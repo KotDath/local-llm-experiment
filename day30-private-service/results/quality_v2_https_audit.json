@@ -1,0 +1,635 @@
+{
+  "reviewed_at_utc": "2026-10-14T10:52:36.043985+00:00",
+  "scope": "Independent v2 real HTTPS network/final dialogue review. Read-only existing responses/source and PC API journal; no model/embedding/cloud/SSH/TG calls, no secret reads, no source/runtime changes. Held-out expected answers not read.",
+  "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+  "inputs_sha256": {
+    "quality_v2_https_network.json": "1ac91155d2caa1f49720d2d9520f86801829875c68afa56b000de5cfe6fdce26",
+    "quality_v2_https_final.json": "dce60ff5bec233848668a1fc5eccac25a891ad65038511017862a2c5ad6e2654"
+  },
+  "meta_checks": {
+    "direct_PC_HTTPS_default_TLS_no_client_forward": true,
+    "health_source_matches_response_and_current_core": true,
+    "ready_RAG_context_slots_match": true,
+    "Q8_native32K_3slots": true,
+    "profile_Q8B_inherited37e_honestly_tagged": true
+  },
+  "all_transport_source_budget_and_accounting_checks_pass": true,
+  "exact_PC_joins": 10,
+  "actual_generation_calls": 29,
+  "receipts": [
+    {
+      "case": "network:first",
+      "request_id": "f94fe5553d30438dad4e8744d86de6c9",
+      "pc_receipt_utc": "2026-10-14T10:11:38Z",
+      "question_sha256": "bc8f226f2007fa7a10423662d6c34c5b5e501dfd77fc2f713ac3b563bd3dd296",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 1664.0276749967597,
+      "http_total_ms": 1671.4040279985056,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "network:second",
+      "request_id": "522977eb739542bcba013de40fbd48b0",
+      "pc_receipt_utc": "2026-10-14T10:11:40Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 1574.9354799991124,
+      "http_total_ms": 1588.0616470021778,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "network:after_reset",
+      "request_id": "dcc6924b74284f3491dfa7c57f98a20a",
+      "pc_receipt_utc": "2026-10-14T10:11:47Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 50,
+        "total_tokens": 295
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 6069.214903000102,
+      "http_total_ms": 6081.52912499645,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:RAG1",
+      "request_id": "e8a49b50c3ce4ba2bbc612ccd40d6455",
+      "pc_receipt_utc": "2026-10-14T10:29:23Z",
+      "question_sha256": "7283b5a250472b9dffab68b0ad9884cd8654a6df208e33bb65be2982bc688013",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 20415,
+        "completion_tokens": 1492,
+        "total_tokens": 21907
+      },
+      "llm_calls": 5,
+      "phases": [
+        "question_plan",
+        "answer",
+        "coverage_review",
+        "answer_revision",
+        "final_review"
+      ],
+      "agent_total_ms": 173496.15730900405,
+      "http_total_ms": 173507.59177999862,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:RAG2",
+      "request_id": "74094b86254d4a429040ca45d8767534",
+      "pc_receipt_utc": "2026-10-14T10:31:19Z",
+      "question_sha256": "776f0421a70762410ab3c81f6dab4e89c317b98a819094af6d96dfe760b043ca",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 20136,
+        "completion_tokens": 668,
+        "total_tokens": 20804
+      },
+      "llm_calls": 6,
+      "phases": [
+        "query_resolution",
+        "question_plan",
+        "answer",
+        "coverage_review",
+        "answer_revision",
+        "final_review"
+      ],
+      "agent_total_ms": 113907.52926799905,
+      "http_total_ms": 113919.87572100334,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:RAG3",
+      "request_id": "4c7f16db0fc94f3d89f39eb592152e63",
+      "pc_receipt_utc": "2026-10-14T10:35:11Z",
+      "question_sha256": "0b881a8b64c9cf1ec2a697a31daf3e59a404bc17cb061278a91fc7b5f8c23f18",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 38060,
+        "completion_tokens": 1464,
+        "total_tokens": 39524
+      },
+      "llm_calls": 6,
+      "phases": [
+        "query_resolution",
+        "question_plan",
+        "answer",
+        "coverage_review",
+        "answer_revision",
+        "final_review"
+      ],
+      "agent_total_ms": 227718.46542599815,
+      "http_total_ms": 227730.81041499972,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:RAG4",
+      "request_id": "a8a8386defe347a082ce2a6560b41adb",
+      "pc_receipt_utc": "2026-10-14T10:36:40Z",
+      "question_sha256": "e7fc624a66bbbc4366ff35e95a9372bc42f1e4dae4239ede5c16f3d8f46f2a6a",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 22676,
+        "completion_tokens": 357,
+        "total_tokens": 23033
+      },
+      "llm_calls": 6,
+      "phases": [
+        "query_resolution",
+        "question_plan",
+        "answer",
+        "coverage_review",
+        "answer_revision",
+        "final_review"
+      ],
+      "agent_total_ms": 84389.58855899546,
+      "http_total_ms": 84401.18429300492,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:plain1",
+      "request_id": "5f5620e83b054569a521bd13c01d447a",
+      "pc_receipt_utc": "2026-10-14T10:36:47Z",
+      "question_sha256": "bc8f226f2007fa7a10423662d6c34c5b5e501dfd77fc2f713ac3b563bd3dd296",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 3168.1735910024145,
+      "http_total_ms": 3180.3155509987846,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:plain2",
+      "request_id": "b4126351e1774dfdbd25af3f20ecc31e",
+      "pc_receipt_utc": "2026-10-14T10:36:50Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 2641.1005170011776,
+      "http_total_ms": 2651.668682003219,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    },
+    {
+      "case": "final:plain3",
+      "request_id": "bc9dcc81edfb4178b0e24ed49b194bd4",
+      "pc_receipt_utc": "2026-10-14T10:37:00Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 66,
+        "total_tokens": 311
+      },
+      "llm_calls": 1,
+      "phases": [
+        "plain_answer"
+      ],
+      "agent_total_ms": 9156.316624001192,
+      "http_total_ms": 9167.629796997062,
+      "checks": {
+        "unique_exact_PC_request_id": true,
+        "HTTP_PCstatus200": true,
+        "question_sha256_matches": true,
+        "body_PC_current_source82c1": true,
+        "usage_raw_aggregate_PC_matches": true,
+        "call_count_matches": true,
+        "actual_rendered_prompt_count_matches": true,
+        "natural_stop_positive_completion": true,
+        "backend_timing_token_counts_match": true,
+        "individual_calls_within_context_budget": true,
+        "actual_http_total_ms_matches": true,
+        "actual_agent_time_inside_http_time": true
+      }
+    }
+  ],
+  "canonical_neighbor_window_checks": [
+    {
+      "turn": 1,
+      "canonical_expanded_windows": 6,
+      "native_anchor_and_span_all_valid": true
+    },
+    {
+      "turn": 2,
+      "canonical_expanded_windows": 6,
+      "native_anchor_and_span_all_valid": true
+    },
+    {
+      "turn": 3,
+      "canonical_expanded_windows": 10,
+      "native_anchor_and_span_all_valid": true
+    },
+    {
+      "turn": 4,
+      "canonical_expanded_windows": 7,
+      "native_anchor_and_span_all_valid": true
+    }
+  ],
+  "per_call_citation_catalog_checks": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "phase": "answer",
+          "catalog_entries": 69,
+          "selected_IDs": 17,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        },
+        {
+          "phase": "answer_revision",
+          "catalog_entries": 96,
+          "selected_IDs": 17,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "phase": "answer",
+          "catalog_entries": 77,
+          "selected_IDs": 6,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        },
+        {
+          "phase": "answer_revision",
+          "catalog_entries": 121,
+          "selected_IDs": 6,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "phase": "answer",
+          "catalog_entries": 181,
+          "selected_IDs": 24,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        },
+        {
+          "phase": "answer_revision",
+          "catalog_entries": 224,
+          "selected_IDs": 25,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "phase": "answer",
+          "catalog_entries": 99,
+          "selected_IDs": 0,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        },
+        {
+          "phase": "answer_revision",
+          "catalog_entries": 165,
+          "selected_IDs": 0,
+          "all_selected_IDs_resolve_to_actual_catalog": true,
+          "all_catalog_quotes_canonical": true
+        }
+      ]
+    }
+  ],
+  "literal_citation_checks": [
+    {
+      "turn": 1,
+      "sources": 17,
+      "literal_UTF16_pages_revision_PDFsha_all_valid": true,
+      "display_contains_no_PDFcontrolchar2": true
+    },
+    {
+      "turn": 2,
+      "sources": 6,
+      "literal_UTF16_pages_revision_PDFsha_all_valid": true,
+      "display_contains_no_PDFcontrolchar2": true
+    },
+    {
+      "turn": 3,
+      "sources": 25,
+      "literal_UTF16_pages_revision_PDFsha_all_valid": true,
+      "display_contains_no_PDFcontrolchar2": true
+    },
+    {
+      "turn": 4,
+      "sources": 0,
+      "literal_UTF16_pages_revision_PDFsha_all_valid": true,
+      "display_contains_no_PDFcontrolchar2": true
+    }
+  ],
+  "plain_history_reset_checks": {
+    "network": {
+      "word_recalled": true,
+      "reset_clears_word": true,
+      "same_agent_before_reset": true,
+      "fresh_agent_after_reset": true,
+      "reset200true": true
+    },
+    "final": {
+      "word_recalled": true,
+      "reset_clears_word": true,
+      "same_agent_before_reset": true,
+      "fresh_agent_after_reset": true,
+      "reset200true": true
+    }
+  },
+  "RAG_semantic_review": [
+    {
+      "turn": 1,
+      "question": "Как MemGPT организует основную и внешнюю память?",
+      "protocol_status": "partial",
+      "core_question_correct": true,
+      "factual_hallucination": false,
+      "fully_grounded": false,
+      "verdict": "factually correct architecture with one weak selected-quote fragment",
+      "reason": "Main/external hierarchy, prompt tokens, explicit transfer, three sections and both storage databases are now correctly explained and cited. The recall append claim selects an interrupted paragraph ending “back of” followed by Figure3, without the queue continuation. This remains a weak/incomplete chosen proof even though the full article supports the claim.",
+      "citation_gaps": [
+        {
+          "claim_index": 9,
+          "detail": "The selected recall retrieval quote ends before “the queue to reinsert…”; a figure-text block cannot substitute for the missing sentence continuation."
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "question": "Как он продолжает выполнение нескольких функций без ответа пользователю?",
+      "protocol_status": "partial",
+      "core_question_correct": true,
+      "factual_hallucination": false,
+      "fully_grounded": true,
+      "verdict": "correct",
+      "reason": "Resolver identifies MemGPT. Function chaining, immediate return flag, result into main context, yield until external event, request heartbeat=true and multi-step retrieval are all supported by the chosen quotations. Conservative partial label remains although runtime reviews say complete/supported."
+    },
+    {
+      "turn": 3,
+      "question": "Чем этот механизм отличается от забывания в MemoryBank?",
+      "protocol_status": "partial",
+      "core_question_correct": true,
+      "factual_hallucination": false,
+      "fully_grounded": false,
+      "verdict": "correct mechanism contrast with an extra citation gap",
+      "reason": "Resolved antecedent explicitly identifies function chaining with request heartbeat=true. Response now covers both sides: function execution control versus MemoryBank time/strength forgetting, Ebbinghaus, R=e^(−t/S), initial S=1 and recall increment/reset. However extra MemGPT claim2 adds FIFO rolling history/recursive summary while its selected quotes cover only section names, system instructions and working context. These are true article facts but are not proved by the selected citations for that claim.",
+      "citation_gaps": [
+        {
+          "claim_index": 1,
+          "detail": "Selected main/system/working-context quotes do not establish the FIFO rolling history or recursive summary stated in the same claim."
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "question": "Какой измеренный p95 ответа MemGPT на Galaxy A54 в этих статьях?",
+      "protocol_status": "abstained",
+      "core_question_correct": true,
+      "factual_hallucination": false,
+      "fully_grounded": true,
+      "verdict": "appropriate refusal",
+      "reason": "No measured MemGPT GalaxyA54 p95 is present in these papers. It does not invent a number; claims/sources empty. Coverage false is consistent with unavailable documentary answer, not a transport failure."
+    }
+  ],
+  "RAG_requested_main_aspects_correct_out_of_4": 4,
+  "RAG_fully_grounded_out_of_4": 2,
+  "RAG_detected_factual_hallucinations_out_of_4": 0,
+  "runtime_question_coverage_reviews": [
+    [
+      {
+        "complete": true,
+        "issues": []
+      },
+      {
+        "complete": true,
+        "issues": []
+      }
+    ],
+    [
+      {
+        "complete": true,
+        "issues": []
+      },
+      {
+        "complete": true,
+        "issues": []
+      }
+    ],
+    [
+      {
+        "complete": true,
+        "issues": []
+      },
+      {
+        "complete": true,
+        "issues": []
+      }
+    ],
+    [
+      {
+        "complete": false,
+        "issues": [
+          "original_question запрашивает p95 ответа MemGPT на Galaxy A54, но ни один аспект не покрыт доказательствами (каталог пуст, все части abstained)."
+        ]
+      },
+      {
+        "complete": false,
+        "issues": [
+          "original_question: p95-латентность MemGPT на Galaxy A54 не подтверждена ни одним доказательством — данные отсутствуют."
+        ]
+      }
+    ]
+  ],
+  "runtime_RAG_protocol_statuses": [
+    "partial",
+    "partial",
+    "partial",
+    "abstained"
+  ],
+  "RAG_agent_times_ms": [
+    173496.15730900405,
+    113907.52926799905,
+    227718.46542599815,
+    84389.58855899546
+  ],
+  "limitations": [
+    "Literal byte/PDF/page proof is not semantic entailment; two chosen-quote gaps remain despite self-review supported=true.",
+    "Three factually useful RAG answers carry conservative partial status; this review assesses content separately from model labels.",
+    "RAG1–4 execution takes about173.5/113.9/227.7/84.4seconds, so restored HTTPS transport is not proof of short answer latency.",
+    "Total usage sums multiple calls; summed prompt usage may exceed32K while each individual call remains within its configured prompt/output budget.",
+    "Q8/B model/profile selection is inherited from old37e matrix, explicitly marked as such; this audit does not establish v2 quantization superiority.",
+    "This10request audit does not re-prove every old load/limits/benchmark result for v2; it proves actual new source, real generation, history/reset and specified RAG dialogue."
+  ]
+}

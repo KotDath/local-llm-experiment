@@ -1,0 +1,964 @@
+{
+  "schema": "independent-articles-grades-v2",
+  "evaluated_utc": "2026-10-14T07:55:52.000333+00:00",
+  "input": "day28-local-rag/results/cloud_answers.jsonl",
+  "input_snapshot_sha256": "54b5b5fc697b750ed49cc086a78de290cdccc00552e7d3223c91cb29a5ab831b",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "questions_sha256": "6c7c412a56502f47ac4a58cd33deab37ac4b2c0225caf4dcecf043e5349b60cb",
+  "rubric": "Все явно запрошенные существенные части должны быть отвечены в prose. Для closed-book M0 факты проверяются по полным PDF, отсутствие citations не считается hallucination. Для RAG нужны sent evidence и смысловая поддержка выбранных цитат; literal provenance проверена отдельно. Partial не correct; appropriate no-data refusal correct. Все actual calls и failures сохранены. Self-review — эвристика, не oracle; bounded revision не проходит повторной semantic проверки. Имена профилей не участвуют в judgement. No inference/secrets/core/config edits.",
+  "rows": 10,
+  "summary": {
+    "cloud": {
+      "total": 10,
+      "correctness_count": 2,
+      "hallucination_count": 0,
+      "correct": 1,
+      "partial": 2,
+      "wrong": 6,
+      "appropriate_refusal": 1
+    }
+  },
+  "grades": [
+    {
+      "mode": "cloud",
+      "id": "Q01",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "delivery_failure_raw_core_factually_correct",
+      "notes": [
+        "invalid_grounded_answer: ни одного ответа не доставлено. Raw answer и repair содержат в целом верные MemGPT механизмы/contents/transfer, но quotes нормализованы по строкам/soft hyphens и не literal substrings. Это provenance/protocol failure, а не автоматически factual hallucination."
+      ],
+      "reasons": [
+        "invalid_grounded_answer: ни одного ответа не доставлено. Raw answer и repair содержат в целом верные MemGPT механизмы/contents/transfer, но quotes нормализованы по строкам/soft hyphens и не literal substrings. Это provenance/protocol failure, а не автоматически factual hallucination."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_provenance",
+          "detail": "No delivered citations; retained raw calls fail exact substring verification after repair."
+        }
+      ],
+      "literal_citation_valid": false,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null,
+      "delivery_ok": false,
+      "error": "invalid_grounded_answer",
+      "request_id": "11ea3ab6eb2d4ab59d5d03097e224208",
+      "raw_calls_reviewed": [
+        {
+          "phase": "answer",
+          "text_sha256": "a1d2fdaf2521cfbe47b1c3ebae77dca5829865b1e8d8e564871cc580f084ba9b",
+          "claim_count": 20,
+          "literal_defect_count": 19,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "Main context consists of the LLM prompt tokens—anything in main context is considered in-context and"
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "External context refers to any information that is held outside of the LLMs fixed context window."
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "must always be explicitly moved into main context in order for it to be passed to the LLM processor "
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "The prompt tokens in MemGPT are split into three contiguous sections: the system instructions, worki"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "The system instructions are read-only (static) and contain information on the MemGPT control flow, t"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "Working context is a fixed-size read/write block of unstructured text, writeable only via MemGPT fun"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The FIFO queue stores a rolling history of messages, including messages between the agent and user, "
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The queue manager writes both the incoming message and the generated LLM output to recall storage (t"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "When messages in recall storage are retrieved via a MemGPT function call, the queue manager appends "
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "archival storage (a read/write database storing arbitrary length text objects)"
+            },
+            {
+              "claim_index": 10,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "MemGPT uses functions to move data between main context and external context (the archival and recal"
+            },
+            {
+              "claim_index": 11,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "Recall Storage\nRead via Functions\nWrite via Queue Manager\nRead via Functions\nWrite via Functions\nPro"
+            },
+            {
+              "claim_index": 12,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "The LLM can request immediate follow-up LLM inference to chain function calls together by generating"
+            },
+            {
+              "claim_index": 13,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "When the prompt tokens exceed the ‘warning token count‘ of the underlying LLM’s context window (e.g."
+            },
+            {
+              "claim_index": 14,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "When the prompt tokens exceed the ‘flush token count’ (e.g. 100% of the context window), the queue m"
+            },
+            {
+              "claim_index": 15,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The first index in the FIFO queue stores a system message containing a recursive summary of messages"
+            },
+            {
+              "claim_index": 16,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "In conversational settings, working context is intended to be used to store key facts, preferences, "
+            },
+            {
+              "claim_index": 17,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "main context (analogous to main memory/physical memory/RAM) and external context (analogous to disk "
+            },
+            {
+              "claim_index": 19,
+              "kind": "nonliteral_quote",
+              "chunk_id": "5d4d58282608da9cb79c94acb75df18856e2a67891a2c8bfb1ef3477b86aa4be",
+              "quote_preview": "In MemGPT, functions can be called with a special flag that requests control be immediately returned"
+            }
+          ]
+        },
+        {
+          "phase": "citation_repair",
+          "text_sha256": "02ec81a89599a311cd134decd056a25469d146e590e2a3cb356dde9792028477",
+          "claim_count": 20,
+          "literal_defect_count": 19,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "Main context consists of the LLM prompt tokens—anything in main context is considered in-context and"
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "External context refers to any information that is held outside of the LLMs fixed context window."
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "must always be explicitly moved into main context in order for it to be passed to the LLM processor "
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "The prompt tokens in MemGPT are split into three contiguous sections: the system instructions, worki"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "The system instructions are read-only (static) and contain information on the MemGPT control flow, t"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "Working context is a fixed-size read/write block of unstructured text, writeable only via MemGPT fun"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The FIFO queue stores a rolling history of messages, including messages between the agent and user, "
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The queue manager writes both the incoming message and the generated LLM output to recall storage (t"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "When messages in recall storage are retrieved via a MemGPT function call, the queue manager appends "
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "archival storage (a read/write database storing arbitrary length text objects)"
+            },
+            {
+              "claim_index": 10,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "MemGPT uses functions to move data between main context and external context (the archival and recal"
+            },
+            {
+              "claim_index": 11,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "Recall Storage\nRead via Functions\nWrite via Queue Manager\nRead via Functions\nWrite via Functions\nPro"
+            },
+            {
+              "claim_index": 12,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "The LLM can request immediate follow-up LLM inference to chain function calls together by generating"
+            },
+            {
+              "claim_index": 13,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "When the prompt tokens exceed the ‘warning token count‘ of the underlying LLM’s context window (e.g."
+            },
+            {
+              "claim_index": 14,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7ff312769e99dfc9d38bd4656b0e4038a562152e42478d734b0d08940caa2fe8",
+              "quote_preview": "When the prompt tokens exceed the ‘flush token count’ (e.g. 100% of the context window), the queue m"
+            },
+            {
+              "claim_index": 15,
+              "kind": "nonliteral_quote",
+              "chunk_id": "fbcbb7e4e96d7275e171d2f8d6db6ab66d31e8ab6c8852560960e1b93d4416a6",
+              "quote_preview": "The first index in the FIFO queue stores a system message containing a recursive summary of messages"
+            },
+            {
+              "claim_index": 16,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "In conversational settings, working context is intended to be used to store key facts, preferences, "
+            },
+            {
+              "claim_index": 17,
+              "kind": "nonliteral_quote",
+              "chunk_id": "02bf431ba3cb2298719076a0674fe8ff3f4a5c6184180ac294bff3cabf8dd4f8",
+              "quote_preview": "main context (analogous to main memory/physical memory/RAM) and external context (analogous to disk "
+            },
+            {
+              "claim_index": 19,
+              "kind": "nonliteral_quote",
+              "chunk_id": "5d4d58282608da9cb79c94acb75df18856e2a67891a2c8bfb1ef3477b86aa4be",
+              "quote_preview": "In MemGPT, functions can be called with a special flag that requests control be immediately returned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q02",
+      "answer_sha256": "ec9efc4ecfc0aa90542cd93a426e3f34b6633eaa327bb85a3c1fcd937e8668fd",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct",
+      "notes": [
+        "Все requested warning/flush/recursive summary/recall persistence явно представлены, directly entailed точными quotes.70/100/50 корректно отмечены примерами."
+      ],
+      "reasons": [
+        "Все requested warning/flush/recursive summary/recall persistence явно представлены, directly entailed точными quotes.70/100/50 корректно отмечены примерами."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false,
+      "delivery_ok": true,
+      "error": null,
+      "request_id": "28df247edabf405785c8d6d335b2f16c",
+      "raw_calls_reviewed": []
+    },
+    {
+      "mode": "cloud",
+      "id": "Q03",
+      "answer_sha256": "82cb929804efa5206b3c2cc78df05fbfe8e14131411be6705217c3ce58ff9354",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Document QA early pagination stop правильно и непосредственно supported. Но base-model часть generic: перечислены GPT4/Turbo/3.5, не observed GPT3.5 degradation due function calling и GPT4 best. Та же completeness rubric, что локально."
+      ],
+      "reasons": [
+        "Document QA early pagination stop правильно и непосредственно supported. Но base-model часть generic: перечислены GPT4/Turbo/3.5, не observed GPT3.5 degradation due function calling и GPT4 best. Та же completeness rubric, что локально."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false,
+      "delivery_ok": true,
+      "error": null,
+      "request_id": "13e832faaf00494ba74f5b12494277cf",
+      "raw_calls_reviewed": []
+    },
+    {
+      "mode": "cloud",
+      "id": "Q04",
+      "answer_sha256": "3eb6b66deb003a63d365eda8359702abbb2fd9c488cfc8f8b7016a2f700250b4",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "honest_missing_evidence_on_answerable_question",
+      "notes": [
+        "Formula/t/S/initial/update не answered, модель честно ограничивает отсутствие excerpts. Полный corpus answerable; incidental example R=e^{-t/S} не представлен как actual method и definitions/update missing. Retrieval coverage failure, без hallucination."
+      ],
+      "reasons": [
+        "Formula/t/S/initial/update не answered, модель честно ограничивает отсутствие excerpts. Полный corpus answerable; incidental example R=e^{-t/S} не представлен как actual method и definitions/update missing. Retrieval coverage failure, без hallucination."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Time decay quote обрывается на first few без days; broad PDF действительно говорит days."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Не указана формула забывания (например, R=e^{-t/S}) — в приведённых фрагментах её нет.",
+          "Не объяснено, что означают t и S.",
+          "Не описано, как S и t меняются при первом упоминании и повторном recall."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "delivery_ok": true,
+      "error": null,
+      "request_id": "51ec7c1d1f4a4fbd9196e8cb4d4b6c4b",
+      "raw_calls_reviewed": []
+    },
+    {
+      "mode": "cloud",
+      "id": "Q05",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "delivery_failure_raw_core_factually_correct",
+      "notes": [
+        "Нет delivered answer: invalid_grounded_answer. Последний raw response правильно объясняет pieces/query/FAISS/encoders/languages, но один encoder-interchangeable quote не является exact substring. Ни delivery success, ни correct за недоставленный draft не начислены."
+      ],
+      "reasons": [
+        "Нет delivered answer: invalid_grounded_answer. Последний raw response правильно объясняет pieces/query/FAISS/encoders/languages, но один encoder-interchangeable quote не является exact substring. Ни delivery success, ни correct за недоставленный draft не начислены."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_provenance",
+          "detail": "No delivered citations; retained raw calls fail exact substring verification after repair."
+        }
+      ],
+      "literal_citation_valid": false,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null,
+      "delivery_ok": false,
+      "error": "invalid_grounded_answer",
+      "request_id": "802a9c992fa049cea4770fe69526afd5",
+      "raw_calls_reviewed": [
+        {
+          "phase": "answer",
+          "text_sha256": "59cae5c95c0e36f016491853c7854b65dbf0e939e0adcc30937210323b57e594",
+          "claim_count": 10,
+          "literal_defect_count": 1,
+          "literal_defects": [
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a6f9197cb225482f493c50bb4c02522cb0c8df047066fb41fb4ea8d83b25847",
+              "quote_preview": "In practice, the encoder E(·) can be interchanged to any suitable model"
+            }
+          ]
+        },
+        {
+          "phase": "citation_repair",
+          "text_sha256": "59cae5c95c0e36f016491853c7854b65dbf0e939e0adcc30937210323b57e594",
+          "claim_count": 10,
+          "literal_defect_count": 1,
+          "literal_defects": [
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a6f9197cb225482f493c50bb4c02522cb0c8df047066fb41fb4ea8d83b25847",
+              "quote_preview": "In practice, the encoder E(·) can be interchanged to any suitable model"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q06",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "delivery_failure_raw_core_factually_correct",
+      "notes": [
+        "Нет delivered answer: invalid_grounded_answer. Raw draft semantic mechanism correct (150,100/3,insights,5/pointers/reflectiontree), но все quotes whitespace/soft-hyphen normalized и не literal. Это формат/citation failure, не invented facts."
+      ],
+      "reasons": [
+        "Нет delivered answer: invalid_grounded_answer. Raw draft semantic mechanism correct (150,100/3,insights,5/pointers/reflectiontree), но все quotes whitespace/soft-hyphen normalized и не literal. Это формат/citation failure, не invented facts."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_provenance",
+          "detail": "No delivered citations; retained raw calls fail exact substring verification after repair."
+        }
+      ],
+      "literal_citation_valid": false,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null,
+      "delivery_ok": false,
+      "error": "invalid_grounded_answer",
+      "request_id": "be7a1837b4eb4de099008027b921e8da",
+      "raw_calls_reviewed": [
+        {
+          "phase": "answer",
+          "text_sha256": "c77845867d4722ac22cd23bca58527149ba45ed654a8149645aa8a9ba6b87d3a",
+          "claim_count": 12,
+          "literal_defect_count": 12,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "d655ec81ef747612a010801c0acddccf6909e7f0d758783173ebe06066ab31bb",
+              "quote_preview": "Reflections are generated periodically; in our implementation, we generate reflections when the sum "
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "The first step in reflection is for the agent to determine what to reflect on, by identifying questi"
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We query the large language model with the 100 most recent records in the agent’s memory stream"
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "prompt the language model, “Given only the information above, what are 3 most salient high-level que"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "The model’s response generates candidate questions: for example, What topic is Klaus Mueller passion"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We use these generated questions as queries for retrieval, and gather relevant memories (including o"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "Then we prompt the language model to extract insights and cite the particular records that served as"
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "What 5 high-level insights can you infer from the above statements? (example format: insight (becaus"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "This process generates statements such as Klaus Mueller is dedicated to his research on gentrificati"
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We parse and store the statement as a reflection in the memory stream, including pointers to the mem"
+            },
+            {
+              "claim_index": 10,
+              "kind": "nonliteral_quote",
+              "chunk_id": "155cd106cf97900a2b3a9c434bff63a2f7856ce2b70a473047bb7c61107f5265",
+              "quote_preview": "Reflection explicitly allows the agents to reflect not only on their observations but also on other "
+            },
+            {
+              "claim_index": 11,
+              "kind": "nonliteral_quote",
+              "chunk_id": "d655ec81ef747612a010801c0acddccf6909e7f0d758783173ebe06066ab31bb",
+              "quote_preview": "Because they are a type of memory, they are included alongside other observations when retrieval occ"
+            }
+          ]
+        },
+        {
+          "phase": "citation_repair",
+          "text_sha256": "c77845867d4722ac22cd23bca58527149ba45ed654a8149645aa8a9ba6b87d3a",
+          "claim_count": 12,
+          "literal_defect_count": 12,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "d655ec81ef747612a010801c0acddccf6909e7f0d758783173ebe06066ab31bb",
+              "quote_preview": "Reflections are generated periodically; in our implementation, we generate reflections when the sum "
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "The first step in reflection is for the agent to determine what to reflect on, by identifying questi"
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We query the large language model with the 100 most recent records in the agent’s memory stream"
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "prompt the language model, “Given only the information above, what are 3 most salient high-level que"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "The model’s response generates candidate questions: for example, What topic is Klaus Mueller passion"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We use these generated questions as queries for retrieval, and gather relevant memories (including o"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "Then we prompt the language model to extract insights and cite the particular records that served as"
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "What 5 high-level insights can you infer from the above statements? (example format: insight (becaus"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "This process generates statements such as Klaus Mueller is dedicated to his research on gentrificati"
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "6f1e50d4d3bf5e01d1243773975457dc1f9a1be2badae9d2b2e8da87bda9c8d6",
+              "quote_preview": "We parse and store the statement as a reflection in the memory stream, including pointers to the mem"
+            },
+            {
+              "claim_index": 10,
+              "kind": "nonliteral_quote",
+              "chunk_id": "155cd106cf97900a2b3a9c434bff63a2f7856ce2b70a473047bb7c61107f5265",
+              "quote_preview": "Reflection explicitly allows the agents to reflect not only on their observations but also on other "
+            },
+            {
+              "claim_index": 11,
+              "kind": "nonliteral_quote",
+              "chunk_id": "d655ec81ef747612a010801c0acddccf6909e7f0d758783173ebe06066ab31bb",
+              "quote_preview": "Because they are a type of memory, they are included alongside other observations when retrieval occ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q07",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "delivery_failure_raw_core_factually_correct",
+      "notes": [
+        "invalid_grounded_answer после repair. Raw claims полно и фактически правильно сравнивают оба papers; DMR38.7/66.9,32.1/92.5,35.3/93.4 verified. Repair всё ещё имеет nonliteral quote memory-stream summarizing. Недоставленный ответ не correct; quote failure не считается hallucination автоматически."
+      ],
+      "reasons": [
+        "invalid_grounded_answer после repair. Raw claims полно и фактически правильно сравнивают оба papers; DMR38.7/66.9,32.1/92.5,35.3/93.4 verified. Repair всё ещё имеет nonliteral quote memory-stream summarizing. Недоставленный ответ не correct; quote failure не считается hallucination автоматически."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_provenance",
+          "detail": "No delivered citations; retained raw calls fail exact substring verification after repair."
+        }
+      ],
+      "literal_citation_valid": false,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null,
+      "delivery_ok": false,
+      "error": "invalid_grounded_answer",
+      "request_id": "518c8ad1d9684c708190cf347e613354",
+      "raw_calls_reviewed": [
+        {
+          "phase": "answer",
+          "text_sha256": "26197154feb5d464cd25b76c62bf6a9d5734569de187e25240a24b6132912106",
+          "claim_count": 23,
+          "literal_defect_count": 2,
+          "literal_defects": [
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7e04f2bbd7edbf5286cbc2eab586bcf68203241b68e4c21be339750370afb345",
+              "quote_preview": "The prompt tokens in MemGPT are split into three contiguous sections: the system instructions, worki"
+            },
+            {
+              "claim_index": 19,
+              "kind": "nonliteral_quote",
+              "chunk_id": "1c50e2bb071e4e3895acb5b5fba1321ecca7fe14955e9022d3457e48006fc358",
+              "quote_preview": "Instead\nof summarizing, the memory stream described below surfaces\nrelevant memories, resulting in a"
+            }
+          ]
+        },
+        {
+          "phase": "citation_repair",
+          "text_sha256": "043fbdd2ad71ff4ee1edfe1a786a3141a8d068adfe4fb7545981c96223edfa16",
+          "claim_count": 23,
+          "literal_defect_count": 1,
+          "literal_defects": [
+            {
+              "claim_index": 19,
+              "kind": "nonliteral_quote",
+              "chunk_id": "1c50e2bb071e4e3895acb5b5fba1321ecca7fe14955e9022d3457e48006fc358",
+              "quote_preview": "Instead\nof summarizing, the memory stream described below surfaces\nrelevant memories, resulting in a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q08",
+      "answer_sha256": "418c19fa08fb9081898b4304830faaf79c1a3afbbc3ff6dc670655322d1855da",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "GA time/recency0.995/component normalization/weighted score правильно grounded. MemoryBank только qualitative curve, без exp(-t/S),t/S/recall update. Re-access mechanisms не answered и explicitly limited to excerpts; partial coverage без выдумок."
+      ],
+      "reasons": [
+        "GA time/recency0.995/component normalization/weighted score правильно grounded. MemoryBank только qualitative curve, без exp(-t/S),t/S/recall update. Re-access mechanisms не answered и explicitly limited to excerpts; partial coverage без выдумок."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 4,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": true,
+        "issues": [
+          "Не объяснено, что меняется после повторного обращения к памяти в MemoryBank (усиление/обновление силы памяти).",
+          "Не объяснено, что меняется после повторного обращения к памяти в Generative Agents (обновление метки последнего доступа и рост recency)."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "delivery_ok": true,
+      "error": null,
+      "request_id": "c0b6f9b0e76a4d588dc5f2cb6c0e908d",
+      "raw_calls_reviewed": []
+    },
+    {
+      "mode": "cloud",
+      "id": "Q09",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "delivery_failure_raw_core_factually_correct",
+      "notes": [
+        "invalid_grounded_answer: no delivered output. Raw claims правильно дают conditions25/two game days/thousands/multiple actualdays и unknown robustness/potential hacking, без measured success. Но normalized multiline/soft-hyphen quotes не exact substrings, repair не исправил; format failure не factual hallucination."
+      ],
+      "reasons": [
+        "invalid_grounded_answer: no delivered output. Raw claims правильно дают conditions25/two game days/thousands/multiple actualdays и unknown robustness/potential hacking, без measured success. Но normalized multiline/soft-hyphen quotes не exact substrings, repair не исправил; format failure не factual hallucination."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_provenance",
+          "detail": "No delivered citations; retained raw calls fail exact substring verification after repair."
+        }
+      ],
+      "literal_citation_valid": false,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null,
+      "delivery_ok": false,
+      "error": "invalid_grounded_answer",
+      "request_id": "b643abcbb7284b619de2da4a3612b616",
+      "raw_calls_reviewed": [
+        {
+          "phase": "answer",
+          "text_sha256": "3c873df71b83562fe74114141250ef4f3d1e926b9ccd241d6877c4e24c8312a2",
+          "claim_count": 10,
+          "literal_defect_count": 11,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "To enhance real-time interactivity, future work can explore parallelizing agents or developing langu"
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "The present study required substantial time and resources to simulate 25 agents for two days, costin"
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "Lastly, the robustness of generative agents is still largely unknown."
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "They may be vulnerable to prompt hacking, memory hacking—where a carefully crafted conversation coul"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "the assessment of generative agents’ behavior in this study was limited to a relatively short timesc"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "While the crowdworker condition provided a helpful comparison point, it did not represent the maxima"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "5db8f5aeaa561814c00b8faae9cacc860d51deffe9b317aa8241d1adb5ec1a4e",
+              "quote_preview": "We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims"
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "ea5268e3f816495459e3524a05bd0ae4eabd85655250859de9e8cc76ce443938",
+              "quote_preview": "We conducted two evaluations of generative agents: a controlled evaluation to test whether the agent"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "ea5268e3f816495459e3524a05bd0ae4eabd85655250859de9e8cc76ce443938",
+              "quote_preview": "Across the technical and end-to-end evaluation, the most common errors arose when the agent failed t"
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7bd71a7376ef347431db1140c098d755b15cf751a342fdb0ee4d4773cc22f293",
+              "quote_preview": "Our current implementation utilizes the gpt3.5-turbo version of ChatGPT [77]."
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7bd71a7376ef347431db1140c098d755b15cf751a342fdb0ee4d4773cc22f293",
+              "quote_preview": "As of writing, however, GPT-4’s API was invitation-only, so our agents use ChatGPT."
+            }
+          ]
+        },
+        {
+          "phase": "citation_repair",
+          "text_sha256": "3c873df71b83562fe74114141250ef4f3d1e926b9ccd241d6877c4e24c8312a2",
+          "claim_count": 10,
+          "literal_defect_count": 11,
+          "literal_defects": [
+            {
+              "claim_index": 0,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "To enhance real-time interactivity, future work can explore parallelizing agents or developing langu"
+            },
+            {
+              "claim_index": 1,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "The present study required substantial time and resources to simulate 25 agents for two days, costin"
+            },
+            {
+              "claim_index": 2,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "Lastly, the robustness of generative agents is still largely unknown."
+            },
+            {
+              "claim_index": 3,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "They may be vulnerable to prompt hacking, memory hacking—where a carefully crafted conversation coul"
+            },
+            {
+              "claim_index": 4,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "the assessment of generative agents’ behavior in this study was limited to a relatively short timesc"
+            },
+            {
+              "claim_index": 5,
+              "kind": "nonliteral_quote",
+              "chunk_id": "2a4144d7af9cb2353253fb3fdd1f2d6b0757c39666e3c224609d9f9bfe3b607b",
+              "quote_preview": "While the crowdworker condition provided a helpful comparison point, it did not represent the maxima"
+            },
+            {
+              "claim_index": 6,
+              "kind": "nonliteral_quote",
+              "chunk_id": "5db8f5aeaa561814c00b8faae9cacc860d51deffe9b317aa8241d1adb5ec1a4e",
+              "quote_preview": "We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims"
+            },
+            {
+              "claim_index": 7,
+              "kind": "nonliteral_quote",
+              "chunk_id": "ea5268e3f816495459e3524a05bd0ae4eabd85655250859de9e8cc76ce443938",
+              "quote_preview": "We conducted two evaluations of generative agents: a controlled evaluation to test whether the agent"
+            },
+            {
+              "claim_index": 8,
+              "kind": "nonliteral_quote",
+              "chunk_id": "ea5268e3f816495459e3524a05bd0ae4eabd85655250859de9e8cc76ce443938",
+              "quote_preview": "Across the technical and end-to-end evaluation, the most common errors arose when the agent failed t"
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7bd71a7376ef347431db1140c098d755b15cf751a342fdb0ee4d4773cc22f293",
+              "quote_preview": "Our current implementation utilizes the gpt3.5-turbo version of ChatGPT [77]."
+            },
+            {
+              "claim_index": 9,
+              "kind": "nonliteral_quote",
+              "chunk_id": "7bd71a7376ef347431db1140c098d755b15cf751a342fdb0ee4d4773cc22f293",
+              "quote_preview": "As of writing, however, GPT-4’s API was invitation-only, so our agents use ChatGPT."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q10",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Matched percentage отсутствует в papers; delivered refusal корректен без fabricated number."
+      ],
+      "reasons": [
+        "Matched percentage отсутствует в papers; delivered refusal корректен без fabricated number."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос требует сравнения скорости MemoryBank и MemGPT в процентах на одинаковом оборудовании и одной LLM.",
+          "Ни один фрагмент не содержит числовых данных о скорости или времени работы MemoryBank.",
+          "Ни один фрагмент не содержит числовых данных о скорости или времени работы MemGPT.",
+          "Нет фрагментов, где MemoryBank и MemGPT сравнивались бы напрямую по производительности.",
+          "Черновик отказался отвечать, но фрагменты действительно не дают запрошенных фактов."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "delivery_ok": true,
+      "error": null,
+      "request_id": "d50a54c919ec4b62a110e53264656b70",
+      "raw_calls_reviewed": []
+    }
+  ],
+  "comparison_limitations": [
+    "Cloud used same own Agent, corpus, questions and frozen core37e; cloud json_object lacks local constrained schema decoder. End-to-end protocol reliability measured, not pure model factual capability.",
+    "All five invalid_grounded_answer failures remain wrong/falsecorrect; raw drafts reviewed separately, no retry/cherry-picking/inference by grader.",
+    "No delivered text for failures: answer_sha256 is SHA256 of exact UTF8 empty text; raw LLM text hashes additionally preserve review binding."
+  ],
+  "delivery_failures": 5,
+  "delivered_answers": 5,
+  "all_actual_calls": 24
+}

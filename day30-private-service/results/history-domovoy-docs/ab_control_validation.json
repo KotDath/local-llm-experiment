@@ -1,0 +1,12 @@
+{
+  "stage": "A/B complete; C/D not yet available",
+  "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "latest_runs": {
+    "A": "A-1791931097876872033",
+    "B": "B-1791931493539589446"
+  },
+  "rows_checked": 40,
+  "same_index_embedding_retrieval_build": true,
+  "single_slot": true,
+  "actual_cache_hits": 0
+}

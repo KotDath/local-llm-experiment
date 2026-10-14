@@ -1,0 +1,151 @@
+{
+  "client": "PC external HTTPS client; no client SSH forward",
+  "statuses": [
+    200,
+    503,
+    200,
+    503,
+    503,
+    200,
+    200,
+    200,
+    200,
+    200,
+    503,
+    200,
+    503,
+    503,
+    200
+  ],
+  "results": [
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "dc7fbd80686747f28d094bb4b8adef85",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 921,
+        "total_tokens": 1180
+      }
+    },
+    {
+      "status": 503,
+      "error": "busy",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "9a7f4c07af9a41f4ba221467fc9fa46a",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 1193,
+        "total_tokens": 1452
+      }
+    },
+    {
+      "status": 503,
+      "error": "queue_wait_timeout",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 503,
+      "error": "busy",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "51194b69a5264194bdd6665d3ae18ce3",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 859,
+        "total_tokens": 1118
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "27c7ca45264e4e14ab653d5e3a899a2a",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 823,
+        "total_tokens": 1082
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "e15835f4c2ac49b58f372bcb246fd00c",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 944,
+        "total_tokens": 1203
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "d8585522fa194601b99c23c9e2324c8c",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 929,
+        "total_tokens": 1188
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "c15fc94232b24dd68eae9fe550b71c1b",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 872,
+        "total_tokens": 1131
+      }
+    },
+    {
+      "status": 503,
+      "error": "queue_wait_timeout",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "14cad329083c4fd78fe97ff09905a314",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 842,
+        "total_tokens": 1101
+      }
+    },
+    {
+      "status": 503,
+      "error": "queue_wait_timeout",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 503,
+      "error": "queue_wait_timeout",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "a69421aae4da4fb1a035ca358565e4ab",
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 998,
+        "total_tokens": 1257
+      }
+    }
+  ],
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=Private local LLM HTTP agent
+After=network.target
+
+[Service]
+WorkingDirectory=/ABSOLUTE/PATH/day30-private-service
+EnvironmentFile=/ABSOLUTE/PATH/day30-private-service/.env
+ExecStart=/ABSOLUTE/PATH/day30-private-service/.venv/bin/python -m uvicorn api:app --host 127.0.0.1 --port 8780 --no-access-log
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,250 @@
+{
+  "schema": "independent-rag-semantic-review-v1",
+  "evaluated_at_utc": "2026-10-13T20:46:30.339957+00:00",
+  "input": "results/dev_rag_answers.jsonl",
+  "input_sha256": "1e69e4892f91934df5df0b4351138fce69128083561068d183647e010d117c16",
+  "input_rows": 8,
+  "scope": "Final topic-prefix dev only. Previous raw-query report/answers and exploratory failures excluded and retained separately. No inference executed; no secrets read.",
+  "method": "Actual question, prose answer, claims, selected citations, sent excerpts and frozen corpus independently read. Exact citation hash/UTF-16 spans checked separately. Citations alone do not count as answering a missing aspect.",
+  "summary": {
+    "correct_answers": 2,
+    "partial_answers": 2,
+    "wrong_answers": 0,
+    "appropriate_refusals": 4,
+    "acceptable_full_responses": 6,
+    "total": 8,
+    "responses_with_unsupported_or_wrong_claims": 0,
+    "responses_with_semantically_inadequate_citations": 2,
+    "all_literal_citation_spans_valid": true
+  },
+  "provenance_issues": [],
+  "grades": [
+    {
+      "id": "D01",
+      "mode": "M1",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "status_reported": "answered",
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "deletion_entailed_owner_quote_unused_in_answer",
+      "reasons": [
+        "Удаление запрещено — ответ верен по первой половине вопроса.",
+        "Вторая половина «кто задаёт идентификаторы и область записи» полностью пропущена в prose. Цитата The host owns scopes, IDs... существует, но отдельный список источников не заменяет ответ на аспект вопроса.",
+        "Retrieval исправлен: architecture.md с прямым ожидаемым правилом реально передан модели. Ответ всё равно неполный, статус answered завышен."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "supported_but_incomplete",
+          "reason": "Automatic deletion forbidden подтверждено; user forget через inspector поддержан README. Кто владеет ID/scope не сказано."
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "mode": "M1",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "status_reported": "answered",
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "entailed_for_given_claim",
+      "reasons": [
+        "Верны USER.md/SOUL.md и отсутствие переноса иной информации.",
+        "Пропущены все пять тем интервью и поведение при отмене, хотя sent evidence содержит эти факты. Статус answered завышен.",
+        "Регрессия относительно raw_query_dev: тот ответ покрывал пять тем и отмену, текущий отвечает лишь на первый аспект."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "supported_but_incomplete",
+          "reason": "Изменение коммуникации и USER/SOUL поддержаны; слово «переписывает» упрощает draft-and-confirm flow, однако основной дефект — отсутствующие аспекты."
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "answered",
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "one_non_entailing_and_one_redundant_citation",
+      "reasons": [
+        "32 элемента, 10 минут и отсутствие расходования частоты при cache hit верны; существенные аспекты покрыты.",
+        "Цитата «соблюдают свои 3 с... общий лимит» не подтверждает claim о попадании в cache. Повторная такая же цитата не добавляет доказательства.",
+        "Более широкий sent chunk говорит, что повторный поиск не обращается к сети; содержание ответа фактически корректно, но выбранная цитата семантически нерелевантна."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "entailed_with_irrelevant_extra_citation",
+          "reason": "cacheTtl/cacheCapacity напрямую подтверждают значения."
+        },
+        {
+          "claim": 2,
+          "assessment": "supported_by_sent_context_not_by_selected_quote",
+          "reason": "Оперативная цитата выбрана из предложения про две машины, а не из правила cache hit."
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "answered",
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "insufficient_operational_clauses",
+      "reasons": [
+        "Обе ветки повторного save_digest покрыты правильно: same payload created:false/no duplicate; changed payload conflict/old retained.",
+        "Дополнительное non-consumption of ID также подтверждено sent evidence.",
+        "Почти все выбранные цитаты — обрывки wrapped lines. Первый обрывается до created:false; conflict quotes обрываются до conflict. version_mismatch нерелевантен. Literal validity не означает semantic support."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "supported_by_full_sent_chunk_but_weak_citations",
+          "reason": "Первый full chunk содержит created:false и no duplicate, но конкретные выбранные quotes не содержат итоговые поля."
+        },
+        {
+          "claim": 2,
+          "assessment": "supported_by_full_sent_chunk_but_weak_citations",
+          "reason": "f2dee full passage поддерживает conflict; selected quote ends before Digest/conflict."
+        },
+        {
+          "claim": 3,
+          "assessment": "supported_by_full_sent_chunk_but_weak_citations",
+          "reason": "Full paragraphs содержат pipeline и ID non-consumption; цитаты обрезаны до объяснения."
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "abstained",
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В замороженном корпусе нет запрошенных коммерческих/измеренных/сертификационных/будущих данных; host refusal без LLM call и без выдумок."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D06",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "abstained",
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В замороженном корпусе нет запрошенных коммерческих/измеренных/сертификационных/будущих данных; host refusal без LLM call и без выдумок."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D07",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "abstained",
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В замороженном корпусе нет запрошенных коммерческих/измеренных/сертификационных/будущих данных; host refusal без LLM call и без выдумок."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D08",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "status_reported": "abstained",
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В замороженном корпусе нет запрошенных коммерческих/измеренных/сертификационных/будущих данных; host refusal без LLM call и без выдумок."
+      ],
+      "claim_notes": []
+    }
+  ],
+  "regressions": [
+    {
+      "id": "D02",
+      "before": "correct",
+      "after": "partial",
+      "reason": "Five interview topics and cancel behavior disappeared despite relevant evidence."
+    }
+  ],
+  "improvements": [
+    {
+      "id": "D01",
+      "before": "wrong",
+      "after": "partial",
+      "reason": "Correct memory/architecture retrieval and deletion claim; host ownership aspect still omitted."
+    },
+    {
+      "id": "D04",
+      "before": "partial",
+      "after": "correct",
+      "reason": "Changed payload conflict now answered."
+    }
+  ],
+  "implementation_findings": [
+    {
+      "severity": "high",
+      "file": "grounding.py",
+      "finding": "validate verifies structure and literal provenance only; semantic entailment and question completeness unverified. This is acknowledged by docstring, must not be sold as semantic hallucination prevention."
+    },
+    {
+      "severity": "high",
+      "file": "agent.py",
+      "finding": "Multi-part question completeness not ensured: D01/D02 omit requested aspects though evidence contains them. Both label answered."
+    },
+    {
+      "severity": "medium",
+      "file": "grounding.py:quotes/output_format",
+      "finding": "Schema enum includes headings and wrapped-line fragments. Current D04 selects prefixes without operative created:false/conflict clauses and unrelated version_mismatch. Enum does not imply entailment."
+    },
+    {
+      "severity": "medium",
+      "file": "rag.py / calibrate.py",
+      "finding": "Answerability calibration remains max-score binary separation, not retrieval evidence coverage/semantic quality. Dev tuning metrics cannot replace held-out golden semantic assessment."
+    },
+    {
+      "severity": "low",
+      "file": "agent.py / model.py",
+      "finding": "Pruning compares to profile context; complete enforces min(profile context,runtime n_ctx). Smaller runtime could cause avoidable context_limit."
+    },
+    {
+      "severity": "medium",
+      "file": "agent.py / rag.py",
+      "finding": "Retrieval uses latest literal question (topic-prefixed), not dialogue-aware rewritten question. Referential follow-ups not covered by dev evaluation."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "file": "rag.py",
+      "finding": "RAG constructor now checks calibrated index_generation against loaded index and fails retrieval_calibration_drift."
+    }
+  ]
+}

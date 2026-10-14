@@ -1,0 +1,295 @@
+{
+  "reviewed_at_utc": "2026-10-14T07:10:59.150158+00:00",
+  "reviewer": "independent child agent",
+  "method": "Read-only semantic review of latest7 preserved real JSONL stdio protocol events, including4 local Chat API responses; no new generation.",
+  "input_jsonl": "cli_dialogues.jsonl",
+  "input_jsonl_sha256": "384d0800fbec12bc153ee4d586b235ac63f1fd11f4311faad7e1eb3d66a362c1",
+  "console_log": "articles_recheck.log",
+  "console_log_sha256": "213e4497a0f302aa377f076e438cb194057fa5c30cbad42d41e122eee6c405cf",
+  "historical_rows_excluded": 7,
+  "event_utc_start": "2026-10-14T05:46:46Z",
+  "event_utc_end": "2026-10-14T05:46:53Z",
+  "sessions": {
+    "A": {
+      "session_id": "c7b716278e924c54a744d2b15ac24603",
+      "agent_id": "7c4c83a5cf0a4b9b80d036904c6b2610"
+    },
+    "B": {
+      "session_id": "36cf5e0f7e8e4ffa9ccefae2db4da118",
+      "agent_id": "acb127dadb3648bd8b78411db6e28f04"
+    }
+  },
+  "checks": {
+    "separate_session_ids": true,
+    "separate_agent_ids": true,
+    "memory_and_recall_on_same_agent": true,
+    "isolated_agent_matches_B": true,
+    "reset_returns_true": true,
+    "reset_reuses_agent_A": true,
+    "same_empty_history_prompt_hash_after_reset": true,
+    "history_increases_prompt_token_count": true,
+    "all_direct_chat_http": true,
+    "all_context32768_output6144": true
+  },
+  "cases": [
+    {
+      "scenario": "memory_write",
+      "request_id": "14752ec403b14d4a99cde3d8ba394e9c",
+      "agent_id": "7c4c83a5cf0a4b9b80d036904c6b2610",
+      "utc": "2026-10-14T05:46:46Z",
+      "question": "В этом разговоре мой любимый фрукт — манго.",
+      "actual_answer": "Записал: ваш любимый фрукт — манго.",
+      "semantic_grade": "correct",
+      "llm_call_count": 1,
+      "usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 249,
+        "total_tokens": 262,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 249,
+      "prompt_hash": "b29a14d9d96198ebd156159a253d7146d0addd2ad8291844397cf111bf732620",
+      "finish_reason": "stop",
+      "generation_ms": 1921.2238869949942,
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "raw_response_id": "chatcmpl-MLU9bvUf4klHDUey94WNQ9QWEvIgexO7",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true,
+        "agent_usage_matches_call": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "scenario": "history_recall",
+      "request_id": "2a201dffd55a4899bc669530ee5ba4cd",
+      "agent_id": "7c4c83a5cf0a4b9b80d036904c6b2610",
+      "utc": "2026-10-14T05:46:48Z",
+      "question": "Какой мой любимый фрукт?",
+      "actual_answer": "Манго.",
+      "semantic_grade": "correct",
+      "llm_call_count": 1,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 282,
+        "total_tokens": 286,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 282,
+      "prompt_hash": "5f7dddec2b8aced1b21f02de862645c050b185b56a2f13c24f9880dda87736ee",
+      "finish_reason": "stop",
+      "generation_ms": 1772.2430220019305,
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "raw_response_id": "chatcmpl-gAzALieUwCVdFueU8P4fw0FvGzpLRljJ",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true,
+        "agent_usage_matches_call": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "scenario": "separate_agent_isolation",
+      "request_id": "674836c09fd948f88bdc8df0c0c7617f",
+      "agent_id": "acb127dadb3648bd8b78411db6e28f04",
+      "utc": "2026-10-14T05:46:50Z",
+      "question": "Какой мой любимый фрукт?",
+      "actual_answer": "Не знаю. У меня нет доступа к вашим предпочтениям — это неизвестно.",
+      "semantic_grade": "correct",
+      "llm_call_count": 1,
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 243,
+        "total_tokens": 261,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 243,
+      "prompt_hash": "a593e7563baff2ce0078eb48117e9c31630bb30a72194740a7bc5017c538696a",
+      "finish_reason": "stop",
+      "generation_ms": 1555.1935480034444,
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "raw_response_id": "chatcmpl-afVHiddNNIzxEwYUvz59eC9WueK0vurE",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true,
+        "agent_usage_matches_call": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "scenario": "after_reset",
+      "request_id": "89c6208eb2cb43f68104f52b3eda5c80",
+      "agent_id": "7c4c83a5cf0a4b9b80d036904c6b2610",
+      "utc": "2026-10-14T05:46:52Z",
+      "question": "Какой мой любимый фрукт?",
+      "actual_answer": "Не знаю. У меня нет доступа к вашим предпочтениям — это неизвестно.",
+      "semantic_grade": "correct",
+      "llm_call_count": 1,
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 243,
+        "total_tokens": 261,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 243,
+      "prompt_hash": "a593e7563baff2ce0078eb48117e9c31630bb30a72194740a7bc5017c538696a",
+      "finish_reason": "stop",
+      "generation_ms": 1556.4025060011772,
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "raw_response_id": "chatcmpl-ANEACVNz2qfzqkLDRsneMUZzResKnmsj",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true,
+        "agent_usage_matches_call": true
+      },
+      "all_checks_pass": true
+    }
+  ],
+  "semantic_findings": {
+    "memory_write": "Acknowledges mango.",
+    "history_recall": "Answers mango, which appeared only in Agent A conversation history.",
+    "separate_agent_isolation": "Agent B refuses to invent the preference.",
+    "after_reset": "Agent A no longer recalls mango; identical rendered-prompt hash and token count to fresh Agent B independently corroborate reset."
+  },
+  "telegram_scope": "This artifact proves the non-Telegram Agent/protocol interface and actual local inference; it does not itself prove Telegram polling.",
+  "all_checks_pass": true,
+  "selected_model_launcher_audit": {
+    "script": "../day30-private-service/scripts/start_selected_model.py",
+    "sha256": "4582c674dd5b3119884a3f865adb71b88cc2c4c1acbf35cc7748b988a673611a",
+    "method": "4 isolated runpy+mock exec dispatches; no process/server launched. run_model.sh reviewed statically.",
+    "combinations": [
+      {
+        "profile": "baseline",
+        "quant": "Q8",
+        "context_per_slot": 65536,
+        "slots": 3,
+        "dispatch_correct": true
+      },
+      {
+        "profile": "baseline",
+        "quant": "Q4",
+        "context_per_slot": 65536,
+        "slots": 3,
+        "dispatch_correct": true
+      },
+      {
+        "profile": "optimized",
+        "quant": "Q8",
+        "context_per_slot": 32768,
+        "slots": 3,
+        "dispatch_correct": true
+      },
+      {
+        "profile": "optimized",
+        "quant": "Q4",
+        "context_per_slot": 32768,
+        "slots": 3,
+        "dispatch_correct": true
+      }
+    ],
+    "total_context_computation": "run_model.sh passes PARALLEL * CTX_PER_SLOT as llama-server --ctx-size, plus --parallel PARALLEL.",
+    "pending_runtime_verification": "After matrix, verify loaded model actual file/full SHA, /props context/slots and profile selection match. configs/selected.json is intentionally not present until exporter selection.",
+    "override_caveat": "MODEL inherited from environment can replace the QUANT-selected filename in run_model.sh. Caller must unset MODEL or independently verify the actual weights. Other SERVER/BACKEND/PARALLEL overrides remain intentional deployment controls.",
+    "resolution": {
+      "reviewed_at_utc": "2026-10-14T07:11:22.075962+00:00",
+      "sha256": "4582c674dd5b3119884a3f865adb71b88cc2c4c1acbf35cc7748b988a673611a",
+      "finding_resolved": true,
+      "detail": "Launcher now explicitly removes inherited MODEL; all4 combinations checked with conflicting inherited MODEL. No process launched.",
+      "mock_cases": [
+        {
+          "profile": "baseline",
+          "quant": "Q8",
+          "inherited_model_removed": true,
+          "context_per_slot": 65536,
+          "dispatch_correct": true
+        },
+        {
+          "profile": "baseline",
+          "quant": "Q4",
+          "inherited_model_removed": true,
+          "context_per_slot": 65536,
+          "dispatch_correct": true
+        },
+        {
+          "profile": "optimized",
+          "quant": "Q8",
+          "inherited_model_removed": true,
+          "context_per_slot": 32768,
+          "dispatch_correct": true
+        },
+        {
+          "profile": "optimized",
+          "quant": "Q4",
+          "inherited_model_removed": true,
+          "context_per_slot": 32768,
+          "dispatch_correct": true
+        }
+      ],
+      "runtime_still_pending": true
+    }
+  }
+}

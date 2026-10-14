@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-14T08:56:16Z",
+  "stage": "Actual task reverse SSH tunnel stopped",
+  "client": "PC direct HTTPS; default TLS verification; no client SSH forward",
+  "status": 503,
+  "body": {
+    "error": "pc_tunnel_unavailable"
+  },
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

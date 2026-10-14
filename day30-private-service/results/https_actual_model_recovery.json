@@ -1,0 +1,107 @@
+{
+  "utc": "2026-10-14T08:56:15Z",
+  "client": "PC direct HTTPS; default TLS verification; no client SSH forward",
+  "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+  "selected_case": "B",
+  "status": 200,
+  "body": {
+    "request_id": "d82c7f6d0b1b4691b30579687e7fe1b8",
+    "utc": "2026-10-14T08:56:14Z",
+    "question": "Назови столицу Франции одним предложением по-русски.",
+    "agent_id": "044a8632c0d34b53aa514d255a6f9a4d",
+    "protocol": "chat-completions-http",
+    "profile": {
+      "temperature": 0.1,
+      "max_tokens": 6144,
+      "context": 32768,
+      "prompt": "optimized"
+    },
+    "rag": false,
+    "rerank": false,
+    "llm_calls": [
+      {
+        "text": "Столица Франции — Париж.",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 250,
+          "total_tokens": 258,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 250,
+          "prompt_ms": 593.582,
+          "prompt_per_token_ms": 2.3743279999999998,
+          "prompt_per_second": 421.17180103170244,
+          "predicted_n": 8,
+          "predicted_ms": 182.08,
+          "predicted_per_token_ms": 26.011428571428574,
+          "predicted_per_second": 38.44463971880492
+        },
+        "finish_reason": "stop",
+        "counted_prompt_tokens": 250,
+        "prompt_hash": "2b285bf303db181c9474cd1f12562a52ea2bf895810ec774f50ce026c7f65349",
+        "generation_ms": 780.6951590027893,
+        "profile": {
+          "temperature": 0.1,
+          "max_tokens": 6144,
+          "context": 32768,
+          "prompt": "optimized"
+        },
+        "model": "tiel-coder",
+        "raw": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Столица Франции — Париж."
+              }
+            }
+          ],
+          "created": 1791968175,
+          "model": "tiel-coder",
+          "system_fingerprint": "b10679-50f068fff",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 250,
+            "total_tokens": 258,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-gkWfsXzpHM7mccEz5auAJJ9WdlmGrhol",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 250,
+            "prompt_ms": 593.582,
+            "prompt_per_token_ms": 2.3743279999999998,
+            "prompt_per_second": 421.17180103170244,
+            "predicted_n": 8,
+            "predicted_ms": 182.08,
+            "predicted_per_token_ms": 26.011428571428574,
+            "predicted_per_second": 38.44463971880492
+          }
+        }
+      }
+    ],
+    "text": "Столица Франции — Париж.",
+    "sources": [],
+    "status": "answered",
+    "finish_reason": "stop",
+    "total_ms": 786.6700630038395,
+    "usage": {
+      "prompt_tokens": 250,
+      "completion_tokens": 8,
+      "total_tokens": 258
+    },
+    "http_total_ms": 792.2833980046562
+  },
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

@@ -1,0 +1,10 @@
+{
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "mode": "Actual Q8/B two complete passes of the identical ten questions, no additional inference",
+  "repeat0_correct_out_of_10": 3,
+  "repeat1_correct_out_of_10": 2,
+  "repeat0_hallucinations": 1,
+  "repeat1_hallucinations": 1,
+  "verdict_stable_out_of_10": 9,
+  "independent_grade_source": "benchmark_grades_B_independent.json"
+}

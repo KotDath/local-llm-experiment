@@ -1,0 +1,97 @@
+{
+  "utc": "2026-10-13T23:42:34.351535+00:00",
+  "source": "PC actual API request journal matched to final VPS response IDs",
+  "receipts": [
+    {
+      "request_id": "7727d24ca0aa4f738f70613b81d23578",
+      "utc": "2026-10-13T23:39:49Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 2745,
+        "completion_tokens": 926,
+        "total_tokens": 3671
+      },
+      "llm_calls": 1,
+      "total_ms": 25145.35220399921,
+      "question_sha256": "0de8bb1ded90913157561ad7a01ec9d1baf7e4edf63a08b4671ddfa6e696e2a7"
+    },
+    {
+      "request_id": "f7f38b0ec80145279271285456f140f5",
+      "utc": "2026-10-13T23:40:13Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 3616,
+        "completion_tokens": 834,
+        "total_tokens": 4450
+      },
+      "llm_calls": 2,
+      "total_ms": 23947.86942599967,
+      "question_sha256": "7b5d50ec59ec9e475ed027c42250714c5ca99e49c5433318553e4e38d12b5406"
+    },
+    {
+      "request_id": "6d7098bf17c8461fa482084e292cd0a3",
+      "utc": "2026-10-13T23:40:31Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 4076,
+        "completion_tokens": 509,
+        "total_tokens": 4585
+      },
+      "llm_calls": 2,
+      "total_ms": 16904.764839000563,
+      "question_sha256": "3b5db41a0e43d30ecb6821c4cc92cc10b832198dc4413a2bda822187a0fc333f"
+    },
+    {
+      "request_id": "e6e888b75916443aa5df44c68fe454c3",
+      "utc": "2026-10-13T23:40:33Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 32,
+        "total_tokens": 411
+      },
+      "llm_calls": 1,
+      "total_ms": 1809.5428090018686,
+      "question_sha256": "e737c5de3d816c802de18bea2ece51c115d8b0dea8950edb9386fc5a43ebb8c5"
+    },
+    {
+      "request_id": "054e744d8c9844cbb50deb050f5f267c",
+      "utc": "2026-10-13T23:40:35Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "llm_calls": 1,
+      "total_ms": 1059.8026199986634,
+      "question_sha256": "bc8f226f2007fa7a10423662d6c34c5b5e501dfd77fc2f713ac3b563bd3dd296"
+    },
+    {
+      "request_id": "b979a768ce1f41d59f8b2d7102ff7d90",
+      "utc": "2026-10-13T23:40:36Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "llm_calls": 1,
+      "total_ms": 938.6707150006259,
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe"
+    },
+    {
+      "request_id": "9578b8ab53af4ed982a1f953e8fd3fcf",
+      "utc": "2026-10-13T23:40:38Z",
+      "status": 200,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 51,
+        "total_tokens": 296
+      },
+      "llm_calls": 1,
+      "total_ms": 1681.8369979991985,
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "comparison": "earlier day28 M1 vs new day29 B repeat0",
+  "benchmark_run_id": "B-1791931493539589446",
+  "rows": [
+    {
+      "id": "Q01",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q02",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q03",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q04",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q05",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q06",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q07",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q08",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q09",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": true,
+      "primary_count_equal": true,
+      "delivered_text_equal": false
+    },
+    {
+      "id": "Q10",
+      "question_equal": true,
+      "profile_equal": true,
+      "sent_evidence_equal": true,
+      "primary_prompt_hash_equal": null,
+      "primary_count_equal": null,
+      "delivered_text_equal": true
+    }
+  ],
+  "question_profile_context_match_count": 10,
+  "primary_prompt_match_count": 9,
+  "host_abstention_without_primary_calls_count": 1,
+  "delivered_text_match_count": 1,
+  "scope": "Observes identical questions/profiles/sent chunks/rendered primary prompts. Does not assert all historical server/sampler/cache/scheduling state was identical. Text differences are retained; complete inference determinism is not claimed."
+}

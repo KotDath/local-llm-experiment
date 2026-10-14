@@ -1,0 +1,240 @@
+{
+  "client": "PC external HTTPS client; no client SSH forward",
+  "unauthorized": {
+    "status": 401,
+    "body": {
+      "error": "unauthorized",
+      "detail": null
+    },
+    "retry_after": null
+  },
+  "body_limit": {
+    "status": 413,
+    "body": {
+      "error": "body_limit"
+    },
+    "retry_after": null,
+    "transport": "curl; early-response capable; default TLS verification"
+  },
+  "context_limit": {
+    "status": 422,
+    "body": {
+      "error": "context_limit",
+      "detail": {
+        "prompt_tokens": 70190
+      }
+    },
+    "retry_after": null
+  },
+  "rate": [
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 429,
+      "error": "rate_limit",
+      "retry_after": "26"
+    }
+  ],
+  "after_rate_window": {
+    "status": 200,
+    "body": {
+      "request_id": "b08e232bff1a43c79ea3f72b5c76b792",
+      "utc": "2026-10-14T08:47:03Z",
+      "question": "Назови столицу Франции одним предложением.",
+      "agent_id": "57f35c08fa1c4a6e9a8deaf15eef93a5",
+      "protocol": "chat-completions-http",
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "rag": false,
+      "rerank": false,
+      "llm_calls": [
+        {
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 246,
+            "total_tokens": 254,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 246,
+            "prompt_ms": 570.126,
+            "prompt_per_token_ms": 2.3175853658536583,
+            "prompt_per_second": 431.48356679049897,
+            "predicted_n": 8,
+            "predicted_ms": 181.513,
+            "predicted_per_token_ms": 25.93042857142857,
+            "predicted_per_second": 38.56473090081702
+          },
+          "finish_reason": "stop",
+          "counted_prompt_tokens": 246,
+          "prompt_hash": "e962363ab2d4f5c1275049eac8adc646e417e917a3fc3302557a1a32716c00c3",
+          "generation_ms": 755.9032179997303,
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "model": "tiel-coder",
+          "raw": {
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Столица Франции — Париж."
+                }
+              }
+            ],
+            "created": 1791967624,
+            "model": "tiel-coder",
+            "system_fingerprint": "b10679-50f068fff",
+            "object": "chat.completion",
+            "usage": {
+              "completion_tokens": 8,
+              "prompt_tokens": 246,
+              "total_tokens": 254,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "id": "chatcmpl-XJRoMW83AizWcgP3vM2hdRfjJ2ZExI6E",
+            "timings": {
+              "cache_n": 0,
+              "prompt_n": 246,
+              "prompt_ms": 570.126,
+              "prompt_per_token_ms": 2.3175853658536583,
+              "prompt_per_second": 431.48356679049897,
+              "predicted_n": 8,
+              "predicted_ms": 181.513,
+              "predicted_per_token_ms": 25.93042857142857,
+              "predicted_per_second": 38.56473090081702
+            }
+          }
+        }
+      ],
+      "text": "Столица Франции — Париж.",
+      "sources": [],
+      "status": "answered",
+      "finish_reason": "stop",
+      "total_ms": 761.6612749989145,
+      "usage": {
+        "prompt_tokens": 246,
+        "completion_tokens": 8,
+        "total_tokens": 254
+      },
+      "http_total_ms": 767.454278000514
+    },
+    "retry_after": null
+  },
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

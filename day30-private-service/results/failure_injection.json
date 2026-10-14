@@ -1,0 +1,121 @@
+[
+  {
+    "mode": "timeout",
+    "status": 504,
+    "body": {
+      "error": "upstream_timeout",
+      "detail": {
+        "upstream_detail": null,
+        "failure_trace": {
+          "request_id": "fd49feda195341d588f4cf9d179e6fb2",
+          "utc": "2026-10-14T06:52:42Z",
+          "question": "test",
+          "agent_id": "59b983d9007f4b66b9ec73d1ceeab5bf",
+          "protocol": "chat-completions-http",
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "rag": false,
+          "rerank": false,
+          "llm_calls": [],
+          "total_ms": 2008.4890610014554,
+          "error": "upstream_timeout",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      }
+    },
+    "synthetic_upstream": true
+  },
+  {
+    "mode": "malformed",
+    "status": 502,
+    "body": {
+      "error": "invalid_model_response",
+      "detail": {
+        "upstream_detail": null,
+        "failure_trace": {
+          "request_id": "cf39e58097d7471db59162211a6213b5",
+          "utc": "2026-10-14T06:52:44Z",
+          "question": "test",
+          "agent_id": "84d1f970c5064c53aeb9a9905660ab27",
+          "protocol": "chat-completions-http",
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "rag": false,
+          "rerank": false,
+          "llm_calls": [],
+          "total_ms": 8.232140004110988,
+          "error": "invalid_model_response",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      }
+    },
+    "synthetic_upstream": true
+  },
+  {
+    "path": "/sessions/reset",
+    "status": 422,
+    "body": {
+      "error": "invalid_session_id",
+      "detail": null
+    }
+  },
+  {
+    "path": "/chat",
+    "status": 422,
+    "body": {
+      "error": "invalid_session_id",
+      "detail": null
+    }
+  },
+  {
+    "pending_after_errors": 0
+  },
+  {
+    "mode": "queue_wait_timeout",
+    "synthetic_upstream": true,
+    "api_slots": 1,
+    "queue_wait_timeout_s": 0.08,
+    "queue_errors": [
+      {
+        "status": 503,
+        "body": {
+          "error": "queue_wait_timeout",
+          "detail": null
+        },
+        "elapsed_ms": 84.27263000339735
+      },
+      {
+        "status": 503,
+        "body": {
+          "error": "queue_wait_timeout",
+          "detail": null
+        },
+        "elapsed_ms": 82.97139999922365
+      }
+    ],
+    "session_reset_after_timeout_status": 200,
+    "pending_while_slot_held": 1,
+    "semaphore_not_overreleased": true,
+    "held_request_recovered": "Synthetic controller recovery response.",
+    "timed_out_session_reused": "Synthetic controller recovery response.",
+    "pending_after_recovery": 0,
+    "private_env_loaded": false,
+    "production_journal_modified": false
+  }
+]

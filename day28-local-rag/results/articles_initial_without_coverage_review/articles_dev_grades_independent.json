@@ -1,0 +1,152 @@
+{
+  "schema": "independent-articles-grades-v1",
+  "evaluated_utc": "2026-10-14T05:56:23.622593+00:00",
+  "input": "results/dev_rag_answers.jsonl",
+  "input_sha256": "b7ac546d59a76d45a90e50e229acb7395194e61e803e574fb16cf0319a99ce53",
+  "core_sha256": "6d78ee67e8a99b9aec78613c4e307241145c1cac2c2a025dfae9276ba342454f",
+  "questions_sha256": "fc1b65417fc209d8e75223e1fcae20e26d0cc3a32a21c573185e31e9a7cd5cb8",
+  "rubric": "All explicitly requested aspects in prose. For M0 factual claims are checked against full pinned PDFs; absence of citations is not hallucination. For RAG completeness, sent evidence, and semantic quote entailment required; literal provenance checked separately. Wrong includes false refusal on answerable question or answering none of requested aspects. Partial not correct; appropriate no-data refusal correct. No LLM calls, secrets or source/config changes.",
+  "summary": {
+    "M1": {
+      "total": 8,
+      "correct": 4,
+      "hallucination": 0,
+      "verdicts": {
+        "partial": 4,
+        "appropriate_refusal": 4
+      }
+    }
+  },
+  "grades": [
+    {
+      "mode": "M1",
+      "id": "D01",
+      "answer_sha256": "81a38b8e2516847280f96c8d76503f821abb75b7bea7a84a99f9db78c7353f5b",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три части названы правильно, но явно запрошенные роли working context и FIFO отсутствуют в prose. Они присутствуют лишь в sources; это не заменяет ответ."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Одна цитата DMR нерелевантна перечислению частей main context."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D02",
+      "answer_sha256": "bf86603060eec99f9274adf9a75c5ebb47c0e2de705c2491deb7b7b32ec3d970",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три вида данных и daily→global events верны. Пропущено преобразование дневных personality insights в global user personality, хотя это явно запрошено."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Первый event-summary quote не поддерживает все три вида данных, но другие supporting citations существуют."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D03",
+      "answer_sha256": "40d4b34cd736e6342f11814ab9fa9774ead4c5a079b08583d3cd7872e4319708",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три оценки названы правильно; отсутствует ответ как их объединяют: min-max [0,1], weighted sum, alpha=1. Нормализация лишь в sources не закрывает prose."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D04",
+      "answer_sha256": "0139c1d4f5a329398ab093daa34e1507124772734235f992cb61527d018ad383",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "10 дней,15 virtual users,194 total questions верны. Пропущены явно запрошенные языки English/Chinese и split97+97; ChatGPT roleplay только в источниках."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D05",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Неопубликованный device-specific Galaxy p95; host refusal без выдуманного числа."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D06",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Неопубликованный FAISS/M1/миллион записей p95; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D07",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "В статье robustness unknown, attack success процент не измерен; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M1",
+      "id": "D08",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Matched three-system Q4 VRAM experiment отсутствует; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    }
+  ]
+}

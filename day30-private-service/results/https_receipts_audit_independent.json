@@ -1,0 +1,537 @@
+{
+  "reviewed_at_utc": "2026-10-14T09:01:41.442820+00:00",
+  "phase": "HTTPS_final_complete",
+  "method": "Read-only saved actualHTTPS responses and PC API journal joins. No new model/network/SSH requests, no secrets read.",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "inputs_sha256": {
+    "https_network.json": "aa8ee0a136cd9f9ec9e0ca9dffd5877ccd021a163141fb7b9d57494f1e4cd908",
+    "https_load.json": "f06ed38e4c18a6a9849cf25d52d1e3c6fc17f78e37231dcf0935e36cce35b8dc",
+    "https_limits.json": "626bc9bdea739d2530a022faf43c0fee9c2fe519f975ff3b71eecf35e39aa408",
+    "https_context_boundary.json": "dcdaa8dd7208df9283be87cd9f95800641696bf30912abec095ebced73c1f24b",
+    "https_final.json": "8edaaad35d1f144589efc2d7af620a1760d34a70dda8f129030503a7ee2bfb1b",
+    "https_overflow.json": "64f9d7c7e423e16131a2b6162c5a7e23f7319cfbdd59738697dd05f3d37fd104",
+    "https_actual_model_outage.json": "61f118bf1aadac9f31f888125acd19d1dbb404423ec7e19f78a33e24e74a1907",
+    "https_actual_model_recovery.json": "f2836250b88df6885eb45b921a7ec86f79a1e98127534e55893c1a72665d13bf",
+    "https_tunnel_outage.json": "92bf33ad4733a58bee5f7cfbc38cf74e8eea2e764237cef94ed59ed8c0e61e46",
+    "https_tunnel_recovery.json": "d6577c22fb91698ff687b6f03a654276e2838f5e7032eab3543d2315aadaef3e",
+    "final_runtime_check.json": "b1b8d182ab44a8e07ee494c2997d0081ba5bbc266cb7d4ad5b0dfe4f6913e755"
+  },
+  "network_checks": {
+    "external_HTTPS_client": true,
+    "no_client_forward": true,
+    "TLS_verified": true,
+    "routeHTTPS": true,
+    "all_response200": true,
+    "memory_recall": true,
+    "reset_clears_word": true,
+    "same_agent_for_write_and_recall": true,
+    "fresh_agent_after_reset": true,
+    "reset200true": true
+  },
+  "network_pass": true,
+  "load_checks": {
+    "same_publicHTTPSroute": true,
+    "TLS_verified": true,
+    "no_client_forward": true,
+    "count5_and10": true,
+    "all15_delivered_correct": true
+  },
+  "load_series": [
+    {
+      "count": 5,
+      "all200": true,
+      "semantic_correct": 5,
+      "cases": [
+        {
+          "index": 0,
+          "request_id": "a82aece815a84a59b9b2acc13f7a5c61",
+          "question": "Назови столицу Франции одним предложением.",
+          "text": "Столица Франции — Париж.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 3345.472550019622
+        },
+        {
+          "index": 1,
+          "request_id": "b45c2b79bd2b49b5abbed2ea88b1be48",
+          "question": "Назови столицу Японии одним предложением.",
+          "text": "Столица Японии — Токио.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 2766.85279305093
+        },
+        {
+          "index": 2,
+          "request_id": "b3142724277348d4ae95a9132f7364d0",
+          "question": "Назови столицу Италии одним предложением.",
+          "text": "Столица Италии — Рим.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 2101.6539779957384
+        },
+        {
+          "index": 3,
+          "request_id": "5ad52164ca9949ca91abb9aa24c4f557",
+          "question": "Как называется планета, на которой мы живём?",
+          "text": "Земля.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 1619.8131060227752
+        },
+        {
+          "index": 4,
+          "request_id": "f6a5e496fd9e417abb132d4e45903678",
+          "question": "Назови столицу Франции одним предложением.",
+          "text": "Столица Франции — Париж.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 3281.137199839577
+        }
+      ]
+    },
+    {
+      "count": 10,
+      "all200": true,
+      "semantic_correct": 10,
+      "cases": [
+        {
+          "index": 0,
+          "request_id": "9f3a12f909ae4555949328d89894aa57",
+          "question": "Назови столицу Франции одним предложением.",
+          "text": "Столица Франции — Париж.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 2951.6572379507124
+        },
+        {
+          "index": 1,
+          "request_id": "fb063fd8cea54e60ae1b4a6f8cf6478f",
+          "question": "Назови столицу Японии одним предложением.",
+          "text": "Столица Японии — Токио.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 3960.4533130768687
+        },
+        {
+          "index": 2,
+          "request_id": "17e728b20114485384a935384f7f83f5",
+          "question": "Назови столицу Италии одним предложением.",
+          "text": "Столица Италии — Рим.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 2095.1491110026836
+        },
+        {
+          "index": 3,
+          "request_id": "14443f7738f247fb9e9213eaed8b731e",
+          "question": "Как называется планета, на которой мы живём?",
+          "text": "Земля.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 2050.8079770952463
+        },
+        {
+          "index": 4,
+          "request_id": "1e7530185cba401b95ffa28c3db44561",
+          "question": "Назови столицу Франции одним предложением.",
+          "text": "Столица Франции — Париж.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 5842.825073981658
+        },
+        {
+          "index": 5,
+          "request_id": "b86f42c7196e4ec78f8d6a7a127485cc",
+          "question": "Назови столицу Японии одним предложением.",
+          "text": "Столица Японии — Токио.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 3954.336274182424
+        },
+        {
+          "index": 6,
+          "request_id": "3fc078a7203746ba871bddf813e565c7",
+          "question": "Назови столицу Италии одним предложением.",
+          "text": "Столица Италии — Рим.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 4031.1852348968387
+        },
+        {
+          "index": 7,
+          "request_id": "bcd21f03f4dc46078fcef87bac967b32",
+          "question": "Как называется планета, на которой мы живём?",
+          "text": "Земля.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 6608.846188988537
+        },
+        {
+          "index": 8,
+          "request_id": "37ef0e807b874ed182bc5ccd6e98ade8",
+          "question": "Назови столицу Франции одним предложением.",
+          "text": "Столица Франции — Париж.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 5755.9494390152395
+        },
+        {
+          "index": 9,
+          "request_id": "819c4b8174634e1ea39d6af3237b06e6",
+          "question": "Назови столицу Японии одним предложением.",
+          "text": "Столица Японии — Токио.",
+          "status": 200,
+          "semantic_correct": true,
+          "elapsed_ms": 5820.071465102956
+        }
+      ]
+    }
+  ],
+  "exact_PC_joins": 38,
+  "all_receipt_checks_pass": true,
+  "pending": [],
+  "limits_checks": {
+    "public_HTTPS_same_route": true,
+    "TLS_verified": true,
+    "no_client_forward": true,
+    "unauthorized401": true,
+    "body_limit413": true,
+    "context_limit422": true,
+    "rate_20_then429": true,
+    "retry_after_positive": true,
+    "recovery_actual200_correct": true
+  },
+  "limits_scope": "20 valid authenticated POST attempts rejected for context consume quota, then429 with positiveRetryAfter. Recovery after window gives actual correctParis generation. Gateway early413 inspected via curl defaultTLS and configstdin, not an insecure transport.",
+  "context_boundary_checks": {
+    "HTTPS_route_verified": true,
+    "current_source": true,
+    "selected_B_profile": true,
+    "accepted_exact_frontier": true,
+    "accepted_actual_generated": true,
+    "rejected_one_token_over": true,
+    "rejected_context422_no_generation": true,
+    "bodies_do_not_hide_token_limit": true,
+    "minimal_answer_correct": true
+  },
+  "context_boundary_details": {
+    "accepted_prompt_tokens": 26624,
+    "output_reserve": 6144,
+    "context_per_slot": 32768,
+    "rejected_prompt_tokens": 26625,
+    "body_limit_bytes": 524288,
+    "accepted_body_bytes": 52997,
+    "rejected_body_bytes": 52999,
+    "actual_answer": "готово",
+    "PC_join_exact": true
+  },
+  "independent_PC_listener_observation": {
+    "utc": "2026-10-14T08:52:47.514687+00:00",
+    "command": "ss -ltn '( sport = :8781 )'",
+    "result": "Header only; no TCP listener on formerPC client-forward port8781. Read-only local socket inventory, no outbound request."
+  },
+  "final_service_checks": {
+    "publicHTTPS_verified": true,
+    "client_forward_not_required": true,
+    "actualsource37e": true,
+    "selected_BQ8optimized": true,
+    "Q8_file_and_bytes": true,
+    "context32Kslots3matched": true,
+    "health_ready_rag_ready": true,
+    "pending0": true,
+    "literal_quotes_native_only": true
+  },
+  "final_request_traces": [
+    {
+      "request_id": "771b18fb3af844c896d82853e2d96b0f",
+      "phases": [
+        "answer",
+        "coverage_review"
+      ],
+      "usage": {
+        "prompt_tokens": 14745,
+        "completion_tokens": 1118,
+        "total_tokens": 15863
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 50462.4354760017,
+      "HTTP_total_ms": 50468.225993005035
+    },
+    {
+      "request_id": "efad157576b5429c986db764414c7ccc",
+      "phases": [
+        "query_resolution",
+        "answer",
+        "coverage_review"
+      ],
+      "usage": {
+        "prompt_tokens": 15460,
+        "completion_tokens": 599,
+        "total_tokens": 16059
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 36510.03272699745,
+      "HTTP_total_ms": 36515.348624998296
+    },
+    {
+      "request_id": "fded0a079e814ba88fc4b7bd251ff1b1",
+      "phases": [
+        "query_resolution",
+        "answer",
+        "coverage_review",
+        "coverage_revision"
+      ],
+      "usage": {
+        "prompt_tokens": 25387,
+        "completion_tokens": 1423,
+        "total_tokens": 26810
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 72215.17203900294,
+      "HTTP_total_ms": 72219.71081799711
+    },
+    {
+      "request_id": "26dc1056fefd4dc2a0374aeff8d75045",
+      "phases": [
+        "query_resolution",
+        "answer",
+        "coverage_review",
+        "coverage_revision"
+      ],
+      "usage": {
+        "prompt_tokens": 25588,
+        "completion_tokens": 175,
+        "total_tokens": 25763
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 38575.26422700175,
+      "HTTP_total_ms": 38580.223513999954
+    },
+    {
+      "request_id": "eea350abfe5c440bbaf4859ceeb576c7",
+      "phases": [
+        null
+      ],
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 1233.749771003204,
+      "HTTP_total_ms": 1238.7518290051958
+    },
+    {
+      "request_id": "acc144efaf664fbb9cb00655fd52ddf2",
+      "phases": [
+        null
+      ],
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 1029.4998820027104,
+      "HTTP_total_ms": 1034.9353329947917
+    },
+    {
+      "request_id": "b1e78d7948984b45996cef4958b4733c",
+      "phases": [
+        null
+      ],
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 51,
+        "total_tokens": 296
+      },
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "Agent_total_ms": 1899.0829210015363,
+      "HTTP_total_ms": 1904.505407997931
+    }
+  ],
+  "final_literal_citation_checks": [
+    {
+      "request_id": "771b18fb3af844c896d82853e2d96b0f",
+      "selected_quote_count": 9,
+      "literal_provenance_UTF16_pages_PDF_sha_all_valid": true,
+      "all_sent_evidence_native_documentary_chunks": true
+    },
+    {
+      "request_id": "efad157576b5429c986db764414c7ccc",
+      "selected_quote_count": 4,
+      "literal_provenance_UTF16_pages_PDF_sha_all_valid": true,
+      "all_sent_evidence_native_documentary_chunks": true
+    },
+    {
+      "request_id": "fded0a079e814ba88fc4b7bd251ff1b1",
+      "selected_quote_count": 5,
+      "literal_provenance_UTF16_pages_PDF_sha_all_valid": true,
+      "all_sent_evidence_native_documentary_chunks": true
+    },
+    {
+      "request_id": "26dc1056fefd4dc2a0374aeff8d75045",
+      "selected_quote_count": 0,
+      "literal_provenance_UTF16_pages_PDF_sha_all_valid": true,
+      "all_sent_evidence_native_documentary_chunks": true
+    }
+  ],
+  "final_plain_history_reset_checks": {
+    "actual_word_recalled": true,
+    "word_cleared_after_reset": true,
+    "same_agent_before_reset": true,
+    "new_agent_after_reset": true,
+    "reset200true": true
+  },
+  "final_RAG_semantic_review": [
+    {
+      "turn": 1,
+      "request_id": "771b18fb3af844c896d82853e2d96b0f",
+      "question": "Как MemGPT организует основную и внешнюю память?",
+      "pipeline_status": "answered",
+      "semantic_verdict": "partial_due_to_selected_citation_gaps",
+      "factual_truth": "Core factual claims true; no factual hallucination detected.",
+      "fully_grounded": false,
+      "reason": "Main/external OS hierarchy, RAM/disk analogy and main context prompt tokens are supported. Claim3 explicit transfer necessity adds Figure3 illustrates components, which does not establish that necessity. Claim4 names three sections but selected snippets do not establish contiguous layout. Correct full-paper facts do not automatically make the selected quotations sufficient.",
+      "citation_defects": [
+        {
+          "claim_index": 2,
+          "kind": "semantic",
+          "detail": "Figure3 component caption cannot establish explicit-transfer requirement."
+        },
+        {
+          "claim_index": 3,
+          "kind": "semantic",
+          "detail": "Three section snippets do not establish the contiguous arrangement stated in prose."
+        }
+      ],
+      "hallucination": false
+    },
+    {
+      "turn": 2,
+      "request_id": "efad157576b5429c986db764414c7ccc",
+      "question": "Как он продолжает выполнение нескольких функций без ответа пользователю?",
+      "pipeline_status": "answered",
+      "semantic_verdict": "correct",
+      "fully_grounded": true,
+      "hallucination": false,
+      "reason": "Correctly resolves он toMemGPT. Function chaining, flag for immediate control, output into main context and yield until external event are all supported by selected MemGPT page4 quotations. Some repetition does not create factual defect."
+    },
+    {
+      "turn": 3,
+      "request_id": "fded0a079e814ba88fc4b7bd251ff1b1",
+      "question": "Чем этот механизм отличается от забывания в MemoryBank?",
+      "pipeline_status": "partial",
+      "semantic_verdict": "partial",
+      "fully_grounded": false,
+      "hallucination": false,
+      "factual_truth": "Eviction and MemoryBank time/importance forgetting are true. Permanence limitation is appropriately cautious.",
+      "reason": "Now includes MemoryBank and no unsupported assertion of eternal retention. However этот механизм afterturn2 refers to function chaining; final answer compares eviction toforgetting and omits contrast between function execution control and forgetting. Ebbinghaus inspiration is a true paper fact but is absent from selected quotations. Resolved query falls back to prior user topic, and final statuspartial is honest.",
+      "citation_defects": [
+        {
+          "claim_index": 1,
+          "kind": "semantic",
+          "detail": "Selected quotations mention elapsed time/significance but do not name Ebbinghaus."
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "request_id": "26dc1056fefd4dc2a0374aeff8d75045",
+      "question": "Какой измеренный p95 ответа MemGPT на Galaxy A54 в этих статьях?",
+      "pipeline_status": "abstained",
+      "semantic_verdict": "appropriate_refusal",
+      "fully_grounded": true,
+      "hallucination": false,
+      "reason": "These papers have noMemGPTGalaxyA54p95 benchmark. Refuses the nonexistent number; no claims or sources. Coverage heuristic unnecessarily requests revision despite describing refusal ascorrect, but rawcalls/time/usage are counted."
+    }
+  ],
+  "final_RAG_fully_grounded_out_of_4": 2,
+  "final_RAG_factual_hallucinations_out_of_4": 0,
+  "final_quality_limitations": [
+    "7successful HTTP responses do not imply4fully correct/grounded RAG answers.",
+    "Fresh final7turn run has2/4fully grounded answers,2partial citation/completeness defects,0detected factual hallucinations.",
+    "Final production multi-slot run differs from controlled benchmark slot1; earlier failure runs retained and variability is not hidden.",
+    "Own coverage_review can incorrectly mark citation-gapped draft supported and can unnecessarily revise a correct no-data refusal; heuristic is not an oracle."
+  ],
+  "overflow_checks": {
+    "HTTPS_TLS_verified_no_forward": true,
+    "15_results_status_consistent": true,
+    "9_generated_successes": true,
+    "2_busy_4_queue_timeout": true,
+    "all_rejections_controlled503": true
+  },
+  "overflow_scope": "15 actual long requests:9generated HTTP200 (823–1193outputtokens),2busy503,4queue_wait_timeout503. This is bounded admission behavior, not15/15success. Saved overflow responses omit full text, so long-answer factual semantics were not independently graded; all15shortload answers separately were.",
+  "actual_recovery_checks": {
+    "model": {
+      "actual_HTTPS503_expected_error": true,
+      "both_same_HTTPS_TLS_no_forward": true,
+      "actual_generated_recovery200": true,
+      "profile_B32K6144": true,
+      "Q8file": true
+    },
+    "tunnel": {
+      "actual_HTTPS503_expected_error": true,
+      "both_same_HTTPS_TLS_no_forward": true,
+      "actual_generated_recovery200": true,
+      "profile_B32K6144": true,
+      "Q8file": true
+    }
+  },
+  "actual_recovery_scope": "Recorded owned llama-server and exact task reverseSSH tunnel stopped/restarted in parent actualcheck_recovery. Model outage503model_unavailable and tunnel outage503pc_tunnel_unavailable, each followed by new correct generated200response exactlyjoined toPC APIjournal. Distinct from synthetic504/502/queue tests.",
+  "final_runtime_checks": {
+    "current_core37e": true,
+    "all_recorded_owned_processes_alive": true,
+    "model_Q8": true,
+    "native32Kslots3": true,
+    "configured_output6144": true,
+    "ready_all_budget_slots_RAG": true,
+    "pending0": true
+  },
+  "final_runtime_utc": "2026-10-14T08:58:52.118904+00:00",
+  "source_sha256_current": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "final_documentation_checks": {
+    "README_PLAN_DEMO_conclusions_links_present": true,
+    "no_stale_old_source_metrics": true,
+    "day30_conclusions_match_actual_observations": true,
+    "actual_recovery503_to200_described": true,
+    "fullHTTPtime_not_backendtime": true,
+    "HTTPAPIjournal_label_precise": true,
+    "RAG2of4grounded0factualhall_explicit": true,
+    "MP4_out_of_agreed_scope_explicit": true
+  }
+}

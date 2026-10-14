@@ -1,0 +1,13 @@
+{
+  "snapshot": "3afc5222473fc08c6130b2771ebd819fa0c4b484",
+  "Q8": {
+    "file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "sha256": "8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310",
+    "bytes": 39350213152
+  },
+  "Q4": {
+    "file": "Tiel-Coder-35B-A3B-MTP-UD-Q4_K_XL.gguf",
+    "sha256": "10960d1d6477b08ed36a0e542e571b473022023c25b8315b0cf8c33c57e98ccd",
+    "bytes": 23259486752
+  }
+}

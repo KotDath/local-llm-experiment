@@ -1,0 +1,210 @@
+{
+  "client": "VPS",
+  "series": [
+    {
+      "count": 5,
+      "results": [
+        {
+          "status": 200,
+          "elapsed_ms": 3428.440382005647,
+          "request_id": "cc6292b588f6470f8c56a5898f6e459e",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2515.979872085154,
+          "request_id": "fdb1b31fb7fa4ea7b8666d85d72acb10",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3355.0263810902834,
+          "request_id": "c8ec7187610e4cf7a1b2945d37116713",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 1803.830032935366,
+          "request_id": "8cce3baf9bf7422c9113f1f0e793aa5c",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2473.3176592271775,
+          "request_id": "9023e733176544a7b4b57e03d59bb38f",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        }
+      ]
+    },
+    {
+      "count": 10,
+      "results": [
+        {
+          "status": 200,
+          "elapsed_ms": 5774.872261099517,
+          "request_id": "f19de09ef484470985ecbe001d8bf94a",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3564.536510966718,
+          "request_id": "fd842b9eaf3f42498d3e5f8314d413e4",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 4134.480827953666,
+          "request_id": "932151ed82374a0c879de12363f12029",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 1880.1144210156053,
+          "request_id": "3e30d7bcd80e4a9cbefb9f8cb000cb5d",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2512.878817971796,
+          "request_id": "2aa4a6d42d0b4134930931f7ace6ee76",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 5350.482324836776,
+          "request_id": "c4ff92649a0844a8a055c3fde3194215",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 4122.645634924993,
+          "request_id": "0104711b20a644b1982546a767563c5d",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 6067.339936969802,
+          "request_id": "49955831833f4ca098080d021e16d409",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2496.7243450228125,
+          "request_id": "a4f5e69b2a6a4b6b92808839d9e5e81f",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 5900.240836897865,
+          "request_id": "08b47f847bd843f08251d6896a539465",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

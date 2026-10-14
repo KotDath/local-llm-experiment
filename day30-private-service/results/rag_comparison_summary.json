@@ -1,0 +1,30 @@
+{
+  "M0": {
+    "correct_out_of_10": 1,
+    "hallucinations_out_of_10": 9,
+    "delivery_failures": 0,
+    "mean_total_ms": 9885.924092399364,
+    "mean_llm_calls": 1
+  },
+  "M1": {
+    "correct_out_of_10": 3,
+    "hallucinations_out_of_10": 1,
+    "delivery_failures": 0,
+    "mean_total_ms": 63492.67865820075,
+    "mean_llm_calls": 2.7
+  },
+  "M2": {
+    "correct_out_of_10": 3,
+    "hallucinations_out_of_10": 1,
+    "delivery_failures": 0,
+    "mean_total_ms": 55158.09186659899,
+    "mean_llm_calls": 2.5
+  },
+  "cloud": {
+    "correct_out_of_10": 2,
+    "hallucinations_out_of_10": 0,
+    "delivery_failures": 5,
+    "mean_total_ms": 13540.893395000603,
+    "mean_llm_calls": 2.4
+  }
+}

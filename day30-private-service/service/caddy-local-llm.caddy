@@ -1,0 +1,11 @@
+# Insert inside the existing HTTPS site, before its fallback handle.
+# The same site's TLS certificate and renewal remain in use.
+handle_path /local-llm/* {
+    reverse_proxy 127.0.0.1:8781 {
+        transport http {
+            response_header_timeout 1800s
+        }
+    }
+}
+# Existing OCR reverse_proxy belongs in the fallback handle:
+# handle { reverse_proxy 127.0.0.1:8765 }

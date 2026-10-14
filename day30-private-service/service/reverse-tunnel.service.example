@@ -1,0 +1,12 @@
+[Unit]
+Description=Reverse SSH relay to private VPS
+After=network-online.target
+
+[Service]
+EnvironmentFile=/ABSOLUTE/PATH/private-tunnel.env
+ExecStart=/ABSOLUTE/PATH/day30-private-service/scripts/start_tunnel.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

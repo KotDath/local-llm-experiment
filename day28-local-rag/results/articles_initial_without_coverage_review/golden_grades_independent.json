@@ -1,0 +1,343 @@
+{
+  "schema": "independent-articles-grades-v1",
+  "evaluated_utc": "2026-10-14T05:56:23.633067+00:00",
+  "input": "results/golden_rag_answers.jsonl",
+  "input_sha256": "fbb004cd9a60d2302bf004f9b7b53f2c036bd044cc9e2f1162387dc2b8cb8696",
+  "core_sha256": "6d78ee67e8a99b9aec78613c4e307241145c1cac2c2a025dfae9276ba342454f",
+  "questions_sha256": "6c7c412a56502f47ac4a58cd33deab37ac4b2c0225caf4dcecf043e5349b60cb",
+  "rubric": "All explicitly requested aspects in prose. For M0 factual claims are checked against full pinned PDFs; absence of citations is not hallucination. For RAG completeness, sent evidence, and semantic quote entailment required; literal provenance checked separately. Wrong includes false refusal on answerable question or answering none of requested aspects. Partial not correct; appropriate no-data refusal correct. No LLM calls, secrets or source/config changes.",
+  "summary": {
+    "M0": {
+      "total": 10,
+      "correct": 1,
+      "hallucination": 9,
+      "verdicts": {
+        "partial": 3,
+        "wrong": 6,
+        "appropriate_refusal": 1
+      }
+    },
+    "M2": {
+      "total": 10,
+      "correct": 1,
+      "hallucination": 0,
+      "verdicts": {
+        "partial": 4,
+        "wrong": 5,
+        "appropriate_refusal": 1
+      }
+    }
+  },
+  "grades": [
+    {
+      "mode": "M0",
+      "id": "Q01",
+      "answer_sha256": "fc212c1fd02cd2332a113d5b2e75888bbf82ba7660d8fdfd04ff2f76d8d5e01b",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Основное различие context/recall/archival и explicit transfer верно. Но утверждается vector-embedding поиск именно recall и названы memory_search/memory_retrieve вместо описанных в статье recall_storage функций; статья не подтверждает эти конкретные дополнительные mechanics. Отсутствие citations само по себе НЕ является дефектом closed-book."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q02",
+      "answer_sha256": "723ccb27012da3db8f1695f2335b81abcc93a63530d64f84ca8ed782382474cb",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Противоречит PDFp3: memory pressure warning подменён немедленным flush, evicted history ошибочно отправлена в archival вместо recall, выдуманы archival FIFO и безвозвратное удаление oldest archival records. Нет recursive summary."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q03",
+      "answer_sha256": "800f9e3bd30e7d7401ecb6cecc84f41160fd29f2d9568dabd4a8b0a496321b0a",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Общая зависимость от base LLM верна, но реальное наблюдение GPT-3.5 limited function calling/GPT-4 не сообщено. Pagination limitation выдумана как изолированная обработка страниц/потеря связи вместо преждевременной остановки paging (PDFp7)."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q04",
+      "answer_sha256": "59d1f2577097ef8456b02e3dd52570209a9740654d180861b935d62b0ab85e6c",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Неверные формула S*exp(-t/t_half), привязка MemoryBank кTiel/Ornith, ростt приrecall и bonus/saturation. PDFp4: R=exp(-t/S), S initially1; recall S+=1,t=0."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q05",
+      "answer_sha256": "a3a6c8d1a514a963cca9f513bf2fb2e06c4f54bd6c595ed3d57c70a16e1b0758",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Подменяет статью MemoryBank RAG Survey, добавляет неподтверждённые document chunks/assistant generations/prompt query/hybrid BM25/HNSW. Реальные memory units=turns+event summaries; encoder текущегоcontext,FAISS (PDFp4) не раскрыты как конкретный pipeline."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q06",
+      "answer_sha256": "d228136ef821c532bf02b9c831d54963cf88bd0ad1daa5f1019f09457a86ee8d",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Выдуманы RMS, псевдособытия каждые3шага,окно5записей иReflection Summary. Реальный trigger sumimportance>150,100recent records,3questions,retrieval+record pointers (PDFp10)."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q07",
+      "answer_sha256": "cc14b954bb6bc4b79955d5b4280683ab2ec3fcd06f9526208a87e789df0b7acd",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Основное сравнение finite context management vs believable behavior через memory/reflection/planning верно. Но Generative Agents ошибочно названы Stanford AI SWOT, которого статья не содержит. «Встраивает в саму модель» неточно: архитектура добавляет external storage/functions, не изменяет веса; дальнейший текст это частично уточняет."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q08",
+      "answer_sha256": "7882f32f441f58f490d988c08a27b6b14f9adb42d6d426b446dca6cf7db5afd4",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "MemoryBank подменён time threshold deletion/merge, нет exp(-t/S),S+=1,t=0. Generative Agents importance якобы растёт послеaccess, но PDFp9 importance assignedatcreation; last access меняетrecency. Авторства также ошибочны."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q09",
+      "answer_sha256": "8f5a9561ac8cf09d678d0865e7802c3a079597e7a9b25c55a7c394dede147ebf",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Неверно30agents вместо25, выдумана проверка устойчивости через observe/Reflection иcontrolled memory hacking. PDFp17:2game days,thousands tokencredits,multipleactualdays,robustness largelyunknown,а не attack benchmark."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M0",
+      "id": "Q10",
+      "answer_sha256": "b3c7bcf5ce4ccd8d0fe17ff285b8d7024213a7e3e6187007ffb64131c594cf9b",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Число не выдумывает и требует источник/условия. Причина «не имею доступа» слабее знания отсутствия matchedbenchmark, но допустима для closed-book; отсутствие статей вmessages не считается hallucination."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "grounding_mode": "closed_book_pdf_fact_check"
+    },
+    {
+      "mode": "M2",
+      "id": "Q01",
+      "answer_sha256": "0941b93fb75fbb630b71720128b4e8db7b0d37c244b42468542ea23c914bf24f",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Названы main/external уровни. Не объяснены разные contents recall/archival иexplicit move/notdirectlyvisibleLLM — существенные аспекты вопроса."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Названия архивной/recall баз сами по себе не поддержаны выбранными цитатами о main/external; нужные сведения имеются в полном sent context."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q02",
+      "answer_sha256": "4b4895b578a8b763a9b7dc89b249102fc9724113f37ec8d196bbd091f8f8f05e",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Warning described верно поPDFp3/sentcontext,но flush/recursive summary/recall survival полностью пропущены. Semantic citations невалидны для текущего claim."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Все4дублированные цитаты про flush100%,ни одна не доказывает утверждение про warning70%/сохранение вworking/archival."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q03",
+      "answer_sha256": "40557cd237225caaa67540f5bfc10cbfc797319d9179a20e121cdfae986e73ae",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "off_topic_true",
+      "notes": [
+        "Вместо двух наблюдаемых limitations сообщена только возможность multiple calls/pagination. Ни early paging stop,ни dependence GPT3.5 functioncalling не отвечены; zero requested aspects. Сам claim capabilities верен."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q04",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "false_refusal",
+      "notes": [
+        "Host refusal на answerable MemoryBank formula/update вопрос; не галлюцинация,но incorrect retrieval coverage/threshold."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q05",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "false_refusal",
+      "notes": [
+        "Host refusal на answerable MemoryBank retrieval mechanism вопрос."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q06",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "false_refusal",
+      "notes": [
+        "Host refusal на answerable Generative Agents reflection вопрос."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q07",
+      "answer_sha256": "12908227753f276ecafb75e1ea8d4e27141e37bca8234f41d871bf913a101377",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Ответ только проGA memory stream/retrieval. Нет стороныMemGPT,сравненияцелей иролейreflection/planning; сравнениеоднойстатьёйне закрыто."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q08",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "false_refusal",
+      "notes": [
+        "Host отказ на answerable two-paper time/forgetting comparison."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q09",
+      "answer_sha256": "6ab0a1e442a225c8e32fcad1f40332652763ba17717e58b2a4885b6111f800ae",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Ресурсныеусловия25agents/2game days/thousands/multiple actual days correct. Вопрос про robustness/memoryhacking полностьюпропущен. «Не обеспечивают realtime» слишкомобщее,но в контекстеописаннойсимуляцииимеетсодержательнуюопору."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    },
+    {
+      "mode": "M2",
+      "id": "Q10",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Matched speedpercentage не опубликован; host отказ appropriate."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310  /home/kotdath/omp/personal/amd-strix-halo-toolboxes/models/tiel-coder/Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf
+0c5784a1f3402d93c42deb0593aaeb38edb08a511d30cde18af84ab64a164a8a  /home/kotdath/.local/share/domovoy-rag/models/bge-reranker-v2-m3-f16.gguf

@@ -1,0 +1,89 @@
+[
+  {
+    "mode": "timeout",
+    "status": 504,
+    "body": {
+      "error": "upstream_timeout",
+      "detail": {
+        "upstream_detail": null,
+        "failure_trace": {
+          "request_id": "63f9e71bc2894cf091f84a25577b5561",
+          "utc": "2026-10-13T22:53:47Z",
+          "question": "test",
+          "agent_id": "05de62723a6245288423058c14c8529a",
+          "protocol": "chat-completions-http",
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 1536,
+            "context": 8192,
+            "prompt": "optimized"
+          },
+          "rag": false,
+          "rerank": false,
+          "llm_calls": [],
+          "total_ms": 506.5859869991982,
+          "error": "upstream_timeout",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      }
+    },
+    "synthetic_upstream": true
+  },
+  {
+    "mode": "malformed",
+    "status": 502,
+    "body": {
+      "error": "invalid_model_response",
+      "detail": {
+        "upstream_detail": null,
+        "failure_trace": {
+          "request_id": "8d7613a04919484093df7b420deadaf2",
+          "utc": "2026-10-13T22:53:48Z",
+          "question": "test",
+          "agent_id": "76307be2ad95421d88c87c491925fd18",
+          "protocol": "chat-completions-http",
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 1536,
+            "context": 8192,
+            "prompt": "optimized"
+          },
+          "rag": false,
+          "rerank": false,
+          "llm_calls": [],
+          "total_ms": 6.950123000933672,
+          "error": "invalid_model_response",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      }
+    },
+    "synthetic_upstream": true
+  },
+  {
+    "path": "/sessions/reset",
+    "status": 422,
+    "body": {
+      "error": "invalid_session_id",
+      "detail": null
+    }
+  },
+  {
+    "path": "/chat",
+    "status": 422,
+    "body": {
+      "error": "invalid_session_id",
+      "detail": null
+    }
+  },
+  {
+    "pending_after_errors": 0
+  }
+]

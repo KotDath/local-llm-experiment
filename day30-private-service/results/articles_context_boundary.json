@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-14T08:04:02Z",
+  "mode": "actual API/model token-boundary test, no synthetic upstream",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "profile": "optimized",
+  "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+  "context": 32768,
+  "output_reserve": 6144,
+  "body_limit_bytes": 524288,
+  "token_count_calls": 20,
+  "accepted": {
+    "status": 200,
+    "prompt_tokens": 26624,
+    "body_bytes": 52997,
+    "filler_repetitions": 26342,
+    "request_id": "638bde5f93db47d198ae7c7178087d94",
+    "question_sha256": "88cbbef58ae652e3dfcbe606a2d983e30532477f3cc4397b57de832ae14496bb",
+    "text": "готово",
+    "usage": {
+      "prompt_tokens": 26624,
+      "completion_tokens": 3,
+      "total_tokens": 26627
+    },
+    "finish_reason": "stop",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 26624,
+      "prompt_ms": 35399.894,
+      "prompt_per_token_ms": 1.3296234224759615,
+      "prompt_per_second": 752.0926475090574,
+      "predicted_n": 3,
+      "predicted_ms": 78.915,
+      "predicted_per_token_ms": 39.4575,
+      "predicted_per_second": 25.343724260280045
+    },
+    "actual_llm_calls": 1
+  },
+  "rejected": {
+    "status": 422,
+    "error": "context_limit",
+    "prompt_tokens": 26625,
+    "output_reserve": 6144,
+    "effective_context": 32768,
+    "generation_calls": 0,
+    "body_bytes": 52999,
+    "filler_repetitions": 26343
+  }
+}

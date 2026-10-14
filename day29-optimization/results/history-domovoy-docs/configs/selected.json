@@ -1,0 +1,22 @@
+{
+  "case": "B",
+  "quant": "Q8",
+  "profile": "optimized",
+  "profile_settings": {
+    "temperature": 0.1,
+    "max_tokens": 1536,
+    "context": 8192,
+    "prompt": "optimized"
+  },
+  "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+  "model_sha256": "8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310",
+  "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "basis": "Best completeness across both measured passes:16/20, zero found hallucinations and delivery failures. Q4 uses less memory, but C=14/20 and D=13/20; D includes one truncated JSON delivery failure and one unsupported claim. Selection prioritizes actual answer quality/reliability over weight size.",
+  "run_ids": {
+    "A": "A-1791931097876872033",
+    "B": "B-1791931493539589446",
+    "C": "C-1791934064540115751",
+    "D": "D-1791934327817056987"
+  },
+  "questions_sha256": "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67"
+}

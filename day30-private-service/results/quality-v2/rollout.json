@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-14T10:09:47Z",
+  "api_url": "https://95.215.56.217/local-llm",
+  "default_tls_verified": true,
+  "public_health": {
+    "ready": true,
+    "agent_source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+    "configured_profile": "optimized",
+    "configured_context": 32768,
+    "configured_max_tokens": 6144,
+    "context_matches": true,
+    "model": "tiel-coder",
+    "model_host": "PC-loopback",
+    "slots": 3,
+    "context_per_slot": 32768,
+    "api_slots": 3,
+    "slots_match": true,
+    "rag_ready": true,
+    "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+    "pending": 0,
+    "queue_limit": 10,
+    "queue_wait_timeout_s": 120.0,
+    "rate": 20,
+    "rate_window": 60.0
+  },
+  "processes_alive": {
+    "model": true,
+    "api": true,
+    "bot": true,
+    "tunnel": true
+  },
+  "note": "Only owned API/bot restarted; model/internal tunnel/Caddy preserved."
+}

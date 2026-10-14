@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-13T22:54:41Z",
+  "stage": "Q8 services restored after new A/B; measured selection pending Q4 C/D",
+  "health": {
+    "ready": true,
+    "model": "tiel-coder",
+    "model_host": "PC-loopback",
+    "slots": 3,
+    "context_per_slot": 8192,
+    "api_slots": 3,
+    "slots_match": true,
+    "rag_ready": true,
+    "index_generation": "71560bd214b69cc53af96bfa94eeb9ba54c96cac098be68fe16f01c11b9d9e56",
+    "pending": 0,
+    "queue_limit": 10,
+    "rate": 20,
+    "rate_window": 60.0
+  },
+  "model_file": "/home/kotdath/omp/personal/amd-strix-halo-toolboxes/models/tiel-coder/Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+  "core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf"
+}

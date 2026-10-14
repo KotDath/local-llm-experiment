@@ -1,0 +1,21 @@
+test_calibration_drift_rejected_before_network (test_articles.ArticleProvenanceTests.test_calibration_drift_rejected_before_network) ... ok
+test_import_rejects_wrong_pages_even_with_recomputed_footer (test_articles.ArticleProvenanceTests.test_import_rejects_wrong_pages_even_with_recomputed_footer) ... ok
+test_original_pdf_and_canonical_text_hashes (test_articles.ArticleProvenanceTests.test_original_pdf_and_canonical_text_hashes) ... ok
+test_original_week6_three_paper_index_identity (test_articles.ArticleProvenanceTests.test_original_week6_three_paper_index_identity) ... ok
+test_quote_specific_pages_across_boundary_with_surrogate_pair (test_articles.ArticleProvenanceTests.test_quote_specific_pages_across_boundary_with_surrogate_pair) ... ok
+test_real_supplementary_math_quote_has_precise_page_and_utf16 (test_articles.ArticleProvenanceTests.test_real_supplementary_math_quote_has_precise_page_and_utf16) ... ok
+test_rebuild_retains_document_and_quote_pages_without_embedding_calls (test_articles.ArticleProvenanceTests.test_rebuild_retains_document_and_quote_pages_without_embedding_calls) ... ok
+test_citation_is_bound_to_sent_evidence (test_core.ProvenanceTests.test_citation_is_bound_to_sent_evidence) ... ok
+test_failed_repair_preserves_primary_response_and_usage (test_core.ProvenanceTests.test_failed_repair_preserves_primary_response_and_usage) ... ok
+test_protocol_survives_invalid_payloads (test_core.ProvenanceTests.test_protocol_survives_invalid_payloads) ... ok
+test_real_index_and_tampered_footer (test_core.ProvenanceTests.test_real_index_and_tampered_footer) ... ok
+test_unresolved_reference_keeps_user_topic_outside_evidence (test_core.ProvenanceTests.test_unresolved_reference_keeps_user_topic_outside_evidence) ... ok
+test_utf16_surrogate_pair (test_core.ProvenanceTests.test_utf16_surrogate_pair) ... ok
+test_malformed_review_preserves_cost_and_history (test_coverage.CoverageControllerTests.test_malformed_review_preserves_cost_and_history) ... ok
+test_revision_is_semantically_rechecked_and_all_calls_billed (test_coverage.CoverageControllerTests.test_revision_is_semantically_rechecked_and_all_calls_billed) ... ok
+test_unsupported_final_revision_is_not_published_as_supported (test_coverage.CoverageControllerTests.test_unsupported_final_revision_is_not_published_as_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.454s
+
+OK

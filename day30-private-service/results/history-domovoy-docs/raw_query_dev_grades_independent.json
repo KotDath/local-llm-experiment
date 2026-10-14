@@ -1,0 +1,227 @@
+{
+  "schema": "independent-rag-semantic-review-v1",
+  "evaluated_at_utc": "2026-10-13T20:31:25.465493+00:00",
+  "input": "results/dev_rag_answers.jsonl",
+  "input_sha256": "76d26b44dc2bdaa832dcb069fe66ac442e6a2814ae80e3b2146c6aba2ca2408b",
+  "input_rows": 8,
+  "scope": "Only final dev_rag_answers. Earlier failures excluded from final grades, retained separately in dev_exploratory_failures.jsonl. No inference executed. No secrets read.",
+  "method": "Independent reading of actual answer, claims, sent excerpts and frozen corpus. Exact citation document hash and UTF-16 spans separately verified. Quote membership/schema is provenance only and does not prove entailment.",
+  "summary": {
+    "correct_answers": 2,
+    "partial_answers": 1,
+    "wrong_answers": 1,
+    "appropriate_refusals": 4,
+    "acceptable_full_responses": 6,
+    "total": 8,
+    "responses_with_unsupported_or_wrong_claims": 1,
+    "responses_with_semantically_inadequate_citations": 3,
+    "all_literal_citation_spans_valid": true
+  },
+  "grades": [
+    {
+      "id": "D01",
+      "mode": "M1",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "retrieval_relevance": "irrelevant_to_memory_ownership",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "insufficient",
+      "reasons": [
+        "Вопрос про активную память и automatic extractor; переданы почти исключительно фрагменты library save_digest и automation.",
+        "Верное правило в docs/architecture.md: host владеет scopes, IDs, revisions, project membership, persistence; automatic deletion forbidden. Ответ этого не сообщает.",
+        "Подмена memory scopes библиотечным namespace является ошибкой. Факт что запись при коллизии не перезаписывается не доказывает запрет extractor deletion."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "unsupported",
+          "reason": "Сначала утверждает, что extractor не удаляет память, затем признаёт отсутствие данных; приведённые цитаты касаются library persistence, а не extractor."
+        },
+        {
+          "claim": 2,
+          "assessment": "supported_but_off_topic",
+          "reason": "Library ID generator реален, но это неверный ответ про host ownership memory IDs."
+        },
+        {
+          "claim": 3,
+          "assessment": "wrong_scope_and_non_entailing_citation",
+          "reason": "Namespace library подан как область записи памяти; цитата «## JSONL: модель и хранение» сама по себе ничего не подтверждает."
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "mostly_supportive_with_minor_overbroad_citations",
+      "reasons": [
+        "Названы все пять тем; drafts only USER.md; SOUL.md untouched; cancel leaves repository untouched. Все запрошенные аспекты покрыты.",
+        "Названия четырёх required sections поддержаны другим переданным chunk d1cb..., хотя claim цитирует только chunk 1b9.... Длинная цитата содержит лишний demo code."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "supported_by_sent_evidence",
+          "reason": "USER/SOUL/apply/save поддержаны cited chunk; exact four section names есть в другом sent chunk."
+        },
+        {
+          "claim": 2,
+          "assessment": "entailed",
+          "reason": "Цитата перечисляет все пять тем."
+        },
+        {
+          "claim": 3,
+          "assessment": "entailed",
+          "reason": "Cancelling leaves repository untouched; no profile appears."
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "one_non_entailing_citation",
+      "reasons": [
+        "cacheCapacity=32 и TTL=10 минут верны; ответ сообщает, что cache hit не расходует частоту. Данные подтверждаются корпусом.",
+        "Sent evidence содержит cache values и то, что повторный поиск не обращается к сети. Однако цитата для второго claim про общий лимит нескольких машин не подтверждает именно claim о cache hit.",
+        "Слово LRU не повторено в ответе, но размер назван корректно; явное правило hit не расходует frequency limit находится в golden evidence unit D03, не в выбранной цитате."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "entailed",
+          "reason": "Цитаты cacheTtl/cacheCapacity прямо дают значения."
+        },
+        {
+          "claim": 2,
+          "assessment": "supported_by_broader_sent_evidence_but_citation_invalid_semantically",
+          "reason": "Цитата «соблюдают свои 3 с...» не про cache hit; окружающий chunk поддерживает отсутствие повторного network request."
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "mode": "M1",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "retrieval_relevance": "relevant",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "insufficient",
+      "reasons": [
+        "Верно отвечает про same runId/same payload: та же запись, created:false, no duplicate. Не отвечает ни словом на вторую половину вопроса: другой payload → [library:conflict], old record unchanged.",
+        "Вторая половина прямо доступна в sent evidence f2dee...; её пропуск нельзя объяснить отсутствием документа.",
+        "Non-consumption of ID подтверждено sent evidence 29db... и f2dee..., но cited schema lines этого не доказывают; повторён один источник. Статус answered ошибочно заявляет полноту."
+      ],
+      "claim_notes": [
+        {
+          "claim": 1,
+          "assessment": "true_but_incomplete_and_weakly_cited",
+          "reason": "First quote обрывается до created:false; следующие две цитаты о payload/schema не подтверждают outcome. Broader sent evidence supports first half."
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В корпусе нет запрошенного тарифа/измерения/сертификата/выручки; host rejected evidence using question threshold, no LLM calls, no invented facts."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D06",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В корпусе нет запрошенного тарифа/измерения/сертификата/выручки; host rejected evidence using question threshold, no LLM calls, no invented facts."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D07",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В корпусе нет запрошенного тарифа/измерения/сертификата/выручки; host rejected evidence using question threshold, no LLM calls, no invented facts."
+      ],
+      "claim_notes": []
+    },
+    {
+      "id": "D08",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "retrieval_relevance": "no_evidence_sent",
+      "citation_provenance_valid": true,
+      "citation_semantic_support": "not_applicable",
+      "reasons": [
+        "В корпусе нет запрошенного тарифа/измерения/сертификата/выручки; host rejected evidence using question threshold, no LLM calls, no invented facts."
+      ],
+      "claim_notes": []
+    }
+  ],
+  "implementation_findings": [
+    {
+      "severity": "high",
+      "file": "grounding.py",
+      "finding": "validate checks JSON fields, IDs, quote substring and exact offsets only. It does not check semantic support or question completeness. D01/D04 pass despite incorrect/incomplete answer. This limitation is honestly stated by module docstring; it must not be reported as hallucination prevention."
+    },
+    {
+      "severity": "high",
+      "file": "rag.py / configs/retrieval.json",
+      "finding": "Dense question threshold learns answerability from max similarity, not presence of gold evidence. D01 exactly meets threshold using library passages and gets irrelevant context. Calibration F1=1 does not measure factual retrieval coverage."
+    },
+    {
+      "severity": "medium",
+      "file": "grounding.py:quotes/output_format",
+      "finding": "Enum candidates include Markdown headings and isolated wrapped lines, so exact citations can be fragments that omit operative clauses. D04 quote ends before created:false, other citations are unrelated. Structural enum does not establish entailment."
+    },
+    {
+      "severity": "medium",
+      "file": "agent.py",
+      "finding": "No host check that all queried aspects are covered. D04 misses conflict and still status answered."
+    },
+    {
+      "severity": "medium",
+      "file": "rag.py",
+      "finding": "Loaded retrieval config records index_generation but retrieve never checks it against current index. Rebuilt or swapped index can reuse calibrated thresholds silently."
+    },
+    {
+      "severity": "low",
+      "file": "agent.py / model.py",
+      "finding": "Context pruning uses profile context only, whereas Model.complete enforces min(profile context, runtime n_ctx); if runtime capacity is smaller than profile, Agent fails context_limit rather than pruning enough."
+    },
+    {
+      "severity": "medium",
+      "file": "agent.py",
+      "finding": "RAG dialogue is used as untrusted_prior_dialogue but retrieval runs only on latest literal question. Follow-up questions referring to prior context may retrieve unrelated sources; not demonstrated by this dev set."
+    }
+  ]
+}

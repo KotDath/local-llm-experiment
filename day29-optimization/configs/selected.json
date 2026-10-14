@@ -1,0 +1,43 @@
+{
+  "case": "B",
+  "quant": "Q8",
+  "profile": "optimized",
+  "profile_settings": {
+    "temperature": 0.1,
+    "max_tokens": 6144,
+    "context": 32768,
+    "prompt": "optimized"
+  },
+  "run_ids": {
+    "A": "A-1791959603382795462",
+    "B": "B-1791960853355963930",
+    "C": "C-1791962050256824796",
+    "D": "D-1791963011935358356"
+  },
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "questions_sha256": "6c7c412a56502f47ac4a58cd33deab37ac4b2c0225caf4dcecf043e5349b60cb",
+  "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+  "basis": "Сначала минимум ошибок доставки, затем максимум полностью correct из20, затем минимум фактических галлюцинаций; при равенстве — меньшее среднее полное время. Известный контрольный набор; скрытый тест обобщения не заявляется.",
+  "summary": {
+    "correct_out_of_10": 3,
+    "hallucinations_out_of_10": 1,
+    "repeat1_correct_out_of_10": 2,
+    "repeat1_hallucinations_out_of_10": 1,
+    "verdict_stable_out_of_10": 9,
+    "mean_total_ms": 56294.63297555085,
+    "p50_ms": 52452.853139999206,
+    "p95_ms": 86109.07675400085,
+    "max_total_ms": 121148.26315199753,
+    "mean_generation_tokens_s": 42.30906223495722,
+    "peak_rss_bytes": 9156849664,
+    "peak_pss_bytes": 9113253888,
+    "peak_host_used_bytes": 85260296192,
+    "peak_vram_bytes": 1028562944,
+    "peak_gtt_bytes": 47528919040,
+    "delivery_failures": 0,
+    "truncated_turns": 0,
+    "model_bytes": 39350213152,
+    "load_ms": 32077.437563995773
+  },
+  "selection_utc": "2026-10-14T07:50:10Z"
+}

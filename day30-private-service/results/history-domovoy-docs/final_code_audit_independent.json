@@ -1,0 +1,370 @@
+{
+  "utc": "2026-10-13T21:36:51.367207+00:00",
+  "scope": "Read-only source/documentation/stored evidence audit; no LLM inference, no Telegram, no remote mutations, no private env files read. Explicitly authorized fresh bootstrap test mocked SSH/keygen only.",
+  "directories": [
+    {
+      "directory": "day26-local-llm",
+      "README": true,
+      "DEMO": true,
+      "requirements": true,
+      "env_example": true,
+      "launcher": true,
+      "agent": true,
+      "protocol": true,
+      "source_python_count": 7,
+      "syntax_errors": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day27-application",
+      "README": true,
+      "DEMO": true,
+      "requirements": true,
+      "env_example": true,
+      "launcher": true,
+      "agent": true,
+      "protocol": true,
+      "source_python_count": 8,
+      "syntax_errors": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day28-local-rag",
+      "README": true,
+      "DEMO": true,
+      "requirements": true,
+      "env_example": true,
+      "launcher": true,
+      "agent": true,
+      "protocol": true,
+      "source_python_count": 18,
+      "syntax_errors": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day29-optimization",
+      "README": true,
+      "DEMO": true,
+      "requirements": true,
+      "env_example": true,
+      "launcher": true,
+      "agent": true,
+      "protocol": true,
+      "source_python_count": 20,
+      "syntax_errors": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day30-private-service",
+      "README": true,
+      "DEMO": true,
+      "requirements": true,
+      "env_example": true,
+      "launcher": true,
+      "agent": true,
+      "protocol": true,
+      "source_python_count": 25,
+      "syntax_errors": [],
+      "source_symlinks": []
+    }
+  ],
+  "autonomy": "No source symlinks or imports from adjacent day directories found. Sources and corpus/index copied; external installed executables/weights/tokenizer caches are declared runtime prerequisites.",
+  "agent_architecture": "Own Agent class owns identity/history/execution. Frontends are adapters; model HTTP transport uses urllib and loopback-only generation URL. No external AI agent framework imports found. Transformers is only used in the embedding/reranking gateway tokenizer work.",
+  "cloud_policy": "Only evaluate_rag.py --cloud explicitly invokes DeepSeek. Agent and model have no cloud fallback; Telegram network and --web GitHub checks separately disclosed. Offline tokenizer flags and socket evidence are present.",
+  "requirements_evidence": {
+    "day26": "Three varied live answers, CLI/history/reset, usage; arithmetic error 9 vs8 openly documented.",
+    "day27": "Independent live Agent sessions and CLI proved local generation; Telegram transport/start checked, no invented Telegram model dialogue. CLI is expressly allowed by task.",
+    "day28": "Authentic week6 128 chunks, local embeddings/retrieval/generation, local/cloud semantic grades, timing caveat, rebuild/web/socket/guard evidence. Repeated Q02/Q03/Q10 responses present in stability.json; Q03 correctness changes from complete to partial, disclosed.",
+    "day29": {
+      "stored_cases": {
+        "A": 20,
+        "B": 20
+      },
+      "stored_core_sha256": [
+        "31c8f6ff1990a3995125bee030b2a03d402afeebe066b3bd1336b0fe7396a1a1"
+      ],
+      "current_core_sha256": "31c8f6ff1990a3995125bee030b2a03d402afeebe066b3bd1336b0fe7396a1a1",
+      "questions_sha256": [
+        "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67"
+      ],
+      "status": "A/B real20 calls each with source frozen; Q4 C/D not yet present. comparison.md absent pending completion."
+    },
+    "day30": {
+      "real_VPS_to_PC_network_evidence": true,
+      "live_stored_load": [
+        [
+          5,
+          {
+            "200": 5
+          }
+        ],
+        [
+          10,
+          {
+            "200": 10
+          }
+        ]
+      ],
+      "overflow_status_counts": {
+        "200": 13,
+        "503": 2
+      },
+      "limits": {
+        "unauthorized": 401,
+        "body_limit": 413,
+        "context_limit": 422,
+        "rate_statuses": [
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          422,
+          429
+        ],
+        "rate_recovery": 200
+      },
+      "outage_evidence": [
+        "actual_model_outage.json",
+        "tunnel_outage.json",
+        "remote_network.json"
+      ],
+      "synthetic_separated": "failure_injection.json labels502/504 artificial upstream; independently real503 outages preserved."
+    }
+  },
+  "core_source_sha256": {
+    "day28-local-rag": "31c8f6ff1990a3995125bee030b2a03d402afeebe066b3bd1336b0fe7396a1a1",
+    "day29-optimization": "31c8f6ff1990a3995125bee030b2a03d402afeebe066b3bd1336b0fe7396a1a1",
+    "day30-private-service": "31c8f6ff1990a3995125bee030b2a03d402afeebe066b3bd1336b0fe7396a1a1"
+  },
+  "bootstrap_runtime_defect": {
+    "previous_problem": "runtime key parent absent on fresh deploy",
+    "resolution": "deploy_gateway now makes parent0700 before keygen; authorized mocked fresh bootstrap passed",
+    "evidence": "results/bootstrap_independent.json"
+  },
+  "nonblocking_code_findings": [
+    {
+      "target": "scripts/deploy_gateway.py",
+      "finding": "systemctl enable --now will not restart an already active gateway after copying changed code. Fresh deployment works, but redeploy can retain old process until explicit restart.",
+      "suggestion": "After enable issue restart; read-only finding, no actual remote probe."
+    },
+    {
+      "target": "cli.py API session creation",
+      "finding": "/sessions bootstrap request occurs before outer ServiceError handler; unreachable API or429 at session creation produces traceback instead of structured CLI error. Actual chat requests are handled.",
+      "suggestion": "Move API session creation under ServiceError handler."
+    },
+    {
+      "target": "README day30 external dependencies",
+      "finding": "Bootstrap uses sshpass, openssh and SSH server/root write access; README assumes these prerequisites without explicit installation list.",
+      "suggestion": "List required host tools and privileged VPS bootstrap login."
+    }
+  ],
+  "remaining_acceptance": [
+    "Download/verify Q4 and obtain C/D real repeated benchmark, independent semantic grades, full comparison with chosen profile.",
+    "Restore chosen demo backend and refresh final API/tunnel readiness proof after benchmark; stored successful evidence predates final maintenance.",
+    "Overall delivery README/checklist should retain measured quality limitations and exact video demonstration commands."
+  ],
+  "video_scope": "Five DEMO.md instructions present. Actual recording was previously scoped separately; no video file is asserted by this audit.",
+  "resolution_audits": [
+    {
+      "utc": "2026-10-13T21:38:44.444246+00:00",
+      "scope": "No model/SSH inference; closed localhost connections only, bootstrap SSH/keygen patched; no secrets read.",
+      "cli_records": [
+        {
+          "directory": "day26-local-llm",
+          "test": "ask_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day26-local-llm",
+          "test": "health_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day27-application",
+          "test": "ask_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day27-application",
+          "test": "health_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day28-local-rag",
+          "test": "ask_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day28-local-rag",
+          "test": "health_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day29-optimization",
+          "test": "ask_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day29-optimization",
+          "test": "health_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day30-private-service",
+          "test": "ask_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day30-private-service",
+          "test": "health_unavailable_api",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day26-local-llm",
+          "test": "unsupported_rag",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"rag_not_available_in_this_version\", \"status\": 422, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day26-local-llm",
+          "test": "ask_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day26-local-llm",
+          "test": "health_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day27-application",
+          "test": "ask_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day27-application",
+          "test": "health_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day28-local-rag",
+          "test": "ask_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day28-local-rag",
+          "test": "health_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day29-optimization",
+          "test": "ask_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day29-optimization",
+          "test": "health_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day30-private-service",
+          "test": "ask_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        },
+        {
+          "directory": "day30-private-service",
+          "test": "health_unavailable_local_model",
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "{\"error\": \"upstream_unavailable\", \"status\": 503, \"detail\": null}\n",
+          "passed": true
+        }
+      ],
+      "bootstrap": {
+        "synthetic_only": true,
+        "runtime0700": true,
+        "remote_script": [
+          {
+            "restart_present": true,
+            "restart_after_enable": true
+          }
+        ],
+        "passed": true
+      },
+      "readme_prerequisites_resolved": true
+    }
+  ]
+}

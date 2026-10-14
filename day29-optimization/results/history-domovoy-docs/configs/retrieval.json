@@ -1,0 +1,109 @@
+{
+  "dense_threshold": -1,
+  "dense_question_threshold": 0.5764271075846307,
+  "rerank_threshold": -1.1824464797973633,
+  "topic_prefix": true,
+  "dev_sha256": "c04cd94f280049551160febceff861dc0c46366259a1959bdadd6d77569fef33",
+  "method": "topic_query_max_score_question_f1_midpoints_v2",
+  "dense_dev_metrics": {
+    "threshold": 0.5764271075846307,
+    "f1": 1.0,
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  "rerank_dev_metrics": {
+    "threshold": -1.1824464797973633,
+    "f1": 0.8888888888888888,
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  "index_generation": "71560bd214b69cc53af96bfa94eeb9ba54c96cac098be68fe16f01c11b9d9e56",
+  "samples": {
+    "dense": [
+      {
+        "id": "D01",
+        "score": 0.6462284513170304,
+        "answerable": true
+      },
+      {
+        "id": "D02",
+        "score": 0.7163421410083024,
+        "answerable": true
+      },
+      {
+        "id": "D03",
+        "score": 0.6404050555477963,
+        "answerable": true
+      },
+      {
+        "id": "D04",
+        "score": 0.7929480408486381,
+        "answerable": true
+      },
+      {
+        "id": "D05",
+        "score": 0.4721765261469033,
+        "answerable": false
+      },
+      {
+        "id": "D06",
+        "score": 0.5080093352871935,
+        "answerable": false
+      },
+      {
+        "id": "D07",
+        "score": 0.5124491596214651,
+        "answerable": false
+      },
+      {
+        "id": "D08",
+        "score": 0.4847240321346406,
+        "answerable": false
+      }
+    ],
+    "rerank": [
+      {
+        "id": "D01",
+        "score": -0.9390741586685181,
+        "answerable": true
+      },
+      {
+        "id": "D02",
+        "score": 0.5523860454559326,
+        "answerable": true
+      },
+      {
+        "id": "D03",
+        "score": 0.4234025478363037,
+        "answerable": true
+      },
+      {
+        "id": "D04",
+        "score": 3.0031466484069824,
+        "answerable": true
+      },
+      {
+        "id": "D05",
+        "score": -4.161825656890869,
+        "answerable": false
+      },
+      {
+        "id": "D06",
+        "score": -2.423532009124756,
+        "answerable": false
+      },
+      {
+        "id": "D07",
+        "score": -1.4258188009262085,
+        "answerable": false
+      },
+      {
+        "id": "D08",
+        "score": -0.4892258644104004,
+        "answerable": false
+      }
+    ]
+  }
+}

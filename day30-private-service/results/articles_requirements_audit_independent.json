@@ -1,0 +1,361 @@
+{
+  "utc": "2026-10-14T05:50:55.076108+00:00",
+  "phase": "Article migration pre-benchmark source and isolated-control audit; not final task completion. Parent owns code changes.",
+  "source_tasks": "/home/kotdath/omp/personal/ai/tasks.md",
+  "new_user_requirements": {
+    "domain": "Only three challenge arXiv papers MemGPT2310.08560v2,MemoryBank2305.10250v3,GenerativeAgents2304.03442v2",
+    "baseline": {
+      "context": 65536,
+      "max_tokens": 8192
+    },
+    "optimized": {
+      "context": 32768,
+      "max_tokens": 6144
+    },
+    "recheck_scope": "All five days, actual standaloneCLI/Agent/RAG,fullnewbenchmark and remote API, instructions/video scope as agreed."
+  },
+  "snapshots": [
+    {
+      "directory": "day26-local-llm",
+      "agent_sha256": "0ebcaf3588c5e717c254dad9db78ab3a3f2248a761d23bf47edff57639d70915",
+      "model_timeout_600": true,
+      "protocol_body_512KiB": true,
+      "launcher_context32768": true,
+      "core_sha256": null
+    },
+    {
+      "directory": "day27-application",
+      "agent_sha256": "0ebcaf3588c5e717c254dad9db78ab3a3f2248a761d23bf47edff57639d70915",
+      "model_timeout_600": true,
+      "protocol_body_512KiB": true,
+      "launcher_context32768": true,
+      "core_sha256": null
+    },
+    {
+      "directory": "day28-local-rag",
+      "agent_sha256": "0ebcaf3588c5e717c254dad9db78ab3a3f2248a761d23bf47edff57639d70915",
+      "model_timeout_600": true,
+      "protocol_body_512KiB": true,
+      "launcher_context32768": true,
+      "core_sha256": "6d78ee67e8a99b9aec78613c4e307241145c1cac2c2a025dfae9276ba342454f",
+      "optimized": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "baseline": {
+        "temperature": 1.0,
+        "max_tokens": 8192,
+        "context": 65536,
+        "prompt": "baseline"
+      }
+    },
+    {
+      "directory": "day29-optimization",
+      "agent_sha256": "0ebcaf3588c5e717c254dad9db78ab3a3f2248a761d23bf47edff57639d70915",
+      "model_timeout_600": true,
+      "protocol_body_512KiB": true,
+      "launcher_context32768": true,
+      "core_sha256": "6d78ee67e8a99b9aec78613c4e307241145c1cac2c2a025dfae9276ba342454f",
+      "optimized": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "baseline": {
+        "temperature": 1.0,
+        "max_tokens": 8192,
+        "context": 65536,
+        "prompt": "baseline"
+      }
+    },
+    {
+      "directory": "day30-private-service",
+      "agent_sha256": "0ebcaf3588c5e717c254dad9db78ab3a3f2248a761d23bf47edff57639d70915",
+      "model_timeout_600": true,
+      "protocol_body_512KiB": true,
+      "launcher_context32768": true,
+      "core_sha256": "6d78ee67e8a99b9aec78613c4e307241145c1cac2c2a025dfae9276ba342454f",
+      "optimized": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "baseline": {
+        "temperature": 1.0,
+        "max_tokens": 8192,
+        "context": 65536,
+        "prompt": "baseline"
+      }
+    }
+  ],
+  "actual_native_week6": {
+    "header": {
+      "type": "manifest",
+      "fingerprint": "df2af910c83efd01d39f7ba4012e24bdc1ba98281ad65efff841fd025148279d",
+      "dimension": 1024,
+      "strategy": "fixed",
+      "generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+      "elapsed_ms": 18734,
+      "count": 182
+    },
+    "copied_sha256": "ba0e9524fb2947802b4121f99944b40b65f936995feafcad77742fe55b4690f3",
+    "documents": [
+      {
+        "title": "MemGPT: Towards LLMs as Operating Systems",
+        "version": "2310.08560v2",
+        "pages": 13,
+        "pdf_sha256": "9f674bcff69c86f11c813dcfad613d8841f5f8ed17979e3c4df06a91df7762e0",
+        "pdf_bytes": 663708
+      },
+      {
+        "title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+        "version": "2305.10250v3",
+        "pages": 11,
+        "pdf_sha256": "6c60f7f95a872de85179b770edaba584da7a30da37490522394a3e4888aa0059",
+        "pdf_bytes": 516536
+      },
+      {
+        "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+        "version": "2304.03442v2",
+        "pages": 22,
+        "pdf_sha256": "1b31e77fb24d25d7598f2c49e955d12a28b95a6dabad34acdac40f44bfb7a139",
+        "pdf_bytes": 11947867
+      }
+    ],
+    "byte_copies28_29_30_equal": true
+  },
+  "new_tests": {
+    "file": "day28-local-rag/tests/test_articles.py",
+    "command": ".venv/bin/python -B -m unittest discover -s tests -p test_articles.py -v",
+    "tests": 7,
+    "passed": 7,
+    "duration_s": 0.562,
+    "coverage": [
+      "Original182chunks/3papers/1024D/generation/indexSHA",
+      "All3originalPDFbyteSHA/bytes and canonicalnative documenttext",
+      "Actual87supplementarymathcharacters;knowncitation44259–44320 belongs page9,notwholechunk9–10",
+      "Surrogate-pair andcross-page quote mapping",
+      "Wrongchunkpagesrejected evenvalid recomputedfooter",
+      "Rebuild retainsPDFpage/version/hash withfullyofflinecontrollerfixture",
+      "Calibrationdrift409before HTTP"
+    ],
+    "synthetic_scope": "Only controlled rebuild vectors/token offsets; no embedding/generation calls. Tests do not assert LLM semantic quality."
+  },
+  "runtime_props_observed": {
+    "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "slots": 1,
+    "context_per_slot": 32768,
+    "method": "actual loopback /props read; no generation request"
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "critical_before_network_tests",
+      "initial": "x9000 context/rate probes became valid under32K profile",
+      "current": "remote_checks now x70000, approx140KB serialized body below512KiB and exceeds both32K/64K budgets",
+      "state": "source_fixed; exact tokenizer/HTTP422 and20×422→429→200 must be remeasured"
+    },
+    {
+      "id": "F02",
+      "severity": "critical_configuration",
+      "initial": "generation600 context profiles/launcher/defaults were8192/1536 or65536-byte body",
+      "current": "profiles baseline65536/8192 optimized32768/6144; Model600s; HTTP/gateway1800s; SSH3600s;API/stdio512KiB;queuewait120s added",
+      "state": "source_fixed; full runtime/context boundary/concurrent/error recovery receipts pending"
+    },
+    {
+      "id": "F03",
+      "severity": "critical_paper_provenance",
+      "initial": "older day21archive onlyMemGPT paperindex; fresh3corpus would not alone prove actualWeek6reuse",
+      "current": "stronger day25native3paperindex copiedbyte-for-byte182chunks/3PDFs/13+11+22page metadata, exactSHA ba0e9524…",
+      "state": "resolved by authoritative native3paperidentity and passing tests"
+    },
+    {
+      "id": "F04",
+      "severity": "critical_grounding",
+      "initial": "paper page/title/version absent in rendered sources; rebuild droppedpage_starts",
+      "current": "Index enrichesnativechunks, validatespage_start/end; quote-specificUTF16 pages/title/version/PDFsha;rebuild preservespages;realmathsupplementarypage9 fixturepassed",
+      "state": "source+offlineprovenance tests passed; semantic entailment requires actualQA"
+    },
+    {
+      "id": "F05",
+      "severity": "critical_domain",
+      "initial": "old Domovoy prefix/prompt/calibration/website andwarmup wrongforpapers",
+      "current": "paper-specificprompt/vocabulary; newgeneration frozen8devthresholds;articlewarmup/web code updated by parent",
+      "state": "new retrieval calibration,actualanswers/cloud/table/freshrebuild/web receipts andmigrationdocs still need final audit"
+    },
+    {
+      "id": "F06",
+      "severity": "critical_selection",
+      "initial": "reporttext hardcoded prior B16/20 and APIprofileoptimized while newmatrix could chooseothercase",
+      "current": "exporter dynamic chosen metrics and API selected_profile implemented",
+      "state": "new80rowmatrix/newgrading/newselection+actualfinalmodelprofile proof required"
+    },
+    {
+      "id": "N01",
+      "severity": "operational_scope",
+      "description": "Large allowedRAGinput still has embedding query8192/reranker query1024 limits; these are separate from generation32K/64K and should be stated. Generated longqueue claims not inferred from shortload runs."
+    },
+    {
+      "id": "N02",
+      "severity": "documentation",
+      "description": "Dense compared-paper branch expands candidates beyondinitial20; neural reranker is actually capped20. Describe candidate budget accurately, not a global20 cap."
+    }
+  ],
+  "requirements_matrix": [
+    {
+      "day": 26,
+      "must_prove": "Newlaunch effective32Kslot/profileoutputs+same3difficulty requests,PID/modelSHA/usage,CLI/HTTP;oldresponses retainedhistorical",
+      "status": "Parent recheckrunning; not audited new real3outputs yet"
+    },
+    {
+      "day": 27,
+      "must_prove": "CurrentAgentplainhistory/reset/isolation through CLI/JSONL;Telegramtransport+allowlist+localgeneration path",
+      "status": "Currentnew limits requirefreshproof, SDK/no cloud invariant preserved source"
+    },
+    {
+      "day": 28,
+      "must_prove": "ActualWeek6threepapers reused, localretrieval/embeddings/neuralrerank, fullPDFpages/title/versioncitation, freshrebuild,localvscloud ifavailable,quality/speed/stability, naturalfollowup and unknownquestion",
+      "status": "Originaldata+7controltests verified;newQA/quality/runtime receipts pending"
+    },
+    {
+      "day": 29,
+      "must_prove": "Newfrozenarticle10questions×2×A–D,matchingcode/question/index/embedding/retrieval/build/quantpair, realresource/time/usage, newindependentgrades+actualchosenprofile",
+      "status": "Previousdocs80andselection not evidence fornewdomain/4×limits. Freeze before newbenchmark."
+    },
+    {
+      "day": 30,
+      "must_prove": "No inference onVPS,finalchosenmodel/profile32K/64Kactualready, freshVPS-to-PC dialogue andreceipts, 5/10shortload,body512KiB/contextboundary/429/overflow/errors/recovery,correcttimeoutbudget instructions",
+      "status": "Source fixes observed; previous8K/64KiB and docsRAGremote receipts are historical only."
+    }
+  ],
+  "blocking_source_defects_remaining_at_snapshot": [],
+  "final_acceptance_remaining": "New real runs and semantic assessments, controlledfullbenchmark, freshnetwork checks and accurateREADME/PLAN/DEMO/conclusions. These remain required, not inferred from source readiness.",
+  "pre_freeze_audits": [
+    {
+      "utc": "2026-10-14T06:22:19.909081+00:00",
+      "source_sha256_by_directory": {
+        "day28-local-rag": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+        "day29-optimization": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+        "day30-private-service": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430"
+      },
+      "core_read_only": true,
+      "blocking_core_findings": [],
+      "rank_policy": "Dense/cross-encoder scores are ranking only; production thresholds−1 and−100000, oldanswerabilityF1 diagnostics not used as rejection. Namedpaperretrievalfilters and20rerankerbound observed.",
+      "new_agent_controller": "Own localcoverage_review(temp0,max1024,schema6issues×180chars),oneboundedcoverage_revision;allcalls andcost included intrace,successfulraw calls preserved onlater failure. No agentSDK added.",
+      "tests_added": {
+        "file": "day28-local-rag/tests/test_coverage.py",
+        "command": ".venv/bin/python -B -m unittest discover -s tests -p test_coverage.py -v",
+        "tests": 2,
+        "passed": 2,
+        "duration_s": 0.075,
+        "cases": [
+          "Incompletecoverage_review causes exactlyone revision;thirdresponsecorrectlyvalidated;aggregateusage/historystore updatedonce.",
+          "Malformedreviewboolean emits502invalid_coverage_review;rawresolver/answer/review retained and billed;preexistinghistory unchanged."
+        ],
+        "scope": "Entirelysynthetic controllermodel/retriever fixtures. No inference or embedding calls;notmodelqualityevidence."
+      },
+      "nonblocking_semantic_limits": [
+        "Finalcoverage_revision is literal-validated but notsubjectto secondsemanticreview. Independentsource-entailment/completenessgrading stillrequired.",
+        "Hostreviewparserchecks types;schema max6×180 andadditionalProperties relyonbackendgrammar. No universalmalformedbackendresilience claim."
+      ],
+      "benchmark_acceptance": "Freeze onecurrentcodeSHA before full80conditionmatrix. Initialinterrupted6d baseline rows remainhistorical,not validfinalmatrixtable. Newreal M0/M1/M2/cloud/stability and finalVPSproofstillrequired."
+    }
+  ],
+  "auxiliary_api_audits": [
+    {
+      "utc": "2026-10-14T07:02:26.398348+00:00",
+      "frozen_core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "core_modified": false,
+      "API_modified": false,
+      "synthetic_error_suite": "Actual isolated FastAPIHTTPprocess andheldsyntheticupstream,notmodelqualityevidence. APIcopiedtoemptytmpworkspace;no.envload,no productionjournalwrites.",
+      "queue_test": {
+        "mode": "queue_wait_timeout",
+        "synthetic_upstream": true,
+        "api_slots": 1,
+        "queue_wait_timeout_s": 0.08,
+        "queue_errors": [
+          {
+            "status": 503,
+            "body": {
+              "error": "queue_wait_timeout",
+              "detail": null
+            },
+            "elapsed_ms": 84.27263000339735
+          },
+          {
+            "status": 503,
+            "body": {
+              "error": "queue_wait_timeout",
+              "detail": null
+            },
+            "elapsed_ms": 82.97139999922365
+          }
+        ],
+        "session_reset_after_timeout_status": 200,
+        "pending_while_slot_held": 1,
+        "semaphore_not_overreleased": true,
+        "held_request_recovered": "Synthetic controller recovery response.",
+        "timed_out_session_reused": "Synthetic controller recovery response.",
+        "pending_after_recovery": 0,
+        "private_env_loaded": false,
+        "production_journal_modified": false
+      },
+      "previous_error_cases": [
+        {
+          "mode": "timeout",
+          "path": null,
+          "status": 504,
+          "synthetic_upstream": true
+        },
+        {
+          "mode": "malformed",
+          "path": null,
+          "status": 502,
+          "synthetic_upstream": true
+        },
+        {
+          "mode": null,
+          "path": "/sessions/reset",
+          "status": 422,
+          "synthetic_upstream": null
+        },
+        {
+          "mode": null,
+          "path": "/chat",
+          "status": 422,
+          "synthetic_upstream": null
+        }
+      ],
+      "artifact": "results/failure_injection.json",
+      "context_script": {
+        "file": "verify_context_boundary.py",
+        "status": "Prepared,compiled,--help checked;notrun againstrealmodel/API whilebenchmarkactive.",
+        "method": "ExtractfrozenAgentplainsystemAST,actualrender/tokenizebinarysearch,selected32K/64Kreserve,bodyquota separate. Oneacceptednear-boundary generation andone+1token422 withzero generation;actual counted usage andselectedprofile asserted.",
+        "after_matrix_command": ".venv/bin/python verify_context_boundary.py --env-file /absolute/private/api.env --api-url http://127.0.0.1:8780",
+        "through_VPS_command": "Run onPCwithlocalModel,activeclientSSHforward;samecommand --api-url http://127.0.0.1:8781",
+        "future_artifact": "results/articles_context_boundary.json"
+      },
+      "bot_change": {
+        "file": "bot.py",
+        "default": "configs/selected.json profile,optimizedfallback whenno measuredselection",
+        "explicit_override": "--profile baseline|optimized",
+        "session_constructor": "Chat(profile=self.profile,rag=self.rag)",
+        "source_only_check": "APIselected_profile function andbotselected_profile matched forabsent/baseline/optimized configs inisolatedcontrollerfixtures;noTGcredentials ortransport accessed.",
+        "needs_restart": "Restartbot afterfinalselection so runninginstanceuses updatedcodeandprofile."
+      },
+      "final_remaining_checks": [
+        "Complete80currentarticleA–D andnewgrades/summary/selection on frozen37ecore.",
+        "Restorechosenquantandactualselectedcontext/outputprofile,3matchedslots,APIandupdatedbot;checkeffectiveenvironmenttimeout values,notonlysource defaults.",
+        "Run preparedcontextboundary selected32K or64KactualAPI;prove exactlycontext-reserve accepted,+1 rejected422,usage match.",
+        "ActualnewarticleRAGmulti-turn withpage/version/titlequotes andindependentsemanticentailment,unknownquestionrefusal,local/cloud/stability.",
+        "ActualVPSfinalplainhistory/reset+RAGdialogue andPCjournaljoin;runnew512KiBbody/70Ktokencontext/rate limits and5/10shortconcurrency.",
+        "Gatewayredeploy/restart fornewbody/1800stimeouts;actualtunnel/modeloutage&recovery;synthetic503queuewait/502/504artifacts remainlabelled synthetic.",
+        "UpdateallREADME/PLAN/DEMO/conclusions/acceptance fromactualnewmeasurements; secret scan excludingprivateworkingfiles."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "stage": "actual_local_model_stopped",
+    "path": "/health",
+    "status": 503,
+    "body": {
+      "error": "model_unavailable",
+      "detail": null
+    }
+  },
+  {
+    "stage": "actual_local_model_stopped",
+    "path": "/chat",
+    "status": 503,
+    "body": {
+      "error": "upstream_unavailable",
+      "detail": null
+    }
+  }
+]

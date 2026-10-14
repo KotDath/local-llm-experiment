@@ -1,0 +1,37 @@
+{
+  "snapshot": "3afc5222473fc08c6130b2771ebd819fa0c4b484",
+  "models": {
+    "Q8": {
+      "file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+      "bytes": 39350213152,
+      "actual_sha256": "8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310",
+      "tensor_count": 753,
+      "tensor_type_counts": {
+        "8": 372,
+        "0": 370,
+        "30": 11
+      },
+      "general_file_type": 7
+    },
+    "Q4": {
+      "file": "Tiel-Coder-35B-A3B-MTP-UD-Q4_K_XL.gguf",
+      "bytes": 23259486752,
+      "actual_sha256": "10960d1d6477b08ed36a0e542e571b473022023c25b8315b0cf8c33c57e98ccd",
+      "tensor_count": 753,
+      "tensor_type_counts": {
+        "8": 263,
+        "0": 370,
+        "13": 38,
+        "12": 78,
+        "14": 4
+      },
+      "general_file_type": 15
+    }
+  },
+  "architecture": "qwen35moe",
+  "metadata_differences": [],
+  "chat_template_sha256": "71d9c4155712970a54ef287354ea251e4516559eddfb48497368dc612de8d766",
+  "tensor_names_shapes_equal": true,
+  "quant_types_differ": true,
+  "passed": true
+}

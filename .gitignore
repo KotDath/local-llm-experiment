@@ -1,0 +1,14 @@
+prod.env
+prod.dev
+.env
+**/.env
+**/*.env
+**/.env.*
+!**/.env.example
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/runtime/
+**/data/index/
+**/*.gguf
+**/*.mp4

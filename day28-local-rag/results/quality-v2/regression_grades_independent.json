@@ -1,0 +1,471 @@
+{
+  "schema": "independent-dev-regression-quality-v2",
+  "evaluated_utc": "2026-10-14T10:03:17.630324+00:00",
+  "not_holdout": true,
+  "input_snapshots_sha256": {
+    "dev_trial_02": "d1a8d8f6ee148c8fb2ed2caa3fe7ef7ec159c7b12aeae1b9bcd2e5b420ee006b",
+    "regression_01": "4558b125a0c55a7b5156d4e1d03b4d51293974dda5293fd818b6314371fbd8e6"
+  },
+  "rubric": "Original old userquestion/fullPDF/actually sent evidence; model reviews and status ignored. All requested material aspects prose, citations require both literal and semantic support. No inference/new20 answer disclosure/core edit.",
+  "grades": [
+    {
+      "trial": "dev_trial_02",
+      "id": "Q04",
+      "repeat": 0,
+      "source_sha256": "c09fd2f884989cd4f5b26b07f8b088b1a239d8f72045814809cc72a6fa2a7816",
+      "source_snapshot_verified": true,
+      "answer_sha256": "3a633b43cebb5bbe03a5a4545210f11518389b253c5003fca23441320919766d",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Все аспекты original Q04 раскрыты: exp(-t/S), elapsed t, strength S, initial1, recall S+=1/t=0. Четыре selected quotes directly entail requested aspects."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "answered",
+      "request_id": "1c6f533673d3486d89a2310613f6c0ea",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "fe7723049364321979b11c8d031c3e5871564c7907ca1afb26ffec4abb4a768b",
+          "prompt_hash": "5806ade5ac73335c57fbc575330831bcf193bc549e464f4a97987e3a890cfa61",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "6719659e79a5d9e051be63c1995ac221c1e998f8c6b24c48422df0478a9a5b04",
+          "prompt_hash": "32b0c1273954671e2e9535838463e18aaf30f4eff898b1edfe9c6b9087080a42",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "37b52bfcebf3b150e4c71eb10b98cca0683d21e04db622a36f8c8033f71ae0f7",
+          "prompt_hash": "173a9570e39861154ad84d0542888537081d82b3798cf8cfc43cacbb8b21032d",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "844448a9a03d5215a294b251dcd93550c85b43875bd231f0fb4aa9c673b2f29e",
+          "prompt_hash": "ff6407703d8d907022108470319790057edaf4b79695f1c5f7a17c5d8393ca74",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "37b52bfcebf3b150e4c71eb10b98cca0683d21e04db622a36f8c8033f71ae0f7",
+          "prompt_hash": "377f23529da769701a370cf02d7859c4f6bf2300ecdc747589286b9a9f9175b9",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": "Prototype has only aggregated catalog; semantic/provenance checked by actual resolved claims, sources and full evidence."
+    },
+    {
+      "trial": "dev_trial_02",
+      "id": "Q07",
+      "repeat": 0,
+      "source_sha256": "c09fd2f884989cd4f5b26b07f8b088b1a239d8f72045814809cc72a6fa2a7816",
+      "source_snapshot_verified": true,
+      "answer_sha256": "df31ab276ddf66d5e695fd9b0df0b6fd2285d47fa53fc0a933ba1e675d222f74",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "notes": [
+        "Обе стороны сравнения теперь достаточно полны: MemGPT finite-context management; GA memory stream/reflection/planning. Но extra пример planning превращает ошибочные три обеда подряд в нормальное eating twice/day, а title alias выдуман. Core semantic citations в основном релевантны; model partial/status не самостоятельная оценка."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Delivered planning example «ест дважды за день» искажает source lunch12:00,12:30,13:00; generated headings «Interactive Fabric» не являются названием Generative Agents."
+        }
+      ],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "partial",
+      "request_id": "41333ae86b734420835ca01f2e164b56",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "bbbe1e2996cfd3b85cced0f59861c793bc7e206efb4dc9485aa03dcb1d7acc28",
+          "prompt_hash": "bf23f1eabac059157d9d1ddd560301dd8a16bbed41144872540ab98b52d0fc21",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "c79dd85ac800663a3ef70af16da6ffd787eeaa79ca95a55aa0a7e048478847a0",
+          "prompt_hash": "e1f7c81de501fc8d74a0dc8690cb93d82064c76948e2acd235ee440c4fbed565",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "99eccae28dd45359a68724c419df22627d45f619e75f65c46bfe530d284199ef",
+          "prompt_hash": "3afe70005cbe6fffc4b665e0f0cf7d7d0beec304cf4c07a6cb60f09aa7dc0ee6",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "ee9fbed77345d1be0bbc68cce17657bd934b751e6eb3b15f31e3012fe266acaf",
+          "prompt_hash": "1e12493875a61be765466dafe27bbd673cba77c91197f43156367f968f878f99",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "99eccae28dd45359a68724c419df22627d45f619e75f65c46bfe530d284199ef",
+          "prompt_hash": "842fb501103a31d11ed75678cd1b570145e28a216b9e5a838e86b43d4ca47b17",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": "Prototype has only aggregated catalog; semantic/provenance checked by actual resolved claims, sources and full evidence."
+    },
+    {
+      "trial": "regression_01",
+      "id": "Q01",
+      "repeat": 0,
+      "source_sha256": "9e297bad4af8b42be9306df25b3cf31ef4978215ad669d4a7537a884d4214e93",
+      "source_snapshot_verified": true,
+      "answer_sha256": "892c7a938dc6bbd96017d51c0b34acf4bce17bcc84a9892408249b0eb7c756a6",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Original Q01 полностью закрыт: main prompt; recall message database с queue-manager writes; arbitrary-length read/write archival; external data explicitly moved via functions. Selected quotes прямо поддерживают существенные различия и explicit transfer."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "partial",
+      "request_id": "9fb47beae44b4c0ba258a12f4d997540",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "b23fa9b29eee82eea4ba0a5dfd16d6215cbb66f8bae965e50ce6e50b529d44a9",
+          "prompt_hash": "bf93900e5aa8eabd8ace0507b9eb93e07cc66b2541d351533f3e804301a77694",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "a6343070b207535d166352f33e005a80cbfc668f22bb6348cc979924f30340f6",
+          "prompt_hash": "7e5f47d32d217b4f3d035de80c9a1e6387a1d42591c794a7b2c6b3016151bbfe",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 118,
+          "catalog_sha256": "b7d9fcb12ffd79d5003bb66d70bfb3d7bebc27736f33a3c00537fc0f72ce0599",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "a867fdaa09fa7b8a276c9a3ed2f70086ee08085559978bbc4efc3a600dbde716",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "1d7678fad3e705f6fff974efa0fc8a32cd8fb113f2156b0f4039ecd4c275239f",
+          "prompt_hash": "52ef593c82dec9e9949c8ae92ccec6e80b157464ac011ac359f0ef5f03bbb82b",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 118,
+          "catalog_sha256": "b7d9fcb12ffd79d5003bb66d70bfb3d7bebc27736f33a3c00537fc0f72ce0599",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "0c79449e6350306a8bbc8576eaaf4381f13aea7adc383b39b6e26475338d0bfb",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": null
+    },
+    {
+      "trial": "regression_01",
+      "id": "Q04",
+      "repeat": 0,
+      "source_sha256": "9e297bad4af8b42be9306df25b3cf31ef4978215ad669d4a7537a884d4214e93",
+      "source_snapshot_verified": true,
+      "answer_sha256": "98cebeaa3e689543599b6a2d39d70a4e325ac479d6cf9fb62680f99266a3524e",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Полная correct formula/definitions/initial/update. Все selected quotes напрямую относят exp(-t/S), strength S, first1 и recall S+=1/t=0 к MemoryBank."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "answered",
+      "request_id": "294fceed876c40e983f32aeb1c1b0df6",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "32a2434abb37be971ffee0cef1d6e6bec92e6727f713b6701b8bbeedb3a747f8",
+          "prompt_hash": "08179922593a0b55c72e25f7205b6d9c591966b0543481e60da1590c204467ab",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "d08e5bf8e4f7bd3ebf84aa845236dcd0e65391b5143d11bf81c84a98ba8b6424",
+          "prompt_hash": "c039446790eb994b840c91eb21307de9d6d582a96faac18cff541799823de26b",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 104,
+          "catalog_sha256": "9009491a6da1f41b5a20fa45dcbfa98a4b7f52a2a42f258b281f0d5a06cdd3e5",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "d5096fc275184e42244b54605a5eb93d0f5ba2f8c7dcb0304951cdb9a4ae1495",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "87a44f6402d1b66142029ea53ac47e70cefacfd356fe8e93886f8bc1f2216718",
+          "prompt_hash": "b0400c416d7478b727b2fa17e127af2421975622103134415a6b05881504761c",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 104,
+          "catalog_sha256": "9009491a6da1f41b5a20fa45dcbfa98a4b7f52a2a42f258b281f0d5a06cdd3e5",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "03b3ee71fbecd4543037eb2d72433c7c654123abef05da33ab2dddb222a446b8",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": null
+    },
+    {
+      "trial": "regression_01",
+      "id": "Q07",
+      "repeat": 0,
+      "source_sha256": "9e297bad4af8b42be9306df25b3cf31ef4978215ad669d4a7537a884d4214e93",
+      "source_snapshot_verified": true,
+      "answer_sha256": "20e2ac7c42f86988718022831ff302bac048d29ae35dcc7f33ef2dd8a78901f1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Original comparison fully covered: MemGPT finite-context OS hierarchy/paging; GA memory stream relevant retrieval, reflection high-level inference, planning temporal coherent actions. Обе papers представлены с direct semantic quotes. Prototype alias и искаженный meal example исчезли. Лишь грамматические ошибки и оставшиеся EID strings в prose; core correctness не меняют."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "partial",
+      "request_id": "fb6dfeca19c3431cab5b2d79c0125bd1",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "99d8e061d65bb43fc9cf0c0df3d1fe22dfc8ce06bccfc27268db8e6bf53cac83",
+          "prompt_hash": "c49da38f72ba97d1d6526a83059ff5c2723a906a0a3f7d6c3772470a80942ea7",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "2a165bedce2ab3985b5ce413a4ab97b3e0aa02d95fcf5e98dc09c4fc3b929c1d",
+          "prompt_hash": "681162ddb2f1cb0677a287255af50a7ad62b24742f70155e3a8ae96805e6e311",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 174,
+          "catalog_sha256": "fca34ac1a186500075139c281f43b870dc4a1355734f344d1dc812fd84a5dc92",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "880397e5febee4c62d6d6e1e0cfcb1ce39f887982af3345debf6de873d30172c",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "7fbbcaf53b22c2c22bc978a36f77d608e49f0525bfdc7625f899e99d628396e5",
+          "prompt_hash": "dcffc52f155cc66fcd9e161fea4ad0fa11b562b82c640bc61e6e2287b79244d6",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 269,
+          "catalog_sha256": "f99c3e6e6a20eb0192881a14c0f39a07120dc8247024a4e37c59289c6dc35176",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": "6aaf3f7f82ac2ffcab91d236eabdd2b5fea17e824140d8016b78ced6efc0ab27",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": null
+    },
+    {
+      "trial": "regression_01",
+      "id": "Q08",
+      "repeat": 0,
+      "source_sha256": "9e297bad4af8b42be9306df25b3cf31ef4978215ad669d4a7537a884d4214e93",
+      "source_snapshot_verified": true,
+      "answer_sha256": "808925dafe7373968de2dceeda9085184e8aea366a43fcf26ab1b9ff9b7b4a74",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "notes": [
+        "MemoryBank formula/initial/update и GA recency0.995/weighted components correct. Но original question asks what changes after re-access in both systems: final GA part отказывается объяснить эффект обновлённой давности, хотя recency depends time since last retrieved and higher score for recently accessed. Необходимая GA re-access implication не названа; отказ от конкретной implementation procedure не заменяет семантический ответ. Partial completeness без fabricated facts."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Первый S-definition claim selected formula quote не объясняет term strength; broader sent context содержит отдельную definition. Last no-procedure quote говорит только timestamp fields; не доказывает невозможность понять смысл recency."
+        }
+      ],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "status_not_used_for_grade": "partial",
+      "request_id": "22dee287c9974676a4eaf414f5595478",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "3d5753bb79d205790d3ae36e72ad18d0b591f21af9a54d9fb7af680970df3a5a",
+          "prompt_hash": "d38f5d6b8fe7f85f2a514b83586527e14ec7d9b475846c5dcc9f7aeed4bf055c",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "35c315b0d46efdc6f6e30cad759533b3873cee0d8ef2fe82144ee7af24dafd3c",
+          "prompt_hash": "bcc4f96d29ef615aa62b14a73c5e14061e403bb40000277f992f5b6faf0f461d",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 267,
+          "catalog_sha256": "d96c430412d5a7b7b22130f28779aca64cb191bc6531caa975413f64f66ed6c9",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "5faf4c06b711b6925d5c9ccb789837d05c32c3aeb2fea171a13af6a58e784738",
+          "prompt_hash": "c37ec011216aa43db9d264b6b5b1d33457bb9299ab3f85c807510fbc281d221f",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        },
+        {
+          "phase": "answer_revision",
+          "text_sha256": "85c91f1401a01daf7ff63712a77517cf1dfc3b0a6d71466e5572a16edc032ebb",
+          "prompt_hash": "47e64dbdc77d4752607f41ae812ddfc0f9291c5d09efbd4fb4464d2523723c1a",
+          "has_per_call_citation_catalog": true,
+          "catalog_entries": 358,
+          "catalog_sha256": "1d553dbb05b7d676ea624eeed5f12aba464a8bf37899c3dd1bd9098373672d6a",
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": null,
+          "catalog_and_raw_reference_defects": [],
+          "catalog_provenance_valid": true
+        },
+        {
+          "phase": "final_review",
+          "text_sha256": "5faf4c06b711b6925d5c9ccb789837d05c32c3aeb2fea171a13af6a58e784738",
+          "prompt_hash": "07f52f54312db540d36aad84d34ae9d6a96d1bbaac8fd21ca9ad1be73fe6247e",
+          "has_per_call_citation_catalog": false,
+          "catalog_entries": null,
+          "catalog_sha256": null,
+          "has_sent_evidence_snapshot": false,
+          "review_proof_catalog_saved": false
+        }
+      ],
+      "per_call_catalog_limitation": null
+    }
+  ],
+  "rows": 6
+}

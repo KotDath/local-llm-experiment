@@ -1,0 +1,903 @@
+{
+  "schema": "independent-articles-grades-v2",
+  "evaluated_utc": "2026-10-14T07:15:21.841427+00:00",
+  "input": "day28-local-rag/results/golden_rag_answers.jsonl",
+  "input_snapshot_sha256": "71a936cf28a0e8c950a58ccc8cd3ea476c4a0c622ba2a501cc9979306804a41b",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "questions_sha256": "6c7c412a56502f47ac4a58cd33deab37ac4b2c0225caf4dcecf043e5349b60cb",
+  "rubric": "Все явно запрошенные существенные части должны быть отвечены в prose. Для closed-book M0 факты проверяются по полным PDF, отсутствие citations не считается hallucination. Для RAG нужны sent evidence и смысловая поддержка выбранных цитат; literal provenance проверена отдельно. Partial не correct; appropriate no-data refusal correct. Все actual calls и failures сохранены. Self-review — эвристика, не oracle; bounded revision не проходит повторной semantic проверки. Имена профилей не участвуют в judgement. No inference/secrets/core/config edits.",
+  "rows": 30,
+  "summary": {
+    "M0": {
+      "total": 10,
+      "correctness_count": 1,
+      "hallucination_count": 9,
+      "correct": 0,
+      "partial": 3,
+      "wrong": 6,
+      "appropriate_refusal": 1
+    },
+    "M2": {
+      "total": 10,
+      "correctness_count": 3,
+      "hallucination_count": 1,
+      "correct": 2,
+      "partial": 7,
+      "wrong": 0,
+      "appropriate_refusal": 1
+    },
+    "M1": {
+      "total": 10,
+      "correctness_count": 3,
+      "hallucination_count": 1,
+      "correct": 2,
+      "partial": 6,
+      "wrong": 1,
+      "appropriate_refusal": 1
+    }
+  },
+  "grades": [
+    {
+      "mode": "M0",
+      "id": "Q01",
+      "answer_sha256": "fc212c1fd02cd2332a113d5b2e75888bbf82ba7660d8fdfd04ff2f76d8d5e01b",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Основное различие context/recall/archival и explicit transfer верно. Но утверждается vector-embedding поиск именно recall и названы memory_search/memory_retrieve вместо описанных в статье recall_storage функций; статья не подтверждает эти конкретные дополнительные mechanics. Отсутствие citations само по себе НЕ является дефектом closed-book."
+      ],
+      "reasons": [
+        "Основное различие context/recall/archival и explicit transfer верно. Но утверждается vector-embedding поиск именно recall и названы memory_search/memory_retrieve вместо описанных в статье recall_storage функций; статья не подтверждает эти конкретные дополнительные mechanics. Отсутствие citations само по себе НЕ является дефектом closed-book."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q02",
+      "answer_sha256": "723ccb27012da3db8f1695f2335b81abcc93a63530d64f84ca8ed782382474cb",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Противоречит PDFp3: memory pressure warning подменён немедленным flush, evicted history ошибочно отправлена в archival вместо recall, выдуманы archival FIFO и безвозвратное удаление oldest archival records. Нет recursive summary."
+      ],
+      "reasons": [
+        "Противоречит PDFp3: memory pressure warning подменён немедленным flush, evicted history ошибочно отправлена в archival вместо recall, выдуманы archival FIFO и безвозвратное удаление oldest archival records. Нет recursive summary."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q03",
+      "answer_sha256": "800f9e3bd30e7d7401ecb6cecc84f41160fd29f2d9568dabd4a8b0a496321b0a",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Общая зависимость от base LLM верна, но реальное наблюдение GPT-3.5 limited function calling/GPT-4 не сообщено. Pagination limitation выдумана как изолированная обработка страниц/потеря связи вместо преждевременной остановки paging (PDFp7)."
+      ],
+      "reasons": [
+        "Общая зависимость от base LLM верна, но реальное наблюдение GPT-3.5 limited function calling/GPT-4 не сообщено. Pagination limitation выдумана как изолированная обработка страниц/потеря связи вместо преждевременной остановки paging (PDFp7)."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q04",
+      "answer_sha256": "59d1f2577097ef8456b02e3dd52570209a9740654d180861b935d62b0ab85e6c",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Неверные формула S*exp(-t/t_half), привязка MemoryBank кTiel/Ornith, ростt приrecall и bonus/saturation. PDFp4: R=exp(-t/S), S initially1; recall S+=1,t=0."
+      ],
+      "reasons": [
+        "Неверные формула S*exp(-t/t_half), привязка MemoryBank кTiel/Ornith, ростt приrecall и bonus/saturation. PDFp4: R=exp(-t/S), S initially1; recall S+=1,t=0."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q05",
+      "answer_sha256": "eefbbca482a31da5ebaef74461938ef15449ff43e60db3e1b98f805aa77907a6",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Подменяет статью MemoryBank RAG Survey, добавляет неподтверждённые document chunks/assistant generations/prompt query/hybrid BM25/HNSW. Реальные memory units=turns+event summaries; encoder текущегоcontext,FAISS (PDFp4) не раскрыты как конкретный pipeline."
+      ],
+      "reasons": [
+        "Подменяет статью MemoryBank RAG Survey, добавляет неподтверждённые document chunks/assistant generations/prompt query/hybrid BM25/HNSW. Реальные memory units=turns+event summaries; encoder текущегоcontext,FAISS (PDFp4) не раскрыты как конкретный pipeline."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q06",
+      "answer_sha256": "0b837c0b33f4771c691d5617fd20001a0ae3078a45545172470bfcd8bc8c3305",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Выдуманы RMS, псевдособытия каждые3шага,окно5записей иReflection Summary. Реальный trigger sumimportance>150,100recent records,3questions,retrieval+record pointers (PDFp10)."
+      ],
+      "reasons": [
+        "Выдуманы RMS, псевдособытия каждые3шага,окно5записей иReflection Summary. Реальный trigger sumimportance>150,100recent records,3questions,retrieval+record pointers (PDFp10)."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q07",
+      "answer_sha256": "cc14b954bb6bc4b79955d5b4280683ab2ec3fcd06f9526208a87e789df0b7acd",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "partly_correct",
+      "notes": [
+        "Основное сравнение finite context management vs believable behavior через memory/reflection/planning верно. Но Generative Agents ошибочно названы Stanford AI SWOT, которого статья не содержит. «Встраивает в саму модель» неточно: архитектура добавляет external storage/functions, не изменяет веса; дальнейший текст это частично уточняет."
+      ],
+      "reasons": [
+        "Основное сравнение finite context management vs believable behavior через memory/reflection/planning верно. Но Generative Agents ошибочно названы Stanford AI SWOT, которого статья не содержит. «Встраивает в саму модель» неточно: архитектура добавляет external storage/functions, не изменяет веса; дальнейший текст это частично уточняет."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q08",
+      "answer_sha256": "cccf4f266cc36fa2a9f5cebc52cd4716f1be7f0ff9b5469363165830941754cf",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "MemoryBank подменён time threshold deletion/merge, нет exp(-t/S),S+=1,t=0. Generative Agents importance якобы растёт послеaccess, но PDFp9 importance assignedatcreation; last access меняетrecency. Авторства также ошибочны."
+      ],
+      "reasons": [
+        "MemoryBank подменён time threshold deletion/merge, нет exp(-t/S),S+=1,t=0. Generative Agents importance якобы растёт послеaccess, но PDFp9 importance assignedatcreation; last access меняетrecency. Авторства также ошибочны."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q09",
+      "answer_sha256": "8f5a9561ac8cf09d678d0865e7802c3a079597e7a9b25c55a7c394dede147ebf",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "wrong",
+      "notes": [
+        "Неверно30agents вместо25, выдумана проверка устойчивости через observe/Reflection иcontrolled memory hacking. PDFp17:2game days,thousands tokencredits,multipleactualdays,robustness largelyunknown,а не attack benchmark."
+      ],
+      "reasons": [
+        "Неверно30agents вместо25, выдумана проверка устойчивости через observe/Reflection иcontrolled memory hacking. PDFp17:2game days,thousands tokencredits,multipleactualdays,robustness largelyunknown,а не attack benchmark."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M0",
+      "id": "Q10",
+      "answer_sha256": "b3c7bcf5ce4ccd8d0fe17ff285b8d7024213a7e3e6187007ffb64131c594cf9b",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Число не выдумывает и требует источник/условия. Причина «не имею доступа» слабее знания отсутствия matchedbenchmark, но допустима для closed-book; отсутствие статей вmessages не считается hallucination."
+      ],
+      "reasons": [
+        "Число не выдумывает и требует источник/условия. Причина «не имею доступа» слабее знания отсутствия matchedbenchmark, но допустима для closed-book; отсутствие статей вmessages не считается hallucination."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": null,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 1,
+      "draft_coverage_review": null,
+      "coverage_revision_performed": null
+    },
+    {
+      "mode": "M2",
+      "id": "Q01",
+      "answer_sha256": "0691eea84e87c6b2d237726298a8900a51544a3b4893297cf2ce6f23417dcbea",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "mostly_correct_with_unsupported_extension",
+      "notes": [
+        "Основные различия main/recall/archival и необходимость переноса изложены полностью и верно. Дополнительная унификация двух хранилищ как arbitrary-length objects не подтверждена статьёй: конкретно такое свойство в PDFp3 описывает archival. Это unsupported scope extension, а не штраф за отсутствие sources. Существенная часть selected quotes не подтверждает назначенные им claims."
+      ],
+      "reasons": [
+        "Основные различия main/recall/archival и необходимость переноса изложены полностью и верно. Дополнительная унификация двух хранилищ как arbitrary-length objects не подтверждена статьёй: конкретно такое свойство в PDFp3 описывает archival. Это unsupported scope extension, а не штраф за отсутствие sources. Существенная часть selected quotes не подтверждает назначенные им claims."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Утверждение «оба ... базы произвольно длинных текстовых объектов» переносит свойство archival на recall; это не следует из выбранных цитат. Для обязательного explicit-transfer claim выбрана цитата про недостатки коротких документов/диалогов, а не про перенос. Access-mode claim цитирует очередь/recall, не archival Write-via-functions."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M2",
+      "id": "Q02",
+      "answer_sha256": "f1dbce0c10b4543ded469bb671f9776d3b7423cf3ed2343a87a12b17eee35cad",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Warning дан правильно. Но явно запрошенные flush, recursive summary и сохранность evicted messages в recall полностью пропущены в prose. Reviewer complete:true является ложным положительным выводом."
+      ],
+      "reasons": [
+        "Warning дан правильно. Но явно запрошенные flush, recursive summary и сохранность evicted messages в recall полностью пропущены в prose. Reviewer complete:true является ложным положительным выводом."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Две одинаковые цитаты про flush100% не подтверждают утверждение про warning70%; сами цитаты существуют."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M2",
+      "id": "Q03",
+      "answer_sha256": "df57aac6beef156f214068baaad86441207c33451cfe97d40206e421c4772cea",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Базовая LLM часть отвечена правильно: GPT-3.5 degraded из-за function calling, GPT-4 best. Наблюдаемое ограничение pagination — остановка до исчерпания базы — не отвечено; это partial, даже после bounded revision."
+      ],
+      "reasons": [
+        "Базовая LLM часть отвечена правильно: GPT-3.5 degraded из-за function calling, GPT-4 best. Наблюдаемое ограничение pagination — остановка до исчерпания базы — не отвечено; это partial, даже после bounded revision."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Дополнительный quote GPT-4 Turbo сравнительно с GPT-4 относится к nested KV, а не к текущему document QA; основной direct QA quote правильный."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос требует два ограничения: pagination retrieval и влияние базовой LLM. Черновик описал только влияние GPT-3.5, но не объяснил, что бывает с pagination retrieval.",
+          "Утверждение о pagination retrieval не подтверждено: в excerpt 56e69ce0... говорится, что MemGPT итерирует пагинацию, но не указано ограничение/проблема с ней.",
+          "Не указано, что производительность на document QA ограничена качеством retriever (embedding search), что прямо в excerpt 56e69ce0... — потенциально второе ограничение.",
+          "Черновик не отметил явно, что часть запроса (pagination retrieval) не найдена в переданных фрагментах."
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M2",
+      "id": "Q04",
+      "answer_sha256": "b405d3948c4e4b09b20f9e698c4395613412ef84bc9b7e4fca778a32cf22e628",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct_with_mathematical_inference",
+      "notes": [
+        "Правильная формула R=exp(-t/S), значения t/S, S initially1, recall S+=1/t=0. Все явно заданные части покрыты; начальное t=0/R=1 математически следует из определения времени и формулы. Предупреждение о simplified model — дополнительная незапрошенная деталь, отсутствие не снижает core completeness."
+      ],
+      "reasons": [
+        "Правильная формула R=exp(-t/S), значения t/S, S initially1, recall S+=1/t=0. Все явно заданные части покрыты; начальное t=0/R=1 математически следует из определения времени и формулы. Предупреждение о simplified model — дополнительная незапрошенная деталь, отсутствие не снижает core completeness."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Claim про начальное t=0 цитирует reset при recall, а не initial elapsed-time definition. Это логический вывод из t и формулы, поддержанный совокупностью цитат, а не отдельный опубликованный замер."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M2",
+      "id": "Q05",
+      "answer_sha256": "40249e6030b42127bd80f9ce97eb4302410431be94e21e3690daece31df1b8b3",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct",
+      "notes": [
+        "Все части прямо объяснены: turns+event summaries как memory pieces, текущий context кодируется E в hc, FAISS для векторов, dual-tower/DPR. Достаточные meaningful quotes подтверждают каждую часть."
+      ],
+      "reasons": [
+        "Все части прямо объяснены: turns+event summaries как memory pieces, текущий context кодируется E в hc, FAISS для векторов, dual-tower/DPR. Достаточные meaningful quotes подтверждают каждую часть."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M2",
+      "id": "Q06",
+      "answer_sha256": "0f29aaf8e7b032e3258599b0372c9e8f672c2f31b4d09b09e6a6422eb0f56f53",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Правильно100recent records и3high-level questions. Полностью пропущены когда запускается reflection (sumimportance>150) и сохранение conclusions сpointers кцитируемымmemory objects. Это2из3requested аспекта; одинправильныйаспект недостаточен."
+      ],
+      "reasons": [
+        "Правильно100recent records и3high-level questions. Полностью пропущены когда запускается reflection (sumimportance>150) и сохранение conclusions сpointers кцитируемымmemory objects. Это2из3requested аспекта; одинправильныйаспект недостаточен."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Не отвечена вторая часть вопроса — как сохраняются выводы с доказательствами (пункт о хранении reflection с указателями на цитируемые записи).",
+          "Черновик не указывает порог генерации reflection (сумма importance-оценок > 150) и частоту (~2-3 раза в день), хотя это часть процесса создания reflection.",
+          "Число «3 вопроса» подтверждено цитатой, но утверждение о «100 свежих записях» не проверено на точность формулировки в источнике."
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M2",
+      "id": "Q07",
+      "answer_sha256": "0855c801456e45126a536a278b2bda402bcfef2316dc09ef361cfd269f6c047a",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "factually_correct_but_some_claims_not_citation_entailed",
+      "notes": [
+        "Обе стороны сравнения и причины memory/reflection/planning изложены содержательно. Числа DMR66.9/38.7/92.5/32.1 верны и относятся правильно кMemGPT, не cross-paper benchmark. Но material extra claims не поддержаны назначенными citations, поэтому по строгой RAG rubric full correct не зачтён. Фактические hallucinations не заявлены: эти сведения действительно имеются в PDF/sent context."
+      ],
+      "reasons": [
+        "Обе стороны сравнения и причины memory/reflection/planning изложены содержательно. Числа DMR66.9/38.7/92.5/32.1 верны и относятся правильно кMemGPT, не cross-paper benchmark. Но material extra claims не поддержаны назначенными citations, поэтому по строгой RAG rubric full correct не зачтён. Фактические hallucinations не заявлены: эти сведения действительно имеются в PDF/sent context."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Claim про Consistency/Engagement выбирает только DMR result/table quotes, которые не подтверждают эти критерии. Claim сablation outcomes четыре раза цитирует только описание условий, а не outcomes. Core comparison и существенные механизмы имеют direct support; дополнительные factual claims support есть в broader sent evidence, но chosen citations не entail."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M2",
+      "id": "Q08",
+      "answer_sha256": "1837a9da0efd4c0172127be15265587222000da324fc1fce5a61823631eed3b3",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Generative Agents время/recency правильно, MemoryBank описана только общими словами. Формулаretention иS+=1/t=0 полностью отсутствуют; модель честно признаёт отсутствие их вsent fragments. Это retrieval coverage miss, не hallucination и не полный ответ наanswerable сравнение."
+      ],
+      "reasons": [
+        "Generative Agents время/recency правильно, MemoryBank описана только общими словами. Формулаretention иS+=1/t=0 полностью отсутствуют; модель честно признаёт отсутствие их вsent fragments. Это retrieval coverage miss, не hallucination и не полный ответ наanswerable сравнение."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Quote recency recent-access не включает coefficient0.995/gamehours; выбранная normalization quote не содержит weighted sum. Эти факты есть в широких sent chunks, но не в выбранных quotes."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Утверждение о decay factor 0.995 как об экспоненциальном спаде по числу игровых часов подтверждено (chunk 3356022f), но формула/единицы не уточнены — в черновике число подано как ф"
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M2",
+      "id": "Q09",
+      "answer_sha256": "912acbc512714f2aaa7850aff3fd228df0715c6042cbf161ef89983586bf4120",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "25agents/2game days/thousands credits/multipleactualdays иfutureparallelization верны. Вопрос про неизвестную устойчивость кmemory hacking полностью пропущен дажепослеrevision; соответствующий sent источник существует."
+      ],
+      "reasons": [
+        "25agents/2game days/thousands credits/multipleactualdays иfutureparallelization верны. Вопрос про неизвестную устойчивость кmemory hacking полностью пропущен дажепослеrevision; соответствующий sent источник существует."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Не отвечена часть про устойчивость к memory hacking: в черновике нет ограничения по memory hacking, хотя в источнике прямо указано, что robustness agents 'still largely unknown' и'"
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M2",
+      "id": "Q10",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Matched speedpercentage не опубликован. Отказ без числа уместен; дополнительная bounded revision отказа не меняет correctness."
+      ],
+      "reasons": [
+        "Matched speedpercentage не опубликован. Отказ без числа уместен; дополнительная bounded revision отказа не меняет correctness."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос требует сравнения скорости MemoryBank и MemGPT, но ни один фрагмент не содержит данных о скорости или процентах ускорения этих систем.",
+          "Фрагменты описывают функционал и качество памяти обеих систем, но не приводят прямое сравнение производительности между ними.",
+          "Нет информации об одинаковом оборудовании при сравнении — эксперименты проводились отдельно в каждой статье.",
+          "Отсутствуют числовые данные в процентах об ускорении, которые запрашиваются в вопросе.",
+          "Черновик корректно воздержался, так как переданные фрагменты не содержат запрашиваемых фактов о скорости."
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M1",
+      "id": "Q08",
+      "answer_sha256": "f134e1c01e4e388972eef3ccffdf8ce772e32a001b1099fecda5e0ac550327f3",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "GA recency и weighted retrieval верны. MemoryBank дана только качественно, без exp(-t/S), S+=1 и t reset. Не отвечает изменению после повторного доступа; признаёт отсутствие этих данных в excerpts. Явно запрошенные существенные части пропущены."
+      ],
+      "reasons": [
+        "GA recency и weighted retrieval верны. MemoryBank дана только качественно, без exp(-t/S), S+=1 и t reset. Не отвечает изменению после повторного доступа; признаёт отсутствие этих данных в excerpts. Явно запрошенные существенные части пропущены."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Выбранная цитата recency не содержит 0.995, хотя число есть в broad sent chunk. Цитата о доступности моделей нерелевантна кривой забывания."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q04",
+      "answer_sha256": "9eaa28ca1e06fe77fd0405767bc7adbed06332fda4ccd25ed791d73776ce94cb",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "factual_truth": "false_statement",
+      "notes": [
+        "Ложно утверждает «The paper does not provide the explicit forgetting formula», хотя PDFp4 публикует exp(-t/S), определения и обновление. Excerpts действительно не включили formula, но это не оправдывает отрицание её наличия в whole paper. Ни один явно запрошенный аспект не отвечен."
+      ],
+      "reasons": [
+        "Ложно утверждает «The paper does not provide the explicit forgetting formula», хотя PDFp4 публикует exp(-t/S), определения и обновление. Excerpts действительно не включили formula, но это не оправдывает отрицание её наличия в whole paper. Ни один явно запрошенный аспект не отвечен."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Heading и качественные overview quotes не доказывают отсутствие формулы в статье."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Черновик выдумал конкретную формулу S = S + e^(-t/τ), которой нет ни в одном фрагменте — это вымышленный факт, а не отсутствие источника.",
+          "Определения t и S не даны: в фрагментах нет явных расшифровок этих символов, что следовало отметить как неизвестное, а не приписывать несуществующей формуле.",
+          "Как S и t меняются при первом упомпании и повторном recall — прямо не описано; следовало пометить как неизвестное из-за отсутствия источника.",
+          "Цитаты о формуле забывания (chunk 2a6f...) говорят лишь о принципах Ebbinghaus, но не приводят формулу, определения или динамику S и t."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q03",
+      "answer_sha256": "24385d481e3e32e59e0f192974f5c9329023998612e17fccb40b11ebb89bf3c1",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Ранняя остановка document QA правильно названа. Зависимость GPT-3.5/function calling/GPT-4 полностью пропущена; citations не entail основной факт."
+      ],
+      "reasons": [
+        "Ранняя остановка document QA правильно названа. Зависимость GPT-3.5/function calling/GPT-4 полностью пропущена; citations не entail основной факт."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Все четыре одинаковые quotes — KV diagram, не document QA early pagination finding."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Черновик не подтверждает второе ограничение — влияние выбранной базовой LLM: ни один из фактов о drop точности/ROUGE по моделях не подтверждён цитатой, хотя в excerpts есть соответ",
+          "#Черновик не подтверждает второе ограничение — влияние базовой LLM: факт о drop точности/ROUGE при переходе к baseline не подтверждён ни одной цитатой, хотя в excerpts он есть (cda",
+          "Черновик не подтверждает второе ограничение — влияние базовой LLM: факт о drop точности/ROUGE при переходе к baseline не подтверждён ни одной цитатой, хотя в excerpts он есть (cda",
+          "Черновик не подтверждает второе ограничение — влияние базовой LLM: факт о drop точности/ROUGE при переходе к baseline не подтверждён ни одной цитатой, хотя в excerpts он есть (cda",
+          "Черновик не подтверждает второе ограничение — влияние базовой LLM: факт о drop точности/ROUGE при переходе к baseline не подтверждён ни одной цитатой, хотя в excerpts он есть (cda",
+          "Черновик не подтверждает второе ограничение — влияние базовой LLM: факт о drop точности/ROUGE при переходе к baseline не подтверждён ни одной цитатой, хотя в excerpts он есть (cda"
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q09",
+      "answer_sha256": "fe8c9285174abe787f22c23fc0403659102517a45afb55f94402cd3df76c6a0a",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "factually_correct_citation_incomplete",
+      "notes": [
+        "Полные core realtime/resources/unknown robustness сведения правильны и прямо supported. Но добавляет несколько буквальных quotations из broader source, связывая их с выбранными совершенно иными quotes, в том числе условия end-to-end evaluation. Factual PDF truth верна; material semantic citation defects не позволяют full RAG correct."
+      ],
+      "reasons": [
+        "Полные core realtime/resources/unknown robustness сведения правильны и прямо supported. Но добавляет несколько буквальных quotations из broader source, связывая их с выбранными совершенно иными quotes, в том числе условия end-to-end evaluation. Factual PDF truth верна; material semantic citation defects не позволяют full RAG correct."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Дополнительные существенные claims о25агентах/Sims/end-to-end оценке цитируют social-roleplay и technical-interview passages, а не названные факты. Основные limitations напрямую supported."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Утверждение о realtime: черновик связывает ограничение с цитатой о future work, но не подтверждает, что realtime-интерактивность именно НЕ доказана — исходный текст говорит лишь о想"
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q06",
+      "answer_sha256": "ffc65ca6e0a91d26c310ef8d57d5828d91c311f87982e1cae508bba09da37b97",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct",
+      "notes": [
+        "Три явные части вопроса раскрыты: threshold150,100latest records/high-levelquestions→retrieval, insights сохранены в memory stream с evidence pointers. Вместо точного3 сказано несколько; существенный метод выбора корректен, число3 также явно видно в цитате. Все основные механизмы подтверждены."
+      ],
+      "reasons": [
+        "Три явные части вопроса раскрыты: threshold150,100latest records/high-levelquestions→retrieval, insights сохранены в memory stream с evidence pointers. Вместо точного3 сказано несколько; существенный метод выбора корректен, число3 также явно видно в цитате. Все основные механизмы подтверждены."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Точная реализация gpt3.5-turbo и частота2–3/день есть в full sent excerpts, но выбранные quotes их напрямую не включают; это minor extra coverage detail."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q07",
+      "answer_sha256": "6030442e479ef652bf748235ebeda2fa8d9373739e2f4ecf573fc3ac54230379",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Верная сторона MemGPT. Generative Agents/reflection/planning и сравнение двух работ отсутствуют в prose; sources list не заменяет ответ."
+      ],
+      "reasons": [
+        "Верная сторона MemGPT. Generative Agents/reflection/planning и сравнение двух работ отсутствуют в prose; sources list не заменяет ответ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Второй части вопроса (memory stream, reflection, planning в Generative Agents) нет в черновике: claims описывает только MemGPT, а роли трёх компонентов GA не разобраны.",
+          "Нет цитат, подтверждающих роли memory stream/reflection/planning — хотя в excerpts они есть (chunk 9c50252d, 7bd71a73), в claims они не использованы.",
+          "complete=false, но supported не проверен на вторую часть: черновик не отвечает на «зачем нужны» три компонента GA."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q10",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Отказ для неопубликованного matched percentage уместен; числа не выдуманы."
+      ],
+      "reasons": [
+        "Отказ для неопубликованного matched percentage уместен; числа не выдуманы."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос требует конкретного процента превосходства MemoryBank над MemGPT, но ни один из фрагментов не содержит сравнительных измерений скорости между этими двумя системами.",
+          "Фрагменты описывают MemoryBank и MemGPT независимо, но не приводят совместных экспериментов на одинаковом оборудовании с одной базовой LLM.",
+          "Нет ни одного фрагмента с числовыми данными скорости или процентами, которые можно было бы сопоставить для ответа на вопрос."
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q05",
+      "answer_sha256": "a772065ecd54e3e36dd3222c6e665146d519a68529cb60572806f18a6bfa7793",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct",
+      "notes": [
+        "Все requested memory pieces, E(c)→hc и FAISS представлены в prose и supported точными quotes. Дополнительные реализации/языки соответствуют статье; упоминание LangChain описывает статью, не код проекта."
+      ],
+      "reasons": [
+        "Все requested memory pieces, E(c)→hc и FAISS представлены в prose и supported точными quotes. Дополнительные реализации/языки соответствуют статье; упоминание LangChain описывает статью, не код проекта."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q01",
+      "answer_sha256": "266b02ecdfaa3393ecf4b306d6091d9e222e976f4aede0cf413f17fa1e81140d",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "factually_correct_citation_incomplete",
+      "notes": [
+        "По полному PDF основные различия и явный перенос верны; delivered prose полный. Однако существенная semantic support выбранных citations отсутствует, несмотря на literal validity."
+      ],
+      "reasons": [
+        "По полному PDF основные различия и явный перенос верны; delivered prose полный. Однако существенная semantic support выбранных citations отсутствует, несмотря на literal validity."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Recall message database цитирует prior external retrievers; archival arbitrary-length read/write цитирует queue eviction; explicit move цитирует только figure replace и обрыв This out-of-context data. Эти основные выбранные quotes не entail claims."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Утверждение о recall storage как о базе сообщений подтверждается только excerpt 7ff..., но в черновике для этого claims приведены цитаты из 798bb..., которые говорят лишь о RAG-исч"
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    },
+    {
+      "mode": "M1",
+      "id": "Q02",
+      "answer_sha256": "632d3006b5f7f2234974a6c1fe60a30ebcc92917d8399e7cb74387910476642a",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Правильно описано warning/example70%, но отсутствуют flush, recursive summary и recall survival в prose. Источники сами по себе не закрывают эти части."
+      ],
+      "reasons": [
+        "Правильно описано warning/example70%, но отсутствуют flush, recursive summary и recall survival в prose. Источники сами по себе не закрывают эти части."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Warning70% цитирует flush100% passages, не warning."
+        }
+      ],
+      "literal_citation_valid": true,
+      "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Черновик не отвечает на вторую часть вопроса — теряются ли вытесненные сообщения; фрагменты прямо указывают, что evicted-сообщения сохраняются в recall storage indefinitely и читаб"
+        ]
+      },
+      "coverage_revision_performed": true,
+      "run_id": "B-1791960853355963930",
+      "case": "B",
+      "repeat": 0,
+      "reuse_policy": "Exact B repeat0 answer, independently graded without another inference"
+    }
+  ],
+  "m1_reuse_run_id": "B-1791960853355963930"
+}

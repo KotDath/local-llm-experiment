@@ -1,0 +1,8 @@
+{
+  "stage": "actual_reverse_tunnel_stopped",
+  "client": "VPS",
+  "status": 503,
+  "body": {
+    "error": "pc_tunnel_unavailable"
+  }
+}

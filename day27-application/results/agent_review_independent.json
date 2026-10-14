@@ -1,0 +1,214 @@
+{
+  "utc": "2026-10-13T20:30:54.067321+00:00",
+  "live_test_scope": "Sequential JSONL protocol, 2 autonomous sessions, 4 real local Chat API calls, no framework, no RAG/load, launch from /tmp",
+  "verified": {
+    "explicit_agent_class": "agent.Agent owns model/history/profile/identity; chat.Chat aliases Agent for frontend compatibility",
+    "local_chat_api": "Model uses stdlib urllib JSON via /v1/chat/completions, loopback-only endpoint; actual raw choices and usage saved",
+    "framework_imports": "No agent SDK, LangChain or LlamaIndex import found in day27 Python source",
+    "same_session_memory": true,
+    "cross_session_isolation": true,
+    "reset": true,
+    "close_404": true,
+    "counts_match": true,
+    "fixed_health_unavailable": "Structured upstream_unavailable/503, exit 1, no traceback"
+  },
+  "defects": [
+    {
+      "severity": "significant",
+      "target": "protocol.py:request/params parsing",
+      "evidence": "Sending [] or params=[] produces uncaught AttributeError and terminates protocol process; second valid request never receives response.",
+      "suggestion": "Validate isinstance(request,dict), isinstance(params,dict), validate session_id/profile/boolean flag types before dispatch; preserve JSONL process on invalid input."
+    },
+    {
+      "severity": "medium",
+      "target": "day30-private-service/api.py:/chat and /sessions/reset",
+      "evidence": "Static review: sessions.get(data.get(session_id)) called without validating type; JSON session_id list/dict is unhashable -> unhandled TypeError/500. No authenticated API request was made by reviewer.",
+      "suggestion": "Reject non-string non-null session_id with structured 422."
+    },
+    {
+      "severity": "minor",
+      "target": "day30-private-service/api.py:mode mismatch and session reset",
+      "evidence": "Static review: reset only clears Agent history; later mode mismatch says reset_or_create but reset preserves rag/rerank/web, so reset cannot resolve mode mismatch.",
+      "suggestion": "Either discard entry.chat on reset or return session_mode_mismatch_create_new."
+    }
+  ],
+  "api_no_auth_evidence": "/health /sessions /chat all live 401 without token; no secrets read",
+  "evidence": [
+    "day27-application/results/protocol_independent.jsonl",
+    "day27-application/results/protocol_errors_independent.jsonl",
+    "day30-private-service/results/auth_independent.jsonl"
+  ],
+  "resolution_audits": [
+    {
+      "utc": "2026-10-13T20:52:58.644317+00:00",
+      "scope": "No inference calls. Exact protocol malformed request regressions and authenticated API payload validation only.",
+      "protocol_records": [
+        {
+          "test": "non_object",
+          "returncode": 0,
+          "responses": [
+            {
+              "id": null,
+              "error": {
+                "code": "invalid_request",
+                "status": 422,
+                "detail": null
+              }
+            },
+            {
+              "id": 2,
+              "result": {
+                "protocol": "local-agent-jsonl-v1",
+                "methods": [
+                  "session.create",
+                  "agent.message",
+                  "session.reset",
+                  "session.close"
+                ],
+                "transport": "stdio",
+                "generation": "local-chat-api",
+                "framework": null
+              }
+            }
+          ],
+          "stderr": "",
+          "resolved": true
+        },
+        {
+          "test": "params_array",
+          "returncode": 0,
+          "responses": [
+            {
+              "id": 1,
+              "error": {
+                "code": "invalid_params",
+                "status": 422,
+                "detail": null
+              }
+            },
+            {
+              "id": 2,
+              "result": {
+                "protocol": "local-agent-jsonl-v1",
+                "methods": [
+                  "session.create",
+                  "agent.message",
+                  "session.reset",
+                  "session.close"
+                ],
+                "transport": "stdio",
+                "generation": "local-chat-api",
+                "framework": null
+              }
+            }
+          ],
+          "stderr": "",
+          "resolved": true
+        },
+        {
+          "test": "invalid_session_id",
+          "returncode": 0,
+          "responses": [
+            {
+              "id": 1,
+              "error": {
+                "code": "invalid_session_id",
+                "status": 422,
+                "detail": null
+              }
+            },
+            {
+              "id": 2,
+              "result": {
+                "protocol": "local-agent-jsonl-v1",
+                "methods": [
+                  "session.create",
+                  "agent.message",
+                  "session.reset",
+                  "session.close"
+                ],
+                "transport": "stdio",
+                "generation": "local-chat-api",
+                "framework": null
+              }
+            }
+          ],
+          "stderr": "",
+          "resolved": true
+        }
+      ],
+      "api_records": [
+        {
+          "path": "/chat",
+          "payload": {
+            "session_id": [],
+            "message": "validation-only"
+          },
+          "status": 422,
+          "response": {
+            "error": "invalid_session_id",
+            "detail": null
+          }
+        },
+        {
+          "path": "/chat",
+          "payload": {
+            "session_id": {},
+            "message": "validation-only"
+          },
+          "status": 422,
+          "response": {
+            "error": "invalid_session_id",
+            "detail": null
+          }
+        },
+        {
+          "path": "/sessions/reset",
+          "payload": {
+            "session_id": []
+          },
+          "status": 422,
+          "response": {
+            "error": "invalid_session_id",
+            "detail": null
+          }
+        },
+        {
+          "path": "/sessions/reset",
+          "payload": {
+            "session_id": {}
+          },
+          "status": 422,
+          "response": {
+            "error": "invalid_session_id",
+            "detail": null
+          }
+        },
+        {
+          "path": "/sessions",
+          "payload": {},
+          "status": 200,
+          "response": {
+            "session_id": "46a97909e1e04e72820acf9be7314304"
+          }
+        },
+        {
+          "path": "/sessions/reset",
+          "payload": {
+            "session_id": "46a97909e1e04e72820acf9be7314304"
+          },
+          "status": 200,
+          "response": {
+            "reset": true
+          }
+        }
+      ],
+      "resolved": {
+        "protocol_non_object_and_params": true,
+        "api_session_id_types": true,
+        "api_reset_discards_mode": true
+      },
+      "api_reset_scope": "Live create/reset succeeded without ever constructing Chat. Mode discard verified read-only in reset_session code; no fake inference or authenticated model request."
+    }
+  ]
+}

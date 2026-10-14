@@ -1,0 +1,236 @@
+{
+  "client": "VPS",
+  "unauthorized": {
+    "status": 401,
+    "body": {
+      "error": "unauthorized",
+      "detail": null
+    },
+    "retry_after": null
+  },
+  "body_limit": {
+    "status": 413,
+    "body": {
+      "error": "body_limit"
+    },
+    "retry_after": null
+  },
+  "context_limit": {
+    "status": 422,
+    "body": {
+      "error": "context_limit",
+      "detail": {
+        "prompt_tokens": 9190
+      }
+    },
+    "retry_after": null
+  },
+  "rate": [
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 422,
+      "error": "context_limit",
+      "retry_after": null
+    },
+    {
+      "status": 429,
+      "error": "rate_limit",
+      "retry_after": "55"
+    }
+  ],
+  "after_rate_window": {
+    "status": 200,
+    "body": {
+      "request_id": "e8fc2b4bea1d480aae614742587bb785",
+      "utc": "2026-10-13T23:54:23Z",
+      "question": "Назови столицу Франции одним предложением.",
+      "agent_id": "ef8e47f927e74bb6bd27635c95237c20",
+      "protocol": "chat-completions-http",
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      },
+      "rag": false,
+      "rerank": false,
+      "llm_calls": [
+        {
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 246,
+            "total_tokens": 254,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 246,
+            "prompt_ms": 550.938,
+            "prompt_per_token_ms": 2.2395853658536584,
+            "prompt_per_second": 446.51122267841396,
+            "predicted_n": 8,
+            "predicted_ms": 181.626,
+            "predicted_per_token_ms": 25.946571428571428,
+            "predicted_per_second": 38.5407375596005
+          },
+          "finish_reason": "stop",
+          "counted_prompt_tokens": 246,
+          "prompt_hash": "e962363ab2d4f5c1275049eac8adc646e417e917a3fc3302557a1a32716c00c3",
+          "generation_ms": 815.829779003252,
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 1536,
+            "context": 8192,
+            "prompt": "optimized"
+          },
+          "model": "tiel-coder",
+          "raw": {
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Столица Франции — Париж."
+                }
+              }
+            ],
+            "created": 1791935664,
+            "model": "tiel-coder",
+            "system_fingerprint": "b10679-50f068fff",
+            "object": "chat.completion",
+            "usage": {
+              "completion_tokens": 8,
+              "prompt_tokens": 246,
+              "total_tokens": 254,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "id": "chatcmpl-jbvsy7kYp0IX54Ku7fBsjd04XCBNldnL",
+            "timings": {
+              "cache_n": 0,
+              "prompt_n": 246,
+              "prompt_ms": 550.938,
+              "prompt_per_token_ms": 2.2395853658536584,
+              "prompt_per_second": 446.51122267841396,
+              "predicted_n": 8,
+              "predicted_ms": 181.626,
+              "predicted_per_token_ms": 25.946571428571428,
+              "predicted_per_second": 38.5407375596005
+            }
+          }
+        }
+      ],
+      "text": "Столица Франции — Париж.",
+      "sources": [],
+      "status": "answered",
+      "finish_reason": "stop",
+      "total_ms": 827.2568570027943,
+      "usage": {
+        "prompt_tokens": 246,
+        "completion_tokens": 8,
+        "total_tokens": 254
+      },
+      "http_total_ms": 836.5700710019155
+    },
+    "retry_after": null
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "reviewed_at_utc": "2026-10-14T08:40:58.261760+00:00",
+  "phase": "HTTPS_network_source_review_before_final_receipts",
+  "method": "Read-only source and recorded deployment review;4 mocked CLI controller dispatch cases. No real model, HTTPS, SSH, Telegram or quota requests. No private env/token files read.",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "file_sha256": {
+    "cli.py": "f0cd160a8a32af22eee49036489cca0a51bbe706826beb9f6f9d60996a032527",
+    "gateway.py": "bfb7cd90034315fa4b206c8f02fafee8eaeeba5239978ddc8ec7c4f3c57b1bc6",
+    "scripts/deploy_https.py": "5f6fe3e5eea4b62e9b7320f0fb2f5d4b077aa1cc6d08272d3488cb9a940fff39",
+    "scripts/deploy_gateway.py": "206b084316c738dd6849d0422d58f9329e0b17d27a1a81ae394a87f828805ded",
+    "scripts/remote_checks.py": "deb24ee1c9ef86d21e6e00b5a9018d61c4606210fe3c9389b9c5c9fe2fc31b7d",
+    "scripts/start_tunnel.sh": "eec0d383f6bdc2f3d6b6a539d4c6424bb4f4c68be985ef898db111983a84706d",
+    "scripts/client_tunnel.sh": "2e2f7c2a95fa3b76270201e78ef6763dc05f254870708fcd8443a28eadabb87f",
+    "load_test.py": "6ec79b166e2bc1ce142a95607091eca067aa7b1bff7c407734b026ff4a415117"
+  },
+  "checks": {
+    "frozen_core37e_unchanged": true,
+    "caddy_prefix_stripped_to_gateway_routes": true,
+    "loopback_gateway_bind": true,
+    "loopback_pc_reverse_binding": true,
+    "reverse_ssh_strict_host_key": true,
+    "no_gateway_llm_sdk_import": true,
+    "bearer_forwarded_to_pc": true,
+    "gateway_body512KiB": true,
+    "gateway_timeout1800": true,
+    "caddy_upstream_response_header_timeout1800": true,
+    "default_tls_verify_no_overrides": true,
+    "caddy_validate_before_mutation": true,
+    "before_bytes_guard": true,
+    "tls_adapted_config_preservation_guard": true,
+    "http_acme_adapted_config_preservation_guard": true,
+    "backup_before_mutation": true,
+    "reload_failure_restores_config": true,
+    "changed_managed_block_refuses": true,
+    "existing_ocr_fallback_preserved_in_block": true,
+    "private_api_token_file_mode600": true,
+    "secret_excluded_runtime": true
+  },
+  "all_source_checks_pass": true,
+  "cli_cases": [
+    {
+      "case": "API_URL environment health",
+      "passed": true,
+      "controller_transport_calls": 1,
+      "real_network": false
+    },
+    {
+      "case": "explicit URL overrides env",
+      "passed": true,
+      "controller_transport_calls": 1,
+      "real_network": false
+    },
+    {
+      "case": "API_URL ask creates remote session",
+      "passed": true,
+      "controller_transport_calls": 2,
+      "real_network": false
+    },
+    {
+      "case": "Missing token stops before HTTP",
+      "passed": true,
+      "controller_transport_calls": 0,
+      "real_network": false
+    }
+  ],
+  "actual_recorded_deployment": {
+    "file": "https_deployment.json",
+    "sha256": "6436078e686ee070553114b88dd88dc0f0b9c45e9a3ab2ab7d9fd29c7f1a9f07",
+    "api_url": "https://95.215.56.217/local-llm",
+    "utc": "2026-10-14T08:34:48Z",
+    "caddy_validation": true,
+    "tls_settings_preserved": true,
+    "acme_http_routes_preserved": true,
+    "recorded_health_ready": true,
+    "tls_verification": "Default trusted CA and hostname/IP verification; no insecure overrides"
+  },
+  "boundary_of_proof": [
+    "Static code guards support the recorded validation; this reviewer did not inspect live remote Caddy or run its own HTTPS request.",
+    "TLS verification uses standard urllib defaults; deployment file records a successful public HTTPS health check. Fresh final/load/limits/boundary request receipt joins remain pending.",
+    "Existing client_tunnel.sh is an optional legacy diagnostic; it is unnecessary for new HTTPS route, and no client tunnel was started by reviewer.",
+    "Managed Caddy patch intentionally accepts only the recognized unique existing OCR upstream line or identical existing managed block; other layouts abort for manual inspection."
+  ],
+  "network_path": "Client HTTPS → existing VPS Caddy /local-llm → loopback gateway8781 → internal reverseSSH127.0.0.1:18780 → PC loopback API8780 → local model/RAG. No inference/index deployed on VPS.",
+  "remaining": "All actualHTTPS receipts now reviewed; final deployment audits/docs completed. No new requests byreviewer.",
+  "final_auxiliary_source_resolution": {
+    "reviewed_at_utc": "2026-10-14T08:59:42.151199+00:00",
+    "method": "Read-only latest source and in-memory Python compilation. No invocation of recovery/deploy or probes.",
+    "current_file_sha256": {
+      "scripts/deploy_https.py": "5f6fe3e5eea4b62e9b7320f0fb2f5d4b077aa1cc6d08272d3488cb9a940fff39",
+      "scripts/remote_checks.py": "c34296270dec93d446d81a7e93a193651ee656dbaaa4007f070a54e7fc5d78b0",
+      "scripts/check_recovery.py": "3497ea246d37b130b268028e94b639aabc73c9efa11b18a9a1f530b3295b69c0",
+      "verify_context_boundary.py": "85d57e4a1c01ea4f50d0e6d3777c321fd6fd4f0fc2e1055d03a20b7ec3670635",
+      "cli.py": "f0cd160a8a32af22eee49036489cca0a51bbe706826beb9f6f9d60996a032527",
+      "gateway.py": "bfb7cd90034315fa4b206c8f02fafee8eaeeba5239978ddc8ec7c4f3c57b1bc6",
+      "scripts/start_tunnel.sh": "eec0d383f6bdc2f3d6b6a539d4c6424bb4f4c68be985ef898db111983a84706d",
+      "scripts/start_selected_model.py": "4582c674dd5b3119884a3f865adb71b88cc2c4c1acbf35cc7748b988a673611a"
+    },
+    "checks": {
+      "curl_credentials_stdin_notargv": true,
+      "curl_defaultTLS_no_insecure": true,
+      "recovery_recorded_model_pid": true,
+      "recovery_initial_pending0_guard": true,
+      "recovery_unique_exact_reverse_tunnel": true,
+      "recovery_no_broad_pkill": true,
+      "recovery_correct_file_context_slots_guard": true,
+      "recovery_real_answers_checked": true,
+      "recovery_HTTPSmetadata": true,
+      "boundary_HTTPSmetadata": true,
+      "idle_guard_rechecked_before_tunnelstop": true
+    },
+    "all_checks_pass": true,
+    "pending_idle_guard_caveat": "Resolved:pending0 is checked immediatelybefore tunnelstop aswellas before modelstop."
+  },
+  "final_reviewed_file_sha256": {
+    "cli.py": "f0cd160a8a32af22eee49036489cca0a51bbe706826beb9f6f9d60996a032527",
+    "common.py": "02a675228b5ec6b6dc438858e1c0c2800ad640c732830cfcea0be898921bde1a",
+    "gateway.py": "bfb7cd90034315fa4b206c8f02fafee8eaeeba5239978ddc8ec7c4f3c57b1bc6",
+    "scripts/deploy_https.py": "5f6fe3e5eea4b62e9b7320f0fb2f5d4b077aa1cc6d08272d3488cb9a940fff39",
+    "scripts/deploy_gateway.py": "206b084316c738dd6849d0422d58f9329e0b17d27a1a81ae394a87f828805ded",
+    "scripts/remote_checks.py": "c34296270dec93d446d81a7e93a193651ee656dbaaa4007f070a54e7fc5d78b0",
+    "scripts/check_recovery.py": "3497ea246d37b130b268028e94b639aabc73c9efa11b18a9a1f530b3295b69c0",
+    "scripts/start_tunnel.sh": "eec0d383f6bdc2f3d6b6a539d4c6424bb4f4c68be985ef898db111983a84706d",
+    "scripts/start_selected_model.py": "4582c674dd5b3119884a3f865adb71b88cc2c4c1acbf35cc7748b988a673611a",
+    "verify_context_boundary.py": "85d57e4a1c01ea4f50d0e6d3777c321fd6fd4f0fc2e1055d03a20b7ec3670635"
+  },
+  "final_reviewed_at_utc": "2026-10-14T09:01:41.442453+00:00"
+}

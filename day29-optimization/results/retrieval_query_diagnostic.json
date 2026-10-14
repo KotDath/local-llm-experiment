@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-14T09:19:28Z",
+  "purpose": "Read-only Q04 retrieval diagnostic; no generation or benchmark rerun. Short query uses only terms from original user question; no expected formula injected. Ranks measured within the named paper; no statistical generalization.",
+  "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+  "embedding_fingerprint": "df2af910c83efd01d39f7ba4012e24bdc1ba98281ad65efff841fd025148279d",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "formula_chunk_id": "08c994926e404f591883b24607013a91c6cc4b85bef1e76a78074f4a6cfb7d75",
+  "recorded_original_merged_rank": 14,
+  "top_k": 12,
+  "queries": [
+    {
+      "label": "исходный вопрос без префикса",
+      "query": "Какую формулу забывания использует MemoryBank, что означают t и S, и как S и t меняются при первом упоминании и повторном recall?",
+      "formula_rank_within_paper": 1,
+      "formula_score": 0.6499048313540234
+    },
+    {
+      "label": "с общим тематическим префиксом",
+      "query": "Research papers on language model agents and long-term memory: Какую формулу забывания использует MemoryBank, что означают t и S, и как S и t меняются при первом упоминании и повторном recall?",
+      "formula_rank_within_paper": 14,
+      "formula_score": 0.6065897165619456
+    },
+    {
+      "label": "с префиксом названия статьи",
+      "query": "MemoryBank: Какую формулу забывания использует MemoryBank, что означают t и S, и как S и t меняются при первом упоминании и повторном recall?",
+      "formula_rank_within_paper": 1,
+      "formula_score": 0.6326355581722796
+    },
+    {
+      "label": "короткий запрос о формуле",
+      "query": "MemoryBank: формула забывания R, t, S",
+      "formula_rank_within_paper": 1,
+      "formula_score": 0.5896265396065411
+    }
+  ]
+}

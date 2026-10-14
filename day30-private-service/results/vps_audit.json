@@ -1,0 +1,24 @@
+{
+  "gateway_active": true,
+  "gateway_sha256": "bfb7cd90034315fa4b206c8f02fafee8eaeeba5239978ddc8ec7c4f3c57b1bc6",
+  "deployed_directory_files": [
+    "gateway.py"
+  ],
+  "llm_processes": [],
+  "target_listeners": [
+    "LISTEN 0      128        127.0.0.1:18780 0.0.0.0:* users:((\"sshd-session\",pid=301752,fd=12))               ",
+    "LISTEN 0      5          127.0.0.1:8781  0.0.0.0:* users:((\"python3\",pid=299702,fd=3))                     "
+  ],
+  "gateway_source_imports": [
+    "http",
+    "json",
+    "os",
+    "socket",
+    "time",
+    "urllib"
+  ],
+  "gateway_source_uses_stdlib_only": true,
+  "utc": "2026-10-14T08:49:55Z",
+  "client": "Actual VPS SSH execution",
+  "expected_gateway_sha256": "bfb7cd90034315fa4b206c8f02fafee8eaeeba5239978ddc8ec7c4f3c57b1bc6"
+}

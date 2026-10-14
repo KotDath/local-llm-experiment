@@ -1,0 +1,24 @@
+{
+  "client": "VPS read-only audit",
+  "python": "3.14.4",
+  "deployment_files": [
+    {
+      "name": "gateway.py",
+      "bytes": 2960,
+      "sha256": "0063dcdb240742ddf6fd0232541bcdaa32c68b72177811f8b503e9fcaa48e15e"
+    }
+  ],
+  "llm_processes": [],
+  "gateway_listeners": [
+    "LISTEN 0      128        127.0.0.1:18780 0.0.0.0:*",
+    "LISTEN 0      5          127.0.0.1:8781  0.0.0.0:*"
+  ],
+  "units": {
+    "local-llm-experiment-gateway.service": "active",
+    "caddy.service": "active",
+    "legal-redaction-gateway.service": "active"
+  },
+  "gateway_enabled": "enabled",
+  "utc": "2026-10-13T21:38:45Z",
+  "source_matches": true
+}

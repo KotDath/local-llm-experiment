@@ -1,0 +1,259 @@
+{
+  "utc": "2026-10-13T22:34:53.919155+00:00",
+  "tested_core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "scope": "New fresh Agent/protocol process; exact same original four questions. No reviewer changes to code,prompts,profiles,corpus or questions. Earlier two failure runs retained.",
+  "turns": [
+    {
+      "turn": 1,
+      "original_question": "Какие слои памяти есть в Domovoy?",
+      "answer": "Domovoy имеет три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).\nКратковременная память — это текущий транскрипт чата, который не перезаписывается памятью и живёт до компрессии или удаления чата.\nРабочая память — это подтверждённые записи, принадлежащие текущему проекту; долговременная — подтверждённые записи, общие для всех проектов локального пользователя.\n\nИсточники:\n[1] README.md · README.md — Domovoy exposes three observable memory layers:\n[2] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[3] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[4] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[5] README.md · README.md — - **working** — confirmed records owned by the current project;\n[6] README.md · README.md — - **long-term** — confirmed records shared across projects by the local user.\n[7] docs/memory.md · docs/memory.md — Working records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.",
+      "agent_id": "4a99a43497ef4b2aa981854b869122f3",
+      "status": "answered",
+      "semantic_correct": true,
+      "verdict": "correct",
+      "domain_factual_hallucination": false,
+      "reason": "Все три слоя correctly названы; short-term=current chat transcript,working=current project,long-term=local user across projects. Все смысловые claims поддержаны текущими README/memory excerpts.",
+      "language_caveat": null,
+      "query_resolution": {
+        "used_history": false,
+        "query": "Какие слои памяти есть в Domovoy?"
+      },
+      "phases": [
+        "answer"
+      ],
+      "llm_calls": 1,
+      "usage_includes_all_phases": true,
+      "prompt_usage_match": true,
+      "retrieval_query": "Domovoy AI assistant memory records: Какие слои памяти есть в Domovoy?",
+      "max_dense_score": 0.7578941962707346,
+      "dense_question_threshold": 0.5764271075846307,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        }
+      ],
+      "runtime_gate": {
+        "q4_final_exists": false,
+        "cd_rows": 0,
+        "model": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+        "slots": 3,
+        "allowed": true
+      }
+    },
+    {
+      "turn": 2,
+      "original_question": "Какие из этих слоёв общие для всех проектов?",
+      "answer": "Общим для всех проектов слоем памяти является долговременный (long-term): его записи принадлежат локальному пользователю и доступны во всех проектах и чатах.\n\nИсточники:\n[1] README.md · README.md — - **long-term** — confirmed records shared across projects by the local user.\n[2] docs/memory.md · docs/memory.md — | Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n[3] docs/architecture.md · docs/architecture.md — | Long-term | long-term JSONL | local user/global | across projects and chats |\n[4] docs/memory.md · docs/memory.md — Working records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.",
+      "agent_id": "4a99a43497ef4b2aa981854b869122f3",
+      "status": "answered",
+      "semantic_correct": true,
+      "verdict": "correct",
+      "domain_factual_hallucination": false,
+      "reason": "Прямо назван long-term как общий для всех проектов локального пользователя; current README/memory/architecture citations поддерживают scope. Ложная оговорка отсутствует.",
+      "language_caveat": null,
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 2,
+        "query": "Какие из слоёв памяти, описанных в Domovoy, общие для всех проектов?"
+      },
+      "phases": [
+        "query_resolution",
+        "answer"
+      ],
+      "llm_calls": 2,
+      "usage_includes_all_phases": true,
+      "prompt_usage_match": true,
+      "retrieval_query": "Domovoy AI assistant memory records: Какие из слоёв памяти, описанных в Domovoy, общие для всех проектов?",
+      "max_dense_score": 0.7341022531123065,
+      "dense_question_threshold": 0.5764271075846307,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        }
+      ],
+      "runtime_gate": {
+        "q4_final_exists": false,
+        "cd_rows": 0,
+        "model": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+        "slots": 3,
+        "allowed": true
+      }
+    },
+    {
+      "turn": 3,
+      "original_question": "А какой из них содержит текущий транскрипт чата?",
+      "answer": "Текущий транскрипт чата содержит кратковременный слой памяти (short-term), источником которого является `AgentTranscript`.\n\nИсточники:\n[1] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[2] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[3] docs/architecture.md · docs/architecture.md — | Short-term | `AgentTranscript` | session | current chat |",
+      "agent_id": "4a99a43497ef4b2aa981854b869122f3",
+      "status": "answered",
+      "semantic_correct": true,
+      "verdict": "correct",
+      "domain_factual_hallucination": false,
+      "reason": "Требуемый слой short-term и источник AgentTranscript прямо указаны, подтверждены current README/memory/architecture excerpts. Небольшая неточность направления русской фразы: «транскрипт содержит слой» вместо «слой содержит транскрипт». Идентификация и документальная поддержка однозначны.",
+      "language_caveat": "Direction of contains reversed in Russian first clause; required short-term identification and AgentTranscript remain explicit.",
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 4,
+        "query": "Какой из слоёв памяти в Domovoy содержит текущий транскрипт чата?"
+      },
+      "phases": [
+        "query_resolution",
+        "answer"
+      ],
+      "llm_calls": 2,
+      "usage_includes_all_phases": true,
+      "prompt_usage_match": true,
+      "retrieval_query": "Domovoy AI assistant memory records: Какой из слоёв памяти в Domovoy содержит текущий транскрипт чата?",
+      "max_dense_score": 0.764874823465162,
+      "dense_question_threshold": 0.5764271075846307,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "sent_evidence": true,
+          "literal_quote_matches": true
+        }
+      ],
+      "runtime_gate": {
+        "q4_final_exists": false,
+        "cd_rows": 0,
+        "model": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+        "slots": 3,
+        "allowed": true
+      }
+    },
+    {
+      "turn": 4,
+      "original_question": "Какой измеренный p95 поиска на Galaxy A54 и 50000 документах?",
+      "answer": "Не знаю: в выбранных источниках недостаточно данных для ответа.",
+      "agent_id": "4a99a43497ef4b2aa981854b869122f3",
+      "status": "abstained",
+      "semantic_correct": true,
+      "verdict": "appropriate_refusal",
+      "domain_factual_hallucination": false,
+      "reason": "Измеренного Galaxy A54/50000 p95 в корпусе нет; standalone query сохранён без изменений и отказ корректен. Значение не выдумано.",
+      "language_caveat": null,
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 6,
+        "query": "Какой измеренный p95 поиска на Galaxy A54 и 50000 документах?"
+      },
+      "phases": [
+        "query_resolution"
+      ],
+      "llm_calls": 1,
+      "usage_includes_all_phases": true,
+      "prompt_usage_match": true,
+      "retrieval_query": "Какой измеренный p95 поиска на Galaxy A54 и 50000 документах?",
+      "max_dense_score": 0.49725533887517115,
+      "dense_question_threshold": 0.5764271075846307,
+      "citations": [],
+      "runtime_gate": {
+        "q4_final_exists": false,
+        "cd_rows": 0,
+        "model": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+        "slots": 3,
+        "allowed": true
+      }
+    }
+  ],
+  "summary": {
+    "semantic_correct_turns": 4,
+    "total": 4,
+    "natural_followup_success": true,
+    "followup_false_refusals": 0,
+    "domain_hallucinations": 0,
+    "language_caveats": 1,
+    "same_agent_id": true,
+    "real_chat_api_calls": 6,
+    "all_aggregate_usage_matches": true,
+    "all_counted_prompt_tokens_match": true,
+    "all_citations_current_documentary_evidence": true,
+    "all_runtime_gates_allowed": true
+  },
+  "history_observation": "Same Agent ID; actual resolution traces show history_messages0/2/4/6. Turns2/3 standalone queries resolve earlier user topic; query_resolution phase has real Chat API output/usage. Firstturn no resolver call.",
+  "grounding_invariant": "All answer source IDs and quotes are from freshly retrieved frozen document chunks. Resolver source code uses only prior user questions as untrusted topic context, never prior assistant answers; none of those questions is documentary evidence.",
+  "fallback_branch_scope": "Generic unresolved-reference context fallback exists in code, but final successful run resolver outputs did not need that branch. Do not claim this run empirically exercised fallback.",
+  "acceptance": "Original requested RAG follow-up scenario passed in this single live session; not a guarantee of arbitrary dialogue correctness or deterministic repeated quality.",
+  "limits": [
+    "Turn3 has imprecise grammatical direction of contains, documented above.",
+    "One successful fourturn session; two previous failed sessions preserved.",
+    "Known narrow Domovoy corpus; no unseen conversational robustness inferred."
+  ],
+  "raw_evidence": "results/rag_dialogue_final_independent.jsonl",
+  "previous_evidence": [
+    "results/rag_dialogue_independent.jsonl",
+    "results/rag_dialogue_resolved_independent.jsonl"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "question": "Может ли автоматический извлекатель удалить активную память? Кто задаёт идентификаторы и область записи?",
+  "translation": {
+    "text": "Automatic memory collector (garbage collector) cannot delete active memory. Active objects are reachable from roots (stack variables, static fields, CPU registers), so the GC considers them live and does not collect them. Only objects unreachable from any root become eligible for collection.\n\nIdentifiers and memory regions are assigned by the runtime/VM, not by the programmer directly:\n\n- Object identifiers (handles/addresses) are managed internally by the runtime. In some implementations (e.g., .NET weak references, Java `java.lang.ref`), identifiers can be obtained indirectly, but you never assign them yourself.\n- The allocation region (where memory is carved out) is determined by the runtime's allocator, typically within the managed heap (e.g., generational heaps in .NET/Java). Programmers request memory via `new`/allocation calls but do not specify the region or exact address.",
+    "usage": {
+      "completion_tokens": 180,
+      "prompt_tokens": 249,
+      "total_tokens": 429,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 249,
+      "prompt_ms": 757.397,
+      "prompt_per_token_ms": 3.0417550200803216,
+      "prompt_per_second": 328.7575736370754,
+      "predicted_n": 180,
+      "predicted_ms": 7721.859,
+      "predicted_per_token_ms": 43.13887709497207,
+      "predicted_per_second": 23.180946453438217
+    },
+    "finish_reason": "stop",
+    "counted_prompt_tokens": 249,
+    "prompt_hash": "1ccc8c8e07f1387c0641db801e19061faaea429f95581ed034507327aa70ba5e",
+    "generation_ms": 8600.287817999742,
+    "profile": {
+      "temperature": 0,
+      "max_tokens": 256,
+      "context": 8192
+    },
+    "model": "tiel-coder",
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Automatic memory collector (garbage collector) cannot delete active memory. Active objects are reachable from roots (stack variables, static fields, CPU registers), so the GC considers them live and does not collect them. Only objects unreachable from any root become eligible for collection.\n\nIdentifiers and memory regions are assigned by the runtime/VM, not by the programmer directly:\n\n- Object identifiers (handles/addresses) are managed internally by the runtime. In some implementations (e.g., .NET weak references, Java `java.lang.ref`), identifiers can be obtained indirectly, but you never assign them yourself.\n- The allocation region (where memory is carved out) is determined by the runtime's allocator, typically within the managed heap (e.g., generational heaps in .NET/Java). Programmers request memory via `new`/allocation calls but do not specify the region or exact address."
+          }
+        }
+      ],
+      "created": 1791923593,
+      "model": "tiel-coder",
+      "system_fingerprint": "b10679-50f068fff",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 180,
+        "prompt_tokens": 249,
+        "total_tokens": 429,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-ztz7dWTH5KiotlqbV2WfrvYiVpnUju5v",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 249,
+        "prompt_ms": 757.397,
+        "prompt_per_token_ms": 3.0417550200803216,
+        "prompt_per_second": 328.7575736370754,
+        "predicted_n": 180,
+        "predicted_ms": 7721.859,
+        "predicted_per_token_ms": 43.13887709497207,
+        "predicted_per_second": 23.180946453438217
+      }
+    }
+  },
+  "hits": [
+    {
+      "chunk": {
+        "id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+        "document": "140eef3ba41bdcf401d507408084181f2c0ac627532b61e0f7906ea7cc926782",
+        "revision": "4de8beced6d63db7e28261a65bf48248e1bccbf5ffc2bb905c57a3b56c84967e",
+        "source": "docs/architecture.md",
+        "title": "docs/architecture.md",
+        "section": "docs/architecture.md",
+        "start": 0,
+        "end": 1840,
+        "text": "# Memory architecture\n\n## Boundaries\n\nDependencies remain `presentation -> application -> domain`. Memory contracts\nlive in `lib/core/memory/`; JSONL and platform adapters live in\n`lib/infrastructure/memory/`; composition remains explicit in `lib/app.dart`.\nNo state-management, DI, database, or embedding dependency is added.\n\n## Scopes and ownership\n\n| Layer | Canonical source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | session | current chat |\n| Working | working JSONL | project | until edited, forgotten, or project deletion |\n| Long-term | long-term JSONL | local user/global | across projects and chats |\n\nThe protected project `default` is a real `ProjectRecord` with an app-managed\nsandbox root. Desktop and mobile use application-support storage; user-created\ndesktop projects continue to use explicit filesystem grants. Web retains the\nreserved default identity while filesystem operations remain unsupported.\n\n## Write flow\n\n```text\ncompleted transcript messages\n  -> deterministic explicit-command parser\n     -> match: candidate immediately, with no LLM call\n     -> no match: isolated LLM classifier sees only the latest user message\n  -> periodic extraction policy (window, idle, manual)\n  -> isolated LLM batch extractor\n  -> schema/source/scope/secret validation\n  -> persisted candidate\n  -> user confirm/edit/reject\n  -> active working or long-term record\n```\n\nThe command classifier decides only `none`, project working memory, or global\nlong-term memory; it cannot see chat history or call tools. The batch extractor\nreceives source message IDs and a bounded set of active records and may propose\ncreate, update, or noop. Semantically equivalent pending/accepted candidates\nand active records are deduplicated across both paths. The host owns scopes,\nIDs, revisions, project membership,",
+        "strategy": "fixed",
+        "tokens": 384,
+        "ordinal": 0,
+        "page_start": null,
+        "page_end": null,
+        "forced_split": false,
+        "config": "v1-384-64"
+      },
+      "dense_score": 0.4530976230236855
+    },
+    {
+      "chunk": {
+        "id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+        "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "source": "docs/memory.md",
+        "title": "docs/memory.md",
+        "section": "docs/memory.md",
+        "start": 0,
+        "end": 1589,
+        "text": "# Memory: behavior, demo, and smoke\n\nThis guide describes the shipped memory behavior and how to reproduce it.\n\n## Layers and scopes\n\n| Layer | Source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n\nWorking records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.\n\n## Extraction policy\n\n- A full automatic window contains **40** completed user/assistant messages.\n- The next window retains a **2**-message overlap and advances by **38**.\n- An idle flush becomes due **30 minutes** after the last completed response and\n  runs in the foreground only.\n- **Analyze now** (memory inspector) flushes every pending source immediately.\n- **Analyze now** also replays deterministic explicit phrases, so it can recover\n  a missed automatic callback without relying on the extraction model.\n- Explicit phrases create candidates with no LLM call:\n  `remember project: ...`, `remember global: ...`, `remember: ...`,\n  `remember that ...`, `запомни проект: ...`, `запомни глобально: ...`,\n  `запомни, что ...`.\n- When the deterministic parser finds no command, an isolated LLM classifier\n  checks only the latest user message. It returns `none`, `working`, or\n  `longTerm` with a self-contained fact, so typos and natural wording such as\n  `Запомни гглобально,",
+        "strategy": "fixed",
+        "tokens": 384,
+        "ordinal": 0,
+        "page_start": null,
+        "page_end": null,
+        "forced_split": false,
+        "config": "v1-384-64"
+      },
+      "dense_score": 0.4378211608314012
+    },
+    {
+      "chunk": {
+        "id": "7d7af84b94310e64f1c8477ea71eae889fb8be4893b8f4b501f7ac59a3a76fcb",
+        "document": "140eef3ba41bdcf401d507408084181f2c0ac627532b61e0f7906ea7cc926782",
+        "revision": "4de8beced6d63db7e28261a65bf48248e1bccbf5ffc2bb905c57a3b56c84967e",
+        "source": "docs/architecture.md",
+        "title": "docs/architecture.md",
+        "section": "docs/architecture.md",
+        "start": 3167,
+        "end": 4998,
+        "text": " errors rather than silently returning no memory.\n\n## Mobile lifecycle\n\nTimers and LLM calls are foreground-only. Pausing the app records the last\nactivity and pending source IDs, cancels the timer, and leaves the checkpoint\nunchanged. Resuming recomputes the deadline and performs an overdue flush in the\nforeground. Reprocessing is idempotent by source IDs.\n\n## Trust model\n\n- API keys and detected secrets are never memory records.\n- Model output is an untrusted candidate until confirmed.\n- Retrieved memory is data, not policy or executable instructions.\n- Project and global scopes are assigned by the host.\n- UI inspection, edit, forget, and context trace are required behavior.\n- Bulk clearing is explicit and confirmed: entries become forgotten tombstones\n  and pending candidates become rejected audit records.\n\n## Final implementation notes\n\n- Composition lives in `lib/app.dart`: one `MemoryJsonlStack`, layered\n  retrieval, a live `MemoryReadTogglesController` behind the dynamic context\n  provider, a registry-backed `LlmMemoryCommandClassifier`, a\n  `LlmMemoryBatchExtractor`, and a `MemoryExtractionCoordinator`.\n- `ChatWorkspaceController.onTurnCompleted` records each completed turn without\n  delaying the chat command; attaching a session restores its pending\n  extraction and reschedules the idle deadline.\n- Candidate identities are derived deterministically from the session, source\n  identities, and proposal index, and confirmed creates recover idempotently, so\n  retried batches cannot duplicate records.\n- Confirmed records are editable in place; forgetting is a tombstone revision.\n  Only an accepted candidate produces an active record, and extraction itself\n  only ever writes candidates.\n- Android/iOS pause and resume extraction with the application lifecycle;\n  desktop and web are foreground-only.\n",
+        "strategy": "fixed",
+        "tokens": 367,
+        "ordinal": 2,
+        "page_start": null,
+        "page_end": null,
+        "forced_split": false,
+        "config": "v1-384-64"
+      },
+      "dense_score": 0.4336572527020524
+    },
+    {
+      "chunk": {
+        "id": "a5889bbbc586674220c6cb1aaf81186f03da26599d626e7f6dbd9890d8a8f0a0",
+        "document": "140eef3ba41bdcf401d507408084181f2c0ac627532b61e0f7906ea7cc926782",
+        "revision": "4de8beced6d63db7e28261a65bf48248e1bccbf5ffc2bb905c57a3b56c84967e",
+        "source": "docs/architecture.md",
+        "title": "docs/architecture.md",
+        "section": "docs/architecture.md",
+        "start": 1518,
+        "end": 3473,
+        "text": " see chat history or call tools. The batch extractor\nreceives source message IDs and a bounded set of active records and may propose\ncreate, update, or noop. Semantically equivalent pending/accepted candidates\nand active records are deduplicated across both paths. The host owns scopes,\nIDs, revisions, project membership, and persistence. Automatic deletion is\nforbidden.\n\nOnly pending candidates and active entries participate in deduplication. An\naccepted candidate whose entry was later forgotten does not prevent the user\nfrom remembering that fact again.\n\nAn update candidate is discarded when its target already has the proposed\ncontent. Confirming a real update extends the target's source provenance rather\nthan replacing it.\n\n## Read flow\n\n```text\nuser request\n  -> current project working records\n  -> global preferences + lexical long-term facts/procedures\n  -> deterministic budget and render\n  -> dynamic system prompt + existing transcript\n  -> provider request + MemoryContextTrace\n```\n\nWorking requirements and decisions have priority. Confirmed preferences are\nalways eligible; other long-term records use lexical ranking with a maximum of\nfive. The rendered memory block is capped at 12,000 characters and labels its\ncontents as untrusted data rather than instructions. It is never appended to the\ntranscript, continuation state, or compaction input.\n\n## Persistence\n\nWorking, long-term, candidate, and extraction-state streams use independent\nnamespaces, optimistic revisions, append/replay validation, atomic generation\npublication, and tombstones. Missing streams mean empty state; corrupt streams\nsurface sanitized persistence errors rather than silently returning no memory.\n\n## Mobile lifecycle\n\nTimers and LLM calls are foreground-only. Pausing the app records the last\nactivity and pending source IDs, cancels the timer, and leaves the checkpoint\nunchanged. Resuming recomputes the deadline and performs an overdue flush in the\n",
+        "strategy": "fixed",
+        "tokens": 384,
+        "ordinal": 1,
+        "page_start": null,
+        "page_end": null,
+        "forced_split": false,
+        "config": "v1-384-64"
+      },
+      "dense_score": 0.4046332927050815
+    },
+    {
+      "chunk": {
+        "id": "f96dedade9c6b8da853748641e1f7ff728b45167e572f5521ad3e1ce8067988f",
+        "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "source": "docs/memory.md",
+        "title": "docs/memory.md",
+        "section": "docs/memory.md",
+        "start": 2837,
+        "end": 4619,
+        "text": " current-project working entries are\nforgotten, global long-term entries are forgotten, and pending candidates are\nrejected. The short-term tab has no clear action because it is the chat\ntranscript; clear it by deleting the chat.\n\n## Read path and trace\n\nRetrieval is deterministic and never calls a provider. Working records are\nsupplied first, then always-eligible long-term preferences, then lexically\nranked facts/procedures/profiles/policies capped at five. The rendered block is\ncapped at 12,000 characters. The memory inspector can show the exact\n`MemoryContextTrace` (included/excluded, reason, rendered size, truncation).\n\nRead toggles in the inspector disable a layer at runtime; disabled records are\nstill listed in the trace with reason `layerDisabled`.\n\n## Security and trust\n\n- Detected secrets (provider keys, key assignments, PEM keys, long opaque\n  tokens) never become candidates or records.\n- The rendered block is labeled as untrusted data, never instructions, and\n  `<`/`>`/`&` are escaped so stored data cannot close the block or inject\n  markup.\n- Memory is only supplied to provider requests; it is never appended to the\n  transcript, continuation state, or compaction input.\n\n## Composition and lifecycle\n\n`lib/app.dart` wires the JSONL memory stack, layered retrieval, a live read\ntoggle provider, the registry-backed command classifier and batch extractor,\nand the extraction coordinator. `ChatWorkspaceController.onTurnCompleted`\nrecords completed turns without delaying the chat command. On Android/iOS the\napp lifecycle pauses extraction when backgrounded and resumes an overdue flush\nin the foreground; desktop/web remain foreground-only.\n\n## Reproducible desktop demo\n\nRequires `libsecret` (see `README.md`) and a DeepSeek key in settings or\n`DEEPSEE",
+        "strategy": "fixed",
+        "tokens": 384,
+        "ordinal": 2,
+        "page_start": null,
+        "page_end": null,
+        "forced_split": false,
+        "config": "v1-384-64"
+      },
+      "dense_score": 0.36553681269088356
+    }
+  ]
+}

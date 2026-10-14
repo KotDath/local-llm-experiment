@@ -1,0 +1,564 @@
+{
+  "schema": "independent-rag-semantic-review-v1",
+  "evaluated_at_utc": "2026-10-13T20:50:54.986060+00:00",
+  "input": "results/golden_rag_answers.jsonl",
+  "input_sha256": "4956654478dd7a1cbd8d2188f2f338ae7539475d42c166e415ff48c872f440c1",
+  "questions_sha256": "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67",
+  "corpus_manifest_sha256": "7370c02fac3434200e8e6dce068388c597117cd53a99f2c0e2a1221d08504312",
+  "scope": "Final topic-prefix traces only; raw_query_* excluded. No inference executed; no secrets read. All actual delivered answers and preserved raw output for failed cloud validation read.",
+  "rubric": "correct means essential aspects explicitly asked are correctly answered in prose. Citations do not replace missing requested aspects. Supplemental expected_facts details not independently asked do not automatically lower core correct answer (Q02). Wrong includes false refusal on answerable question and undelivered service failure; raw cloud semantic quality recorded separately. Hallucination means a concrete target claim contradicted by or unsupported in frozen corpus; omission/false refusal alone is not hallucination. Literal validity assessed separately from entailment.",
+  "timing_limitation": "Wall-time/throughput observations are real but evaluation ran with background overflow load; no clean latency comparison or causal speed inference is justified here. Day29 clean benchmark is separate.",
+  "summary": {
+    "M0": {
+      "total": 10,
+      "correct": 1,
+      "partial": 0,
+      "wrong": 8,
+      "appropriate_refusal": 1,
+      "acceptable_full_responses": 2,
+      "hallucination_responses": 7,
+      "delivered_hallucination_responses": 7,
+      "unsupported_claim_responses": 8,
+      "literal_invalid_responses": 0,
+      "delivery_failures": 0
+    },
+    "M1": {
+      "total": 10,
+      "correct": 8,
+      "partial": 1,
+      "wrong": 0,
+      "appropriate_refusal": 1,
+      "acceptable_full_responses": 9,
+      "hallucination_responses": 0,
+      "delivered_hallucination_responses": 0,
+      "unsupported_claim_responses": 0,
+      "literal_invalid_responses": 0,
+      "delivery_failures": 0
+    },
+    "M2": {
+      "total": 10,
+      "correct": 5,
+      "partial": 2,
+      "wrong": 2,
+      "appropriate_refusal": 1,
+      "acceptable_full_responses": 6,
+      "hallucination_responses": 0,
+      "delivered_hallucination_responses": 0,
+      "unsupported_claim_responses": 0,
+      "literal_invalid_responses": 0,
+      "delivery_failures": 0
+    }
+  },
+  "grades": [
+    {
+      "id": "Q01",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Выдуман OpenAI Domovoy/умный дом; неверно заявлено отсутствие документированных трёх слоёв. Реальный корпус прямо задаёт chat/project/user scopes."
+      ],
+      "answer_sha256": "d93414ca7f400f5fd4bc6de38d0432edcaf4ab1853cb9a4f16e977c60da6b9cd"
+    },
+    {
+      "id": "Q02",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Первое «нет» верно, но далее активная память подменена рабочей активацией после долговременного хранения. User confirmation представлен лишь факультативным общим вариантом, отсутствует фактический candidate→validation→confirmation flow."
+      ],
+      "answer_sha256": "16121bbd3fd9cfd18a90de974abd7dfc500ccacfa54e56f91de45f48a78fd353"
+    },
+    {
+      "id": "Q03",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Ложный отказ на answerable вопрос. Память Domovoy ошибочно отнесена к внутренним спецификациям Tiel-Coder/Ornith; нет 5/12000 chars."
+      ],
+      "answer_sha256": "6dccf41d52de374bcc599286a8a258d6389b207fad6861a82948d3fb7b36eb74"
+    },
+    {
+      "id": "Q04",
+      "mode": "M0",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Верно: выключение слоя не удаляет записи, лишь перестаёт их использовать. Нет retrieval/citations, но содержание совпадает с frozen corpus."
+      ],
+      "answer_sha256": "df61a23a9a70b8d3fc6caf4068f87d5d6934061a0f02a838359843de070925c7"
+    },
+    {
+      "id": "Q05",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Неверно приписывает SOUL/USER Claude Code, выдумывает ~2000 слов и отсутствие обязательных разделов. Противоречит 4000/2500 characters и четырём exact sections."
+      ],
+      "answer_sha256": "a69e794f0235bffec615b7638aaee0fcd63ccf7108b4cdcb50c81bfeec17b517"
+    },
+    {
+      "id": "Q06",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Отвечает про Android WorkManager/AlarmManager вообще, а не shipped Domovoy; нет политики open-app-only и единственного catch-up. Generic OS statements не считаем доказанным выдуманным измерением."
+      ],
+      "answer_sha256": "7a0c73f09f0c0377cb2fb2d335c30c16d2a8cadd3f44ec4a2311cc827fa41517"
+    },
+    {
+      "id": "Q07",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Отвечает про Python timezone libraries вместо политики Domovoy; заявленная нормализация spring gap противоречит документированному skip. Ни конкретный scheduler scope, ни корректная spring policy не переданы."
+      ],
+      "answer_sha256": "05dedb1861b48e1e6b7f4a1e1dcbf6ac5fb1edb420fa8d19b7dee183147b8c26"
+    },
+    {
+      "id": "Q08",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Прямо противоположный ответ: заявляет разрешённое создание/запуск других задач, тогда как intrinsic policy запрещает независимо от allowlist."
+      ],
+      "answer_sha256": "b69bf9fd6d08682ed2606a73dea73bf46293371f23c8c7f8d6b77844ce4619bb"
+    },
+    {
+      "id": "Q09",
+      "mode": "M0",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Прямо противоположный ответ: сторонний stdio на Android назван поддержанным. Альтернативы представлены общей догадкой вместо подтверждённых loopback HTTP/in-process stream."
+      ],
+      "answer_sha256": "5517823ab2acf2759c0c477fa53705285ecd3e97adfefa2a3bfe87bd4a3d4623"
+    },
+    {
+      "id": "Q10",
+      "mode": "M0",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": null,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "none",
+      "reasons": [
+        "Отказ от выдумывания p95 Galaxy A54/50000 документов; запрашивает реальный отдельный замер."
+      ],
+      "answer_sha256": "4080dc1161f41aebbd4a59a66a34f3b45f9e0dcc585c6cf6cdd77bd0657932e7"
+    },
+    {
+      "id": "Q01",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Все три слоя и scopes chat/project/local user изложены правильно и подтверждены выбранными цитатами."
+      ],
+      "answer_sha256": "a6a05b865feb73785be59942aa9378b50eb411d29d0bfce8d6965b831ec208b5"
+    },
+    {
+      "id": "Q02",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "На конкретный вопрос отвечает правильно: кандидат остаётся недоверенным до user confirmation. Детали validation/host ownership из expected_facts не перечислены, но не были отдельным вопросом и не искажены."
+      ],
+      "answer_sha256": "b82000e7ec6868e6de99c631d139fb34b53b3cdbc4588adfeb25772302632e64"
+    },
+    {
+      "id": "Q03",
+      "mode": "M1",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_for_present_claim",
+      "reasons": [
+        "Верно 5 обычных long-term записей с lexical ranking и preference exception; полностью пропущен прямо запрошенный предел 12000 символов, хотя sent evidence содержит его."
+      ],
+      "answer_sha256": "06b01c20ddffb618397de727c2c1c41c643617c0f291bf7b666a5ebf39c4398a"
+    },
+    {
+      "id": "Q04",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Нет удаления при toggle; runtime layerDisabled и persistence отражены верно. Одна цитата обрывается, но другие подтверждают core answer."
+      ],
+      "answer_sha256": "27121d89570f794522ab7d9ba6f7156e7e96ff1fee970a48ceece1fc58c78769"
+    },
+    {
+      "id": "Q05",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_non_entailing_limit_quote",
+      "reasons": [
+        "4000/2500 символов и STYLE/FORMAT/CONSTRAINTS/CONTEXT верны. Цитата для численных лимитов вместо таблицы говорит про editor control chars; sent evidence содержит правильные лимиты."
+      ],
+      "answer_sha256": "494f6028ddb54627d120f5c88be8461b6d54b91a9bc912c98855c33f29ad4890"
+    },
+    {
+      "id": "Q06",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "reasons": [
+        "Open-app-only и один catch-up изложены правильно. Часть цитат обрезана/соседняя demo line нерелевантна; ключевые цитаты закрытого приложения и одного catch-up содержат нужные правила."
+      ],
+      "answer_sha256": "08c25dadf5498bd6e3de653dc173845826dd9fcd0553388eab13af21e62ecc05"
+    },
+    {
+      "id": "Q07",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "reasons": [
+        "Spring gap skip и autumn fold один более ранний момент верны. В citation набор добавлены нерелевантные cron day-field/invalid-date paragraphs; присутствует и прямая spring/fold policy."
+      ],
+      "answer_sha256": "b1599f46f098396cb84cacce94159e7f0fe9793293eff8780e5d385e3d23ec47"
+    },
+    {
+      "id": "Q08",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "insufficient",
+      "reasons": [
+        "Intrinsic запрет создания расписаний/запуска других задач верен; дополнительные update human-only и unattended restrictions поддержаны sent excerpts. Selected quotes обрезаны или про UI preview вместо policy, поэтому entailment конкретных citations слабый."
+      ],
+      "answer_sha256": "60f9e340cf9065ec3a00544c6daf047621878dcd75a9d4b73a27b2fe9ae433fe"
+    },
+    {
+      "id": "Q09",
+      "mode": "M1",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mostly_entailed",
+      "reasons": [
+        "В контексте приложения public stdio unsupported; loopback HTTP+bearer/in-process stream и reconnect верны. Нет заявления, что текущая сборка заново испытана на Android; cited source — прежний spike report."
+      ],
+      "answer_sha256": "35b0aff678c89085f55ea22bb9ee9905661726697f2ee3b799306899522ff280"
+    },
+    {
+      "id": "Q10",
+      "mode": "M1",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "abstained",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "reasons": [
+        "Host отказ при отсутствии данных о Galaxy p95; нет выдуманных измерений."
+      ],
+      "answer_sha256": "7ed83c5204db16de5f202121897ffa840347e4b0754c4c94a8e43d1704125972"
+    },
+    {
+      "id": "Q01",
+      "mode": "M2",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_for_present_claim",
+      "reasons": [
+        "Названы три слоя, но прямо запрошенное распределение chat/project/user полностью отсутствует в prose; scopes есть лишь в citations. Evidence не заменяет ответа."
+      ],
+      "answer_sha256": "f018bafe81d74f5a4f8155c9629a0bb7537ea08cea70a9759cff25411f181dd1"
+    },
+    {
+      "id": "Q02",
+      "mode": "M2",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "abstained",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "reasons": [
+        "Ложный host refusal на answerable вопрос про candidate/user confirmation. Rerank threshold отбросил evidence, LLM calls=0."
+      ],
+      "answer_sha256": "f28db3ed19f34548a31a423256b9e2f117554074537556a6285713bcda7a5946"
+    },
+    {
+      "id": "Q03",
+      "mode": "M2",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "5 обычных long-term + preference exception + 12000 characters правильно; truncation trace поддержан sent context."
+      ],
+      "answer_sha256": "abfa8d15bb0d69756efa353b3fd5935d61e57a2bd49bee1053283bd0d4b11991"
+    },
+    {
+      "id": "Q04",
+      "mode": "M2",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "abstained",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "reasons": [
+        "Ложный host refusal на answerable toggle/delete вопрос; LLM calls=0. Это retrieval/threshold miss, не factual hallucination."
+      ],
+      "answer_sha256": "f3a8fd346ef5ebbb6ca9623c6d5fc6ab19ab90953fa0186b23f09d03bf68661b"
+    },
+    {
+      "id": "Q05",
+      "mode": "M2",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "reasons": [
+        "Все требуемые значения/sections верны; USER 2500 не подтверждён выбранными цитатами, хотя есть в sent table. Цитата interview default switch не подтверждает four-section validation."
+      ],
+      "answer_sha256": "9174e7389c187cc2579cfbb21f0cf507818437441548bf8fe09aed688bcee8e8"
+    },
+    {
+      "id": "Q06",
+      "mode": "M2",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_non_entailing_catchup_quotes",
+      "reasons": [
+        "Open-app-only, latest single catch-up, aggregation и interrupted semantics верны и имеются в sent evidence. Selected quotes для catch-up — DST fold и section heading, не actual catch-up rule."
+      ],
+      "answer_sha256": "23ec43347b0d4ce8b44fbb478d6f6617e37ffb0485be595e10c291ebc228d7c7"
+    },
+    {
+      "id": "Q07",
+      "mode": "M2",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "non_entailing",
+      "reasons": [
+        "Spring gap skip верен, autumn повторяющееся время полностью пропущено. Ни одна выбранная цитата не относится к DST spring gap: они про restricted cron fields/date validation."
+      ],
+      "answer_sha256": "df25927181e9c70af7ba9bbfb9db0c9e359ea9286bf0f054bcfb4fb9e85585f6"
+    },
+    {
+      "id": "Q08",
+      "mode": "M2",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_fragmentary",
+      "reasons": [
+        "Core запрет верен, intrinsicDeniedToolIds/run_task_now подтверждены широким sent context. Citation quotes обрываются до запрещающей части, добавлены нерелевантные one-shot/proposed task lines."
+      ],
+      "answer_sha256": "337c341b3bf5d617955ab231af53c6ad68af2c664c2145a42516fa782e2eb181"
+    },
+    {
+      "id": "Q09",
+      "mode": "M2",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_with_duplicates",
+      "reasons": [
+        "Unsupported stdio и loopback HTTP/in-process alternatives верны. stdio-supported=false процитировано четыре раза без новой информации; второй claim имеет прямое доказательство."
+      ],
+      "answer_sha256": "26d5b608b0a925742998a82487691924e5602aaedf3b0ae5f50d4d467fff9a4b"
+    },
+    {
+      "id": "Q10",
+      "mode": "M2",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "abstained",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "reasons": [
+        "Host отказ от неподтверждённого p95; никаких выдуманных чисел."
+      ],
+      "answer_sha256": "370dd6cbaddd4cfe70169e5fc6cb8921bf305b35bfb51215db577735b54218f8"
+    }
+  ]
+}

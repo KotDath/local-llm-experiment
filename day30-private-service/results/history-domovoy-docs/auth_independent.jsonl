@@ -1,0 +1,3 @@
+{"path": "/health", "status": 401, "body": "{\"error\":\"unauthorized\",\"detail\":null}"}
+{"path": "/sessions", "status": 401, "body": "{\"error\":\"unauthorized\",\"detail\":null}"}
+{"path": "/chat", "status": 401, "body": "{\"error\":\"unauthorized\",\"detail\":null}"}

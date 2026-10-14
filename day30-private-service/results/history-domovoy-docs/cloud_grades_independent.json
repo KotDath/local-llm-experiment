@@ -1,0 +1,224 @@
+{
+  "schema": "independent-rag-semantic-review-v1",
+  "evaluated_at_utc": "2026-10-13T20:50:54.986060+00:00",
+  "input": "results/cloud_answers.jsonl",
+  "input_sha256": "f14eab67685ed0fae3053a119c1b92965992cb257c32117e81a444cbeffc3a43",
+  "questions_sha256": "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67",
+  "corpus_manifest_sha256": "7370c02fac3434200e8e6dce068388c597117cd53a99f2c0e2a1221d08504312",
+  "scope": "Final topic-prefix traces only; raw_query_* excluded. No inference executed; no secrets read. All actual delivered answers and preserved raw output for failed cloud validation read.",
+  "rubric": "correct means essential aspects explicitly asked are correctly answered in prose. Citations do not replace missing requested aspects. Supplemental expected_facts details not independently asked do not automatically lower core correct answer (Q02). Wrong includes false refusal on answerable question and undelivered service failure; raw cloud semantic quality recorded separately. Hallucination means a concrete target claim contradicted by or unsupported in frozen corpus; omission/false refusal alone is not hallucination. Literal validity assessed separately from entailment.",
+  "timing_limitation": "Wall-time/throughput observations are real but evaluation ran with background overflow load; no clean latency comparison or causal speed inference is justified here. Day29 clean benchmark is separate.",
+  "summary": {
+    "cloud": {
+      "total": 10,
+      "correct": 6,
+      "partial": 1,
+      "wrong": 2,
+      "appropriate_refusal": 1,
+      "acceptable_full_responses": 7,
+      "hallucination_responses": 2,
+      "delivered_hallucination_responses": 1,
+      "unsupported_claim_responses": 2,
+      "literal_invalid_responses": 2,
+      "delivery_failures": 2
+    }
+  },
+  "grades": [
+    {
+      "id": "Q01",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Все layers/scopes правильно и подтверждены complete quoted rows."
+      ],
+      "answer_sha256": "fc749312a9c8629f555eddd243e00989cadec259e487265c65bbd7e0f3ce3c05"
+    },
+    {
+      "id": "Q02",
+      "mode": "cloud",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "one_non_entailing_claim",
+      "reasons": [
+        "Первый claim про candidate until confirmation верен. Второй буквально утверждает, что уже «подтверждённые записи ... а не сразу в активную память», создавая ложное различие confirmed vs active: по write flow confirmation переводит record в active. Цитата лишь перечисляет working/long-term scopes."
+      ],
+      "answer_sha256": "48f620ef296997c2659ef4d3c562d61dcd2f1cf38d16c8aabe4afd7a4d30cb28"
+    },
+    {
+      "id": "Q03",
+      "mode": "cloud",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": false,
+      "status_reported": null,
+      "literal_citation_valid": false,
+      "literal_citation_issues": [
+        {
+          "kind": "quote_not_exact_in_sent_chunk",
+          "claim": 1,
+          "chunk_id": "f96dedade9c6b8da853748641e1f7ff728b45167e572f5521ad3e1ce8067988f",
+          "quote": "then lexically ranked facts/procedures/profiles/policies capped at five"
+        },
+        {
+          "kind": "quote_not_exact_in_sent_chunk",
+          "claim": 2,
+          "chunk_id": "f96dedade9c6b8da853748641e1f7ff728b45167e572f5521ad3e1ce8067988f",
+          "quote": "The rendered block is capped at 12,000 characters."
+        }
+      ],
+      "semantic_citation_support": "literal_invalid",
+      "reasons": [
+        "Пользовательский результат не доставлен: ok:false invalid_grounded_answer. Raw JSON семантически корректно даёт five ordinary records и 12000 characters, но цитаты заменили line breaks пробелами; raw quality correct отдельно от delivery."
+      ],
+      "answer_sha256": "48869813675c88a82cc7061bf60fa4dfd010d8d00544e528c157155d637417a8",
+      "raw_semantic_verdict": "correct",
+      "raw_status_reported": "partial",
+      "hallucination_scope": "raw_model_output_only; no invalid answer delivered"
+    },
+    {
+      "id": "Q04",
+      "mode": "cloud",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": true,
+      "unsupported_claims": true,
+      "delivered": false,
+      "status_reported": null,
+      "literal_citation_valid": false,
+      "literal_citation_issues": [
+        {
+          "kind": "quote_not_exact_in_sent_chunk",
+          "claim": 1,
+          "chunk_id": "f96dedade9c6b8da853748641e1f7ff728b45167e572f5521ad3e1ce8067988f",
+          "quote": "Read toggles in the inspector disable a layer at runtime; disabled records are still listed in the trace with reason `layerDisabled`."
+        }
+      ],
+      "semantic_citation_support": "literal_invalid",
+      "reasons": [
+        "Пользовательский результат не доставлен: ok:false invalid_grounded_answer из-за изменённых line breaks. Raw core toggle answer верен, но дополнительное «Удаление ... через действия редактирования/забывания» приравнивает editing к removal; corpus edit/forget — отдельные действия."
+      ],
+      "answer_sha256": "4d6cde4ec33bd2423377a31480b1c50ad41ce5217d673dcfff49871e0c4a0447",
+      "raw_semantic_verdict": "partial",
+      "raw_status_reported": "answered",
+      "hallucination_scope": "raw_model_output_only; no invalid answer delivered"
+    },
+    {
+      "id": "Q05",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Все точные лимиты и required sections верны; дополнительные credential checks/data ownership также directly supported."
+      ],
+      "answer_sha256": "7c729ea579b951b880bdfc546f0433ce3cdf36f3868757d8de2509b4a88148a2"
+    },
+    {
+      "id": "Q06",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Open app, single catch-up, lifecycle pause и interrupted-without-effects корректны; meaningful citations entail claims."
+      ],
+      "answer_sha256": "b35d8f66ea9ecdb9b9779f262c27bb8c3e0390c6d2af9bb1205179984c17c1d1"
+    },
+    {
+      "id": "Q07",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Обе DST политики изложены правильно и supported by direct complete quotes."
+      ],
+      "answer_sha256": "aa8e32ec76d934d7d2e7fddfc789708cd1c383bd056c7593ef67a91652ca29f1"
+    },
+    {
+      "id": "Q08",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Intrinsic prohibition независимо от случайного allowlist directly quoted."
+      ],
+      "answer_sha256": "9fad75bb55a75932a2c83778ff51822084a4d17a5fbdf4cd3d29b938e3e6e389"
+    },
+    {
+      "id": "Q09",
+      "mode": "cloud",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "answered",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "reasons": [
+        "Public stdio unsupported; loopback HTTP/in-process stream report on emulator API35 правильно и не выдаётся за свежий тест."
+      ],
+      "answer_sha256": "e633b82ce8fa065df8b31e3230852304d93ff8f2f8a84ed9434dc0a0bbff56c4"
+    },
+    {
+      "id": "Q10",
+      "mode": "cloud",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "unsupported_claims": false,
+      "delivered": true,
+      "status_reported": "abstained",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "reasons": [
+        "Не знает неподтверждённый Galaxy p95; никакого измерения не выдумано."
+      ],
+      "answer_sha256": "4aa5fafa1badb0abcefddb7728a5e3dc94ab2a45b9cddf17acfba1289403567d"
+    }
+  ]
+}

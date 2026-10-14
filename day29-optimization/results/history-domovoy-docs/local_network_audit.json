@@ -1,0 +1,892 @@
+{
+  "actual_agent_response": {
+    "request_id": "1715b7218a8e4ebf95a2f450422f5865",
+    "utc": "2026-10-13T21:14:42Z",
+    "question": "Какие слои памяти есть в Domovoy?",
+    "agent_id": "7ec8ae9c11374c85898ba0701a65d94b",
+    "protocol": "chat-completions-http",
+    "profile": {
+      "temperature": 0.1,
+      "max_tokens": 1536,
+      "context": 8192,
+      "prompt": "optimized"
+    },
+    "rag": true,
+    "rerank": false,
+    "llm_calls": [
+      {
+        "text": "{\"status\":\"answered\",\"claims\":[{\"text\":\"Domovoy имеет три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"Domovoy exposes three observable memory layers:\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\"}]},{\"text\":\"Кратковременная память — это текущий транскрипт чата, который не перезаписывается памятью и живёт до компрессии или удаления чата.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **short-term** — the current chat transcript (never rewritten by memory);\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\"}]},{\"text\":\"Рабочая память — это подтверждённые записи, принадлежащие текущему проекту, живущие до редактирования, забывания или удаления проекта.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **working** — confirmed records owned by the current project;\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\"}]},{\"text\":\"Долговременная память — это подтверждённые записи, общие для проектов локального пользователя, живущие между проектами и чатами.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **long-term** — confirmed records shared across projects by the local user.\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\"}]}]}",
+        "usage": {
+          "completion_tokens": 837,
+          "prompt_tokens": 2745,
+          "total_tokens": 3582,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 2745,
+          "prompt_ms": 3127.49,
+          "prompt_per_token_ms": 1.1393406193078324,
+          "prompt_per_second": 877.7006481235751,
+          "predicted_n": 837,
+          "predicted_ms": 19279.45,
+          "predicted_per_token_ms": 23.061543062200958,
+          "predicted_per_second": 43.36223284377926
+        },
+        "finish_reason": "stop",
+        "counted_prompt_tokens": 2745,
+        "prompt_hash": "cf42c48f9f58a88385b2be55d8e99ac142d0c7272ead9586bb890d583e09c6e7",
+        "generation_ms": 22480.396611999822,
+        "profile": {
+          "temperature": 0.1,
+          "max_tokens": 1536,
+          "context": 8192,
+          "prompt": "optimized",
+          "response_format": {
+            "type": "json_object",
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "claims"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "answered",
+                    "partial",
+                    "abstained"
+                  ]
+                },
+                "claims": {
+                  "type": "array",
+                  "maxItems": 6,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "evidence"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "evidence": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 4,
+                        "items": {
+                          "anyOf": [
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "chunk_id",
+                                "quote"
+                              ],
+                              "properties": {
+                                "chunk_id": {
+                                  "const": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2"
+                                },
+                                "quote": {
+                                  "type": "string",
+                                  "enum": [
+                                    "# Domovoy",
+                                    "Personal AI assistant built with Flutter. The application is a chat workspace\nwith projects, streaming reasoning and answers, provider/model settings, and a\nlayered memory inspector.",
+                                    "## Memory",
+                                    "Domovoy exposes three observable memory layers:",
+                                    "- **short-term** — the current chat transcript (never rewritten by memory);\n- **working** — confirmed records owned by the current project;\n- **long-term** — confirmed records shared across projects by the local user.",
+                                    "Candidates proposed by extraction are untrusted until you confirm them. Open the\nmemory inspector with the brain icon in the workspace header: desktop and tablet\nshow it as a side pane, phones open a bottom sheet. From the inspector you can\nconfirm, edit, or reject candidates; edit or forget confirmed records; toggle\nwhether working and long-term layers are supplied to the provider; run a manual\nanalysis; and inspect the exact context trace.",
+                                    "See [docs/memory.md](docs/memory.md) for reproducible demo steps, the extraction\npolicy, security behavior, mobile constraints, and smoke results.",
+                                    "## Personalization",
+                                    "Domovoy keeps one active assistant profile and can store multiple alternatives.\nEach profile has a `SOUL.md` persona and a structured `USER.md` with style,\nformat, constraints, and user context. Open **Персонализация** in the sidebar to\ncreate, clone, edit, import/export, activate, or delete profiles. An optional\nfive-step LLM interview prepares a preview of `USER.md`; nothing is written\nuntil you confirm it.",
+                                    "The active profile is resolved for every provider request, so activation or an\nedit affects the next message without recreating the chat. Profile data and\nmemory remain separate. See [docs/personalization.md](docs/personalization.md)\nfor the data model, request path, and demo script.",
+                                    "## Tasks and schedule",
+                                    "The tasks section",
+                                    "Personal AI assistant built with Flutter. The application is a chat workspace",
+                                    "with projects, streaming reasoning and answers, provider/model settings, and a",
+                                    "layered memory inspector.",
+                                    "- **short-term** — the current chat transcript (never rewritten by memory);",
+                                    "- **working** — confirmed records owned by the current project;",
+                                    "- **long-term** — confirmed records shared across projects by the local user.",
+                                    "Candidates proposed by extraction are untrusted until you confirm them. Open the",
+                                    "memory inspector with the brain icon in the workspace header: desktop and tablet",
+                                    "show it as a side pane, phones open a bottom sheet. From the inspector you can",
+                                    "confirm, edit, or reject candidates; edit or forget confirmed records; toggle",
+                                    "whether working and long-term layers are supplied to the provider; run a manual",
+                                    "analysis; and inspect the exact context trace.",
+                                    "See [docs/memory.md](docs/memory.md) for reproducible demo steps, the extraction",
+                                    "policy, security behavior, mobile constraints, and smoke results.",
+                                    "Domovoy keeps one active assistant profile and can store multiple alternatives.",
+                                    "Each profile has a `SOUL.md` persona and a structured `USER.md` with style,",
+                                    "format, constraints, and user context. Open **Персонализация** in the sidebar to",
+                                    "create, clone, edit, import/export, activate, or delete profiles. An optional",
+                                    "five-step LLM interview prepares a preview of `USER.md`; nothing is written",
+                                    "until you confirm it.",
+                                    "The active profile is resolved for every provider request, so activation or an",
+                                    "edit affects the next message without recreating the chat. Profile data and",
+                                    "memory remain separate. See [docs/personalization.md](docs/personalization.md)",
+                                    "for the data model, request path, and demo script.",
+                                    "# Domovoy\n\nPersonal AI assistant built with Flutter.",
+                                    "The application is a chat workspace\nwith projects, streaming reasoning and answers, provider/model settings, and a\nlayered memory inspector.\n\n## Memory\n\nDomovoy exposes three observable memory layers:\n\n- **short-term** — the current chat transcript (never rewritten by memory);\n- **working** — confirmed records owned by the current project;\n- **long-term** — confirmed records shared across projects by the local user.",
+                                    "Candidates proposed by extraction are untrusted until you confirm them.",
+                                    "Open the\nmemory inspector with the brain icon in the workspace header: desktop and tablet\nshow it as a side pane, phones open a bottom sheet.",
+                                    "From the inspector you can\nconfirm, edit, or reject candidates; edit or forget confirmed records; toggle\nwhether working and long-term layers are supplied to the provider; run a manual\nanalysis; and inspect the exact context trace.",
+                                    "See [docs/memory.md](docs/memory.md) for reproducible demo steps, the extraction\npolicy, security behavior, mobile constraints, and smoke results.\n\n## Personalization\n\nDomovoy keeps one active assistant profile and can store multiple alternatives.",
+                                    "Each profile has a `SOUL.md` persona and a structured `USER.md` with style,\nformat, constraints, and user context.",
+                                    "Open **Персонализация** in the sidebar to\ncreate, clone, edit, import/export, activate, or delete profiles.",
+                                    "An optional\nfive-step LLM interview prepares a preview of `USER.md`; nothing is written\nuntil you confirm it.",
+                                    "The active profile is resolved for every provider request, so activation or an\nedit affects the next message without recreating the chat.",
+                                    "Profile data and\nmemory remain separate.",
+                                    "See [docs/personalization.md](docs/personalization.md)\nfor the data model, request path, and demo script.\n\n## Tasks and schedule\n\nThe tasks section"
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "chunk_id",
+                                "quote"
+                              ],
+                              "properties": {
+                                "chunk_id": {
+                                  "const": "e68d74a777df346a1b1e687a850e09b016b516fff7d971861f0982b21a7800ed"
+                                },
+                                "quote": {
+                                  "type": "string",
+                                  "enum": [
+                                    "# AGENTS.md — инструкции для ИИ-ассистентов",
+                                    "Контракт для любого ИИ-ассистента, работающего с этим репозиторием.\nПрочитайте перед любыми изменениями.",
+                                    "## Цель проекта",
+                                    "Domovoy — персональный ИИ-ассистент в виде Flutter-приложения: рабочее\nпространство чата с LLM (провайдеры DeepSeek/OpenRouter), стриминг ответа и\nreasoning, проекты и настройки API-ключа.",
+                                    "## Инварианты",
+                                    "Контракт для любого ИИ-ассистента, работающего с этим репозиторием.",
+                                    "Прочитайте перед любыми изменениями.",
+                                    "Domovoy — персональный ИИ-ассистент в виде Flutter-приложения: рабочее",
+                                    "пространство чата с LLM (провайдеры DeepSeek/OpenRouter), стриминг ответа и",
+                                    "reasoning, проекты и настройки API-ключа.",
+                                    "1. **Один Flutter-пакет `domovoy`.** Никаких вложенных `pubspec.yaml`,",
+                                    "подпакетов или внешних менеджеров воркспейса. Все зависимости — в корневом",
+                                    "`pubspec.yaml`.",
+                                    "2. **Идентификатор приложения — `ru.kotdath.domovoy`** на всех платформах:",
+                                    "`namespace`/`applicationId` в Android, `PRODUCT_BUNDLE_IDENTIFIER` в",
+                                    "iOS/macOS, `APPLICATION_ID` в Linux, company/namespace в Windows. Не",
+                                    "переименовывать.",
+                                    "3. **Слои и направление зависимостей:** `presentation → application → domain`,",
+                                    "`infrastructure` реализует контракты из `core`. Обратные зависимости",
+                                    "запрещены.",
+                                    "4. **Состояние — `ChangeNotifier` и явная композиция в `lib/app.dart`.**",
+                                    "Внешних state-management/DI-пакетов нет; не добавлять.",
+                                    "5. **Домен — в `lib/core/`** (`llm/`, `agents/`, `projects/",
+                                    "# AGENTS.md — инструкции для ИИ-ассистентов\n\nКонтракт для любого ИИ-ассистента, работающего с этим репозиторием.",
+                                    "Прочитайте перед любыми изменениями.\n\n## Цель проекта\n\nDomovoy — персональный ИИ-ассистент в виде Flutter-приложения: рабочее\nпространство чата с LLM (провайдеры DeepSeek/OpenRouter), стриминг ответа и\nreasoning, проекты и настройки API-ключа.\n\n## Инварианты\n\n1. **Один Flutter-пакет `domovoy`.** Никаких вложенных `pubspec.yaml`,\n   подпакетов или внешних менеджеров воркспейса.",
+                                    "Все зависимости — в корневом\n   `pubspec.yaml`.\n2. **Идентификатор приложения — `ru.kotdath.domovoy`** на всех платформах:\n   `namespace`/`applicationId` в Android, `PRODUCT_BUNDLE_IDENTIFIER` в\n   iOS/macOS, `APPLICATION_ID` в Linux, company/namespace в Windows.",
+                                    "Не\n   переименовывать.\n3. **Слои и направление зависимостей:** `presentation → application → domain`,\n   `infrastructure` реализует контракты из `core`.",
+                                    "Обратные зависимости\n   запрещены.\n4. **Состояние — `ChangeNotifier` и явная композиция в `lib/app.dart`.**\n   Внешних state-management/DI-пакетов нет; не добавлять.\n5. **Домен — в `lib/core/`** (`llm/`, `agents/`, `projects/"
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "chunk_id",
+                                "quote"
+                              ],
+                              "properties": {
+                                "chunk_id": {
+                                  "const": "1d6a114c8312cdc264dc0c576378e695cbd12a856fa5f2c6017b1bd064663228"
+                                },
+                                "quote": {
+                                  "type": "string",
+                                  "enum": [
+                                    "## Правки после",
+                                    "новременно",
+                                    "**для всех машин под контролем пользователя**. Domovoy не имеет",
+                                    "межмашинной синхронизации: ПК и телефон, запущенные одновременно, каждый",
+                                    "соблюдают свои 3 с и один запрос, но вместе могут превысить общий лимит.",
+                                    "Документация не заявляет глобально гарантированного лимита; снижают риск",
+                                    "кэш (TTL 10 минут) и то, что повторный поиск не обращается к сети.",
+                                    "- Официальный API отдаёт только описательные метаданные (название, авторы,",
+                                    "аннотация, категории, даты, ссылки). Хранить и преобразовывать их можно;",
+                                    "PDF не скачиваются, полный текст не индексируется, перепубликация не",
+                                    "выполняется.",
+                                    "- Релевантность задаёт внутренний поиск arXiv, поэтому порядок relevance",
+                                    "зависит от API; даты сортируются локально детерминированно.",
+                                    "- Поле `submittedAfter` — единственный документированный фильтр дат; верхняя",
+                                    "граница запроса фиксирована (`999912312359`), отдельного `submittedBefore`",
+                                    "в контракте B3 нет.",
+                                    "- Свободный текст не поддерживает сложную грамматику arXiv (поля, Boolean,",
+                                    "фразы): это осознанное ограничение безопасности и повторяемости; для",
+                                    "грамматики достаточно `category` и документированного `sortBy`.",
+                                    "новременно\n  **для всех машин под контролем пользователя**.",
+                                    "Domovoy не имеет\n  межмашинной синхронизации: ПК и телефон, запущенные одновременно, каждый\n  соблюдают свои 3 с и один запрос, но вместе могут превысить общий лимит.",
+                                    "Документация не заявляет глобально гарантированного лимита; снижают риск\n  кэш (TTL 10 минут) и то, что повторный поиск не обращается к сети.\n- Официальный API отдаёт только описательные метаданные (название, авторы,\n  аннотация, категории, даты, ссылки)."
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "chunk_id",
+                                "quote"
+                              ],
+                              "properties": {
+                                "chunk_id": {
+                                  "const": "1c812faea455f0ddcae4441bd6208cd223aaffde3f6e0d558f465af38cfb0b81"
+                                },
+                                "quote": {
+                                  "type": "string",
+                                  "enum": [
+                                    "chat command. On Android/iOS the\napp lifecycle pauses extraction when backgrounded and resumes an overdue flush\nin the foreground; desktop/web remain foreground-only.",
+                                    "## Reproducible desktop demo",
+                                    "Requires `libsecret` (see `README.md`) and a DeepSeek key in settings or\n`DEEPSEEK_API_KEY`.",
+                                    "```sh\nflutter pub get\nflutter run -d linux\n```",
+                                    "## Mobile constraints",
+                                    "- Extraction timers and LLM calls are foreground-only.\n- Pausing records the last activity and pending sources and cancels timers;\n  resuming recomputes the deadline and flushes overdue work in the foreground.\n- Confirmed memory persists in application-support storage on Android/iOS;\n  the web build stores streams in origin-local browser preferences.\n- Android and iOS share the same Flutter lifecycle bridge and native storage\n  adapter contract; a physical iOS smoke still needs a macOS host.",
+                                    "## Smoke checklist and results",
+                                    "Environment: Fedora Linux",
+                                    "chat command. On Android/iOS the",
+                                    "app lifecycle pauses extraction when backgrounded and resumes an overdue flush",
+                                    "in the foreground; desktop/web remain foreground-only.",
+                                    "Requires `libsecret` (see `README.md`) and a DeepSeek key in settings or",
+                                    "`DEEPSEEK_API_KEY`.",
+                                    "flutter pub get",
+                                    "flutter run -d linux",
+                                    "1. Create a project and a chat.",
+                                    "2. Send `Запомни, что деплой делается только через kubernetes`.",
+                                    "3. Open the memory inspector (brain icon in the header). Under **Кандидаты**",
+                                    "confirm the candidate.",
+                                    "4. Under **Рабочая** the confirmed record appears. Edit or forget it.",
+                                    "5. Send a normal question; open **Показать трассу** to see the exact records",
+                                    "supplied (reason `workingPriority`/`confirmedPreference`/`lexicalMatch`).",
+                                    "6. Toggle **Долговременная память** off; the trace now shows",
+                                    "`layerDisabled` for long-term records.",
+                                    "7. Press **Анализировать** to run a manual extraction; new candidates appear",
+                                    "for confirmation.",
+                                    "8. Restart the app: confirmed records and pending candidates persist; the",
+                                    "inspector reloads them.",
+                                    "- Extraction timers and LLM calls are foreground-only.",
+                                    "- Pausing records the last activity and pending sources and cancels timers;",
+                                    "resuming recomputes the deadline and flushes overdue work in the foreground.",
+                                    "- Confirmed memory persists in application-support storage on Android/iOS;",
+                                    "the web build stores streams in origin-local browser preferences.",
+                                    "- Android and iOS share the same Flutter lifecycle bridge and native storage",
+                                    "adapter contract; a physical iOS smoke still needs a macOS host.",
+                                    "chat command.",
+                                    "On Android/iOS the\napp lifecycle pauses extraction when backgrounded and resumes an overdue flush\nin the foreground; desktop/web remain foreground-only.\n\n## Reproducible desktop demo\n\nRequires `libsecret` (see `README.md`) and a DeepSeek key in settings or\n`DEEPSEEK_API_KEY`.\n\n```sh\nflutter pub get\nflutter run -d linux\n```\n\n1.",
+                                    "Create a project and a chat.\n2.",
+                                    "Send `Запомни, что деплой делается только через kubernetes`.\n3.",
+                                    "Open the memory inspector (brain icon in the header).",
+                                    "Under **Кандидаты**\n   confirm the candidate.\n4.",
+                                    "Under **Рабочая** the confirmed record appears.",
+                                    "Edit or forget it.\n5.",
+                                    "Send a normal question; open **Показать трассу** to see the exact records\n   supplied (reason `workingPriority`/`confirmedPreference`/`lexicalMatch`).\n6.",
+                                    "Toggle **Долговременная память** off; the trace now shows\n   `layerDisabled` for long-term records.\n7.",
+                                    "Press **Анализировать** to run a manual extraction; new candidates appear\n   for confirmation.\n8."
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "chunk_id",
+                                "quote"
+                              ],
+                              "properties": {
+                                "chunk_id": {
+                                  "const": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391"
+                                },
+                                "quote": {
+                                  "type": "string",
+                                  "enum": [
+                                    "# Memory: behavior, demo, and smoke",
+                                    "This guide describes the shipped memory behavior and how to reproduce it.",
+                                    "## Layers and scopes",
+                                    "| Layer | Source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n| Long-term | `memory-v1_` JSONL | local user | across projects and chats |",
+                                    "Working records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.",
+                                    "## Extraction policy",
+                                    "| Layer | Source | Scope | Lifetime |",
+                                    "|---|---|---|---|",
+                                    "| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |",
+                                    "| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |",
+                                    "| Long-term | `memory-v1_` JSONL | local user | across projects and chats |",
+                                    "Working records require a project; long-term records are user-global. Retrieval",
+                                    "never mixes them: a working record is only ever returned for its own project.",
+                                    "- A full automatic window contains **40** completed user/assistant messages.",
+                                    "- The next window retains a **2**-message overlap and advances by **38**.",
+                                    "- An idle flush becomes due **30 minutes** after the last completed response and",
+                                    "runs in the foreground only.",
+                                    "- **Analyze now** (memory inspector) flushes every pending source immediately.",
+                                    "- **Analyze now** also replays deterministic explicit phrases, so it can recover",
+                                    "a missed automatic callback without relying on the extraction model.",
+                                    "- Explicit phrases create candidates with no LLM call:",
+                                    "`remember project: ...`, `remember global: ...`, `remember: ...`,",
+                                    "`remember that ...`, `запомни проект: ...`, `запомни глобально: ...`,",
+                                    "`запомни, что ...`.",
+                                    "- When the deterministic parser finds no command, an isolated LLM classifier",
+                                    "checks only the latest user message. It returns `none`, `working`, or",
+                                    "`longTerm` with a self-contained fact, so typos and natural wording such as",
+                                    "`Запомни гглобально,",
+                                    "It returns `none`, `working`, or\n  `longTerm` with a self-contained fact, so typos and natural wording such as\n  `Запомни гглобально,"
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "model": "tiel-coder",
+        "raw": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "{\"status\":\"answered\",\"claims\":[{\"text\":\"Domovoy имеет три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"Domovoy exposes three observable memory layers:\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\"}]},{\"text\":\"Кратковременная память — это текущий транскрипт чата, который не перезаписывается памятью и живёт до компрессии или удаления чата.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **short-term** — the current chat transcript (never rewritten by memory);\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\"}]},{\"text\":\"Рабочая память — это подтверждённые записи, принадлежащие текущему проекту, живущие до редактирования, забывания или удаления проекта.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **working** — confirmed records owned by the current project;\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\"}]},{\"text\":\"Долговременная память — это подтверждённые записи, общие для проектов локального пользователя, живущие между проектами и чатами.\",\"evidence\":[{\"chunk_id\":\"d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2\",\"quote\":\"- **long-term** — confirmed records shared across projects by the local user.\"},{\"chunk_id\":\"3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391\",\"quote\":\"| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\"}]}]}"
+              }
+            }
+          ],
+          "created": 1791926106,
+          "model": "tiel-coder",
+          "system_fingerprint": "b10679-50f068fff",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 837,
+            "prompt_tokens": 2745,
+            "total_tokens": 3582,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-pr2eJ2cqqJPzZVHzcKitUKrSo3lmjUrT",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 2745,
+            "prompt_ms": 3127.49,
+            "prompt_per_token_ms": 1.1393406193078324,
+            "prompt_per_second": 877.7006481235751,
+            "predicted_n": 837,
+            "predicted_ms": 19279.45,
+            "predicted_per_token_ms": 23.061543062200958,
+            "predicted_per_second": 43.36223284377926
+          }
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "chunk": {
+          "id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "document": "b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5",
+          "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+          "source": "README.md",
+          "title": "README.md",
+          "section": "README.md",
+          "start": 0,
+          "end": 1829,
+          "text": "# Domovoy\n\nPersonal AI assistant built with Flutter. The application is a chat workspace\nwith projects, streaming reasoning and answers, provider/model settings, and a\nlayered memory inspector.\n\n## Memory\n\nDomovoy exposes three observable memory layers:\n\n- **short-term** — the current chat transcript (never rewritten by memory);\n- **working** — confirmed records owned by the current project;\n- **long-term** — confirmed records shared across projects by the local user.\n\nCandidates proposed by extraction are untrusted until you confirm them. Open the\nmemory inspector with the brain icon in the workspace header: desktop and tablet\nshow it as a side pane, phones open a bottom sheet. From the inspector you can\nconfirm, edit, or reject candidates; edit or forget confirmed records; toggle\nwhether working and long-term layers are supplied to the provider; run a manual\nanalysis; and inspect the exact context trace.\n\nSee [docs/memory.md](docs/memory.md) for reproducible demo steps, the extraction\npolicy, security behavior, mobile constraints, and smoke results.\n\n## Personalization\n\nDomovoy keeps one active assistant profile and can store multiple alternatives.\nEach profile has a `SOUL.md` persona and a structured `USER.md` with style,\nformat, constraints, and user context. Open **Персонализация** in the sidebar to\ncreate, clone, edit, import/export, activate, or delete profiles. An optional\nfive-step LLM interview prepares a preview of `USER.md`; nothing is written\nuntil you confirm it.\n\nThe active profile is resolved for every provider request, so activation or an\nedit affects the next message without recreating the chat. Profile data and\nmemory remain separate. See [docs/personalization.md](docs/personalization.md)\nfor the data model, request path, and demo script.\n\n## Tasks and schedule\n\nThe tasks section",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.7585857094432964
+      },
+      {
+        "chunk": {
+          "id": "e68d74a777df346a1b1e687a850e09b016b516fff7d971861f0982b21a7800ed",
+          "document": "a54ff182c7e8acf56acfd6e4b9c3ff41e2c41a31c9b211b2deb9df75d9a478f9",
+          "revision": "40ad44daaae5cc0ed79d33324ea73dcd1687b3bfb62ad4531285d8563d5a50cc",
+          "source": "AGENTS.md",
+          "title": "AGENTS.md",
+          "section": "AGENTS.md",
+          "start": 0,
+          "end": 1135,
+          "text": "# AGENTS.md — инструкции для ИИ-ассистентов\n\nКонтракт для любого ИИ-ассистента, работающего с этим репозиторием.\nПрочитайте перед любыми изменениями.\n\n## Цель проекта\n\nDomovoy — персональный ИИ-ассистент в виде Flutter-приложения: рабочее\nпространство чата с LLM (провайдеры DeepSeek/OpenRouter), стриминг ответа и\nreasoning, проекты и настройки API-ключа.\n\n## Инварианты\n\n1. **Один Flutter-пакет `domovoy`.** Никаких вложенных `pubspec.yaml`,\n   подпакетов или внешних менеджеров воркспейса. Все зависимости — в корневом\n   `pubspec.yaml`.\n2. **Идентификатор приложения — `ru.kotdath.domovoy`** на всех платформах:\n   `namespace`/`applicationId` в Android, `PRODUCT_BUNDLE_IDENTIFIER` в\n   iOS/macOS, `APPLICATION_ID` в Linux, company/namespace в Windows. Не\n   переименовывать.\n3. **Слои и направление зависимостей:** `presentation → application → domain`,\n   `infrastructure` реализует контракты из `core`. Обратные зависимости\n   запрещены.\n4. **Состояние — `ChangeNotifier` и явная композиция в `lib/app.dart`.**\n   Внешних state-management/DI-пакетов нет; не добавлять.\n5. **Домен — в `lib/core/`** (`llm/`, `agents/`, `projects/",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.553975604067692
+      },
+      {
+        "chunk": {
+          "id": "1d6a114c8312cdc264dc0c576378e695cbd12a856fa5f2c6017b1bd064663228",
+          "document": "088e884cb76ef1d275017813422b4db1a47f657f1e49b0f63e882e100f012cf9",
+          "revision": "7b1daf627dd83b8bca332b239398b6df568d55eca2c6fb38c67944ca487e156f",
+          "source": "docs/mcp-b3-arxiv-server.md",
+          "title": "docs/mcp-b3-arxiv-server.md",
+          "section": "docs/mcp-b3-arxiv-server.md",
+          "start": 8265,
+          "end": 9411,
+          "text": "новременно\n  **для всех машин под контролем пользователя**. Domovoy не имеет\n  межмашинной синхронизации: ПК и телефон, запущенные одновременно, каждый\n  соблюдают свои 3 с и один запрос, но вместе могут превысить общий лимит.\n  Документация не заявляет глобально гарантированного лимита; снижают риск\n  кэш (TTL 10 минут) и то, что повторный поиск не обращается к сети.\n- Официальный API отдаёт только описательные метаданные (название, авторы,\n  аннотация, категории, даты, ссылки). Хранить и преобразовывать их можно;\n  PDF не скачиваются, полный текст не индексируется, перепубликация не\n  выполняется.\n- Релевантность задаёт внутренний поиск arXiv, поэтому порядок relevance\n  зависит от API; даты сортируются локально детерминированно.\n- Поле `submittedAfter` — единственный документированный фильтр дат; верхняя\n  граница запроса фиксирована (`999912312359`), отдельного `submittedBefore`\n  в контракте B3 нет.\n- Свободный текст не поддерживает сложную грамматику arXiv (поля, Boolean,\n  фразы): это осознанное ограничение безопасности и повторяемости; для\n  грамматики достаточно `category` и документированного `sortBy`.\n\n## Правки после",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 9,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.49774375190919484
+      },
+      {
+        "chunk": {
+          "id": "1c812faea455f0ddcae4441bd6208cd223aaffde3f6e0d558f465af38cfb0b81",
+          "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+          "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+          "source": "docs/memory.md",
+          "title": "docs/memory.md",
+          "section": "docs/memory.md",
+          "start": 4339,
+          "end": 5984,
+          "text": " chat command. On Android/iOS the\napp lifecycle pauses extraction when backgrounded and resumes an overdue flush\nin the foreground; desktop/web remain foreground-only.\n\n## Reproducible desktop demo\n\nRequires `libsecret` (see `README.md`) and a DeepSeek key in settings or\n`DEEPSEEK_API_KEY`.\n\n```sh\nflutter pub get\nflutter run -d linux\n```\n\n1. Create a project and a chat.\n2. Send `Запомни, что деплой делается только через kubernetes`.\n3. Open the memory inspector (brain icon in the header). Under **Кандидаты**\n   confirm the candidate.\n4. Under **Рабочая** the confirmed record appears. Edit or forget it.\n5. Send a normal question; open **Показать трассу** to see the exact records\n   supplied (reason `workingPriority`/`confirmedPreference`/`lexicalMatch`).\n6. Toggle **Долговременная память** off; the trace now shows\n   `layerDisabled` for long-term records.\n7. Press **Анализировать** to run a manual extraction; new candidates appear\n   for confirmation.\n8. Restart the app: confirmed records and pending candidates persist; the\n   inspector reloads them.\n\n## Mobile constraints\n\n- Extraction timers and LLM calls are foreground-only.\n- Pausing records the last activity and pending sources and cancels timers;\n  resuming recomputes the deadline and flushes overdue work in the foreground.\n- Confirmed memory persists in application-support storage on Android/iOS;\n  the web build stores streams in origin-local browser preferences.\n- Android and iOS share the same Flutter lifecycle bridge and native storage\n  adapter contract; a physical iOS smoke still needs a macOS host.\n\n## Smoke checklist and results\n\nEnvironment: Fedora Linux",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 3,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.48955902247056315
+      },
+      {
+        "chunk": {
+          "id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+          "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+          "source": "docs/memory.md",
+          "title": "docs/memory.md",
+          "section": "docs/memory.md",
+          "start": 0,
+          "end": 1589,
+          "text": "# Memory: behavior, demo, and smoke\n\nThis guide describes the shipped memory behavior and how to reproduce it.\n\n## Layers and scopes\n\n| Layer | Source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n\nWorking records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.\n\n## Extraction policy\n\n- A full automatic window contains **40** completed user/assistant messages.\n- The next window retains a **2**-message overlap and advances by **38**.\n- An idle flush becomes due **30 minutes** after the last completed response and\n  runs in the foreground only.\n- **Analyze now** (memory inspector) flushes every pending source immediately.\n- **Analyze now** also replays deterministic explicit phrases, so it can recover\n  a missed automatic callback without relying on the extraction model.\n- Explicit phrases create candidates with no LLM call:\n  `remember project: ...`, `remember global: ...`, `remember: ...`,\n  `remember that ...`, `запомни проект: ...`, `запомни глобально: ...`,\n  `запомни, что ...`.\n- When the deterministic parser finds no command, an isolated LLM classifier\n  checks only the latest user message. It returns `none`, `working`, or\n  `longTerm` with a self-contained fact, so typos and natural wording such as\n  `Запомни гглобально,",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.48688186077757967
+      }
+    ],
+    "candidates": [
+      {
+        "chunk": {
+          "id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "document": "b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5",
+          "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+          "source": "README.md",
+          "title": "README.md",
+          "section": "README.md",
+          "start": 0,
+          "end": 1829,
+          "text": "# Domovoy\n\nPersonal AI assistant built with Flutter. The application is a chat workspace\nwith projects, streaming reasoning and answers, provider/model settings, and a\nlayered memory inspector.\n\n## Memory\n\nDomovoy exposes three observable memory layers:\n\n- **short-term** — the current chat transcript (never rewritten by memory);\n- **working** — confirmed records owned by the current project;\n- **long-term** — confirmed records shared across projects by the local user.\n\nCandidates proposed by extraction are untrusted until you confirm them. Open the\nmemory inspector with the brain icon in the workspace header: desktop and tablet\nshow it as a side pane, phones open a bottom sheet. From the inspector you can\nconfirm, edit, or reject candidates; edit or forget confirmed records; toggle\nwhether working and long-term layers are supplied to the provider; run a manual\nanalysis; and inspect the exact context trace.\n\nSee [docs/memory.md](docs/memory.md) for reproducible demo steps, the extraction\npolicy, security behavior, mobile constraints, and smoke results.\n\n## Personalization\n\nDomovoy keeps one active assistant profile and can store multiple alternatives.\nEach profile has a `SOUL.md` persona and a structured `USER.md` with style,\nformat, constraints, and user context. Open **Персонализация** in the sidebar to\ncreate, clone, edit, import/export, activate, or delete profiles. An optional\nfive-step LLM interview prepares a preview of `USER.md`; nothing is written\nuntil you confirm it.\n\nThe active profile is resolved for every provider request, so activation or an\nedit affects the next message without recreating the chat. Profile data and\nmemory remain separate. See [docs/personalization.md](docs/personalization.md)\nfor the data model, request path, and demo script.\n\n## Tasks and schedule\n\nThe tasks section",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.7585857094432964
+      },
+      {
+        "chunk": {
+          "id": "e68d74a777df346a1b1e687a850e09b016b516fff7d971861f0982b21a7800ed",
+          "document": "a54ff182c7e8acf56acfd6e4b9c3ff41e2c41a31c9b211b2deb9df75d9a478f9",
+          "revision": "40ad44daaae5cc0ed79d33324ea73dcd1687b3bfb62ad4531285d8563d5a50cc",
+          "source": "AGENTS.md",
+          "title": "AGENTS.md",
+          "section": "AGENTS.md",
+          "start": 0,
+          "end": 1135,
+          "text": "# AGENTS.md — инструкции для ИИ-ассистентов\n\nКонтракт для любого ИИ-ассистента, работающего с этим репозиторием.\nПрочитайте перед любыми изменениями.\n\n## Цель проекта\n\nDomovoy — персональный ИИ-ассистент в виде Flutter-приложения: рабочее\nпространство чата с LLM (провайдеры DeepSeek/OpenRouter), стриминг ответа и\nreasoning, проекты и настройки API-ключа.\n\n## Инварианты\n\n1. **Один Flutter-пакет `domovoy`.** Никаких вложенных `pubspec.yaml`,\n   подпакетов или внешних менеджеров воркспейса. Все зависимости — в корневом\n   `pubspec.yaml`.\n2. **Идентификатор приложения — `ru.kotdath.domovoy`** на всех платформах:\n   `namespace`/`applicationId` в Android, `PRODUCT_BUNDLE_IDENTIFIER` в\n   iOS/macOS, `APPLICATION_ID` в Linux, company/namespace в Windows. Не\n   переименовывать.\n3. **Слои и направление зависимостей:** `presentation → application → domain`,\n   `infrastructure` реализует контракты из `core`. Обратные зависимости\n   запрещены.\n4. **Состояние — `ChangeNotifier` и явная композиция в `lib/app.dart`.**\n   Внешних state-management/DI-пакетов нет; не добавлять.\n5. **Домен — в `lib/core/`** (`llm/`, `agents/`, `projects/",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.553975604067692
+      },
+      {
+        "chunk": {
+          "id": "1d6a114c8312cdc264dc0c576378e695cbd12a856fa5f2c6017b1bd064663228",
+          "document": "088e884cb76ef1d275017813422b4db1a47f657f1e49b0f63e882e100f012cf9",
+          "revision": "7b1daf627dd83b8bca332b239398b6df568d55eca2c6fb38c67944ca487e156f",
+          "source": "docs/mcp-b3-arxiv-server.md",
+          "title": "docs/mcp-b3-arxiv-server.md",
+          "section": "docs/mcp-b3-arxiv-server.md",
+          "start": 8265,
+          "end": 9411,
+          "text": "новременно\n  **для всех машин под контролем пользователя**. Domovoy не имеет\n  межмашинной синхронизации: ПК и телефон, запущенные одновременно, каждый\n  соблюдают свои 3 с и один запрос, но вместе могут превысить общий лимит.\n  Документация не заявляет глобально гарантированного лимита; снижают риск\n  кэш (TTL 10 минут) и то, что повторный поиск не обращается к сети.\n- Официальный API отдаёт только описательные метаданные (название, авторы,\n  аннотация, категории, даты, ссылки). Хранить и преобразовывать их можно;\n  PDF не скачиваются, полный текст не индексируется, перепубликация не\n  выполняется.\n- Релевантность задаёт внутренний поиск arXiv, поэтому порядок relevance\n  зависит от API; даты сортируются локально детерминированно.\n- Поле `submittedAfter` — единственный документированный фильтр дат; верхняя\n  граница запроса фиксирована (`999912312359`), отдельного `submittedBefore`\n  в контракте B3 нет.\n- Свободный текст не поддерживает сложную грамматику arXiv (поля, Boolean,\n  фразы): это осознанное ограничение безопасности и повторяемости; для\n  грамматики достаточно `category` и документированного `sortBy`.\n\n## Правки после",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 9,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.49774375190919484
+      },
+      {
+        "chunk": {
+          "id": "1c812faea455f0ddcae4441bd6208cd223aaffde3f6e0d558f465af38cfb0b81",
+          "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+          "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+          "source": "docs/memory.md",
+          "title": "docs/memory.md",
+          "section": "docs/memory.md",
+          "start": 4339,
+          "end": 5984,
+          "text": " chat command. On Android/iOS the\napp lifecycle pauses extraction when backgrounded and resumes an overdue flush\nin the foreground; desktop/web remain foreground-only.\n\n## Reproducible desktop demo\n\nRequires `libsecret` (see `README.md`) and a DeepSeek key in settings or\n`DEEPSEEK_API_KEY`.\n\n```sh\nflutter pub get\nflutter run -d linux\n```\n\n1. Create a project and a chat.\n2. Send `Запомни, что деплой делается только через kubernetes`.\n3. Open the memory inspector (brain icon in the header). Under **Кандидаты**\n   confirm the candidate.\n4. Under **Рабочая** the confirmed record appears. Edit or forget it.\n5. Send a normal question; open **Показать трассу** to see the exact records\n   supplied (reason `workingPriority`/`confirmedPreference`/`lexicalMatch`).\n6. Toggle **Долговременная память** off; the trace now shows\n   `layerDisabled` for long-term records.\n7. Press **Анализировать** to run a manual extraction; new candidates appear\n   for confirmation.\n8. Restart the app: confirmed records and pending candidates persist; the\n   inspector reloads them.\n\n## Mobile constraints\n\n- Extraction timers and LLM calls are foreground-only.\n- Pausing records the last activity and pending sources and cancels timers;\n  resuming recomputes the deadline and flushes overdue work in the foreground.\n- Confirmed memory persists in application-support storage on Android/iOS;\n  the web build stores streams in origin-local browser preferences.\n- Android and iOS share the same Flutter lifecycle bridge and native storage\n  adapter contract; a physical iOS smoke still needs a macOS host.\n\n## Smoke checklist and results\n\nEnvironment: Fedora Linux",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 3,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.48955902247056315
+      },
+      {
+        "chunk": {
+          "id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "document": "ad99d17d1a3323a2fd92ce2210bb9f73f75067d380ec51b0061e19770e56ce13",
+          "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+          "source": "docs/memory.md",
+          "title": "docs/memory.md",
+          "section": "docs/memory.md",
+          "start": 0,
+          "end": 1589,
+          "text": "# Memory: behavior, demo, and smoke\n\nThis guide describes the shipped memory behavior and how to reproduce it.\n\n## Layers and scopes\n\n| Layer | Source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n\nWorking records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.\n\n## Extraction policy\n\n- A full automatic window contains **40** completed user/assistant messages.\n- The next window retains a **2**-message overlap and advances by **38**.\n- An idle flush becomes due **30 minutes** after the last completed response and\n  runs in the foreground only.\n- **Analyze now** (memory inspector) flushes every pending source immediately.\n- **Analyze now** also replays deterministic explicit phrases, so it can recover\n  a missed automatic callback without relying on the extraction model.\n- Explicit phrases create candidates with no LLM call:\n  `remember project: ...`, `remember global: ...`, `remember: ...`,\n  `remember that ...`, `запомни проект: ...`, `запомни глобально: ...`,\n  `запомни, что ...`.\n- When the deterministic parser finds no command, an isolated LLM classifier\n  checks only the latest user message. It returns `none`, `working`, or\n  `longTerm` with a self-contained fact, so typos and natural wording such as\n  `Запомни гглобально,",
+          "strategy": "fixed",
+          "tokens": 384,
+          "ordinal": 0,
+          "page_start": null,
+          "page_end": null,
+          "forced_split": false,
+          "config": "v1-384-64"
+        },
+        "dense_score": 0.48688186077757967
+      }
+    ],
+    "index_generation": "71560bd214b69cc53af96bfa94eeb9ba54c96cac098be68fe16f01c11b9d9e56",
+    "embedding_fingerprint": "df2af910c83efd01d39f7ba4012e24bdc1ba98281ad65efff841fd025148279d",
+    "dense_ms": 622.4562560000777,
+    "rerank_ms": 0,
+    "retrieval_config": {
+      "dense_threshold": -1,
+      "dense_question_threshold": 0.5764271075846307,
+      "rerank_threshold": -1.1824464797973633,
+      "topic_prefix": true,
+      "dev_sha256": "c04cd94f280049551160febceff861dc0c46366259a1959bdadd6d77569fef33",
+      "method": "topic_query_max_score_question_f1_midpoints_v2",
+      "dense_dev_metrics": {
+        "threshold": 0.5764271075846307,
+        "f1": 1.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0
+      },
+      "rerank_dev_metrics": {
+        "threshold": -1.1824464797973633,
+        "f1": 0.8888888888888888,
+        "tp": 4,
+        "fp": 1,
+        "fn": 0
+      },
+      "index_generation": "71560bd214b69cc53af96bfa94eeb9ba54c96cac098be68fe16f01c11b9d9e56",
+      "samples": {
+        "dense": [
+          {
+            "id": "D01",
+            "score": 0.6462284513170304,
+            "answerable": true
+          },
+          {
+            "id": "D02",
+            "score": 0.7163421410083024,
+            "answerable": true
+          },
+          {
+            "id": "D03",
+            "score": 0.6404050555477963,
+            "answerable": true
+          },
+          {
+            "id": "D04",
+            "score": 0.7929480408486381,
+            "answerable": true
+          },
+          {
+            "id": "D05",
+            "score": 0.4721765261469033,
+            "answerable": false
+          },
+          {
+            "id": "D06",
+            "score": 0.5080093352871935,
+            "answerable": false
+          },
+          {
+            "id": "D07",
+            "score": 0.5124491596214651,
+            "answerable": false
+          },
+          {
+            "id": "D08",
+            "score": 0.4847240321346406,
+            "answerable": false
+          }
+        ],
+        "rerank": [
+          {
+            "id": "D01",
+            "score": -0.9390741586685181,
+            "answerable": true
+          },
+          {
+            "id": "D02",
+            "score": 0.5523860454559326,
+            "answerable": true
+          },
+          {
+            "id": "D03",
+            "score": 0.4234025478363037,
+            "answerable": true
+          },
+          {
+            "id": "D04",
+            "score": 3.0031466484069824,
+            "answerable": true
+          },
+          {
+            "id": "D05",
+            "score": -4.161825656890869,
+            "answerable": false
+          },
+          {
+            "id": "D06",
+            "score": -2.423532009124756,
+            "answerable": false
+          },
+          {
+            "id": "D07",
+            "score": -1.4258188009262085,
+            "answerable": false
+          },
+          {
+            "id": "D08",
+            "score": -0.4892258644104004,
+            "answerable": false
+          }
+        ]
+      }
+    },
+    "retrieval_query": "Domovoy AI assistant memory records: Какие слои памяти есть в Domovoy?",
+    "text": "Domovoy имеет три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).\nКратковременная память — это текущий транскрипт чата, который не перезаписывается памятью и живёт до компрессии или удаления чата.\nРабочая память — это подтверждённые записи, принадлежащие текущему проекту, живущие до редактирования, забывания или удаления проекта.\nДолговременная память — это подтверждённые записи, общие для проектов локального пользователя, живущие между проектами и чатами.\n\nИсточники:\n[1] README.md · README.md — Domovoy exposes three observable memory layers:\n[2] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[3] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[4] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[5] README.md · README.md — - **working** — confirmed records owned by the current project;\n[6] docs/memory.md · docs/memory.md — | Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n[7] README.md · README.md — - **long-term** — confirmed records shared across projects by the local user.\n[8] docs/memory.md · docs/memory.md — | Long-term | `memory-v1_` JSONL | local user | across projects and chats |",
+    "status": "answered",
+    "claims": [
+      {
+        "text": "Domovoy имеет три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).",
+        "evidence": [
+          {
+            "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+            "quote": "Domovoy exposes three observable memory layers:"
+          },
+          {
+            "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+            "quote": "| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |"
+          }
+        ]
+      },
+      {
+        "text": "Кратковременная память — это текущий транскрипт чата, который не перезаписывается памятью и живёт до компрессии или удаления чата.",
+        "evidence": [
+          {
+            "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+            "quote": "- **short-term** — the current chat transcript (never rewritten by memory);"
+          },
+          {
+            "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+            "quote": "| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |"
+          }
+        ]
+      },
+      {
+        "text": "Рабочая память — это подтверждённые записи, принадлежащие текущему проекту, живущие до редактирования, забывания или удаления проекта.",
+        "evidence": [
+          {
+            "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+            "quote": "- **working** — confirmed records owned by the current project;"
+          },
+          {
+            "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+            "quote": "| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |"
+          }
+        ]
+      },
+      {
+        "text": "Долговременная память — это подтверждённые записи, общие для проектов локального пользователя, живущие между проектами и чатами.",
+        "evidence": [
+          {
+            "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+            "quote": "- **long-term** — confirmed records shared across projects by the local user."
+          },
+          {
+            "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+            "quote": "| Long-term | `memory-v1_` JSONL | local user | across projects and chats |"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+        "source": "README.md",
+        "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+        "section": "README.md",
+        "quote": "Domovoy exposes three observable memory layers:",
+        "start_utf16": 206
+      },
+      {
+        "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+        "source": "docs/memory.md",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "section": "docs/memory.md",
+        "quote": "| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |",
+        "start_utf16": 190
+      },
+      {
+        "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+        "source": "README.md",
+        "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+        "section": "README.md",
+        "quote": "- **short-term** — the current chat transcript (never rewritten by memory);",
+        "start_utf16": 255
+      },
+      {
+        "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+        "source": "docs/memory.md",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "section": "docs/memory.md",
+        "quote": "| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |",
+        "start_utf16": 190
+      },
+      {
+        "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+        "source": "README.md",
+        "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+        "section": "README.md",
+        "quote": "- **working** — confirmed records owned by the current project;",
+        "start_utf16": 331
+      },
+      {
+        "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+        "source": "docs/memory.md",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "section": "docs/memory.md",
+        "quote": "| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |",
+        "start_utf16": 273
+      },
+      {
+        "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+        "source": "README.md",
+        "revision": "997bf6b6688d961ac0aa6cad6fc53171acd4b6833f37a3fd714857461ab50b01",
+        "section": "README.md",
+        "quote": "- **long-term** — confirmed records shared across projects by the local user.",
+        "start_utf16": 395
+      },
+      {
+        "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+        "source": "docs/memory.md",
+        "revision": "e15ec060b3e02b5a37c2e2dba5d4cef9f207787aca678070bcdb0886c2c48441",
+        "section": "docs/memory.md",
+        "quote": "| Long-term | `memory-v1_` JSONL | local user | across projects and chats |",
+        "start_utf16": 371
+      }
+    ],
+    "finish_reason": "stop",
+    "total_ms": 23362.55427299875,
+    "usage": {
+      "prompt_tokens": 2745,
+      "completion_tokens": 837,
+      "total_tokens": 3582
+    }
+  },
+  "socket_connect_events": [
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8765)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8765)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 8772)"
+    }
+  ],
+  "web": false,
+  "cloud": false,
+  "embedding_gateway_runtime": "HF_HUB_OFFLINE=1, local_files_only=True, HF_HUB_DISABLE_TELEMETRY=1"
+}

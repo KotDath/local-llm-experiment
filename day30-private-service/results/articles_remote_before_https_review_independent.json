@@ -1,0 +1,114 @@
+{
+  "reviewed_at_utc": "2026-10-14T08:24:49.295911+00:00",
+  "phase": "before_HTTPS",
+  "transport_scope": "Existing remote_checks script client=VPS through prior internal gateway/reverse SSH. Not proof of client HTTPS, Caddy, certificate verification or public HTTPS endpoint.",
+  "input": "remote_final.json",
+  "input_sha256": "6eedd787c3751c78f768dceefca7260ab88e0b574c2728972c4d1864a56a24a1",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "source_matches_current": true,
+  "remote_health": {
+    "ready": true,
+    "configured_profile": "optimized",
+    "configured_context": 32768,
+    "configured_max_tokens": 6144,
+    "context_matches": true,
+    "model": "tiel-coder",
+    "model_host": "PC-loopback",
+    "slots": 3,
+    "context_per_slot": 32768,
+    "api_slots": 3,
+    "slots_match": true,
+    "rag_ready": true,
+    "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+    "pending": 0,
+    "queue_limit": 10,
+    "queue_wait_timeout_s": 120.0,
+    "rate": 20,
+    "rate_window": 60.0
+  },
+  "runtime_model": {
+    "file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "bytes": 39350213152,
+    "build": "b10679-50f068fff",
+    "slots": 3,
+    "context_per_slot": 32768
+  },
+  "selection_case": "B",
+  "exact_pc_joins": 7,
+  "all_transport_accounting_checks_pass": true,
+  "literal_citation_checks": [
+    {
+      "request_id": "822edc71d57c47dfa7b69f4be87f6706",
+      "selected_quotes": 3,
+      "literal_UTF16_pages_all_valid": true
+    },
+    {
+      "request_id": "ea865e85a52b44a381e02db7cf6387e3",
+      "selected_quotes": 17,
+      "literal_UTF16_pages_all_valid": true
+    },
+    {
+      "request_id": "1b3406346ecb4bf29608fbb7f484eb5b",
+      "selected_quotes": 3,
+      "literal_UTF16_pages_all_valid": true
+    },
+    {
+      "request_id": "d9de922fbd5740428ad6765b83053a2c",
+      "selected_quotes": 0,
+      "literal_UTF16_pages_all_valid": true
+    }
+  ],
+  "rag_semantic_review": [
+    {
+      "turn": 1,
+      "request_id": "822edc71d57c47dfa7b69f4be87f6706",
+      "question": "Как MemGPT организует основную и внешнюю память?",
+      "verdict": "correct_high_level",
+      "fully_grounded": true,
+      "reason": "Main/external distinction and RAM/disk analogy are supported by literal MemGPT page2 quote. Limited detail, but answers the high-level question."
+    },
+    {
+      "turn": 2,
+      "request_id": "ea865e85a52b44a381e02db7cf6387e3",
+      "question": "Как он продолжает выполнение нескольких функций без ответа пользователю?",
+      "verdict": "core_answer_correct_extra_claims_partially_grounded",
+      "fully_grounded": false,
+      "reason": "Function chaining, special flag, immediate return and yield waiting are supported by page4 quotations. Extra external-transfer necessity and paging/page-fault mechanics are not fully supported by the selected quotes; some figure fragments and FIFO fragment are unrelated. Grounded primary mechanism does not validate all prose."
+    },
+    {
+      "turn": 3,
+      "request_id": "1b3406346ecb4bf29608fbb7f484eb5b",
+      "question": "Чем этот механизм отличается от забывания в MemoryBank?",
+      "verdict": "incorrect_incomplete_comparison",
+      "fully_grounded": false,
+      "hallucination": true,
+      "reason": "Fails to describe MemoryBank forgetting/strength/time at all. Negative universal assertion that MemGPT has no time/importance forgetting is not established by selected MemGPT architecture/eviction quotations. Third citation is a References/Longformer fragment, not evidence for that assertion. Query resolver fallback retains prior user topic but result cannot be graded fully correct."
+    },
+    {
+      "turn": 4,
+      "request_id": "d9de922fbd5740428ad6765b83053a2c",
+      "question": "Какой измеренный p95 ответа MemGPT на Galaxy A54 в этих статьях?",
+      "verdict": "correct_appropriate_refusal",
+      "fully_grounded": true,
+      "reason": "No Galaxy A54 MemGPT p95 experiment in these papers; refuses to invent a measurement, claims/sources empty."
+    }
+  ],
+  "rag_fully_grounded_out_of_4": 2,
+  "plain_history_reset_checks": {
+    "codeword_recalled": true,
+    "codeword_not_recalled_after_reset": true,
+    "reset200true": true,
+    "history_prompt_larger_than_after_reset": true,
+    "same_agent_for_write_and_recall": true,
+    "reset_constructs_fresh_agent": true
+  },
+  "pending": [
+    "New HTTPS final/load/limits/boundary receipts and final launch/docs audit."
+  ],
+  "limitations": [
+    "Literal quotation validity and native page identity are not semantic entailment.",
+    "This7turn run is not separate-Agent isolation proof; independent day27 real run provides that evidence."
+  ],
+  "plain_reset_implementation": "API reset drops Chat after clearing it; next request constructs a fresh Agent under the same API session. Changed Agent ID after reset is expected.",
+  "timing_semantics": "PC journal.total_ms equals response.http_total_ms (includes HTTP queue/admission); response.total_ms is Agent execution and is slightly smaller."
+}

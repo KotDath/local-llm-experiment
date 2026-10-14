@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-13T22:53:57.332866+00:00",
+  "command": ".venv/bin/python -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "tests_run": 6,
+  "all_passed": true,
+  "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "test_source_sha256": "ba8bbdfb393c70e80f5608818c76fa9813220f3c7176185d97ac332137fd6853",
+  "scope": "Controller/protocol/provenance checks; synthetic repair/fallback fixtures are not model-quality evidence."
+}

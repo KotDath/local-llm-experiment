@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-14T10:17:59Z",
+  "endpoint": "https://api.deepseek.com/models",
+  "available_model_ids": [
+    "deepseek-flash",
+    "deepseek-v4-pro"
+  ],
+  "selected_model_id": "deepseek-flash",
+  "selected_model_available": true,
+  "transport": "direct HTTP; no SDK",
+  "role": "explicit comparison only; no production fallback"
+}

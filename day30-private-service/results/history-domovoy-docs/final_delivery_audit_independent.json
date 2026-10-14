@@ -1,0 +1,402 @@
+{
+  "utc": "2026-10-14T00:03:32.857539+00:00",
+  "scope": "Final read-only delivery audit of sources,instructions and actual saved evidence. No new model,SSH,TG/cloud calls; no private env values read. Python AST/compile and bash -n only. Only this audit written.",
+  "final_source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "directories": [
+    {
+      "directory": "day26-local-llm",
+      "required_files_present": true,
+      "source_python_files": 7,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "core_sha256": null,
+      "source_symlinks": []
+    },
+    {
+      "directory": "day27-application",
+      "required_files_present": true,
+      "source_python_files": 8,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "core_sha256": null,
+      "source_symlinks": []
+    },
+    {
+      "directory": "day28-local-rag",
+      "required_files_present": true,
+      "source_python_files": 18,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "source_symlinks": []
+    },
+    {
+      "directory": "day29-optimization",
+      "required_files_present": true,
+      "source_python_files": 21,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "source_symlinks": []
+    },
+    {
+      "directory": "day30-private-service",
+      "required_files_present": true,
+      "source_python_files": 28,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "source_symlinks": []
+    }
+  ],
+  "source_gates": {
+    "same_Agent_all5": true,
+    "RAG_core28_29_30_finalSHA": true,
+    "all_required_files_present": true,
+    "no_source_symlinks": true,
+    "python_compile_errors": [],
+    "bash_syntax_errors": [],
+    "agent_framework_imports": [],
+    "cross_day_imports": "None observed; sources own model/common/Agent/protocol; copied corpus and fixed index in days28–30. Installed binaries/weights/tokenizer cache are explicit external prerequisites.",
+    "direct_HTTP": "model.py generation uses urllib-based HTTP JSON /v1/chat/completions and loopback-only URL. Agent owns history/identity/execution; SDK absent.",
+    "cloud_policy": "Explicit opt-in evaluate --cloud only; no generation fallback in Agent/model/API. Optional web and Telegram accurately disclosed."
+  },
+  "documentation": {
+    "README_PLAN_DEMO_all5_present": true,
+    "root_README_ACCEPTANCE_VIDEO_present": true,
+    "broken_local_Markdown_links": [],
+    "PLAN30_contract_corrections_present": true,
+    "final_quality_limit_disclosed": true,
+    "video_scope": "Instructions only, as agreed. Actual video not claimed.",
+    "historical_evidence": "Earlier RAG dialogue failures and early benchmark/control artifacts retained and identified, not silently overwritten."
+  },
+  "matrix": {
+    "selected_rows": 80,
+    "case_counts": {
+      "A": 20,
+      "B": 20,
+      "C": 20,
+      "D": 20
+    },
+    "source_SHA_set": [
+      "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf"
+    ],
+    "question_SHA_unique": 1,
+    "csv_rows": 80,
+    "CSV_runs_match_selected": true,
+    "grade_binding": [
+      {
+        "case": "A",
+        "grades": 20,
+        "match_current_run": true,
+        "answer_SHA_matches": true
+      },
+      {
+        "case": "B",
+        "grades": 20,
+        "match_current_run": true,
+        "answer_SHA_matches": true
+      },
+      {
+        "case": "C",
+        "grades": 20,
+        "match_current_run": true,
+        "answer_SHA_matches": true
+      },
+      {
+        "case": "D",
+        "grades": 20,
+        "match_current_run": true,
+        "answer_SHA_matches": true
+      }
+    ],
+    "all_single_slot": true,
+    "actual_cache_hits_total": 0,
+    "model_pair_metadata_passed": true,
+    "tensor_shapes_equal": true,
+    "quant_types_differ": true,
+    "same_snapshot": true,
+    "selection": {
+      "case": "B",
+      "quant": "Q8",
+      "profile": "optimized",
+      "profile_settings": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      },
+      "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+      "model_sha256": "8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310",
+      "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "basis": "Best completeness across both measured passes:16/20, zero found hallucinations and delivery failures. Q4 uses less memory, but C=14/20 and D=13/20; D includes one truncated JSON delivery failure and one unsupported claim. Selection prioritizes actual answer quality/reliability over weight size.",
+      "run_ids": {
+        "A": "A-1791931097876872033",
+        "B": "B-1791931493539589446",
+        "C": "C-1791934064540115751",
+        "D": "D-1791934327817056987"
+      },
+      "questions_sha256": "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67"
+    },
+    "copy_to_day30_csv_byte_equal": true,
+    "interpretation": "Quality estimates from known10question×2 control; partial/delivery/citation problems kept. Q4 available and measured; chosenB Q8optimized is supported by final grades."
+  },
+  "remote_final": {
+    "chat_response_count": 7,
+    "exact_public_PC_receipt_matches": true,
+    "receipt_count": 7,
+    "stored_independent_summary": {
+      "all7_chat_responses_http200": true,
+      "all7_requests_joined_exact_pc_receipts": true,
+      "all_aggregate_usage_and_prompt_count_checks": true,
+      "all_literal_citations_current_evidence": true,
+      "RAG_required_answer_or_refusal_correct": 4,
+      "RAG_fully_acceptable_grounded_answers": 3,
+      "RAG_total": 4,
+      "semantic_citation_problem_turns": 1,
+      "network_and_plain_session_check_passed": true,
+      "current_model_is_selected_Q8_B": true
+    },
+    "RAG_quality": "Required answers/refusal correct4/4; fully grounded3/4 in this final remote run. Wrong arXiv citation and project/layer wording retained in raw and conclusions. Earlier successful local4/4 remains a separate run."
+  },
+  "current_remote_load": [
+    {
+      "count": 5,
+      "responses": [
+        {
+          "position": 0,
+          "status": 200,
+          "answer": "Столица Франции — Париж.",
+          "expected_fact": "Париж",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "cc6292b588f6470f8c56a5898f6e459e",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 1,
+          "status": 200,
+          "answer": "Столица Японии — Токио.",
+          "expected_fact": "Токио",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "fdb1b31fb7fa4ea7b8666d85d72acb10",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 2,
+          "status": 200,
+          "answer": "Столица Италии — Рим.",
+          "expected_fact": "Рим",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "c8ec7187610e4cf7a1b2945d37116713",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 3,
+          "status": 200,
+          "answer": "Земля.",
+          "expected_fact": "Земл",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "8cce3baf9bf7422c9113f1f0e793aa5c",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 4,
+          "status": 200,
+          "answer": "Столица Франции — Париж.",
+          "expected_fact": "Париж",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "9023e733176544a7b4b57e03d59bb38f",
+          "PC_receipt_present": true
+        }
+      ],
+      "all_correct": true
+    },
+    {
+      "count": 10,
+      "responses": [
+        {
+          "position": 0,
+          "status": 200,
+          "answer": "Столица Франции — Париж.",
+          "expected_fact": "Париж",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "f19de09ef484470985ecbe001d8bf94a",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 1,
+          "status": 200,
+          "answer": "Столица Японии — Токио.",
+          "expected_fact": "Токио",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "fd842b9eaf3f42498d3e5f8314d413e4",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 2,
+          "status": 200,
+          "answer": "Столица Италии — Рим.",
+          "expected_fact": "Рим",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "932151ed82374a0c879de12363f12029",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 3,
+          "status": 200,
+          "answer": "Земля.",
+          "expected_fact": "Земл",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "3e30d7bcd80e4a9cbefb9f8cb000cb5d",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 4,
+          "status": 200,
+          "answer": "Столица Франции — Париж.",
+          "expected_fact": "Париж",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "2aa4a6d42d0b4134930931f7ace6ee76",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 5,
+          "status": 200,
+          "answer": "Столица Японии — Токио.",
+          "expected_fact": "Токио",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "c4ff92649a0844a8a055c3fde3194215",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 6,
+          "status": 200,
+          "answer": "Столица Италии — Рим.",
+          "expected_fact": "Рим",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "0104711b20a644b1982546a767563c5d",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 7,
+          "status": 200,
+          "answer": "Земля.",
+          "expected_fact": "Земл",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "49955831833f4ca098080d021e16d409",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 8,
+          "status": 200,
+          "answer": "Столица Франции — Париж.",
+          "expected_fact": "Париж",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "a4f5e69b2a6a4b6b92808839d9e5e81f",
+          "PC_receipt_present": true
+        },
+        {
+          "position": 9,
+          "status": 200,
+          "answer": "Столица Японии — Токио.",
+          "expected_fact": "Токио",
+          "semantic_correct": true,
+          "actual_usage": true,
+          "real_llm_call_count": 1,
+          "request_id": "08b47f847bd843f08251d6896a539465",
+          "PC_receipt_present": true
+        }
+      ],
+      "all_correct": true
+    }
+  ],
+  "current_remote_limits": {
+    "unauthorized": 401,
+    "body_limit": 413,
+    "context_limit": 422,
+    "quota_sequence": [
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      422,
+      429
+    ],
+    "Retry_After_present": true,
+    "post_window_status": 200,
+    "post_window_semantic_answer": true
+  },
+  "current_runtime_artifact": {
+    "source_SHA": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "health_ready": true,
+    "RAG_ready": true,
+    "slots_match": true,
+    "slots": 3,
+    "context_per_slot": 8192,
+    "pending": 0,
+    "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "processes_alive": {
+      "model": true,
+      "api": true,
+      "bot": true
+    }
+  },
+  "core_tests": {
+    "utc": "2026-10-13T22:53:57.332866+00:00",
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests_run": 6,
+    "all_passed": true,
+    "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "test_source_sha256": "ba8bbdfb393c70e80f5608818c76fa9813220f3c7176185d97ac332137fd6853",
+    "scope": "Controller/protocol/provenance checks; synthetic repair/fallback fixtures are not model-quality evidence."
+  },
+  "secret_scan": {
+    "utc": "2026-10-14T00:00:40.377928+00:00",
+    "scope": "All Git-unignored source, documentation, corpus, fixed data and results; exact known credential values and private-key headers. Private env/runtime/venv/index cache excluded by Git rules. No secret values recorded.",
+    "files_scanned": 348,
+    "matches": [],
+    "passed": true
+  },
+  "secrets_scope": "Exact known-value scan recorded0matches348files; reviewer did not read secrets. Private.env/runtime keys are0600 and ignored. Distribution must honor source exclusions, not raw copy private working files.",
+  "remaining_blocking_requirements": [],
+  "status": "Final delivery requirements verified against inspected saved evidence and current source. Known LLM quality limitations remain explicitly documented; no guarantee of perfect correctness or universal robustness."
+}

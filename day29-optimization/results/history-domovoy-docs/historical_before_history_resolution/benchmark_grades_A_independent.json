@@ -1,0 +1,386 @@
+{
+  "schema": "independent-benchmark-grades-v1",
+  "evaluated_at_utc": "2026-10-13T20:59:37.693177+00:00",
+  "input": "results/benchmark_raw.jsonl",
+  "input_snapshot_sha256": "8b3c50c95cf4f5817fbb4db918eb1af7168bd454f6c8ea988c96957eb04b217d",
+  "selected_case": "A",
+  "selected_rows_sha256": "0f846bee8d07f821e37e13b07baacec2e3548a7ee39954622a1a4e6cbd198367",
+  "questions_sha256": "8f652fc8c56f0698f5d54e682d4bf6d1f7711d3eccb9e98abd16489f22576a67",
+  "rows": 20,
+  "rubric": "Same independent golden rubric: all explicitly requested aspects in prose, partial not correct; appropriate Q10 refusal correct. Concrete wrong/unsupported extra target claims can downgrade an otherwise correct core answer. Quote provenance separate from entailment. Profile names ignored for semantic judgement. Repeat 0 primary 10-question quality; repeat1 stability only. No inference/secrets/code modifications.",
+  "summary_by_repeat": {
+    "0": {
+      "total": 10,
+      "correctness_count": 7,
+      "hallucination_count": 1,
+      "correct": 6,
+      "partial": 3,
+      "wrong": 0,
+      "appropriate_refusal": 1
+    },
+    "1": {
+      "total": 10,
+      "correctness_count": 6,
+      "hallucination_count": 2,
+      "correct": 5,
+      "partial": 4,
+      "wrong": 0,
+      "appropriate_refusal": 1
+    }
+  },
+  "stability": {
+    "verdict_equal_questions": 9,
+    "total_questions": 10,
+    "changes": [
+      {
+        "id": "Q09",
+        "repeat0": "correct",
+        "repeat1": "partial",
+        "reason": "Extra Aurora-to-Android fallback scope claim."
+      }
+    ]
+  },
+  "grades": [
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q08",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Intrinsic prohibition независимо от allowed tools верен; три последовательных wrapped-line quotes вместе составляют прямое правило."
+      ],
+      "answer_sha256": "68e1b79cdbce7ba0f14b008c6b37419bbe25fb6b10b01e18f5630a1361def0ca",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_collectively",
+      "answer_record_sha256": "8dfc4b79d9c9e59faeb995fc30d7c5ac325c4a1543feef4ccf7537849eafdb9c"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q04",
+      "repeat": 0,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "reasons": [
+        "Toggle не удаляет — верно. Дополнительный claim говорит «Записи реально удаляются ... edit/forget», ошибочно объединяя edit с forget/deletion; corpus разделяет редактирование и забывание. Clear/current-project/global/candidates/chat сведения поддержаны."
+      ],
+      "answer_sha256": "9c855afd96976a535ae67f0f5d3039f87d378db84741eade5e4465d5c6bbcc6b",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "2655aa4fe98d311b465dc549d35f62db223f39a2412ca59d2b3d91136f9832fa"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q03",
+      "repeat": 0,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "reasons": [
+        "Дано ограничение five для lexically ranked ordinary long-term, но прямо запрошенные 12000 символов отсутствуют. Формулировка «обычно только» неточна относительно working priority; границу ordinary vs preferences нужно читать в контексте вопроса."
+      ],
+      "answer_sha256": "7e439521f61690966816676a12a970a361108b26a514e914f0efb0fd66e4e008",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_for_present_claim",
+      "answer_record_sha256": "ebd263ce06167ab9cb6e0ff4d354bf57d7d73c6c9d82c2d196c97814145212df"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q09",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Public Android stdio unsupported; loopback HTTP/in-process and old emulator API35 report верны. Дополнительные Web/Aurora quotes нерелевантны, но Android source содержит факты."
+      ],
+      "answer_sha256": "2bd2827c1e10f11b305c2e2b41e1f18f6dc6689f70eb0b56c2045ed1a92418e1",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "c409ce6bfe181d1a4067b79d89d4372a22995bce13b810c799fc6d0f21c68efe"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q06",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Closed app does nothing; one fresh catch-up and aggregated old missed periods правильны. Для catch-up выбран line prefix+headings вместо complete rule; весь sent chunk содержит нужное правило."
+      ],
+      "answer_sha256": "d98cb98511f269950ea4354f0624a1f3959e4800f584448f220042fe045ef903",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_fragmentary_catchup",
+      "answer_record_sha256": "75c1ac3a4ad445cc192e9d4a1f1dd8853849224bbbecc8aeaa6aa1bd96737654"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q07",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Обе DST политики и UTC/IANA верны. Нерелевантные invalid-calendar и implementation-path цитаты избыточны; meaningful spring цитата и fold fragment поддерживают core."
+      ],
+      "answer_sha256": "5e7c70b27cde11497c46abd1ec03190000d142086eac3c0ede301167893c00da",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "9be7d21cc867f7d44b6fcee9593cdf7286c05107cadffdb74a2b41a860d6f9e9"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q10",
+      "repeat": 0,
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "В базе нет измерения Galaxy p95; host refusal без выдуманных чисел."
+      ],
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "answer_record_sha256": "92ef3f77afbb45cba74a061c39a086e7aa27eed2c907f903f145b56b2cc08200"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q05",
+      "repeat": 0,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "reasons": [
+        "Численные лимиты 4000/2500 символов верны, но все четыре явно запрошенных USER.md sections пропущены. Единственная выбранная цитата про editor/credential не подтверждает лимиты."
+      ],
+      "answer_sha256": "aee887f111b70ddcc01589b235809cd426b2a1288c2414195a49b428751dac1c",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "non_entailing",
+      "answer_record_sha256": "75a1d1c51af595ba82ff8db7b7ebe4e7e909a3eb1bf5c34c53267b7f6a1fd32d"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q01",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Все три слоя и chat/project/local-user scope изложены корректно. Header-only first quote сам по себе неполон, остальные claims прямо подкреплены."
+      ],
+      "answer_sha256": "5a2ca11c3d8a17fe7b87d5cddd0ff46a7adecee723be42982737e6d502e3f759",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "answer_record_sha256": "4f91d28e8e695363ab8cca5bdc1cef192dc2b74e339a47fe3550b0af83a91765"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q02",
+      "repeat": 0,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Candidate until user confirmation и active working/long-term правильно. Supplemental host validation/IDs не были отдельным вопросом; irrelevant AGENTS/scheduled-task citations не подтверждают memory semantics, но README confirmation цитата подтверждает основной ответ."
+      ],
+      "answer_sha256": "1a0996ff945412bb273385c33c3555f2b2c19ddaa648901160e4a02574723ae8",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "7a841ff4da7950d0560857f8c1a3cbd198ef40bf762695bdcdfce2124f13c1b8"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q08",
+      "repeat": 1,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Запрет создания расписаний/запуска других задач независимо от allowlist прямо поддержан тремя последовательными цитатами."
+      ],
+      "answer_sha256": "cbf81b0b3fee7a474777ae9ff26fbea261096bd94c37af40e8b37c2f9cdde1e2",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_collectively",
+      "answer_record_sha256": "00eef23ec5e40c1e822766e309ae154a526f2f896b62528d451c04fdd3c0409d"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q04",
+      "repeat": 1,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "reasons": [
+        "Toggle/layerDisabled и clear семантика верны, но дополнительный claim приравнивает edit к delete: «реально удаляются ... edit/forget». Это неверное побочное утверждение; не зачтено как полностью correct."
+      ],
+      "answer_sha256": "717e4846b7ce40a3bafda25224bc314c5565d925bfacf8a9602a6199b81e6e69",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "e52546bb150a724e200e06cf877fbdf34402487764304f4ef1e414791e763fde"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q03",
+      "repeat": 1,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "reasons": [
+        "Five after always-eligible preferences верно, но отсутствует прямо запрошенный размер блока 12000 символов."
+      ],
+      "answer_sha256": "f5d5b661dbcb066e445de2fc962459e805a80e22b2b39c176023babf50a935b2",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed_for_present_claim",
+      "answer_record_sha256": "5bf6fa84fcef26ab05d98b91f43f267cc29abb75d0b9b23e60364ac2c63ad42d"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q09",
+      "repeat": 1,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": true,
+      "reasons": [
+        "Основной ответ stdio unsupported/HTTP+stream правильный. Дополнительный claim переносит «До smoke ... stream-fallback» из подпункта Aurora на Android; источник явно про forceDisabled Aurora override. Android emulator handshake details сами по себе подтверждены, fresh test не заявлен."
+      ],
+      "answer_sha256": "a7211bf28d33b17da96a688fbd2f13a1b449c706a370ea9b0963e47c7a15472f",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_wrong_scope_fallback",
+      "answer_record_sha256": "25d9d03691adca37c28b18d7d65eceffa4b59d299444907e1a202137aa74be2a"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q06",
+      "repeat": 1,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Open-app-only, lifecycle pause, one catch-up, interrupted no-side-effect repeat верны. «за текущий период» менее точно, чем latest missed moment; не считаем отдельным неверным измерением. «возобновление ... следующий будущий» взято из pause-resume контекста и нуждается в уточнении scope, но core answer не противоречит single catch-up."
+      ],
+      "answer_sha256": "a893e668ce5473bfec3db337666bacd7cb5b2000ab92222d47c8bf07ac0a231d",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed_fragmentary",
+      "answer_record_sha256": "b0897df8fcf8ef9e7112173b93c1c05987fd193ce9a3cac7980083cae2485bb0"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q07",
+      "repeat": 1,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Spring skip, one early autumn fold верны; additional parser/test zones supported by sent evidence. Selected fold quotes не включают полную operative clause, часть цитат нерелевантна."
+      ],
+      "answer_sha256": "506027bf616504624d60d98e775467b618b51e39b1e4c3ac0a0e00482e8c1bb6",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "c9e97b27c2750eeacca2323a28b81019c6a423b4ac21e111c8d01edf2be29325"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q10",
+      "repeat": 1,
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "В базе нет измерения Galaxy p95; обоснованный отказ."
+      ],
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "not_applicable",
+      "answer_record_sha256": "f0f5178f5cf8be2ba757e05d842a05cc12c19e23bb588ab9c311ac943879d8ed"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q05",
+      "repeat": 1,
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "reasons": [
+        "4000/2500 символов верны, required STYLE/FORMAT/CONSTRAINTS/CONTEXT полностью пропущены. Единственная цитата нерелевантна numerical limits."
+      ],
+      "answer_sha256": "aee887f111b70ddcc01589b235809cd426b2a1288c2414195a49b428751dac1c",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "non_entailing",
+      "answer_record_sha256": "68ea06c52c5c9eda6d2eca11dd40ff58ac9b56ef82fafe4eda35adaa6d88b674"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q01",
+      "repeat": 1,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Все три слоя и scopes верны; опечатка «Кравовременный» не меняет смысл."
+      ],
+      "answer_sha256": "a8d4197695c02ead78dfe560ab89e54370693e66779092d7ffb74933639a7acc",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "entailed",
+      "answer_record_sha256": "e1e452be1a7f8a15bcfcc149db5cf7adae3bcb4df5043224c43eb3aa2e923440"
+    },
+    {
+      "run_id": "A-1791924615541238433",
+      "case": "A",
+      "id": "Q02",
+      "repeat": 1,
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "reasons": [
+        "Candidate→confirmation→active правильно; лишние AGENTS header и task proposal citation не относятся к memory, прямая README extraction цитата поддерживает core."
+      ],
+      "answer_sha256": "3a5c320514471dddae3f7061144e7a879dfd2c1e21c97ba06986fc6b1249ae7c",
+      "literal_citation_valid": true,
+      "literal_citation_issues": [],
+      "semantic_citation_support": "mixed",
+      "answer_record_sha256": "57ed473b59f61beaa2fe569b4cfae9adf3b092a07dcd57906ea2ccba33bcc172"
+    }
+  ],
+  "answer_sha256_definition": "SHA256 of exact delivered text UTF-8, compatible with grade_results.py; original full record hash retained as answer_record_sha256."
+}

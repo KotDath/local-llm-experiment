@@ -1,0 +1,6 @@
+{"path": "/chat", "payload": {"session_id": [], "message": "validation-only"}, "status": 422, "response": {"error": "invalid_session_id", "detail": null}}
+{"path": "/chat", "payload": {"session_id": {}, "message": "validation-only"}, "status": 422, "response": {"error": "invalid_session_id", "detail": null}}
+{"path": "/sessions/reset", "payload": {"session_id": []}, "status": 422, "response": {"error": "invalid_session_id", "detail": null}}
+{"path": "/sessions/reset", "payload": {"session_id": {}}, "status": 422, "response": {"error": "invalid_session_id", "detail": null}}
+{"path": "/sessions", "payload": {}, "status": 200, "response": {"session_id": "46a97909e1e04e72820acf9be7314304"}}
+{"path": "/sessions/reset", "payload": {"session_id": "46a97909e1e04e72820acf9be7314304"}, "status": 200, "response": {"reset": true}}

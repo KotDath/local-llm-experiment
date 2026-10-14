@@ -1,0 +1,189 @@
+{
+  "phase": "before_HTTPS",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "receipts": [
+    {
+      "phase": "before_HTTPS",
+      "request_id": "822edc71d57c47dfa7b69f4be87f6706",
+      "pc_receipt_utc": "2026-10-14T08:07:52Z",
+      "question_sha256": "7283b5a250472b9dffab68b0ad9884cd8654a6df208e33bb65be2982bc688013",
+      "usage": {
+        "prompt_tokens": 21654,
+        "completion_tokens": 963,
+        "total_tokens": 22617
+      },
+      "llm_calls": 3,
+      "status": 200,
+      "total_ms": 64552.72292200243,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 64547.56903499947,
+      "http_total_ms": 64552.72292200243
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "ea865e85a52b44a381e02db7cf6387e3",
+      "pc_receipt_utc": "2026-10-14T08:10:18Z",
+      "question_sha256": "776f0421a70762410ab3c81f6dab4e89c317b98a819094af6d96dfe760b043ca",
+      "usage": {
+        "prompt_tokens": 24473,
+        "completion_tokens": 3465,
+        "total_tokens": 27938
+      },
+      "llm_calls": 4,
+      "status": 200,
+      "total_ms": 144786.7094710018,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 144775.98368100007,
+      "http_total_ms": 144786.7094710018
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "1b3406346ecb4bf29608fbb7f484eb5b",
+      "pc_receipt_utc": "2026-10-14T08:11:28Z",
+      "question_sha256": "0b881a8b64c9cf1ec2a697a31daf3e59a404bc17cb061278a91fc7b5f8c23f18",
+      "usage": {
+        "prompt_tokens": 26477,
+        "completion_tokens": 1061,
+        "total_tokens": 27538
+      },
+      "llm_calls": 4,
+      "status": 200,
+      "total_ms": 69218.72268700099,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 69213.44567699998,
+      "http_total_ms": 69218.72268700099
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "d9de922fbd5740428ad6765b83053a2c",
+      "pc_receipt_utc": "2026-10-14T08:12:11Z",
+      "question_sha256": "e7fc624a66bbbc4366ff35e95a9372bc42f1e4dae4239ede5c16f3d8f46f2a6a",
+      "usage": {
+        "prompt_tokens": 26590,
+        "completion_tokens": 175,
+        "total_tokens": 26765
+      },
+      "llm_calls": 4,
+      "status": 200,
+      "total_ms": 41855.11748200224,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 41849.06160199898,
+      "http_total_ms": 41855.11748200224
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "b2bd4fdabe9949fbafde14ae55d54815",
+      "pc_receipt_utc": "2026-10-14T08:12:13Z",
+      "question_sha256": "bc8f226f2007fa7a10423662d6c34c5b5e501dfd77fc2f713ac3b563bd3dd296",
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "llm_calls": 1,
+      "status": 200,
+      "total_ms": 1489.1760280006565,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 1484.1854160040384,
+      "http_total_ms": 1489.1760280006565
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "7a9fa65f9ec14f37ac31f6307e11cdf6",
+      "pc_receipt_utc": "2026-10-14T08:12:15Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "llm_calls": 1,
+      "status": 200,
+      "total_ms": 1193.6979399979464,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 1188.8402469994617,
+      "http_total_ms": 1193.6979399979464
+    },
+    {
+      "phase": "before_HTTPS",
+      "request_id": "4bf17a6b6e1d43959d79e4cb50b82189",
+      "pc_receipt_utc": "2026-10-14T08:12:17Z",
+      "question_sha256": "ec68bb1e68b847fecef5b356b8ac257eb1ed287cd4bf6c38dd14359411bb0fbe",
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 51,
+        "total_tokens": 296
+      },
+      "llm_calls": 1,
+      "status": 200,
+      "total_ms": 1885.8796179993078,
+      "checks": {
+        "unique_exact_pc_request_id": true,
+        "status200": true,
+        "question_sha256_matches": true,
+        "usage_matches": true,
+        "call_count_matches": true,
+        "raw_call_accounting_matches": true,
+        "http_total_ms_matches_pc_receipt": true,
+        "agent_time_within_http_time": true
+      },
+      "agent_total_ms": 1880.14175400167,
+      "http_total_ms": 1885.8796179993078
+    }
+  ],
+  "timing_semantics": "PC journal.total_ms equals response.http_total_ms (includes HTTP queue/admission); response.total_ms is Agent execution and is slightly smaller."
+}

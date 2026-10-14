@@ -1,0 +1,129 @@
+{
+  "utc": "2026-10-14T08:56:19Z",
+  "client": "PC direct HTTPS; default TLS verification; no client SSH forward",
+  "health": {
+    "status": 200,
+    "body": {
+      "ready": true,
+      "configured_profile": "optimized",
+      "configured_context": 32768,
+      "configured_max_tokens": 6144,
+      "context_matches": true,
+      "model": "tiel-coder",
+      "model_host": "PC-loopback",
+      "slots": 3,
+      "context_per_slot": 32768,
+      "api_slots": 3,
+      "slots_match": true,
+      "rag_ready": true,
+      "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+      "pending": 0,
+      "queue_limit": 10,
+      "queue_wait_timeout_s": 120.0,
+      "rate": 20,
+      "rate_window": 60.0
+    }
+  },
+  "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+  "status": 200,
+  "body": {
+    "request_id": "5b19821eec9b4980bd8cf409528c5575",
+    "utc": "2026-10-14T08:56:18Z",
+    "question": "Назови столицу Японии одним предложением по-русски.",
+    "agent_id": "3009f44310d74683a4bfc11fae532c30",
+    "protocol": "chat-completions-http",
+    "profile": {
+      "temperature": 0.1,
+      "max_tokens": 6144,
+      "context": 32768,
+      "prompt": "optimized"
+    },
+    "rag": false,
+    "rerank": false,
+    "llm_calls": [
+      {
+        "text": "Столица Японии — Токио.",
+        "usage": {
+          "completion_tokens": 9,
+          "prompt_tokens": 250,
+          "total_tokens": 259,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 250,
+          "prompt_ms": 571.341,
+          "prompt_per_token_ms": 2.285364,
+          "prompt_per_second": 437.56705715150844,
+          "predicted_n": 9,
+          "predicted_ms": 208.196,
+          "predicted_per_token_ms": 26.0245,
+          "predicted_per_second": 38.42532997752118
+        },
+        "finish_reason": "stop",
+        "counted_prompt_tokens": 250,
+        "prompt_hash": "f639b69b9fd933bc767b65dd373da33c63ae6d522b4558f75b7e30b4e9b42539",
+        "generation_ms": 783.3967200058396,
+        "profile": {
+          "temperature": 0.1,
+          "max_tokens": 6144,
+          "context": 32768,
+          "prompt": "optimized"
+        },
+        "model": "tiel-coder",
+        "raw": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Столица Японии — Токио."
+              }
+            }
+          ],
+          "created": 1791968179,
+          "model": "tiel-coder",
+          "system_fingerprint": "b10679-50f068fff",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 9,
+            "prompt_tokens": 250,
+            "total_tokens": 259,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-IYt8yYhMgmayRth3wdubmU9RjkjkQmB3",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 250,
+            "prompt_ms": 571.341,
+            "prompt_per_token_ms": 2.285364,
+            "prompt_per_second": 437.56705715150844,
+            "predicted_n": 9,
+            "predicted_ms": 208.196,
+            "predicted_per_token_ms": 26.0245,
+            "predicted_per_second": 38.42532997752118
+          }
+        }
+      }
+    ],
+    "text": "Столица Японии — Токио.",
+    "sources": [],
+    "status": "answered",
+    "finish_reason": "stop",
+    "total_ms": 788.5629449956468,
+    "usage": {
+      "prompt_tokens": 250,
+      "completion_tokens": 9,
+      "total_tokens": 259
+    },
+    "http_total_ms": 793.5123950010166
+  },
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

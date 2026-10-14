@@ -1,0 +1,11 @@
+{
+  "synthetic_only": true,
+  "no_real_ssh_or_key_generation": true,
+  "runtime_creation_before_keygen": [
+    {
+      "parent_exists_before_keygen": true,
+      "parent_mode": "0o700"
+    }
+  ],
+  "passed": true
+}

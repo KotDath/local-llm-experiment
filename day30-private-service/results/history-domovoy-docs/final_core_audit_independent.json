@@ -1,0 +1,134 @@
+{
+  "utc": "2026-10-13T22:54:45.094116+00:00",
+  "scope": "Intermediate read-only source/documentation/artifact audit; no model calls, Telegram, SSH, mutations, private env reads or frozen core changes. Only this audit artifact written.",
+  "expected_final_core_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+  "directories": [
+    {
+      "directory": "day26-local-llm",
+      "source_sha256": null,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "required_interface_files_present": true,
+      "python_sources": 7,
+      "compile_errors": [],
+      "broken_markdown_links": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day27-application",
+      "source_sha256": null,
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "required_interface_files_present": true,
+      "python_sources": 8,
+      "compile_errors": [],
+      "broken_markdown_links": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day28-local-rag",
+      "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "required_interface_files_present": true,
+      "python_sources": 18,
+      "compile_errors": [],
+      "broken_markdown_links": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day29-optimization",
+      "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "required_interface_files_present": true,
+      "python_sources": 21,
+      "compile_errors": [],
+      "broken_markdown_links": [],
+      "source_symlinks": []
+    },
+    {
+      "directory": "day30-private-service",
+      "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+      "agent_sha256": "e5f19a4809f8184e9229257bdce1d66a8f29f15dab39d33c1d1b828f4c64a5ba",
+      "required_interface_files_present": true,
+      "python_sources": 28,
+      "compile_errors": [],
+      "broken_markdown_links": [],
+      "source_symlinks": []
+    }
+  ],
+  "consistency": {
+    "same_agent_all5": true,
+    "rag_core28_29_30_matches_expected": true,
+    "all_docs_interfaces_present": true,
+    "all_sources_compile": true,
+    "no_broken_markdown_links": true
+  },
+  "autonomy": "No cross-day source imports or symlinks found. All5 own Agent/CLI/protocol/model/common; days28–30 own copied RAG/index/grounding/corpus/index/config/local_models. External installed executables, weights and cached pinned tokenizers are documented prerequisites.",
+  "framework_and_cloud_policy": "AST import scan found no LangChain/LangGraph/LlamaIndex/OpenAI agents/autogen/crewai/semantic-kernel SDK. Local generation enforces loopback URL; cloud exists only explicit evaluate --cloud. Telegram and optional --web are disclosed network interfaces, not cloud fallback.",
+  "secrets_audit": {
+    "credential_pattern_candidates_in_deliverable_sources_docs_evidence": [],
+    "scope": "Scanned source/docs/results with private env/runtime/cache/data exclusions. Printed no match values. No .env/prod.env contents read.",
+    "private_file_metadata_only": {
+      "day27_env_mode": "0600",
+      "day30_env_mode": "0600",
+      "day30_tunnel_private_key_mode": "0600"
+    },
+    "ignore_rules": "**/.env and **/runtime/ excluded in root.gitignore. .env.example placeholders safe.",
+    "distribution_caveat": "A raw copy/zip of complete working directories would include local private .env/runtime keys despite gitignore. Export only source/documentation/data/results, honoring exclusions; no safe archive asserted yet."
+  },
+  "verified_rag_dialogue": "results/rag_dialogue_final_review_independent.json: exact4turns,4semanticcorrect,6realcalls,0domainhallucinations,current documentary citations; one language caveat and narrow single-session scope retained. Two failed predecessor runs preserved.",
+  "current_benchmark": {
+    "all_rows_cases": {
+      "A": 40,
+      "B": 40
+    },
+    "current_core_cases": {
+      "A": 20,
+      "B": 20
+    },
+    "current_A_B_grade_binding": {
+      "A": {
+        "grades": 20,
+        "all_bind_to_current_core": true,
+        "answer_sha_matches": true
+      },
+      "B": {
+        "grades": 20,
+        "all_bind_to_current_core": true,
+        "answer_sha_matches": true
+      }
+    },
+    "historical_rows_present": 40,
+    "matrix_export_policy": "grade_results.py selects latest run percase, requires80rows/onecodeSHA/onequestionSHA and verifies grade answer hashes, preventing mixing historical core.",
+    "final_q4_exists": false,
+    "final_C_D_rows": 0,
+    "finish_matrix_pid418161": {
+      "Name": "python3.12",
+      "State": "S (sleeping)",
+      "Pid": "418161"
+    }
+  },
+  "stability": {
+    "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "run_id": "B-1791931493539589446",
+    "matches_final_core": true,
+    "repeat_Q03_variation_documented": true
+  },
+  "core_tests_summary": {
+    "utc": "2026-10-13T22:53:57.332866+00:00",
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests_run": 6,
+    "all_passed": true,
+    "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "test_source_sha256": "ba8bbdfb393c70e80f5608818c76fa9813220f3c7176185d97ac332137fd6853",
+    "scope": "Controller/protocol/provenance checks; synthetic repair/fallback fixtures are not model-quality evidence."
+  },
+  "remaining_acceptance": [
+    "Q4 complete final-file checksum/model identity and genuine C/D benchmark+grades.",
+    "Full current-code A–D comparison and chosen configuration.",
+    "Restore final production backend; final API/tunnel network readiness and authenticated chat after maintenance on final core."
+  ],
+  "status": "Intermediate audit only: final goal completion not yet proven. No additional blocking source defect found in inspected core/interfaces.",
+  "nonblocking_doc_notes": [
+    "PLAN28 suggested filenames still include embeddings.py/rag_answers.jsonl/web_checks.jsonl whereas actual implementation uses index.py/golden_rag_answers.jsonl/web_check.json; current README actual commands point to real files."
+  ]
+}

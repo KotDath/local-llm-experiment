@@ -1,0 +1,13 @@
+[Unit]
+Description=Tiel Coder local llama.cpp
+After=network.target
+
+[Service]
+WorkingDirectory=/ABSOLUTE/PATH/day30-private-service
+Environment=PARALLEL=3
+ExecStart=/ABSOLUTE/PATH/day30-private-service/.venv/bin/python /ABSOLUTE/PATH/day30-private-service/scripts/start_selected_model.py
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

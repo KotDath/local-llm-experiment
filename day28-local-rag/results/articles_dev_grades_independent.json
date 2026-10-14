@@ -1,0 +1,242 @@
+{
+  "schema": "independent-articles-grades-v1",
+  "evaluated_utc": "2026-10-14T06:18:32.341548+00:00",
+  "input": "results/dev_rag_answers.jsonl",
+  "input_sha256": "5d8be9d7c3a74f549fbadcb56e7862f3215dc42961b823ed1ce745f959cd0b59",
+  "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "questions_sha256": "fc1b65417fc209d8e75223e1fcae20e26d0cc3a32a21c573185e31e9a7cd5cb8",
+  "rubric": "All explicitly requested aspects in prose. For M0 factual claims are checked against full pinned PDFs; absence of citations is not hallucination. For RAG completeness, sent evidence, and semantic quote entailment required; literal provenance checked separately. Wrong includes false refusal on answerable question or answering none of requested aspects. Partial not correct; appropriate no-data refusal correct. No LLM calls, secrets or source/config changes.",
+  "summary": {
+    "M1": {
+      "total": 8,
+      "correct": 5,
+      "hallucination": 0,
+      "verdicts": {
+        "partial": 3,
+        "correct": 1,
+        "appropriate_refusal": 4
+      }
+    }
+  },
+  "grades": [
+    {
+      "mode": "M1",
+      "id": "D01",
+      "answer_sha256": "e6eceb1d4f84deda85147fee9138dd025cd21ae21118731a8f28223b425bb2b2",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три части названы правильно, но явно запрошенные роли working context и FIFO отсутствуют в prose. Они присутствуют лишь в sources; это не заменяет ответ."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Одна цитата DMR нерелевантна перечислению частей main context."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M1",
+      "id": "D02",
+      "answer_sha256": "9b36509bec599c28d29e02551b4c922ca9c521c08de0aaf5ee8b275f125e4981",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три вида хранимых данных названы верно. После revision отсутствует вся вторая часть: как дневные сведения о событиях и личности агрегируются в общее представление. Draft review заметил пропуск; итог после revision повторно не оценён и стал менее полным."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Первый event-summary quote не поддерживает все три вида данных, но другие supporting citations существуют."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Второй части вопроса (как дневные сведения о событиях и личности превращаются в общее представление) нет в черновике: фрагменты описывают иерархическое суммирование и агрегацию, но",
+          "Черновик не отвечает на вторую часть вопроса о превращении дневных сведений в общее представление, хотя соответствующие фрагменты (fa1b96616a404ccce03ed5c6bbfc189ca48e11711b42ee0a0"
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M1",
+      "id": "D03",
+      "answer_sha256": "c1c3f35c99219879e4f77a2059917373a95574494acc6d735726302c9ba72348",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "factual_truth": "partial",
+      "notes": [
+        "Три оценки названы правильно; отсутствует ответ как их объединяют: min-max [0,1], weighted sum, alpha=1. Нормализация лишь в sources не закрывает prose."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M1",
+      "id": "D04",
+      "answer_sha256": "d9abf5d4052ab86a40b25754420728c535be5f178332e11a633bfba3b885a84f",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "correct",
+      "notes": [
+        "10 дней, 15 виртуальных пользователей, 194 вопроса и оба языка — английский и китайский — правильно сообщены. Split 97+97 не запрошен отдельным пунктом и его отсутствие не уменьшает полноту. Содержательные цитаты подтверждают основные факты."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Две одинаковые цитаты про ranking s=1/r не подтверждают язык набора и избыточны; другая цитата прямо подтверждает English/Chinese evaluation."
+        }
+      ],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 2,
+      "draft_coverage_review": {
+        "complete": true,
+        "supported": true,
+        "issues": []
+      },
+      "coverage_revision_performed": false
+    },
+    {
+      "mode": "M1",
+      "id": "D05",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Неопубликованный device-specific Galaxy p95; host refusal без выдуманного числа."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос требует конкретное число p95 времени ответа на Galaxy A54, которого нет ни в одном фрагменте — отказ от ответа обоснован верно.",
+          "Фрагменты содержат только accuracy/ROUGE-L и графики Document QA, но не содержат замеров времени ответа или упоминаний Galaxy A54."
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M1",
+      "id": "D06",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Неопубликованный FAISS/M1/миллион записей p95; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос о p95 retrieval latency в миллисекундах для FAISS-индекса из 1 000 000 записей на Apple M1 не покрывается ни одним фрагментом; в них нет ни чисел latency, ни упоминания M1.",
+          "Фрагменты описывают архитектуру MemoryBank и SiliconFriend, но не содержат экспериментальных замеров времени retrieval или характеристик железа.",
+          "Черновик корректно отказался (abstained), так как переданные фрагменты действительно не содержат запрашиваемых фактов о latency."
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M1",
+      "id": "D07",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "В статье robustness unknown, attack success процент не измерен; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос о точном проценте успешных атак memory hacking не раскрыт: авторы лишь констатируют, что устойчивость агентов «largely unknown» и атаки «may be vulnerable», без измеренного嬴"
+        ]
+      },
+      "coverage_revision_performed": true
+    },
+    {
+      "mode": "M1",
+      "id": "D08",
+      "answer_sha256": "286477582763dc804fa6f456d0b3fa14afee9d5c7240c6aad53d61438a062496",
+      "verdict": "appropriate_refusal",
+      "correctness": true,
+      "hallucination": false,
+      "factual_truth": "refusal",
+      "notes": [
+        "Matched three-system Q4 VRAM experiment отсутствует; корректный отказ."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "grounding_mode": "sent_evidence_and_claim_citations",
+      "llm_calls": 3,
+      "draft_coverage_review": {
+        "complete": false,
+        "supported": false,
+        "issues": [
+          "Вопрос о пике VRAM в GiB для одновременного запуска трёх систем с Q4-моделью не подтверждён ни одним фрагментом — ни числа VRAM, ни Q4-модели, ни совместного запуска.",
+          "Фрагменты описывают архитектуры систем (MemGPT, MemoryBank, Generative Agents), но не содержат спецификаций памяти GPU или требований к Q4-моделям.",
+          "Отказ (abstained) обоснован: ни в одном из переданных фрагментов нет запрашиваемых фактов о VRAM."
+        ]
+      },
+      "coverage_revision_performed": true
+    }
+  ],
+  "implementation_findings": [
+    {
+      "severity": "quality_limitation",
+      "file": "agent.py",
+      "note": "Coverage review is model judgement, not semantic proof: D01/D03 false-positive complete=true despite missing explicit question aspects. Revision is bounded and validated structurally only; D02 revision remains incomplete, and no final semantic review is performed. coverage_review is a draft review, not evidence that the final revision was rejected."
+    },
+    {
+      "severity": "efficiency",
+      "file": "agent.py",
+      "note": "D05–D08 appropriate refusals trigger additional revision because critic marks complete/supported false while describing refusal as justified. All calls are traced; this increases measured cost without improving facts."
+    }
+  ]
+}

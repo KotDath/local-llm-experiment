@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-14T08:00:18Z",
+  "stage": "Before new context-boundary test",
+  "observed": "PC loopback API healthy; old client SSH forward HTTP health timed out after5s before any model generation",
+  "action": "Restarted owned client SSH forward; added15s server alive / count3 to launcher",
+  "synthetic": false,
+  "additional_observation": "Old reverse SSH process absent; actual VPS gateway health503 pc_tunnel_unavailable. Started fresh owned reverse-forward.",
+  "recovered_utc": "2026-10-14T08:04:36Z",
+  "recovered_health": {
+    "ready": true,
+    "configured_profile": "optimized",
+    "configured_context": 32768,
+    "configured_max_tokens": 6144,
+    "context_matches": true,
+    "model": "tiel-coder",
+    "model_host": "PC-loopback",
+    "slots": 3,
+    "context_per_slot": 32768,
+    "api_slots": 3,
+    "slots_match": true,
+    "rag_ready": true,
+    "index_generation": "29297553d6b1cd8636c4024a587544c8320b17bcfb0582d35216f54703e203eb",
+    "pending": 0,
+    "queue_limit": 10,
+    "queue_wait_timeout_s": 120.0,
+    "rate": 20,
+    "rate_window": 60.0
+  }
+}

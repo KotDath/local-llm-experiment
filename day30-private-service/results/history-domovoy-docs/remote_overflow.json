@@ -1,0 +1,164 @@
+{
+  "client": "VPS",
+  "statuses": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    503,
+    200,
+    200,
+    503,
+    200,
+    200,
+    200,
+    200
+  ],
+  "results": [
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "5d183d497a0b4d64b10b87950a273e71",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 821,
+        "total_tokens": 1046
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "2a84fb8918b24000a8de43f27f37e58c",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 872,
+        "total_tokens": 1097
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "9a8ebb46ebd6440d916b620ac492c13c",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 914,
+        "total_tokens": 1139
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "a7d0aef42ef4407e9909091340ffdb46",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 916,
+        "total_tokens": 1141
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "2137733df953443e8ac3a46d995104ae",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 1076,
+        "total_tokens": 1301
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "d56bda8da6564ccaba6468d5c5c05656",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 870,
+        "total_tokens": 1095
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "ac10396f50c744c89f0f47dae56dd749",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 786,
+        "total_tokens": 1011
+      }
+    },
+    {
+      "status": 503,
+      "error": "busy",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "82f69d9be75047dd86bbacffbb79e913",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 829,
+        "total_tokens": 1054
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "12c2585764d7423898ec889a7206498c",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 896,
+        "total_tokens": 1121
+      }
+    },
+    {
+      "status": 503,
+      "error": "busy",
+      "request_id": null,
+      "usage": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "a28576046f63449bbb34d1f2c6de4e0f",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 937,
+        "total_tokens": 1162
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "811d49fbe8c44defbabcca460c4380cb",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 936,
+        "total_tokens": 1161
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "923f0bb64c1b40d1b45a462e29df804e",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 861,
+        "total_tokens": 1086
+      }
+    },
+    {
+      "status": 200,
+      "error": null,
+      "request_id": "6903918a7d6b4694b07e255792f21a85",
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 924,
+        "total_tokens": 1149
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "username": "producto_online_bot",
+  "getMe": true,
+  "webhook_present": false,
+  "allowlist_configured": true,
+  "incoming_start_and_welcome": true,
+  "inference_verification": "results/cli_dialogues.jsonl and protocol_independent.jsonl",
+  "note": "Telegram ordinary LLM dialogue not fabricated; factual model runs done via local agent protocol"
+}

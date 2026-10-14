@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-14T08:05:14Z",
+  "scope": "Instrumented urllib calls of this guard probe only; no claim of OS-wide packet capture",
+  "observed_http_requests": [
+    {
+      "host": "127.0.0.1",
+      "port": 8765,
+      "path": "/health"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/apply-template"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/tokenize"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/apply-template"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/tokenize"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/props"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/v1/chat/completions"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/apply-template"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/tokenize"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/props"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 8772,
+      "path": "/v1/chat/completions"
+    }
+  ],
+  "all_observed_http_hosts_loopback": true,
+  "web_enabled": false,
+  "cloud_enabled": false
+}

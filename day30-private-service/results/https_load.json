@@ -1,0 +1,213 @@
+{
+  "client": "VPS HTTPS client",
+  "series": [
+    {
+      "count": 5,
+      "results": [
+        {
+          "status": 200,
+          "elapsed_ms": 3345.472550019622,
+          "request_id": "a82aece815a84a59b9b2acc13f7a5c61",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2766.85279305093,
+          "request_id": "b45c2b79bd2b49b5abbed2ea88b1be48",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2101.6539779957384,
+          "request_id": "b3142724277348d4ae95a9132f7364d0",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 1619.8131060227752,
+          "request_id": "5ad52164ca9949ca91abb9aa24c4f557",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3281.137199839577,
+          "request_id": "f6a5e496fd9e417abb132d4e45903678",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        }
+      ]
+    },
+    {
+      "count": 10,
+      "results": [
+        {
+          "status": 200,
+          "elapsed_ms": 2951.6572379507124,
+          "request_id": "9f3a12f909ae4555949328d89894aa57",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3960.4533130768687,
+          "request_id": "fb063fd8cea54e60ae1b4a6f8cf6478f",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2095.1491110026836,
+          "request_id": "17e728b20114485384a935384f7f83f5",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2050.8079770952463,
+          "request_id": "14443f7738f247fb9e9213eaed8b731e",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 5842.825073981658,
+          "request_id": "1e7530185cba401b95ffa28c3db44561",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3954.336274182424,
+          "request_id": "b86f42c7196e4ec78f8d6a7a127485cc",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 4031.1852348968387,
+          "request_id": "3fc078a7203746ba871bddf813e565c7",
+          "text": "Столица Италии — Рим.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 7,
+            "total_tokens": 253
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 6608.846188988537,
+          "request_id": "bcd21f03f4dc46078fcef87bac967b32",
+          "text": "Земля.",
+          "usage": {
+            "prompt_tokens": 247,
+            "completion_tokens": 5,
+            "total_tokens": 252
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 5755.9494390152395,
+          "request_id": "37ef0e807b874ed182bc5ccd6e98ade8",
+          "text": "Столица Франции — Париж.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 8,
+            "total_tokens": 254
+          },
+          "llm_calls": 1,
+          "error": null
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 5820.071465102956,
+          "request_id": "819c4b8174634e1ea39d6af3237b06e6",
+          "text": "Столица Японии — Токио.",
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 9,
+            "total_tokens": 255
+          },
+          "llm_calls": 1,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

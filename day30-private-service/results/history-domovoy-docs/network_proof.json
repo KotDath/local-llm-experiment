@@ -1,0 +1,100 @@
+{
+  "client": "VPS",
+  "client_os": "Linux",
+  "gateway": "127.0.0.1:8781",
+  "result": {
+    "request_id": "0f00583edfd74e07a4843e753ad82d63",
+    "utc": "2026-10-13T20:24:48Z",
+    "question": "Какая столица Франции? Ответь одним предложением.",
+    "profile": {
+      "temperature": 0.1,
+      "max_tokens": 1024,
+      "context": 8192,
+      "prompt": "optimized"
+    },
+    "rag": false,
+    "rerank": false,
+    "llm_calls": [
+      {
+        "text": "Столица Франции — Париж.",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 214,
+          "total_tokens": 222,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 214,
+          "prompt_ms": 589.592,
+          "prompt_per_token_ms": 2.7551028037383176,
+          "prompt_per_second": 362.96286245403604,
+          "predicted_n": 8,
+          "predicted_ms": 232.856,
+          "predicted_per_token_ms": 33.265142857142855,
+          "predicted_per_second": 30.061497234342255
+        },
+        "finish_reason": "stop",
+        "counted_prompt_tokens": 214,
+        "prompt_hash": "7f80cdc41a462d7580c568b10372c9896d0430bfae77f08ecf2aa1f9559c4804",
+        "generation_ms": 828.999553000358,
+        "profile": {
+          "temperature": 0.1,
+          "max_tokens": 1024,
+          "context": 8192,
+          "prompt": "optimized"
+        },
+        "model": "tiel-coder",
+        "raw": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Столица Франции — Париж."
+              }
+            }
+          ],
+          "created": 1791923089,
+          "model": "tiel-coder",
+          "system_fingerprint": "b10679-50f068fff",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 8,
+            "prompt_tokens": 214,
+            "total_tokens": 222,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-YDYSbbgnOHkjqD7UCNM5Y7y3qYP71hia",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 214,
+            "prompt_ms": 589.592,
+            "prompt_per_token_ms": 2.7551028037383176,
+            "prompt_per_second": 362.96286245403604,
+            "predicted_n": 8,
+            "predicted_ms": 232.856,
+            "predicted_per_token_ms": 33.265142857142855,
+            "predicted_per_second": 30.061497234342255
+          }
+        }
+      }
+    ],
+    "text": "Столица Франции — Париж.",
+    "sources": [],
+    "status": "answered",
+    "finish_reason": "stop",
+    "total_ms": 834.8109159996966,
+    "usage": {
+      "prompt_tokens": 214,
+      "completion_tokens": 8,
+      "total_tokens": 222
+    },
+    "http_total_ms": 842.7641859998403
+  }
+}

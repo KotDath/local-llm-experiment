@@ -1,0 +1,137 @@
+{
+  "reviewed_at_utc": "2026-10-14T07:10:59.150158+00:00",
+  "reviewer": "independent child agent",
+  "method": "Read-only semantic review of preserved real localhost HTTP responses; no new generation or mock responses.",
+  "input_jsonl": "day26.jsonl",
+  "input_jsonl_sha256": "1b7079ec1ddc2b99d3225e09d1ae12b5ea1b6e19570282cb1f55eb2396b9a735",
+  "console_log": "articles_recheck.log",
+  "console_log_sha256": "547fd7dde75f33a8a8851c87734c601ce460f26154910dda6b80cfb9488a4e37",
+  "latest_run": "2026-10-14T05:44:54Z",
+  "historical_rows_excluded": 3,
+  "three_difficulties_demonstrated": true,
+  "correct_answers": 2,
+  "total_answers": 3,
+  "cases": [
+    {
+      "id": "fact",
+      "question": "Какая столица Франции? Ответь одним предложением по-русски.",
+      "utc": "2026-10-14T05:44:56Z",
+      "actual_answer": "Столица Франции — Париж.",
+      "semantic_grade": "correct",
+      "reason": "Paris is the capital of France.",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 206,
+        "total_tokens": 214,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 206,
+      "prompt_hash": "27a956726e658eb1ce1e31a709bad25a50c23f276d6fdc31e702efce61c726d8",
+      "finish_reason": "stop",
+      "generation_ms": 1875.562806999369,
+      "profile": {
+        "temperature": 1.0,
+        "max_tokens": 6144,
+        "context": 32768
+      },
+      "raw_response_id": "chatcmpl-bIr2ASnMDVMuWiDAVmirZW6g2U9TZwEk",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "id": "logic",
+      "question": "Все вороны — птицы. Все птицы — животные. Следует ли, что все вороны — животные? Объясни кратко.",
+      "utc": "2026-10-14T05:44:59Z",
+      "actual_answer": "Да, следует.\n\nЕсли все вороны входят в группу птиц, а все птицы входят в группу животных, то вороны автоматически оказываются внутри животных. Это классический силлогизм: A⊂B и B⊂C значит, что A⊂C.",
+      "semantic_grade": "correct",
+      "reason": "Set inclusion A⊂B⊂C establishes that all crows are animals.",
+      "usage": {
+        "completion_tokens": 61,
+        "prompt_tokens": 216,
+        "total_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 216,
+      "prompt_hash": "a05a48d2bf035d2b50b3bd31a00efc47ac94bc74df596d82ccb9e4df4af9a369",
+      "finish_reason": "stop",
+      "generation_ms": 2578.226989004179,
+      "profile": {
+        "temperature": 1.0,
+        "max_tokens": 6144,
+        "context": 32768
+      },
+      "raw_response_id": "chatcmpl-t17mrbi2pIQbyYhGjfCHwulYVCsUI3Kz",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "id": "constraints",
+      "question": "A длится 3 ч. B длится 2 ч после A. C длится 4 ч после A. D длится 1 ч после B и C. Исполнителей достаточно. Когда раньше всего закончится D и каков критический путь?",
+      "utc": "2026-10-14T05:45:03Z",
+      "actual_answer": "D закончится раньше всего через **9 часов** после начала A.\n\nКритический путь: **A → C → D** (A = 3, C = 4, D = 1).\n\nПроверка:\n- A → C → D: 3 + 4 + 1 = **9 ч**\n- A → B → D: 3 + 2 + 1 = 6 ч\n- C начинается после A (3 ч), значит D не раньше 3 + 4 + 1 = 9 ч.",
+      "semantic_grade": "incorrect",
+      "reason": "A ends at3; B at5; C at7; D starts at7 and ends at8. Critical path A→C→D is correct; 3+4+1=8, not9.",
+      "usage": {
+        "completion_tokens": 118,
+        "prompt_tokens": 242,
+        "total_tokens": 360,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "counted_prompt_tokens": 242,
+      "prompt_hash": "9010545bf237bf5b3eabcded3a3722cb8eb9cf30f75a89358b7a502d035ba449",
+      "finish_reason": "stop",
+      "generation_ms": 3889.7123639981146,
+      "profile": {
+        "temperature": 1.0,
+        "max_tokens": 6144,
+        "context": 32768
+      },
+      "raw_response_id": "chatcmpl-AlryYMu8JCKYX7DVlOWyjg5RqHiu4BgG",
+      "model_alias": "tiel-coder",
+      "backend_build": "b10679-50f068fff",
+      "checks": {
+        "raw_usage_matches": true,
+        "raw_text_matches": true,
+        "counted_matches_usage": true,
+        "usage_adds": true,
+        "timing_token_counts_match": true,
+        "zero_cache": true,
+        "natural_stop": true,
+        "positive_generation_ms": true,
+        "real_raw_response_present": true
+      },
+      "all_checks_pass": true
+    }
+  ],
+  "finding": "Local generation and three complexity levels are demonstrated. The constrained schedule answer repeats an arithmetic error: D ends at 8 hours, not 9. This is a genuine model-quality defect, not a transport or counting failure. No claim that all three answers are correct."
+}

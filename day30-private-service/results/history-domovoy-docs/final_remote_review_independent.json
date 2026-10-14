@@ -1,0 +1,432 @@
+{
+  "utc": "2026-10-13T23:42:34.351535+00:00",
+  "scope": "Independent semantic review of actual final VPS remote checks file; joined PC runtime receipts. No additional model,cloud,TG orSSHcalls; no private env read.",
+  "client": "VPS",
+  "stage": "final service after measured model selection",
+  "core_sha256": {
+    "remote": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "current_source": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "expected": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "matches": true
+  },
+  "loaded_model": {
+    "file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "bytes": 39350213152,
+    "build": "b10679-50f068fff",
+    "slots": 3,
+    "context_per_slot": 8192
+  },
+  "health": {
+    "status": 200,
+    "body": {
+      "ready": true,
+      "model": "tiel-coder",
+      "model_host": "PC-loopback",
+      "slots": 3,
+      "context_per_slot": 8192,
+      "api_slots": 3,
+      "slots_match": true,
+      "rag_ready": true,
+      "index_generation": "71560bd214b69cc53af96bfa94eeb9ba54c96cac098be68fe16f01c11b9d9e56",
+      "pending": 0,
+      "queue_limit": 10,
+      "rate": 20,
+      "rate_window": 60.0
+    }
+  },
+  "measured_selection": {
+    "case": "B",
+    "quant": "Q8",
+    "profile": "optimized",
+    "profile_settings": {
+      "temperature": 0.1,
+      "max_tokens": 1536,
+      "context": 8192,
+      "prompt": "optimized"
+    },
+    "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+    "model_sha256": "8384abe448e6159b1d43249be9c51f68fe5771e962bb39e3ee89ad1215385310",
+    "source_sha256": "f1a41f303db90a8efbae7c593bca221e7b211391c28cd7ec61e617517132eabf",
+    "basis": "Best completeness across both measured passes:16/20, zero found hallucinations and delivery failures. Q4 uses less memory, but C=14/20 and D=13/20; D includes one truncated JSON delivery failure and one unsupported claim. Selection prioritizes actual answer quality/reliability over weight size."
+  },
+  "turns": [
+    {
+      "group": "rag_turns",
+      "turn": 1,
+      "request_id": "7727d24ca0aa4f738f70613b81d23578",
+      "agent_id": "5f8b0ba754d844c59ccee246f24c94d0",
+      "http_status": 200,
+      "original_question": "Какие слои памяти есть в Domovoy?",
+      "answer": "В Domovoy есть три слоя памяти: кратковременный (short-term), рабочий (working) и долговременный (long-term).\nКравременный слой — это текущий транскрипт чата, который никогда не перезаписывается памятью и живёт до компрессии или удаления чата.\nРабочий слой — это подтверждённые записи, принадлежащие текущему проекту; извлечение никогда не смешивает их с долговременным слоем, и рабочая запись возвращается только для своего проекта.\nДолговременный слой — это подтверждённые записи, общие для проектов локального пользователя; он может быть отключён в инспекторе памяти (trace показывает `layerDisabled`).\n\nИсточники:\n[1] README.md · README.md — Domovoy exposes three observable memory layers:\n[2] docs/memory.md · docs/memory.md — | Layer | Source | Scope | Lifetime |\n|---|---|---|---|\n| Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n| Working | `memory-v1_` JSONL | current project | until edited, forgotten, or project deletion |\n| Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n[3] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[4] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[5] README.md · README.md — - **working** — confirmed records owned by the current project;\n[6] docs/memory.md · docs/memory.md — Working records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.\n[7] README.md · README.md — - **long-term** — confirmed records shared across projects by the local user.\n[8] docs/mcp-b3-arxiv-server.md · docs/mcp-b3-arxiv-server.md — - Поле `submittedAfter` — единственный документированный фильтр дат; верхняя",
+      "semantic_verdict": "partial_citation_support",
+      "fully_documentary_supported": false,
+      "semantic_notes": [
+        "Required3layers and scopes correctly named.",
+        "Fourth claim long-term disable/layerDisabled cites arXiv submittedAfter date-filter quote, which does not entail memory claim. layerDisabled exists in another sent memory chunk; wrong selected citation is still a grounding defect.",
+        "Third claim expands project isolation into working never mixed with long-term; source wording establishes own-project restriction, not a clear prohibition on combining memory layers. Do not count extra formulation as proven.",
+        "Several Russian spelling errors; raw answer preserved."
+      ],
+      "query_resolution": {
+        "used_history": false,
+        "query": "Какие слои памяти есть в Domovoy?"
+      },
+      "phases": [
+        "answer"
+      ],
+      "llm_calls": 1,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "1d6a114c8312cdc264dc0c576378e695cbd12a856fa5f2c6017b1bd064663228",
+          "source": "docs/mcp-b3-arxiv-server.md",
+          "current_evidence": true,
+          "literal_quote": true
+        }
+      ],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "rag_turns",
+      "turn": 2,
+      "request_id": "f7f38b0ec80145279271285456f140f5",
+      "agent_id": "5f8b0ba754d844c59ccee246f24c94d0",
+      "http_status": 200,
+      "original_question": "Какие из этих слоёв общие для всех проектов?",
+      "answer": "Общим для всех проектов слоем памяти является долговременный (long-term): его записи принадлежат локальному пользователю и доступны между проектами и чатами.\nРабочий слой (working) не является общим: его записи принадлежат текущему проекту и не смешиваются между проектами.\nКратковременный слой (short-term) также не является общим: это транскрипт текущего чата, не перезаписываемый памятью.\n\nИсточники:\n[1] README.md · README.md — - **long-term** — confirmed records shared across projects by the local user.\n[2] docs/memory.md · docs/memory.md — | Long-term | `memory-v1_` JSONL | local user | across projects and chats |\n[3] docs/architecture.md · docs/architecture.md — | Long-term | long-term JSONL | local user/global | across projects and chats |\n[4] README.md · README.md — - **working** — confirmed records owned by the current project;\n[5] docs/memory.md · docs/memory.md — Working records require a project; long-term records are user-global. Retrieval\nnever mixes them: a working record is only ever returned for its own project.\n[6] docs/architecture.md · docs/architecture.md — | Working | working JSONL | project | until edited, forgotten, or project deletion |\n[7] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[8] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |",
+      "semantic_verdict": "correct",
+      "fully_documentary_supported": true,
+      "semantic_notes": [
+        "long-term across all user projects correctly answered; working remains project-local and short-term current chat, current README/memory/architecture citations entail scopes."
+      ],
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 2,
+        "query": "Какие из слоёв памяти, описанных в Domovoy, общие для всех проектов?"
+      },
+      "phases": [
+        "query_resolution",
+        "answer"
+      ],
+      "llm_calls": 2,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        }
+      ],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "rag_turns",
+      "turn": 3,
+      "request_id": "6d7098bf17c8461fa482084e292cd0a3",
+      "agent_id": "5f8b0ba754d844c59ccee246f24c94d0",
+      "http_status": 200,
+      "original_question": "А какой из них содержит текущий транскрипт чата?",
+      "answer": "Текущий транскрипт чата содержит кратковременный слой (short-term).\nВ качестве хранилища кратовременного слоя выступает `AgentTranscript`, и он живёт до компрессии или удаления чата.\n\nИсточники:\n[1] README.md · README.md — - **short-term** — the current chat transcript (never rewritten by memory);\n[2] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[3] docs/architecture.md · docs/architecture.md — | Short-term | `AgentTranscript` | session | current chat |\n[4] docs/memory.md · docs/memory.md — | Short-term | `AgentTranscript` | current chat | until compaction/chat deletion |\n[5] docs/architecture.md · docs/architecture.md — | Short-term | `AgentTranscript` | session | current chat |",
+      "semantic_verdict": "correct",
+      "fully_documentary_supported": true,
+      "semantic_notes": [
+        "Required short-term/AgentTranscript correctly named and supported. Direction of Russian contains phrase reversed; same small language caveat retained from independent local review."
+      ],
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 4,
+        "query": "Какой из слоёв памяти в Domovoy содержит текущий транскрипт чата?"
+      },
+      "phases": [
+        "query_resolution",
+        "answer"
+      ],
+      "llm_calls": 2,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [
+        {
+          "chunk_id": "d20a761ce30ab2987eb6a1b30c395896f9a23180f867aa9d51f1e876e4912ad2",
+          "source": "README.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "3efa4a4b271284f812c712d96c35176001484d0fc2a5a2d1857da46537e86391",
+          "source": "docs/memory.md",
+          "current_evidence": true,
+          "literal_quote": true
+        },
+        {
+          "chunk_id": "1b3f9da7973bf3be6a0a3561a9e1e282daa4b81632b4a81cbbb0b2605af322ca",
+          "source": "docs/architecture.md",
+          "current_evidence": true,
+          "literal_quote": true
+        }
+      ],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "rag_turns",
+      "turn": 4,
+      "request_id": "e6e888b75916443aa5df44c68fe454c3",
+      "agent_id": "5f8b0ba754d844c59ccee246f24c94d0",
+      "http_status": 200,
+      "original_question": "Какой измеренный p95 поиска на Galaxy A54 и 50000 документах?",
+      "answer": "Не знаю: в выбранных источниках недостаточно данных для ответа.",
+      "semantic_verdict": "appropriate_refusal",
+      "fully_documentary_supported": true,
+      "semantic_notes": [
+        "No measured p95 Galaxy A54/50000 value in corpus, correct host refusal. Query-resolution call is real and included in cost; no invented number."
+      ],
+      "query_resolution": {
+        "used_history": true,
+        "history_messages": 6,
+        "query": "Какой измеренный p95 поиска на Galaxy A54 и 50000 документах?"
+      },
+      "phases": [
+        "query_resolution"
+      ],
+      "llm_calls": 1,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "plain_turns",
+      "turn": 1,
+      "request_id": "054e744d8c9844cbb50deb050f5f267c",
+      "agent_id": "97b95836d0d84d528b4917b522859116",
+      "http_status": 200,
+      "original_question": "Запомни в этом разговоре: кодовое слово Липа-7319.",
+      "answer": "Запомнил: кодовое слово — Липа-7319.",
+      "semantic_verdict": "correct",
+      "fully_documentary_supported": null,
+      "semantic_notes": [
+        "Local plain agent acknowledges exact supplied code Липа-7319."
+      ],
+      "query_resolution": null,
+      "phases": [
+        "answer"
+      ],
+      "llm_calls": 1,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "plain_turns",
+      "turn": 2,
+      "request_id": "b979a768ce1f41d59f8b2d7102ff7d90",
+      "agent_id": "97b95836d0d84d528b4917b522859116",
+      "http_status": 200,
+      "original_question": "Какое кодовое слово я назвал?",
+      "answer": "Липа-7319.",
+      "semantic_verdict": "correct",
+      "fully_documentary_supported": null,
+      "semantic_notes": [
+        "Same Agent session recalls exact supplied code."
+      ],
+      "query_resolution": null,
+      "phases": [
+        "answer"
+      ],
+      "llm_calls": 1,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    },
+    {
+      "group": "plain_turns",
+      "turn": 3,
+      "request_id": "9578b8ab53af4ed982a1f953e8fd3fcf",
+      "agent_id": "c00756c1b17543cca2e6300705d7d3b6",
+      "http_status": 200,
+      "original_question": "Какое кодовое слово я назвал?",
+      "answer": "Я не могу этого знать. У меня нет доступа к тому, что вы сказали ранее, и в этом диалоге ваше кодовое слово не упоминалось. Если вы хотите, чтобы я что-то запомнил, скажите это прямо.",
+      "semantic_verdict": "correct",
+      "fully_documentary_supported": null,
+      "semantic_notes": [
+        "Reset creates new Agent; answer says code absent/unknown rather than leaking previous code."
+      ],
+      "query_resolution": null,
+      "phases": [
+        "answer"
+      ],
+      "llm_calls": 1,
+      "aggregate_usage_matches": true,
+      "all_prompt_counts_match": true,
+      "receipt_exactly_matches_remote": true,
+      "citations": [],
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 1536,
+        "context": 8192,
+        "prompt": "optimized"
+      }
+    }
+  ],
+  "plain_history_reset": {
+    "same_agent_before_reset": true,
+    "new_agent_after_reset": true,
+    "recall_before_reset": true,
+    "no_code_after_reset": true,
+    "reset_http200": true
+  },
+  "summary": {
+    "all7_chat_responses_http200": true,
+    "all7_requests_joined_exact_pc_receipts": true,
+    "all_aggregate_usage_and_prompt_count_checks": true,
+    "all_literal_citations_current_evidence": true,
+    "RAG_required_answer_or_refusal_correct": 4,
+    "RAG_fully_acceptable_grounded_answers": 3,
+    "RAG_total": 4,
+    "semantic_citation_problem_turns": 1,
+    "network_and_plain_session_check_passed": true,
+    "current_model_is_selected_Q8_B": true
+  },
+  "acceptance": "Final network service and plain state/reset are independently proved. RAG followups retrieve documentary answers; final first answer has a real semantic citation defect. Do not claim 4/4 fully grounded quality for this particular remote run. Literal validator remains weaker than semantic entailment.",
+  "receipt_policy": "Public subset contains request ID,time,status,usage,callcount,questionSHA and elapsedtime only; no credentials,owner keys,headers or actual secret values.",
+  "evidence": [
+    "results/remote_final.json",
+    "runtime/api_requests.jsonl",
+    "results/final_pc_request_receipts.json"
+  ]
+}

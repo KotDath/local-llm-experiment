@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-13T22:55:59.625222+00:00",
+  "terminal_failure": "HTTP 403 Forbidden in signed CDN range downloader",
+  "completed_bytes_at_failure": 19944188387,
+  "expected_bytes": 23259486752,
+  "recovery": "fresh immutable resolver request with cache-busting query; resume checkpoint unchanged model SHA and revision",
+  "fresh_range_probe": {
+    "status": 206,
+    "bytes": 16,
+    "gguf_magic": true,
+    "metadata_sha_matches_pinned": true
+  },
+  "credentials_or_signed_urls_saved": false,
+  "verification_at_resume_start": false,
+  "resolution_utc": "2026-10-13T23:28:34.399358+00:00",
+  "full_model_verified_after_resume": true,
+  "actual_sha256": "10960d1d6477b08ed36a0e542e571b473022023c25b8315b0cf8c33c57e98ccd",
+  "evidence": "model_pair_metadata.json"
+}

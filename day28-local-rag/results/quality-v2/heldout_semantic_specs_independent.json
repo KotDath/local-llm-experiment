@@ -1,0 +1,402 @@
+[
+  {
+    "repeat": 0,
+    "id": "V01",
+    "spec": [
+      "partial",
+      true,
+      "Extra assertion LLM judge=(GPT-4) не entail quoted passage: тот лишь сообщает high agreement GPT-4 и human evaluators, а appendix говорит LLM judge без version.",
+      "Все requested aspects human MSC/five sessions/sixth QA закрыты. Но дополнительная атрибуция фактически использованного judge именно GPT-4 не опубликована явно и не поддержана actual quote; unsupported specific experimental model claim, не отсутствие core ответа."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V02",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Task цель и обе группы эталонов persona/human opener правильно раскрыты и supported напрямую. Не требует точного SIM algorithm или отдельного числа источников."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V03",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "All explicitly requested sources/questions count/storage/search stack correctly covered and directly cited: NaturalQuestions-Open/Wikipedia2018,50,PostgreSQL/pgvector/HNSW/precomputedvectors/cosine. Embedding model ID not explicitly separately requested; omitted auxiliary detail not counted incomplete. Answer unexpectedly English; language defect noted separately, смысл понятен."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V04",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "All requested original-vs-nested mechanism,128bitUUID,140pairs,approximately8k tokens,30orderings correct and directly grounded. Source appendix imperative only quoted as task protocol, no executed external action."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V05",
+    "spec": [
+      "partial",
+      false,
+      "First-stage 38k tuning claim quotes only open-source scope and second-stage integration, not data/tuning mechanics.",
+      "Two stages and second-stage function partly correct. Explicitly requested first-stage eligible models left as no-confirmation, despite own citation says only open-source ChatGLM/BELLE. Missing core scope; selfreview status cannot turn answerable aspect into appropriate refusal."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V06",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "All explicit dataset size/type, frozen baseweights/lowrank matrices, rank16,3epochs,A100 correct with direct quotes. BA compact notation conveys learned A/B lowrank adaptation, not training baseW."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V07",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все четыре метрики, три requested шкалы и ranking s=1/r для r=1,2,3 представлены в prose, прямо подтверждены цитатами. Retrieval/correctness/coherence не смешаны."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V08",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все три requested facts — книга, quicksort и отвергнутый heap-sort premise — прямо отвечены и supported точными dialogue quotes. Model partial не принимается как независимая оценка; delivered prose полный."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V09",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested inputs,5–8 крупных блоков,hour-long затем5–15minute детализация отвечены и supported. Дополнительное replanning после reaction также прямо cited, не заменяет decomposition."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V10",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Decision loop, два relationship/action-status retrieval queries и регенерация плана с momentreaction прямо отвечены и directly cited. Dialogue generation вспомогательно, вопрос отдельно его не требует."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V11",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Requested100 evaluators/fiveconditions,believability rankings и rationale equivalent histories/noresimulation полно и supported. Language mistakes rekrutirovannyh/абликации/авторизованным человеком отмечены; English human-authored и subsequent crowdworker-written clarification сохраняют однозначный смысл."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V12",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested TrueSkill,mean/std,raw-rank Kruskal–Wallis,Dunn posthoc,Holm–Bonferroni правильно и прямо cited. Русская передача фамилий шероховата, но English terms полностью однозначны."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V13",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested diffusion counts/percentages,network density endpoints и hallucinations1.3%(n6/453responses) правильно со scope и direct quotes. Шероховатая фраза баллоте Само не изменяет fact Sam mayoral candidacy, пояснённый цитатой."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V14",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "5/12attendance,7absent,3schedule conflicts и4interestwithoutplan полностью и directly supported. Никакого total memoryfailure deduction. Ответ на английском вопреки русскому вопросу — отдельный language defect, факты однозначны."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V15",
+    "spec": [
+      "partial",
+      true,
+      "Атрибуция judge именно GPT-4 не entail quoted passages: cited parenthesis reports GPT-4 high agreement in prior work, appendix defines judge task but not its model version.",
+      "Requested judging/metric comparison обеих papers содержательно полный и direct support. Но дополнительный specific judge model неподтверждён. Замечание о числах scoped provided data проверено: actual evidence не содержит DMRtable numericbody; не интерпретирую это как отрицание чисел во всём PDF."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V16",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Обе явно requested control systems правильно объяснены с direct citations: MemGPT flag/controlreturn/output/yield/chaining и GA observations/LLM continue-vs-react. Дополнительные example/replanning/dialogue также supported, не переносится heartbeat наGA."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V17",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Точный непубликовавшийся seed не выдумывает. Соседние0–4levels/30orderings правильно cited; absence verified по full corpus, сама соседняя цитата не самостоятельное доказательство отсутствия."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V18",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Отказывается дать все три отсутствующих train/validation/test sizes, не придумывает proportions и не подменяет их evaluation question counts. Краткая формулировка provided evidence допустима для unavailable fact."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V19",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Не печатает выдуманные100rankvectors; объясняет aggregated ratings не определяют per-evaluator rawdata. Пример µ29.89/σ0.72 и aggregate nature directly supported; cannotrecover — допустимый reasoning вывод, absence проверено поfull paper. Only interpreted в противопоставлении individualrawdata, не отрицание остальных aggregate statistical tests. Часть ответа на английском — language defect."
+    ]
+  },
+  {
+    "repeat": 0,
+    "id": "V20",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Не выдумывает p-value отсутствующего matched crosspaper experiment и не переносит GA significance stats. Delivered no-confirmation refusal appropriate для этого unavailable fact."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V01",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested human creation/consistent personas/five sessions/sixth QA correct and directquotes. Additional DMR/separateLLM question generation supported; unsupported judge-model attribution из firstpass здесь отсутствует."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V02",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Purpose и both reference types full/directlycited. Answer English for Russian query noted as language defect separately; factual смысл однозначен."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V03",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все явно requested dataset/document provenance,count50,PostgreSQL/pgvector/HNSW/cosine storage/search stack correctly supported. Embedding modelID auxiliary не отдельно requested. Delivered English language mismatch noted separately."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V04",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "All explicit KV vs nested,128-bitUUID,140pairs,approximately8k tokens,30orderings correct/directquotes. Дополнительные0–4levels/4lookups следуют конкретной published формулировке, не переносится чужой эксперимент."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V05",
+    "spec": [
+      "partial",
+      true,
+      "Scope claim firststage tuning applies allthree including ChatGPT цитирует implementation/backbone list и generic38kstatement, не подтверждает tuning scope; противоречит explicit onlyopen-source rule.",
+      "Two stages and integration function correct. Но substantive requested eligibility answer false: psychological tuning stage onlyopen-source ChatGLM/BELLE, не ChatGPT. Subsequent LoRA-only caveat не исправляет выдуманный allthree firststage и делает ответ внутренне противоречивым."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V06",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все explicit38kpsychologicaldialogs/frozenbase/rank16/3epochs/A100 правильны и directly supported. Parsed переведено шероховато как распознанных, но происхождение данных сохраняется."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V07",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все четыре requested метрики/шкалы/reciprocal rank правильны и непосредственно supported. Краткое coherence explanation достаточно, все numeric labels сохранены."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V08",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Book/quicksort/falseheap-sort event все три правильно и direct support. Дополнительные partlyoverlapping figure fragments redundant, основные citations достаточны."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V09",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested initial inputs/broad5–8chunks/hourlong→5–15minutes правильны и directly supported. Дополнительные planrecordlocation/time/duration/storage/retrieval также directly grounded."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V10",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все явно requested decisionloop,relationship/actionstatus queries и planregen fromreactionmoment объяснены правильно,direct citations. Storage observation auxiliary не отдельно requested и omission не ухудшает method answer."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V11",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Полные100/fiveconditions,ranking believability,shared histories/noresimulationrationale correctly/directed quotes. Дополнительные categories/prolific/humanbaseline scope верны."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V12",
+    "spec": [
+      "correct",
+      false,
+      "Higher score meaning находится в broader same sent text, selectedfour TrueSkill quotes directly capture other core properties; minor coverage detail.",
+      "Все requested rating/Kruskal–Wallis/Dunn/Holm–Bonferroni правильны и explicitly prose/directquotes. Дополнительные Elo/multiplayer/tossup properties также source-верны."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V13",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Все requested counts/percents,density и hallucination scope1.3%/n6/453response correct/directquotes. Английское thirteen в русском ответе — language defect, число13 однозначно."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V14",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Requested5of12 attendance and7absent split3conflicts/4notplanned correct,directquotes. Extra Rajiv example supported. Внятный русский ответ, без выдуманного forgetting всехabsent."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V15",
+    "spec": [
+      "correct",
+      false,
+      null,
+      "Обе judgingsystems и metrics/scales полно правильно/directed citations. Judge=modelversion не приписывается. Extra quoted generous/correct-wrong prompt protocol source-верен; это описание статьи, не изменение нашей независимой рубрики."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V16",
+    "spec": [
+      "correct",
+      false,
+      "Фраза только если observation релевантно сильнее published unlikely/example wording. Отмечена как minor scope qualification, не новый измеренный threshold или host algorithm.",
+      "Все explicitly requested controls MemGPT flag/yield/chaining и GA LLM observationdecision полно/правильно/directquotes. Релевантность употреблена качественно в примере, основное управление описано как LLMchoice, не deterministic scorer."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V17",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Exactseed отсутствует вfullpaper и не выдуман.140pairs/30orderings соседние факты правильно supported. Contextualquote не proofabsence itself, absence independently verified."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V18",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Не выдумывает отсутствующие train/val/testsplit sizes; все три запрошенных отсутствующих числа declined. Scope provided evidence допустим, dataabsence fullpaper independently checked."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V19",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Missing individual rawvectors not fabricated; correctly distinguishes aggregates fromraw and explains nonrecoverability. Published µ/σ example correct/direct support; absence checkedfullpaper. Часть English answer отмечена как language defect."
+    ]
+  },
+  {
+    "repeat": 1,
+    "id": "V20",
+    "spec": [
+      "appropriate_refusal",
+      false,
+      null,
+      "Correct refusal неопубликованного common matched p-value. Нет переноса GA test results, fabricated significance или inventedexperiment."
+    ]
+  }
+]

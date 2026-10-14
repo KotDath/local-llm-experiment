@@ -1,0 +1,319 @@
+{
+  "client": "PC external HTTPS client; no client SSH forward",
+  "first": {
+    "status": 200,
+    "body": {
+      "request_id": "f94fe5553d30438dad4e8744d86de6c9",
+      "utc": "2026-10-14T10:11:36Z",
+      "question": "Запомни в этом разговоре: кодовое слово Липа-7319.",
+      "agent_id": "1accdb7024d8460cbdf25a40a6e945ff",
+      "protocol": "chat-completions-http",
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "rag": false,
+      "rerank": false,
+      "llm_calls": [
+        {
+          "text": "Запомнил: кодовое слово — Липа-7319.",
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 258,
+            "total_tokens": 277,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 258,
+            "prompt_ms": 836.9,
+            "prompt_per_token_ms": 3.243798449612403,
+            "prompt_per_second": 308.2805592065958,
+            "predicted_n": 19,
+            "predicted_ms": 813.565,
+            "predicted_per_token_ms": 45.198055555555555,
+            "predicted_per_second": 22.12484558701517
+          },
+          "finish_reason": "stop",
+          "counted_prompt_tokens": 258,
+          "prompt_hash": "7e2b41942b095e6af43ae65d546676aea1a715fb51d5a4ff1df99edd64cde9d6",
+          "generation_ms": 1656.6679010065855,
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "model": "tiel-coder",
+          "raw": {
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Запомнил: кодовое слово — Липа-7319."
+                }
+              }
+            ],
+            "created": 1791972698,
+            "model": "tiel-coder",
+            "system_fingerprint": "b10679-50f068fff",
+            "object": "chat.completion",
+            "usage": {
+              "completion_tokens": 19,
+              "prompt_tokens": 258,
+              "total_tokens": 277,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "id": "chatcmpl-qwEQtRKEeUkB5Pnqpv3gtGIcoHFusFGD",
+            "timings": {
+              "cache_n": 0,
+              "prompt_n": 258,
+              "prompt_ms": 836.9,
+              "prompt_per_token_ms": 3.243798449612403,
+              "prompt_per_second": 308.2805592065958,
+              "predicted_n": 19,
+              "predicted_ms": 813.565,
+              "predicted_per_token_ms": 45.198055555555555,
+              "predicted_per_second": 22.12484558701517
+            }
+          }
+        }
+      ],
+      "text": "Запомнил: кодовое слово — Липа-7319.",
+      "sources": [],
+      "status": "answered",
+      "finish_reason": "stop",
+      "total_ms": 1664.0276749967597,
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 19,
+        "total_tokens": 277
+      },
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "http_total_ms": 1671.4040279985056
+    },
+    "retry_after": null
+  },
+  "second": {
+    "status": 200,
+    "body": {
+      "request_id": "522977eb739542bcba013de40fbd48b0",
+      "utc": "2026-10-14T10:11:39Z",
+      "question": "Какое кодовое слово я назвал?",
+      "agent_id": "1accdb7024d8460cbdf25a40a6e945ff",
+      "protocol": "chat-completions-http",
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "rag": false,
+      "rerank": false,
+      "llm_calls": [
+        {
+          "text": "Липа-7319.",
+          "usage": {
+            "completion_tokens": 10,
+            "prompt_tokens": 299,
+            "total_tokens": 309,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 299,
+            "prompt_ms": 1130.846,
+            "prompt_per_token_ms": 3.7820936454849496,
+            "prompt_per_second": 264.40381802650404,
+            "predicted_n": 10,
+            "predicted_ms": 403.79,
+            "predicted_per_token_ms": 44.86555555555556,
+            "predicted_per_second": 22.28881349216177
+          },
+          "finish_reason": "stop",
+          "counted_prompt_tokens": 299,
+          "prompt_hash": "16f44613aca1519a3f6e33e10018de8f2de677ad3db1bfb325a7f9c49455bf31",
+          "generation_ms": 1557.5786839981447,
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "model": "tiel-coder",
+          "raw": {
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Липа-7319."
+                }
+              }
+            ],
+            "created": 1791972700,
+            "model": "tiel-coder",
+            "system_fingerprint": "b10679-50f068fff",
+            "object": "chat.completion",
+            "usage": {
+              "completion_tokens": 10,
+              "prompt_tokens": 299,
+              "total_tokens": 309,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "id": "chatcmpl-bVQ79bk16GavNzKA1Rt5iX6SZAbPlvH5",
+            "timings": {
+              "cache_n": 0,
+              "prompt_n": 299,
+              "prompt_ms": 1130.846,
+              "prompt_per_token_ms": 3.7820936454849496,
+              "prompt_per_second": 264.40381802650404,
+              "predicted_n": 10,
+              "predicted_ms": 403.79,
+              "predicted_per_token_ms": 44.86555555555556,
+              "predicted_per_second": 22.28881349216177
+            }
+          }
+        }
+      ],
+      "text": "Липа-7319.",
+      "sources": [],
+      "status": "answered",
+      "finish_reason": "stop",
+      "total_ms": 1574.9354799991124,
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 10,
+        "total_tokens": 309
+      },
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "http_total_ms": 1588.0616470021778
+    },
+    "retry_after": null
+  },
+  "reset": {
+    "status": 200,
+    "body": {
+      "reset": true
+    },
+    "retry_after": null
+  },
+  "after_reset": {
+    "status": 200,
+    "body": {
+      "request_id": "dcc6924b74284f3491dfa7c57f98a20a",
+      "utc": "2026-10-14T10:11:41Z",
+      "question": "Какое кодовое слово я назвал?",
+      "agent_id": "5f1ea7009254488bbf1b714988d99386",
+      "protocol": "chat-completions-http",
+      "profile": {
+        "temperature": 0.1,
+        "max_tokens": 6144,
+        "context": 32768,
+        "prompt": "optimized"
+      },
+      "rag": false,
+      "rerank": false,
+      "llm_calls": [
+        {
+          "text": "Я не могу этого знать. У меня нет доступа к тому, что вы сказали ранее, и в истории этого диалога нет никакого кодового слова. Если вы имели в виду что-то конкретное, повторите или уточните запрос.",
+          "usage": {
+            "completion_tokens": 50,
+            "prompt_tokens": 245,
+            "total_tokens": 295,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 245,
+            "prompt_ms": 852.576,
+            "prompt_per_token_ms": 3.479902040816327,
+            "prompt_per_second": 287.3644109146868,
+            "predicted_n": 50,
+            "predicted_ms": 5183.823,
+            "predicted_per_token_ms": 105.79230612244899,
+            "predicted_per_second": 9.452483234863536
+          },
+          "finish_reason": "stop",
+          "counted_prompt_tokens": 245,
+          "prompt_hash": "2386db868a888056a4f44b7c2458ea2f10754d07c797a5fe548f77360c041cea",
+          "generation_ms": 6055.535888997838,
+          "profile": {
+            "temperature": 0.1,
+            "max_tokens": 6144,
+            "context": 32768,
+            "prompt": "optimized"
+          },
+          "model": "tiel-coder",
+          "raw": {
+            "choices": [
+              {
+                "finish_reason": "stop",
+                "index": 0,
+                "message": {
+                  "role": "assistant",
+                  "content": "Я не могу этого знать. У меня нет доступа к тому, что вы сказали ранее, и в истории этого диалога нет никакого кодового слова. Если вы имели в виду что-то конкретное, повторите или уточните запрос."
+                }
+              }
+            ],
+            "created": 1791972707,
+            "model": "tiel-coder",
+            "system_fingerprint": "b10679-50f068fff",
+            "object": "chat.completion",
+            "usage": {
+              "completion_tokens": 50,
+              "prompt_tokens": 245,
+              "total_tokens": 295,
+              "prompt_tokens_details": {
+                "cached_tokens": 0
+              }
+            },
+            "id": "chatcmpl-bkSimXrChhCgDCgErMIsJf4JU9jvP0Pp",
+            "timings": {
+              "cache_n": 0,
+              "prompt_n": 245,
+              "prompt_ms": 852.576,
+              "prompt_per_token_ms": 3.479902040816327,
+              "prompt_per_second": 287.3644109146868,
+              "predicted_n": 50,
+              "predicted_ms": 5183.823,
+              "predicted_per_token_ms": 105.79230612244899,
+              "predicted_per_second": 9.452483234863536
+            }
+          }
+        }
+      ],
+      "text": "Я не могу этого знать. У меня нет доступа к тому, что вы сказали ранее, и в истории этого диалога нет никакого кодового слова. Если вы имели в виду что-то конкретное, повторите или уточните запрос.",
+      "sources": [],
+      "status": "answered",
+      "finish_reason": "stop",
+      "total_ms": 6069.214903000102,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 50,
+        "total_tokens": 295
+      },
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "http_total_ms": 6081.52912499645
+    },
+    "retry_after": null
+  },
+  "api_url": "https://95.215.56.217/local-llm",
+  "tls_verified": true,
+  "client_ssh_forward_required": false
+}

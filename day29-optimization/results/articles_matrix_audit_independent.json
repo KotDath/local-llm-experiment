@@ -1,0 +1,233 @@
+{
+  "reviewed_at_utc": "2026-10-14T08:24:49.295911+00:00",
+  "phase": "articles_final_matrix_before_HTTPS",
+  "method": "Read-only audit of actual recorded80 benchmark rows, semantic grade answer-SHA joins, selection, copied deliverables and30 golden/10cloud records. No new generation/network/SSH; no secrets read.",
+  "source_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+  "matrix_input_sha256": "4ef0020d0f8c4fc253a6ac9008432a98fb5e4bd4f182d940e70aa59093188d1b",
+  "matrix_checks": {
+    "80_records": true,
+    "80_unique_grade_joins": true,
+    "one_current_source": true,
+    "one_questions_sha": true,
+    "one_index_generation": true,
+    "one_embedding_fingerprint": true,
+    "one_retrieval_config": true,
+    "one_backend_build": true,
+    "one_slot_no_rerank": true,
+    "all_grade_answer_sha_match": true,
+    "all_grade_source_match": true,
+    "zero_prompt_cache": true,
+    "full_pinned_model_sha": true,
+    "A_10x2": true,
+    "A_summary_matches": true,
+    "B_10x2": true,
+    "B_summary_matches": true,
+    "C_10x2": true,
+    "C_summary_matches": true,
+    "D_10x2": true,
+    "D_summary_matches": true,
+    "AC_quant_only_primary_control": true,
+    "BD_quant_only_primary_control": true,
+    "selection_matches_declared_rule": true,
+    "selection_source_matches": true,
+    "selection_settings_match_measured": true,
+    "day30_copies_identical": true
+  },
+  "matrix_recomputed": {
+    "A": {
+      "correct_out_of_10": 1,
+      "hallucinations_out_of_10": 4,
+      "repeat1_correct_out_of_10": 2,
+      "repeat1_hallucinations_out_of_10": 1,
+      "delivery_failures": 0,
+      "mean_total_ms": 54751.033696800005,
+      "verdict_stable_out_of_10": 8
+    },
+    "B": {
+      "correct_out_of_10": 3,
+      "hallucinations_out_of_10": 1,
+      "repeat1_correct_out_of_10": 2,
+      "repeat1_hallucinations_out_of_10": 1,
+      "delivery_failures": 0,
+      "mean_total_ms": 56294.63297555085,
+      "verdict_stable_out_of_10": 9
+    },
+    "C": {
+      "correct_out_of_10": 2,
+      "hallucinations_out_of_10": 1,
+      "repeat1_correct_out_of_10": 1,
+      "repeat1_hallucinations_out_of_10": 0,
+      "delivery_failures": 0,
+      "mean_total_ms": 43862.57397704903,
+      "verdict_stable_out_of_10": 9
+    },
+    "D": {
+      "correct_out_of_10": 2,
+      "hallucinations_out_of_10": 0,
+      "repeat1_correct_out_of_10": 1,
+      "repeat1_hallucinations_out_of_10": 0,
+      "delivery_failures": 0,
+      "mean_total_ms": 56586.438292598905,
+      "verdict_stable_out_of_10": 9
+    }
+  },
+  "all_matrix_checks_pass": true,
+  "day30_copy_hash_matches": {
+    "benchmark_raw.jsonl": true,
+    "benchmark_summary.json": true,
+    "comparison.md": true,
+    "model_pair_metadata.json": true,
+    "benchmark.csv": true,
+    "benchmark_grades_A_independent.json": true,
+    "benchmark_grades_B_independent.json": true,
+    "benchmark_grades_C_independent.json": true,
+    "benchmark_grades_D_independent.json": true
+  },
+  "rag_cloud_checks": {
+    "30_golden_10_cloud": true,
+    "golden_current_source": true,
+    "cloud_current_source": true,
+    "all_golden_grade_sha_joins": true,
+    "all_cloud_grade_sha_joins": true,
+    "M1_matches_actual_B_repeat0": true,
+    "all_10_identical_questions": true
+  },
+  "rag_cloud_summary": {
+    "M0": {
+      "correct_out_of_10": 1,
+      "hallucinations_out_of_10": 9,
+      "delivery_failures": 0,
+      "mean_total_ms": 9885.924092399364,
+      "mean_llm_calls": 1
+    },
+    "M1": {
+      "correct_out_of_10": 3,
+      "hallucinations_out_of_10": 1,
+      "delivery_failures": 0,
+      "mean_total_ms": 63492.67865820075,
+      "mean_llm_calls": 2.7
+    },
+    "M2": {
+      "correct_out_of_10": 3,
+      "hallucinations_out_of_10": 1,
+      "delivery_failures": 0,
+      "mean_total_ms": 55158.09186659899,
+      "mean_llm_calls": 2.5
+    },
+    "cloud": {
+      "correct_out_of_10": 2,
+      "hallucinations_out_of_10": 0,
+      "delivery_failures": 5,
+      "mean_total_ms": 13540.893395000603,
+      "mean_llm_calls": 2.4
+    }
+  },
+  "quality_limitations": [
+    "Selected B is5/20 fully correct,2 factual hallucinations and0delivery failures; improved configuration does not imply high absolute quality.",
+    "Cloud has5/10 delivery failures from strict provenance/repair; zero factual hallucinations does not imply10 usable responses.",
+    "M0/M2 and B measured sequentially at different moments; temporal confounding and OS caches remain disclosed.",
+    "Self-review may miss defects; single revision is not independently re-reviewed at runtime."
+  ],
+  "five_version_source_audit": [
+    {
+      "directory": "day26-local-llm",
+      "agent_sha256": "843af9314da9bfcec6968eb05f3dc5f0119d4970c80bae099e9e84e2e2a262d5",
+      "core_sha256": null,
+      "python_files_compiled_in_memory": 7,
+      "syntax_errors": [],
+      "forbidden_framework_sdk_imports": [],
+      "neighbor_source_imports": [],
+      "docs_present": true
+    },
+    {
+      "directory": "day27-application",
+      "agent_sha256": "843af9314da9bfcec6968eb05f3dc5f0119d4970c80bae099e9e84e2e2a262d5",
+      "core_sha256": null,
+      "python_files_compiled_in_memory": 8,
+      "syntax_errors": [],
+      "forbidden_framework_sdk_imports": [],
+      "neighbor_source_imports": [],
+      "docs_present": true
+    },
+    {
+      "directory": "day28-local-rag",
+      "agent_sha256": "843af9314da9bfcec6968eb05f3dc5f0119d4970c80bae099e9e84e2e2a262d5",
+      "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "python_files_compiled_in_memory": 22,
+      "syntax_errors": [],
+      "forbidden_framework_sdk_imports": [],
+      "neighbor_source_imports": [],
+      "docs_present": true
+    },
+    {
+      "directory": "day29-optimization",
+      "agent_sha256": "843af9314da9bfcec6968eb05f3dc5f0119d4970c80bae099e9e84e2e2a262d5",
+      "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "python_files_compiled_in_memory": 25,
+      "syntax_errors": [],
+      "forbidden_framework_sdk_imports": [],
+      "neighbor_source_imports": [],
+      "docs_present": true
+    },
+    {
+      "directory": "day30-private-service",
+      "agent_sha256": "843af9314da9bfcec6968eb05f3dc5f0119d4970c80bae099e9e84e2e2a262d5",
+      "core_sha256": "37e91e107ef800cfd5a20cc91912b78f4fcdb231a2bb6ac0ada9e1899d38c430",
+      "python_files_compiled_in_memory": 34,
+      "syntax_errors": [],
+      "forbidden_framework_sdk_imports": [],
+      "neighbor_source_imports": [],
+      "docs_present": true
+    }
+  ],
+  "agent_identical_all_versions": true,
+  "rag_core_identical_28_29_30": true,
+  "documentation_links_missing_at_review": [
+    {
+      "document": "day30-private-service/README.md",
+      "label": "выводы",
+      "missing": "results/conclusions.md"
+    }
+  ],
+  "documentation_state": "Parent updating final network and conclusions. ACCEPTANCE still pending new final acceptance at this read-only snapshot. HTTPS evidence explicitly pending.",
+  "excluded_actual_generation_warmups": [
+    {
+      "case": "A",
+      "run_id": "A-1791959603382795462",
+      "excluded": true,
+      "source_current": true,
+      "run_matches_matrix": true,
+      "generation_calls": 3,
+      "real_generation_completed": true
+    },
+    {
+      "case": "B",
+      "run_id": "B-1791960853355963930",
+      "excluded": true,
+      "source_current": true,
+      "run_matches_matrix": true,
+      "generation_calls": 3,
+      "real_generation_completed": true
+    },
+    {
+      "case": "C",
+      "run_id": "C-1791962050256824796",
+      "excluded": true,
+      "source_current": true,
+      "run_matches_matrix": true,
+      "generation_calls": 3,
+      "real_generation_completed": true
+    },
+    {
+      "case": "D",
+      "run_id": "D-1791963011935358356",
+      "excluded": true,
+      "source_current": true,
+      "run_matches_matrix": true,
+      "generation_calls": 3,
+      "real_generation_completed": true
+    }
+  ],
+  "all_warmup_checks_pass": true,
+  "direct_HTTP_no_cloud_fallback_audit": "All production Model constructors restrict generation to local loopback HTTP. Agent/CLI/protocol/bot do not import a cloud client. Explicit compare_cloud.py injects DeepSeekComparisonClient only in its standalone comparison main; no automatic fallback."
+}
