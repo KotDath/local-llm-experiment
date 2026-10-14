@@ -34,3 +34,11 @@ QUANT=Q8 PARALLEL=1 CTX_PER_SLOT=32768 ./run_model.sh
 context и profile по `configs/selected.json`, затем API/бота.
 RSS/PSS/host RAM/VRAM/GTT на Strix Halo не складывать. Не скрывать partial,
 ожидание и ограничения малой выборки. Секреты в кадр не выводить.
+
+Обновлениеv2: показать results/quality-v2/comparison.md (36/40correct,
+три неподтверждённых факта, отклонённый filter34/40). Все старые A–D и
+load/limits/outage назвать измерениями прежнего core37e; свежие HTTPSдиалоги
+core82 в quality_v2_https_network/final и независимомaudit дня30. Полная
+selected-quote support там2/4 при правильных основныхответах4/4.
+Cloudfinal7/10 измерен надругом наборе; прямого сравненияпроцентов не делать.
+Подробный отчёт: [REPORT](../REPORT.md).

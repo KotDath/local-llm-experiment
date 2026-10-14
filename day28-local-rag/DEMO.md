@@ -24,3 +24,11 @@
 
 Не показывать .env, ключи, headers и Telegram IDs. Не выдавать сохранённый
 benchmark за живой ответ; назвать дату и условия измерений.
+
+Обновлениеv2: показать results/quality-v2/comparison.md (36/40correct,
+три неподтверждённых факта, отклонённый filter34/40). Все старые A–D и
+load/limits/outage назвать измерениями прежнего core37e; свежие HTTPSдиалоги
+core82 в quality_v2_https_network/final и независимомaudit дня30. Полная
+selected-quote support там2/4 при правильных основныхответах4/4.
+Cloudfinal7/10 измерен надругом наборе; прямого сравненияпроцентов не делать.
+Подробный отчёт: [REPORT](../REPORT.md).

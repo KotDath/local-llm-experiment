@@ -1,0 +1,60 @@
+{
+  "reviewed_at_utc": "2026-10-14T09:59:22.535388+00:00",
+  "phase": "quality_v2_prefreeze_day28_source_audit",
+  "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+  "file_sha256": {
+    "agent.py": "f4923080ca5bb29b1f394f057e28154adb503ca4e1b4d3b92fe15940959662e5",
+    "rag.py": "5a8e719cee001b8e0328998b4f6cb850e63fbaebb6e91105f00b46c01a0e4585",
+    "model.py": "951893964ae5c645fe7cd4d465b9d3481a6c66f852ca59d6b613f704db491c30",
+    "grounding.py": "3a7c5bb70e20a8bfdba21ccdb13f91519e450f648b88d6821884b4a0a83d5dbf",
+    "index.py": "0ad116349786563385ae155e6f2d7f9382276e2400ba4f8d22238977a3a94e9e"
+  },
+  "method": "Read-only source inspection and in-memory Python syntax compilation; no generation, embedding, reranking, cloud, Telegram or SSH calls. Held-out expected answers not read.",
+  "checks": {
+    "reranker_hard_cap20": true,
+    "canonical_document_UTF16_neighbor_windows": true,
+    "initial_evidence_per_part_context_guard": true,
+    "runtime_configured_min_context": true,
+    "early_evidence_catalog_before_generation": true,
+    "percall_citation_catalog_retained": true,
+    "deduplicated_review_proofs": true,
+    "feedback_contains_claim_text_only": true,
+    "original_question_coverage_review": true,
+    "revision_is_rechecked": true,
+    "individual_unsupported_claim_drop": true,
+    "still_missing_original_coverage_returns_partial": true,
+    "history_only_commits_after_all_successful_steps": true,
+    "failure_trace_retains_prior_calls_usage": true,
+    "actual_answer_finish_reason": true,
+    "display_only_removes_PDFcontrolchar2": true,
+    "materialize_still_uses_literal_UTF16_page_validation": true,
+    "host_max12_claims": true,
+    "host_review_strict_keys_and_issue_bounds": true,
+    "no_agent_sdk_and_local_generation": true
+  },
+  "major_issues_previously_reported_and_now_resolved": [
+    "Three-paper reranker21candidate overflow now capped20 withpaper balance.",
+    "Context pruning now protects at leastone evidencewindow foreach plannedpart andrecords removals.",
+    "Sent evidence and citation catalogs captured beforegeneration and retained percall, including failure traces.",
+    "Review quote duplication replaced bydeduplicated proof catalog.",
+    "Old citation EIDs removed from revisionfeedback; prior claims treated asuntrusted text.",
+    "Reviewer now checks originalquestion coverage, canretrieve/revise again and marksstillmissing answer partial.",
+    "Actual model finish_reason preserved, raw PDFquote immutable whiledisplay control charsremoved.",
+    "Host claims/issue bounds and keys largelyenforced forcloudparity."
+  ],
+  "remaining_findings": [],
+  "important_non_code_acceptance_followup": [
+    "Real fourturn regression, development answers and blinded heldout grades must confirm semantic gains; source inspection alone isnotqualityproof.",
+    "Qualityv2 currently changesday28 whileday30service remains oldcore; old80matrix/HTTPSreceipts arenotevidence fornewv2.",
+    "Planner-dependent downstreamretrieval makesQ8/Q4 answercontexts potentiallydifferent. Existing quantization exporter mustdistinguish initialplanner prompt fromanswer prompt andtruthfullylabel end-to-end versusfixed-context comparison.",
+    "Self-review remainsaheuristic; drop logicdoesnotguarantee every retainedfact iscorrect.",
+    "Runtime review prompt stillhasto fit actualcontext; deduplication reduces blowup butdoesnot warrant unlimited claims/evidence."
+  ],
+  "native_index_unchanged": {
+    "sha256": "ba0e9524fb2947802b4121f99944b40b65f936995feafcad77742fe55b4690f3",
+    "expected": "ba0e9524fb2947802b4121f99944b40b65f936995feafcad77742fe55b4690f3",
+    "chunks": 182,
+    "native_chunks_ordered_by_start": true
+  },
+  "not_a_final_delivery_acceptance": true
+}

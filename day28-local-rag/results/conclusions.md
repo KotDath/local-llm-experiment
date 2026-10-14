@@ -42,3 +42,7 @@ weightedRRF. Generic topic prefix удалён; четыре опорных ча
 Актуальность pinnedPDF/latest arXiv проверена отдельно ранее; это проверка
 байтов/ревизии, не научной истинности. Новых tests/inference после текущей серии
 по просьбе пользователя не запускали. [Общий отчёт](../../REPORT.md).
+
+Cloud finaldeepseek-flash:7/10correct,2partial,1protocolfailure,0hallucinations,
+среднее7.88с. Это другой golden10 набор, поэтому не сравниваем90% с70% как
+контролируемый выигрыш. Оценка:quality-v2/cloud_final_grades_independent.json.

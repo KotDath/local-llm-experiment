@@ -1,0 +1,71 @@
+{
+  "heldout": {
+    "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+    "questions_sha256": "e220a5cf352e608622397a1d1c85dee7f38a3db275a70efa804eff0db9b53c23",
+    "answers_file_sha256": "7d74a8bc311b048fc790e9eaabab7c2d4b9a4943bdbabdddec3c55f8215e20d4",
+    "grades_file_sha256": "8719594cf10340278d87c1af8188d2eafe02f35f4019a60a2cd187f8cf70c588",
+    "runtime_model": {
+      "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+      "build": "b10679-50f068fff",
+      "context_per_slot": 32768,
+      "slots": 3
+    },
+    "count": 40,
+    "correct": 36,
+    "hallucinations": 3,
+    "delivery_failures": 0,
+    "truncated": 0,
+    "mean_total_ms": 79382.49752144967,
+    "mean_focus_ms": 0,
+    "mean_generation_tokens_s": 27.149728499147994,
+    "meets_quality_target": false,
+    "by_repeat": {
+      "0": {
+        "count": 20,
+        "correct": 17,
+        "hallucinations": 2
+      },
+      "1": {
+        "count": 20,
+        "correct": 19,
+        "hallucinations": 1
+      }
+    },
+    "stable_verdicts": 18
+  },
+  "heldout_focus": {
+    "source_sha256": "e1c707e61744cce596097339ec01eb2e4eb1f3cd092d780d143df9859454f703",
+    "questions_sha256": "e220a5cf352e608622397a1d1c85dee7f38a3db275a70efa804eff0db9b53c23",
+    "answers_file_sha256": "04da5258184020c33d73fd761537ee830d7984e78a30c5af976e6be059ac4991",
+    "grades_file_sha256": "8255529b95ef333b8fc1937825db298ec28d36c3d878589fd394ce9f2d84d72b",
+    "runtime_model": {
+      "model_file": "Tiel-Coder-35B-A3B-MTP-UD-Q8_K_XL.gguf",
+      "build": "b10679-50f068fff",
+      "context_per_slot": 32768,
+      "slots": 3
+    },
+    "count": 40,
+    "correct": 34,
+    "hallucinations": 3,
+    "delivery_failures": 0,
+    "truncated": 0,
+    "mean_total_ms": 85903.41733447477,
+    "mean_focus_ms": 6520.9198130251025,
+    "mean_generation_tokens_s": 25.86072559874163,
+    "meets_quality_target": false,
+    "by_repeat": {
+      "0": {
+        "count": 20,
+        "correct": 16,
+        "hallucinations": 2
+      },
+      "1": {
+        "count": 20,
+        "correct": 18,
+        "hallucinations": 1
+      }
+    },
+    "stable_verdicts": 18,
+    "scope": "Paired postprocessing of the same 40 actual outputs; one additional real focus call per answer with claims. No call for empty refusals. Not a fresh end-to-end repeat."
+  }
+}

@@ -1,0 +1,658 @@
+{
+  "schema": "quality-v2-cloud-final-independent-v1",
+  "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+  "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+  "source_snapshot_verified": true,
+  "adapter_current_file_sha_verified": true,
+  "questions_sha256": "6c7c412a56502f47ac4a58cd33deab37ac4b2c0225caf4dcecf043e5349b60cb",
+  "input_snapshot_sha256": "1751ace48d054fef547b22616a16fbe17b97a6407790594be3ef4c5863d5ba15",
+  "evaluated_utc": "2026-10-14T10:59:53.398497+00:00",
+  "complete": true,
+  "rows": 10,
+  "grades": [
+    {
+      "mode": "cloud",
+      "id": "Q01",
+      "request_id": "54bc548a8a15413f9497e90eb4da5d49",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "04048d9924e50db28fcaca13ad8c7b4907241b2b140de9b9dedc2183bafda429",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Все original requested main/recall/archival distinctions и explicit move/notdirectlyvisible покрыты. Core directquotes; дополнительные working/FIFO/queue/pagination facts также правильны. Один обрывочный auxiliary inference-cycle quote всё же явно содержит maincontext-input, не material defect."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "812d59226f9a9b0a80a3bf6dd823e1d04b676262ba7f0d3a4c3fe31ad0269c31",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "c33a588b41be94dfb0fe1cf507db243683b04dd364b829ba7a0d989dca8e0f52",
+          "prompt_hash": null,
+          "citation_catalog_count": 108,
+          "catalog_sha256": "57187221f1397765265cd93e2f3e48afac13af2e8107759fe80a56bfa576fc5d",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 23,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "c2d0824866310102f7d28a357f3dff86204abaa1fd781dc3824656d6a4345a23",
+          "review_proof_count": 19,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q02",
+      "request_id": "49d8a0455de740a492518743f347e555",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "8c91627c7b5e678f9fcb75c269731b8947a1653856c4ae03f212af29e4804ab3",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "notes": [
+        "Original warning/flush/recursive summary/recall survival полный и true/directlysupported, examples70/100/50 правильно scoped. Но дополнительный существенный control mechanism имеет неверную semantic citation; fact true в fullPDF, hallucination не начислена."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "Последний extra claim recall-retrieved→queue-manager appendback цитирует heartbeat/functionchaining passage плюс dangling queue reinsert fragment. Эта выбранная цитата не entail actor/appendback mechanism."
+        }
+      ],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "6fefff88f561dfeec784283af66151b3e231a15bbe2e13c1560072336342739c",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "48f8ee9d0346760ffe2096d177fd27121812c98d970a0f84d3b74b7d43887641",
+          "prompt_hash": null,
+          "citation_catalog_count": 119,
+          "catalog_sha256": "ca1973cdeb72dc8eb739701ef7a51bfab63c57c9a6d8159592cdae4d0239bc43",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 7,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "2e83a3cf22aba73fb4a05023812bcbeba912bf7e983cff1157f4b44271a1b1d4",
+          "review_proof_count": 7,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q03",
+      "request_id": "6315f8efb9374d28bb2165a381defefa",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "862db2e269a296decf67245fbbf169065b99b80be184358fac17a81001df3a51",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Оба explicitly requested observed limitations earlypaginationstop и degradedGPT3.5/functioncalling/GPT4best прямо answered/directlyquoted. KV figure interleaving в первойquote не подменяет задачу: нужный QA finding непосредственно присутствует."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "9601057ff2e15366d156db772eb3fe587d2be500b85e953f2ee3a39da7fe75d3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "0984a4366f4b0f0675463bab433c495108172f0bb4b01b2edfd18feb1342c746",
+          "prompt_hash": null,
+          "citation_catalog_count": 78,
+          "catalog_sha256": "dcd936110fa7f793a6f1fc69ea00e69d59aa375e9895696d7767c3e76808723a",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 2,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "41fe13940560f5b837082f4d1c6f0bdedf3a2afd6a7bafea425cdf46414b03af",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "80f53cf25739bfe7a57c890696b40cb449f6c48201bc3fd4d6e8d469d6a888ea",
+          "review_proof_count": 2,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q04",
+      "request_id": "dec0c237f1b5497782bba692eaebc477",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "3c78e56b7ab93c1de3ccaf1baa4989e98b97f5d5c3d4a6ba4795a5eb1016e2e8",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Correct exp(-t/S),t/S meanings,initialS1 и recallS+=1/t0,полные prose/directquotes. e≈2.71828/qualitative forgetting extras также sourceверны."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "9b1f8323c5361554aef9092f5a21cc69a53c50d2b7551b25d743049c0ff5745a",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "f60f011479ac96f4bdbede095a99dbb4501bb05c5cf33f32a4cfa4fd0c973983",
+          "prompt_hash": null,
+          "citation_catalog_count": 104,
+          "catalog_sha256": "4d1a092f8e8a61aa2c794727afd85d06dabf57c73a3e3fe005e7fdfdb9f890af",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 9,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "2a3302dca6a6b1e4d3701c462993753463d6a78847baec3e5228d28370c275b4",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "413d8e8ad15eeaf87b6dfdaa29c6bcd20ea7f80a6dc6929f1dcbbea932dc10c4",
+          "review_proof_count": 7,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q05",
+      "request_id": "a5608e07d1324be989b57238f72ae230",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "83d757a4f5cc73478e6cca80b7c1efdf9d9c4013e3ecb82a8bbab99ae3f6162c",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Pieces=dialogue turns/eventsummary,E(c)→hc иFAISS все явно answered/directlyquoted. Extra entire storage vectors/LangChain indexing facts true и quote-supported; упоминание описывает статью, не software project."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "ecf34acfa395a165e910a9b35da3daaf7c802dc16f511a722991e66e1738bcc9",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "d90b9310d68885ce70254a8d501de2a428f088763db025292d7f984af2e75d6c",
+          "prompt_hash": null,
+          "citation_catalog_count": 124,
+          "catalog_sha256": "2fc849db12a66394ef34ff1e8c35a3b9ce61422c1635c045fecef37c1a426cce",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 9,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "2bbe9df5333dd2fb62b38ec755389877f7e4475f1108b611e7e586f98834a8f5",
+          "review_proof_count": 7,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q06",
+      "request_id": "c389d247fa254970ae232fbd0bc8fa7b",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "43d3ff900bfbe7096ce9a9c6520b214eca1aadded083e7d975d73f3f816b2f12",
+      "verdict": "partial",
+      "correctness": false,
+      "hallucination": false,
+      "notes": [
+        "Question selection100/3 и storageinsight/pointers полно correct/directquotes. Но original WHEN reflection запускается omitted entirethreshold150. Planner dropped этотаспект, хотя actualsent evidence содержит150; ownreviews/status не доказываютcomplete."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "5e5624780939c9fe2ed358b09972b9772d83101dceba2ecc76be01f2049b5e55",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "4d7e50190c13410610b9e552687e6a55db3b0c8d6a1ce77cc97b677e3bbb4544",
+          "prompt_hash": null,
+          "citation_catalog_count": 163,
+          "catalog_sha256": "85c1d69897706960581ec8a873dcc925b90cd83a722ec5820807f565b51cc896",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 9,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "da0144a45b07aa1a6a1f712fab7ad62d64b6f7b3306f1381a723a3dafd993fb7",
+          "review_proof_count": 6,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q07",
+      "request_id": "2c047e43e5e44d568e80d02a8b5e3103",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "a7718783ccf007222d551f3afd0e0d1fff7ca3e21e34f141acef775e913fcf41",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Comparison covers обе papers:MemGPTfinitecontext/hierarchy/paging иGA memory stream/reflection/planning roles. Всеcore иadditional claims meaningful directquotes, никаких fabricatedcrossbench/names."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "6de43693572cc002b367f2ce71fbb2c2ccc98ab15f5f6db04cdd900ec82bd804",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "9b6082f0dbc502e34fa3a085361f85536526bc2683fcb53987a1345c94855ca7",
+          "prompt_hash": null,
+          "citation_catalog_count": 191,
+          "catalog_sha256": "e906edfc7e65449f6906221789f10069581008f323636afaf0a8b223c90c279e",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 21,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "000e77be1b50052fe1833273790232d6a7ef7ba65d669c973c643995a742dcc4",
+          "review_proof_count": 21,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q08",
+      "request_id": "c99204002bc4403f99ff1fff54179371",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "82c230ad495d0c52cc3a7cb94b28730068aa383bf690ca917c83bc3606c92bdb",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Обе time models explained,MemoryBankinitial/update иGA gamehours0.995/recency/access timestampeffect полно answered. GA timestamp/re-access — корректная semantic implication из lastretrieved/mostrecentaccess/higherrecent score, не выдуманный implementationAPI."
+      ],
+      "citation_defects": [
+        {
+          "kind": "semantic",
+          "detail": "В formula claim выбранная quote не включает S-definition strength, но definition есть в actual broader same evidence; minor supporting-detail coverage."
+        }
+      ],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "4befc95602c775f4c0d6bbd7e71aff1f1f052c265c1e838cea9e21a8ed298130",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "7d50248baafe606e70bf1a9ab8110a7d5ee61ba0a2d3dad565e68afa0787b2cb",
+          "prompt_hash": null,
+          "citation_catalog_count": 248,
+          "catalog_sha256": "048a356a43b15fadcd6d97c18d5e1f21789de750a289267c71d31888f85426f5",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 25,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "22d679b83f85798ed4e8cf779a054db4768900f0a3c014df310181e7210282ee",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "c615f7280f4775da993fa18e00566116dfbaa15326f61559ef95b33b8ce9f364",
+          "review_proof_count": 21,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q09",
+      "request_id": "9039c4a983ae49428535589a50416f44",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "f2e7effe912de28fab7f94147619340e29f512d8379ac1406bfd238d7c5cb40a",
+      "verdict": "correct",
+      "correctness": true,
+      "hallucination": false,
+      "notes": [
+        "Conditions25/twogamedays/thousandstokencredits/multipleactualdays иlargelyunknownrobustness/potentialhacking полно/directquotes. Additionalsimulation/userinteraction/interview/ablation/error facts sourceверны; shortscale connection — reasonable researchlimitation inference, не measuredattackscore."
+      ],
+      "citation_defects": [],
+      "literal_citation_valid": true,
+      "delivery_ok": true,
+      "error": null,
+      "model_status_not_used": "answered",
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "ecba5e73d1edc91aec3900f07341d8d0e7a36f070a18ce4325e594e3dca8968a",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "8f108eada78b91937a233ec523bc2a5ea78315a7fd24ca2d8462e53473bf341d",
+          "prompt_hash": null,
+          "citation_catalog_count": 149,
+          "catalog_sha256": "513095b734798e0c83ffa468d4a46eb3205dcb6262e6e557f092e33e102c0750",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 23,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "26a19d9ced435237b664a0a2989011fd59fb6c7b42b7e8cb2916878fd8fac7a3",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "5c3d6640f4c3e84dbce96698d971348ab63534f6be9cb01ef63290437123021c",
+          "review_proof_count": 18,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ]
+    },
+    {
+      "mode": "cloud",
+      "id": "Q10",
+      "request_id": "eb156fa5c25942e9ba1914e5888cdb16",
+      "source_sha256": "82c1d897a454d580329428ddfadb4d312c926ea7d84e47f602abd9a2b1a56ced",
+      "comparison_client_sha256": "166cc872b89592066d929461e8896efe69342296d836b4af901dc9cab6219d7b",
+      "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verdict": "wrong",
+      "correctness": false,
+      "hallucination": false,
+      "notes": [
+        "End-to-endfailure preserved falsecorrect. Raw answerP1/P2abstainedemptyclaims правильный отказ на unavailablematchedspeedpercentage, но reviewer protocol нарушен и response недоставлен. Не factual hallucination; повтор/retry не запускался."
+      ],
+      "citation_defects": [
+        {
+          "kind": "delivery_protocol",
+          "detail": "No delivered answer:invalid_coverage_review. Raw draft appropriateabstention; coverageissue215characters exceeds180cap."
+        }
+      ],
+      "literal_citation_valid": null,
+      "delivery_ok": false,
+      "error": "invalid_coverage_review",
+      "model_status_not_used": null,
+      "call_provenance": [
+        {
+          "phase": "question_plan",
+          "text_sha256": "2b401a6fd1822c9c23ce26d78b812b14e0c98d08786d55521943c4ae73171277",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "answer",
+          "text_sha256": "eaa358fc9322d38ce79edb7a49093e5502ec0a4938498d370807bd1589453b17",
+          "prompt_hash": null,
+          "citation_catalog_count": 113,
+          "catalog_sha256": "a92c17f6ef72f69b411ca445a9daf6fc329698cb03c689332f4c6f2ef689ed67",
+          "catalog_provenance_valid": true,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": false,
+          "review_input_sha256": null
+        },
+        {
+          "phase": "coverage_review",
+          "text_sha256": "479c5e242fbcb380f022de8b239c25283fd07112d2b7309837253794d2d0d0d9",
+          "prompt_hash": null,
+          "citation_catalog_count": null,
+          "catalog_sha256": null,
+          "catalog_provenance_valid": null,
+          "catalog_reference_defects": [],
+          "raw_reference_count": 0,
+          "review_input_saved": true,
+          "review_input_sha256": "de92f36ba28e6dc4800c04ea6f271fcee4dd246e30fe82e4795c8f4257292a8d",
+          "review_proof_count": 0,
+          "review_provenance_valid": true,
+          "review_provenance_defects": []
+        }
+      ],
+      "raw_draft_semantic_verdict": "appropriate_refusal",
+      "raw_draft_not_credited_correct": true,
+      "review_issue_lengths": {
+        "P1": [
+          156
+        ],
+        "P2": [
+          156
+        ],
+        "coverage": [
+          215
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "graded": 10,
+    "correctness_count": 7,
+    "hallucination_count": 0,
+    "delivery_failures": 1,
+    "correct": 7,
+    "partial": 2,
+    "wrong": 1,
+    "appropriate_refusal": 0
+  },
+  "all_actual_llm_calls": 30,
+  "comparison_limitations": [
+    "Same frozen ownAgent core82 and3fullpapers; public golden10, not newheldout20. Old20/40quality and cloud10 are differentdatasets, no direct accuracywin conclusion.",
+    "Cloud json_object requires explicit schema/caps in wireprompt, host EID materialization. Local decoder constrainedschema differs; this grades actual end-to-end delivery+semanticquality, not pure model knowledge.",
+    "All10 finalrows use same adapterSHA; oldfailedformatdevelopmentruns excluded from thisfinalseries but retained. FailureQ10 preserved; no retries or fresh inference bygrader."
+  ]
+}

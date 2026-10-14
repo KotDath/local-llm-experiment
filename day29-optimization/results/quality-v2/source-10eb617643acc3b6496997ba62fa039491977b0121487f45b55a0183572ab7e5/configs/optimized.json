@@ -1,0 +1,6 @@
+{
+  "temperature": 0.1,
+  "max_tokens": 6144,
+  "context": 32768,
+  "prompt": "optimized"
+}

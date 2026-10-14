@@ -30,8 +30,9 @@ RAG_RERANK_MODEL_PATH=/home/kotdath/.local/share/domovoy-rag/models/bge-reranker
 ```
 
 `start_selected_model.py` берёт квантование и context из `configs/selected.json`
-дня 29; до завершения выбора запускать `QUANT=Q8 CTX_PER_SLOT=32768 ./run_model.sh`
-можно только для предварительной проверки.
+дня29. Это унаследованный выбор исторического core37e; новая серия Agent82
+не выбирала quant заново. `QUANT=Q8 CTX_PER_SLOT=32768 ./run_model.sh`
+запускает тот же профиль.
 
 Для `setup.sh` нужны `uv` и Python 3.12; для body-limit probe — `curl`.
 Нужны установленная Ollama с `qwen3-embedding:0.6b`, llama.cpp и внешние веса.
